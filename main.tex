@@ -1,0 +1,65 @@
+% -*- Mode:TeX -*-
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You need to build this file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Try not to edit this file much, only include pacakges and the sub-files you write so that if you make a mistke you dont break everything in the code.
+
+\documentclass[12pt.fleqn]{article}
+% add packages here if needed
+% \usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage{amssymb} 
+\usepackage{enumitem}
+\usepackage{geometry} 
+\usepackage{tikz} 
+\usepackage{float}
+
+\begin{document}
+
+\tableofcontents
+
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\section{Introduction}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Introduction/intro}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\section{Notes and Definitions}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{Notes/mod1}
+\include{Notes/mod2}
+\include{Notes/mod3}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\section{Solutions}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make separate files and then include them here
+% Example :
+\include{Solutions/20XX/q1}
+% \include{Solutions/2011/q2}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\section{Appendix}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
