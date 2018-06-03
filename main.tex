@@ -1,13 +1,18 @@
 % -*- Mode:TeX -*-
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % You need to build this file
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Try not to edit this file much, only include pacakges and the sub-files you write so that if you make a mistke you dont break everything in the code.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Try not to edit this file much, only input pacakges and the
+% sub-files you write so that if you make a mistke you dont break
+% everything in the code.
 
-\documentclass[12pt.fleqn]{article}
+\documentclass[fleqn,titlepage]{book}
+
 % add packages here if needed
 % \usepackage[T1]{fontenc}
+\usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{hyperref}
@@ -21,44 +26,128 @@
 \usepackage{tikz} 
 \usepackage{float}
 
+%-------------------
+% Set up format for definitions and axioms etc.
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{law}[thm]{Law}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{axiom}{Axiom}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{note}{Note}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+%Set up the format for the listing structure
+\renewcommand{\theenumi}{\Roman{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)} 
+\renewcommand{\theenumii}{\alph{enumii}} 
+\renewcommand{\labelenumii}{\theenumi.~\theenumii}
+
+% Equation numbering 
+\numberwithin{equation}{section}
+
+% Draft
+\usepackage{draftwatermark}
+\SetWatermarkScale{4}
+
 \begin{document}
 
-\tableofcontents
 
 \pagestyle{plain}
 
+%========================================================================
+\frontmatter
+%========================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Disclaimer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Disclaimer/disclaimer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Acknowledgements/acknowledgements}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{About the Authors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Authors/authors}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Preface}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{Preface/preface}
+
+
+%========================================================================
+\mainmatter
+%========================================================================
+\tableofcontents
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------------------------------------------------------------------------
-\section{Introduction}
+\part{Introduction}
 %------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{Introduction/intro}
+\input{Introduction/intro}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------------------------------------------------------------------------
-\section{Notes and Definitions}
+\part{Notes and Definitions}
 %------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{Notes/mod1}
-\include{Notes/mod2}
-\include{Notes/mod3}
+\input{Notes/mod1}
+\input{Notes/mod2}
+\input{Notes/mod3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\part{Solutions}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%------------------------------------------------------------------------
+% 2010
+%------------------------------------------------------------------------
+% \chapter{2010}
+% \input{Solutions/2010/q1}
+% \input{Solutions/2010/q2}
+% \input{Solutions/2010/q3}
+% \input{Solutions/2010/q4}
+% \input{Solutions/2010/q5}
+% \input{Solutions/2010/q6}
+
+\chapter{2010}
+
+%------------------------------------------------------------------------
+\chapter{20XX}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{Solutions/20XX/q1}
+\item \input{Solutions/20XX/q2}
+\section{Module 2: Probability and Distributions}
+\item \input{Solutions/20XX/q3}
+\item % \input{Solutions/20XX/q4}
+\section{Module 3: Particle Mechanics}
+\item % \input{Solutions/20XX/q5}
+\item % \input{Solutions/20XX/q6}
+\end{enumerate}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------------------------------------------------------------------------
-\section{Solutions}
-%------------------------------------------------------------------------
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Make separate files and then include them here
-% Example :
-\include{Solutions/20XX/q1}
-% \include{Solutions/2011/q2}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%------------------------------------------------------------------------
-\section{Appendix}
+\part{Appendix}
 %------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
