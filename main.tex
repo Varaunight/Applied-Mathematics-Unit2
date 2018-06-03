@@ -1,3 +1,5 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % -*- Mode:TeX -*-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11,7 +13,7 @@
 \documentclass[fleqn,titlepage]{book}
 
 % add packages here if needed
-% \usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -25,8 +27,28 @@
 \usepackage{geometry} 
 \usepackage{tikz} 
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage{lmodern}
+% Equation numbering 
+\numberwithin{equation}{section}
 
-%-------------------
+% Used in cover page
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\providecommand{\HUGE}{\Huge}% if not using memoir
+\newlength{\drop}% for my convenience
+\usepackage{epstopdf}
+\usepackage{epsfig}
+
+% Draft
+\usepackage{draftwatermark}
+\SetWatermarkScale{1}\usepackage{epsfig}
+
 % Set up format for definitions and axioms etc.
 \theoremstyle{plain}
 \newtheorem{thm}{Theorem}[section]
@@ -51,15 +73,10 @@
 \renewcommand{\theenumii}{\alph{enumii}} 
 \renewcommand{\labelenumii}{\theenumi.~\theenumii}
 
-% Equation numbering 
-\numberwithin{equation}{section}
-
-% Draft
-\usepackage{draftwatermark}
-\SetWatermarkScale{4}
-
 \begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% \input{Cover/cover}
 
 \pagestyle{plain}
 
@@ -116,18 +133,6 @@
 %------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%------------------------------------------------------------------------
-% 2010
-%------------------------------------------------------------------------
-% \chapter{2010}
-% \input{Solutions/2010/q1}
-% \input{Solutions/2010/q2}
-% \input{Solutions/2010/q3}
-% \input{Solutions/2010/q4}
-% \input{Solutions/2010/q5}
-% \input{Solutions/2010/q6}
-
-\chapter{2010}
 
 %------------------------------------------------------------------------
 \chapter{20XX}
@@ -136,14 +141,37 @@
 \begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
 \item \input{Solutions/20XX/q1}
 \item \input{Solutions/20XX/q2}
+\end{enumerate}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
 \section{Module 2: Probability and Distributions}
 \item \input{Solutions/20XX/q3}
-\item % \input{Solutions/20XX/q4}
+% \item % \input{Solutions/20XX/q4}
+\end{enumerate}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
 \section{Module 3: Particle Mechanics}
 \item % \input{Solutions/20XX/q5}
 \item % \input{Solutions/20XX/q6}
 \end{enumerate}
 
+
+% %------------------------------------------------------------------------
+% \chapter{2015}
+% %------------------------------------------------------------------------
+% \section{Module 1: Managing Uncertainty}
+% \begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+% \item \input{Solutions/2015/q1}
+% \item \input{Solutions/2015/q2}
+% \end{enumerate}
+% \begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+% \section{Module 2: Probability and Distributions}
+% \item \input{Solutions/2015/q3}
+% \item \input{Solutions/2015/q4}
+% \end{enumerate}
+% \begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+% \section{Module 3: Particle Mechanics}
+% \item \input{Solutions/2015/q5}
+% \item \input{Solutions/2015/q6}
+% \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %------------------------------------------------------------------------
