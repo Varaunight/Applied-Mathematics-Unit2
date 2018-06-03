@@ -5,4 +5,5 @@
 *.gz
 *.fdb_latexmk
 *.out
+*.bak
 *.pdf
