@@ -1,0 +1,394 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -*- Mode:TeX -*-
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You need to build this file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Try not to edit this file much, only input pacakges and the
+% sub-files you write so that if you make a mistke you dont break
+% everything in the code.
+
+\documentclass[fleqn,titlepage]{book}
+
+% add packages here if needed
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage{amssymb} 
+\usepackage{enumitem}
+\usepackage{geometry} 
+\usepackage{tikz} 
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{lmodern}
+% Equation numbering 
+\numberwithin{equation}{section}
+
+% Used in cover page
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\providecommand{\HUGE}{\Huge}% if not using memoir
+\newlength{\drop}% for my convenience
+\usepackage{epstopdf}
+\usepackage{epsfig}
+
+% Draft
+\usepackage{draftwatermark}
+\SetWatermarkScale{1}\usepackage{epsfig}
+
+% Set up format for definitions and axioms etc.
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{law}[thm]{Law}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{axiom}{Axiom}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{note}{Note}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+%Set up the format for the listing structure
+\renewcommand{\theenumi}{\Roman{enumi}} 
+\renewcommand{\labelenumi}{(\theenumi)} 
+\renewcommand{\theenumii}{\alph{enumii}} 
+\renewcommand{\labelenumii}{\theenumi.~\theenumii}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \input{../include/Cover/cover}
+
+\pagestyle{plain}
+
+%========================================================================
+\frontmatter
+%========================================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Disclaimer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{../include/Disclaimer/disclaimer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Acknowledgements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{../include/Acknowledgements/acknowledgements}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{About the Authors}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{../include/Authors/authors}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Preface}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{../include/Preface/preface}
+
+
+%========================================================================
+\mainmatter
+%========================================================================
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\part{Introduction}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{../include/Introduction/intro}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\part{Notes and Definitions}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Module 1: Managing Uncertainty}
+\input{../include/Notes/mod1}
+\chapter{Module 2: Probability and Distributions}
+\input{../include/Notes/mod2}
+\chapter{Module 3: Particle Mechanics}
+\input{../include/Notes/mod3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\part{Solutions}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%------------------------------------------------------------------------
+\chapter{20XX}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/20XX/q1}
+\item \input{../include/Solutions/20XX/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/20XX/q3}
+% \item % \input{../include/Solutions/20XX/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item % \input{../include/Solutions/20XX/q5}
+\item % \input{../include/Solutions/20XX/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2005}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2005/q1}
+\item \input{../include/Solutions/2005/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2005/q3}
+\item \input{../include/Solutions/2005/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2005/q5}
+\item \input{../include/Solutions/2005/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2006}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2006/q1}
+\item \input{../include/Solutions/2006/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2006/q3}
+\item \input{../include/Solutions/2006/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2006/q5}
+\item \input{../include/Solutions/2006/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2007}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2007/q1}
+\item \input{../include/Solutions/2007/q2}
+\end{enumerate}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\section{Module 2: Probability and Distributions}
+\item \input{../include/Solutions/2007/q3}
+\item \input{../include/Solutions/2007/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2007/q5}
+\item \input{../include/Solutions/2007/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2008}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2008/q1}
+\item \input{../include/Solutions/2008/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2008/q3}
+\item \input{../include/Solutions/2008/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2008/q5}
+\item \input{../include/Solutions/2008/q6}
+\end{enumerate}
+
+
+%------------------------------------------------------------------------
+\chapter{2009}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2009/q1}
+\item \input{../include/Solutions/2009/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2009/q3}
+\item \input{../include/Solutions/2009/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2009/q5}
+\item \input{../include/Solutions/2009/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2010}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2010/q1}
+\item \input{../include/Solutions/2010/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2010/q3}
+\item \input{../include/Solutions/2010/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2010/q5}
+\item \input{../include/Solutions/2010/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2011}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2011/q1}
+\item \input{../include/Solutions/2011/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2011/q3}
+\item \input{../include/Solutions/2011/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2011/q5}
+\item \input{../include/Solutions/2011/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2012}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2012/q1}
+\item \input{../include/Solutions/2012/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2012/q3}
+\item \input{../include/Solutions/2012/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2012/q5}
+\item \input{../include/Solutions/2012/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2013}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2013/q1}
+\item \input{../include/Solutions/2013/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2013/q3}
+\item \input{../include/Solutions/2013/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2013/q5}
+\item \input{../include/Solutions/2013/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2014}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2014/q1}
+\item \input{../include/Solutions/2014/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2014/q3}
+\item \input{../include/Solutions/2014/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2014/q5}
+\item \input{../include/Solutions/2014/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2015}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2015/q1}
+\item \input{../include/Solutions/2015/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2015/q3}
+\item \input{../include/Solutions/2015/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2015/q5}
+\item \input{../include/Solutions/2015/q6}
+\end{enumerate}
+
+%------------------------------------------------------------------------
+\chapter{2016}
+%------------------------------------------------------------------------
+\section{Module 1: Managing Uncertainty}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{0}
+\item \input{../include/Solutions/2016/q1}
+\item \input{../include/Solutions/2016/q2}
+\end{enumerate}
+\section{Module 2: Probability and Distributions}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{2}
+\item \input{../include/Solutions/2016/q3}
+\item \input{../include/Solutions/2016/q4}
+\end{enumerate}
+\section{Module 3: Particle Mechanics}
+\begin{enumerate}[label=\bfseries  \arabic*.]\setcounter{enumi}{4}
+\item \input{../include/Solutions/2016/q5}
+\item \input{../include/Solutions/2016/q6}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------------------------------------------------------------------
+\part{Appendix}
+%------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
