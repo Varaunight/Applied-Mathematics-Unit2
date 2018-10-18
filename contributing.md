@@ -16,10 +16,10 @@ Here are the easy steps to contribute.
 
 	>To verify the new upstream repository you've specified for your fork, type `git remote -v` again. You should see the URL for your fork as `origin`, and the URL for the original repository as `upstream`.
 
-	`origin		https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (fetch)`
-	`origin		https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (push)`
-	`upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (fetch)`
-	`upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (push)`
+		`origin		https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (fetch)`
+		`origin		https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (push)`
+		`upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (fetch)`
+		`upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (push)`
 
 	Now, you can keep your fork synced with the upstream repository by following [this](https://help.github.com/articles/syncing-a-fork/)
 
