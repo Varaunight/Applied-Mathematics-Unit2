@@ -4,7 +4,7 @@ Here are the easy steps to contribute.
 
 1. Fork, then clone the repo:
 
-	`git clone https://github.com/BradBachu/Applied-Mathematics-Unit2.git`
+	`git clone https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git`
 
 2. Configure git to sync your fork with the original repository
 	
@@ -15,6 +15,11 @@ Here are the easy steps to contribute.
 	>Type `git remote add upstream https://github.com/BradBachu/Applied-Mathematics-Unit2.git`
 
 	>To verify the new upstream repository you've specified for your fork, type `git remote -v` again. You should see the URL for your fork as `origin`, and the URL for the original repository as `upstream`.
+
+	`origin		https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (fetch)`
+	`origin		https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (push)`
+	`upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (fetch)`
+	`upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (push)`
 
 	Now, you can keep your fork synced with the upstream repository by following [this](https://help.github.com/articles/syncing-a-fork/)
 
@@ -46,7 +51,7 @@ Here are the easy steps to contribute.
 
 8. Submit pull request
 
-9. Wait for me to accept your
+9. Wait for me to accept your pull request.
 
 ## Conventions
 
