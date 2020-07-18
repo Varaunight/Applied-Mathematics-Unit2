@@ -23,11 +23,19 @@ Here are the easy steps to contribute.
 
 	Now, you can keep your fork synced with the upstream repository by following [this](https://help.github.com/articles/syncing-a-fork/)
 
+<<<<<<< HEAD
 3.  Create a branch
 
 	`git branch 20XX-q1`
 
 4. Switch to branch
+=======
+3.  Create a branch with the appropriate name, for example:
+
+	`git branch 20XX-q1`
+
+4. Switch to that branch
+>>>>>>> contributing
 
 	`git checkout 20XX-q1`
 
@@ -51,7 +59,11 @@ Here are the easy steps to contribute.
 
 8. Submit pull request
 
+<<<<<<< HEAD
 9. Wait for me to accept your pull request.
+=======
+9. Wait for Arjun to accept your pull request.
+>>>>>>> contributing
 
 ## Conventions
 
