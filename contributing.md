@@ -21,7 +21,7 @@ Here are the easy steps to contribute.
 		upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (fetch)
 		upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (push)
 
-	Now, you can keep your fork synced with the upstream repository by following [this](https://help.github.com/articles/syncing-a-fork/)
+	Now, everytime you start work, run `git fetch upstream` to fast forward your master branch to that of Brad's. This ensures that your working tree will be clean and consistent.
 
 3.  Create a branch
 
@@ -33,25 +33,21 @@ Here are the easy steps to contribute.
 
 5. Make changes and commit with a good message
 
-	`git add 20xx/q1.tex`
+	`git add 20XX/q1.tex`
 
 	`git commit -m "commit message"`
 
-6. Push your local changes to your remote repo.
+6. Push your local branch changes to your remote repo. Your local branch will now be tracked by a remote branch. This prevents local data loss to serverely affect your work.
 
-	`git push --set-upstream`
+	`git push --set-upstream 20XX-q1`
 
-	`git merge 20XX-q1`
+7. Every new change you make, you will repeat step 5 and simply `git push` to the remote branch.
 
-7. Push to your fork
+8. Go on the github UI to create a Pull request from the branch you are working on to Brad's `master` branch.
 
-	`git push origin master`
+9. Review and submit a pull request.
 
-	(enter username and info)
-
-8. Submit pull request
-
-9. Wait for me to accept your pull request.
+10. Wait for me to accept your pull request.
 
 ## Conventions
 
