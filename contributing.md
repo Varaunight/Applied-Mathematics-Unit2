@@ -8,13 +8,13 @@ Here are the easy steps to contribute.
 
 2. Configure git to sync your fork with the original repository
 	
-	>Change directories to the location of the fork you cloned
+	a. Change directories to the location of the fork you cloned
 
-	>Type `git remote -v` and press enter.
+	b. Type `git remote -v` and press enter.
 
-	>Type `git remote add upstream https://github.com/BradBachu/Applied-Mathematics-Unit2.git`
+	c. Type `git remote add upstream https://github.com/BradBachu/Applied-Mathematics-Unit2.git`
 
-	>To verify the new upstream repository you've specified for your fork, type `git remote -v` again. You should see the URL for your fork as `origin`, and the URL for the original repository as `upstream`.
+	d. To verify the new upstream repository you've specified for your fork, type `git remote -v` again. You should see the URL for your fork as `origin`, and the URL for the original repository as `upstream`.
 
 		origin	https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (fetch)
 		origin	https://github.com/<YourUserName>/Applied-Mathematics-Unit2.git (push)
