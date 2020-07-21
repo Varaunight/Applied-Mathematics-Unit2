@@ -23,11 +23,11 @@ Here are the easy steps to contribute.
 
 	Now, everytime you start work, run `git fetch upstream` to fast forward your master branch to that of Brad's. This ensures that your working tree will be clean and consistent.
 
-3.  Create a branch
+3.  Create a branch with the appropriate name, for example:
 
 	`git branch 20XX-q1`
 
-4. Switch to branch
+4. Switch to that branch
 
 	`git checkout 20XX-q1`
 
@@ -48,6 +48,7 @@ Here are the easy steps to contribute.
 9. Review and submit a pull request.
 
 10. Wait for me to accept your pull request.
+
 
 ## Conventions
 
