@@ -23,11 +23,11 @@ Here are the easy steps to contribute.
 
 	Now, everytime you start work, run `git fetch upstream` to fast forward your master branch to that of Brad's. This ensures that your working tree will be clean and consistent.
 
-3.  Create a branch
+3.  Create a branch with the appropriate name, for example:
 
 	`git branch anon23-20XX-q1`
 
-4. Switch to branch
+4. Switch to that branch
 
 	`git checkout anon23-20XX-q1`
 
@@ -49,14 +49,16 @@ Here are the easy steps to contribute.
 
 10. Wait for me to accept your pull request or give feedback on what needs to be changed.
 
+
 ## Git Conventions
 
 1. Label branches in the form `username-year-question#`, example `anon23-2020-q1`. If the branch is created for files that are not questions, ensure your username is present and a clear motive. eg. `anon23-add_git_conventions`
 
-2. Each branch should deal with a single question and should not have editted files in other directories. The *ONLY* exception to this rule is if you recieve permission from `Brad` or `Arjun` to complete en entire year and you wish to have all questions on the same branch.
+2. Each branch should deal with a single question and should not have editted files in other directories. The __ONLY__ exception to this rule is if you recieve permission from `Brad` or `Arjun` to complete en entire year and you wish to have all questions on the same branch.
 
-3. Ensure you read the *Latex and Solution Conventions* before starting and keep them handy when working. If you have any major formatting questions, please look at other files in the original repo first, before reaching out and asking. We strongly value consistency and clarity so please reach out before adding your own style.
+3. Ensure you read the __Latex and Solution Conventions__ before starting and keep them handy when working. If you have any major formatting questions, please look at other files in the original repo first, before reaching out and asking. We strongly value consistency and clarity so please reach out before adding your own style.
 
 4. Be willing to accept constructive crticism and feedback. We all want these solutions to be as clear and useful to anyone who is pursuing Applied Mathematics. 
+
 
 Happy contributing !
