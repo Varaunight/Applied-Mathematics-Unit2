@@ -21,7 +21,7 @@ Here are the easy steps to contribute.
 		upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (fetch)
 		upstream	https://github.com/BradBachu/Applied-Mathematics-Unit2.git (push)
 
-	Now, everytime you start work, run `git fetch upstream` to fast forward your master branch to that of Brad's. This ensures that your working tree will be clean and consistent.
+	Now, everytime you start work, run `git fetch upstream` and `git merge upstream/master master` to fast forward your master branch to that of Brad's. This ensures that your working tree will be clean and consistent.
 
 3.  Create a branch with the appropriate name, for example:
 
