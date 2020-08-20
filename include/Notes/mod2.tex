@@ -242,6 +242,150 @@ P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{m
 \end{note}
 
 
+\section {Poisson Approximation to the Binomial Distribution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Continuous Random Varibales} \label{mod2:section:ContinuousRandomVar}
+
+\begin{defn} \label{mod2:defn:ContinuousRandomVar}
+	We say that $X$ is a \textbf{continuous random variable}, if there exists a non-negative function $f$, defined for all real $x \in (-\infty,\infty)$, having the property that, for any set of real numbers $B$,
+	\begin{equation}
+	P(X \in B) = \int_B f(x).dx. \
+	\end{equation}
+	The function $f$ is called the \textit{probability density function} of the random variable $X$.
+\end{defn}
+
+
+\begin{prop} \label{mod2:prop:ContinuousRV:1}
+	Since $X$ must assume some value, $f$ must satisfy,
+	\begin{equation}
+	1 = P(X \in (-\infty,\infty)) = \int_{-\infty}^{\infty} f(x).dx.  \
+	\end{equation}
+\end{prop}
+
+\begin{note} \label{mod2:note:ContinuousRV:Note1}
+	If $B=[a,b]$, then
+	\begin{align}
+	P(X\in B) &= P(a \leq X \leq b), \\
+	&= \int_a^b f(x) .dx. \
+	\end{align}
+\end{note}
+
+\begin{prop} \label{mod2:prop:ContinuousRV:2}
+	For any continuous random variable $X$ and real number $a$,
+	\begin{equation}
+	P(X=a) = 0.\
+	\end{equation}
+\end{prop}
+
+\begin{note} 
+	This implies
+	\begin{equation}
+	P( X \leq a) = P(X<a). \
+	\end{equation}
+\end{note}
+
+\begin{defn} \label{mod2:defn:ContinuousRV:Expectation}
+	If $X$ is a continuous random variable, the \textbf{expectation (mean)} of $X$ is given by,
+	\begin{equation}
+	E[X] = \int_{-\infty}^{\infty}x f(x).dx. \label{mod2:eq:ContinuousRV:Expectation} \
+	\end{equation}
+\end{defn}
+
+\begin{defn} \label{mod2:defn:ContinuousRV:Variance}
+	If $X$ is a continuous random variable, the \textbf{variance)} of $X$ is given by,
+	\begin{align}
+	Var[X] &= E[X^2] - {E[X]}^2, \\
+	 &= \int_{-\infty}^{\infty}x^2 f(x).dx - {(\int_{-\infty}^{\infty}x f(x).dx)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
+	\end{align}
+\end{defn}
+
+\begin{law} \label{mod2:law:UnconsciousStat}
+	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statiscian (LOTUS)} is used. This law states that if $X$ is a continuous randon varibale with probability mass function $f$, then for any function g,
+	\begin{equation}
+		E[g(X)] = \int_{-\infty}^{\infty}g(x) f(x).dx. \label{mod2:eq:LOTUS:ContinuousRV}
+	\end{equation}
+	
+	The law also extends to the discrete case. If $X$ is a discrete random variable, then by \textbf{LOTUS}, 
+	
+	\begin{equation}
+	E[g(X)] =  \sum_{\forall i} g(x_i) P(X=x_i). \label{mod2:eq:LOTUS:DiscreteRV}
+	\end{equation}
+\end{law}	
+
+
+\begin{defn} \label{mod2:defn:ContinuousRV:CDF}
+	For a continuous random variable $X$ with p.m.f $f$, we define the \textbf{cumulative distribution function, F,} as follows,
+	\begin{equation}
+		F(x) = P(X \leq x), \
+	\end{equation}
+	
+	Using Eq~[\ref{mod2:note:ContinuousRV:Note1}], where $B = (-\infty, x]$,
+	\begin{equation}
+		F(x) = \int_{-\infty}^{x} f(x).dx. \
+	\end{equation}
+	
+\end{defn}	
+
+\begin{note} \label{mod2:note:ContinuousRV:CDF}
+	This implies
+	\begin{equation}
+		P( a \leq X \leq b) = F(b) - F(a).
+	\end{equation}
+\end{note}
+
+\begin{prop} \label{mod2:prop:ContinuousRV:CDF}
+	The c.d.f can be used to calculate the median and quartiles of a distribution. If a continuous random variable $X$ has c.d.f $F$,  then 
+	\begin{align}
+	F(M) &= 0.5, \\
+	F(LQ) &= 0.25, \\
+	F(UQ) &= 0.75.
+	\end{align}	
+	where $M$ denotes the median, $LQ$ denotes the lower quartile and $UQ$ denotes the upper quartile.
+\end{prop}
+		
+
+
+
+
+\section{Normal Distribution}\label{mod2:section:Normal}
+
+\begin{defn}\label{mod2:defn:Normal}
+	A continuous random variable $X$ is said to follow a \textbf{normal distribution} with parameters $\mu$ and $\sigma^2$, $X \sim \text{N}(\mu,\sigma^2)$, if its probability density function, $f$, is given by
+	\begin{equation}
+	f(x) = \frac{1}{\sqrt{2 \pi}\sigma} e^{-(x-\mu)^2/2\sigma^2} \quad -\infty < x < \infty  \label{mod2:eq:Normal}\
+	\end{equation}
+	The parameters $\mu$ and $\sigma^2$ represent the expected value (mean) and variance respectively.
+\end{defn}
+
+\begin{note}
+	Normal random variables have important properties
+	\begin{enumerate}[label = (\roman*)]
+		\item If $X$ is normally distributed with parameters $\mu$ and $\sigma^2$, then $Y = aX + b$ is normally distributed with parameters $a\mu + b$ and $a^2\sigma^2$ respectively. \label{mod2:note:Normal:Property1}
+		\item The previous property implies that if $X$ is normally distributed with parameters $\mu$ and $\sigma^2$, then $Z=(X-\mu)\sigma$ is normally distributed with parameters $0$ and $1$. We call $Z$ a \textit{standard} or \textit{unit} normal random variable. \label{mod2:note:Normal:Property2}
+	\end{enumerate}
+\end{note}
+
+
+
+
+
 
 
 
