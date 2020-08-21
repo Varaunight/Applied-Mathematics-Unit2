@@ -327,15 +327,21 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 
 
 \begin{defn} \label{mod2:defn:ContinuousRV:CDF}
-	For a continuous random variable $X$ with p.d.f $f$, we define the \textbf{cumulative distribution function, F,} as follows,
+	For a continuous random variable $X$ with p.d.f $f$,  the \textbf{cumulative distribution function, F,} is defined as follows,
 	\begin{equation}
 		F(x) = P(X \leq x), \
 	\end{equation}
 	
 	Using Eq~[\ref{mod2:note:ContinuousRV:Note1}], where $B = (-\infty, x]$,
 	\begin{equation}
-		F(x) = \int_{-\infty}^{x} f(x).dx. \
+		F(x) = \int_{-\infty}^{x} f(x).dx, \
 	\end{equation}
+	
+	Using the \textbf{Fundamental Law of Calculus}, then
+	\begin{equation}
+	f(x) = \frac{d}{dx}F(x)
+.	\end{equation}
+	
 	
 \end{defn}	
 
@@ -388,7 +394,7 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 \begin{note}\label{mod2:note:NormalApproxtoPois:Continuity}
 	To use this approximation, we must note that because the poisson is a discrete integer-valued random variable and the normal is a continuous random variable, we must write
 	\begin{align}
-	P(X=i) &= P \left( i -\frac{1}{2} < X < i + \frac{1}{2} \right), \\
+	P(X=a) &= P \left( a -\frac{1}{2} < X < a + \frac{1}{2} \right), \\
 	P(X \leq a) &= P \left( X < a + \frac{1}{2} \right), \\
 	P(X \geq a) &= P \left( X > a - \frac{1}{2} \right), \\
 	P(X < a) &= P \left( X < a - \frac{1}{2} \right), \\
@@ -399,6 +405,41 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 	\end{align}
 	This is called the \textbf{continuity correction}.
 \end{note}
+
+
+\section{Expectation and Variance} \label{mod2:section:ExpectationVariance}
+
+\begin{prop}
+
+Define  functions $g$ and $f$ with $a, b, c \in \mathbb{R}$. For \textbf{ANY} random variables (discrete or cotinuous) $X$ and $Y$, the following properties hold
+\begin{align}
+E[aX + b] &= aE[X] + b, \\
+E[X + Y] &= E[X] + E[Y], \\
+E[ag(X) + bf(Y)  + c] &= aE[g(X) ]+ bE[f(Y)] + c, \\
+Var[ag(X) + b] &= a^2Var[g(X)].
+\end{align}
+
+If $X$ and $Y$ are \textbf{independent} random variables, then the following properties also hold
+\begin{align}
+E[XY] &= E[X] \ E[Y], \\
+E[g(X)f(Y)] &= E[g(X)] \ E[f(Y)], \\
+Var[X + Y] &= Var[X]+ Var[Y].
+\end{align}
+
+\end{prop}
+
+\begin{note} \label{mod2:note:Independence:Non-implication}
+	
+	If $E[XY] = E[X] \ E[Y]$ or $Var[X + Y] = Var[X]+ Var[Y]$, this does not imply $X$ and $Y$ are independent.
+	
+\end{note}
+
+
+
+
+
+
+
 
 
 
