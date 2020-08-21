@@ -140,7 +140,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 \end{defn}
 
 \begin{note}\label{mod2:note:DiscreteUniform}
-	In the discrete case, the notation $X \sim \text{Unif}\{a, b\}$ or $X \sim \text{U}\{a, b\}$ implies that $X$ can take \textbf{integer} values $x$ such that $a \leq x \leq b$. Here, the total numer of values $X$ can take is given by
+	In the discrete case, the notation $X \sim \text{Unif}(a, b)$ or $X \sim \text{U}(a, b)$ implies that $X$ can take \textbf{integer} values $x$ such that $a \leq x \leq b$. Here, the total numer of values $X$ can take is given by
 	\begin{equation}
 		n = b - a + 1,
 	\end{equation}
@@ -148,7 +148,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 	\begin{equation}
 	P(X = x)= \frac{1}{b - a + 1}\ \quad a \leq x \leq b.
 	\end{equation}
-		The \textit{expected value (mean)} and \textit{variance} of $X \sim \text{U}\{a,b\}$ are given by:
+		The \textit{expected value (mean)} and \textit{variance} of $X \sim \text{U}(a,b)$ are given by:
 	\begin{align}
 	E[X] &= \frac{a+b}{2}, \label{mod2:eq:DiscreteUniform:Mean} \\
 	Var[X] &= \frac{(b-a+1)^2 - 1}{12}. \label{mod2:eq:DiscreteUniform:Variance} 
@@ -205,7 +205,7 @@ P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \
 \end{note}
 
 \begin{note} \label{mod2:note:Geometric:Conditions}
-	There are three conditions that describe a geomtric distribution
+	There are three conditions that describe a geometric distribution
 	\begin{enumerate}[label = (\roman*)]
 		\item The trials are independent.
 		\item Each trial can be classified as a success or failure.
@@ -242,23 +242,19 @@ P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{m
 \end{note}
 
 
-\section {Poisson Approximation to the Binomial Distribution}
+\section {Poisson Approximation to the Binomial Distribution} \label{mod2:section:PoissonApproxBinomial}
+ 
+ \begin{defn} \label{mod2:defn:PoissonApproxBinomial}
+The \textbf{Poisson limit theorem} states that a binomially distributed random variable $X \sim \text{Bin}\{n, p\}$ can be approximated by a poisson distribution if the following hold;
+\begin{enumerate}[label = (\roman*)]
+	\item $n > 50$,
+	\item $np < 5$.
+\end{enumerate}
 
+Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X \sim \text{Pois}(np)$, $\lambda = E[X]$.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\end{defn}
+	
 
 
 \section{Continuous Random Varibales} \label{mod2:section:ContinuousRandomVar}
@@ -309,7 +305,7 @@ P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{m
 \end{defn}
 
 \begin{defn} \label{mod2:defn:ContinuousRV:Variance}
-	If $X$ is a continuous random variable, the \textbf{variance)} of $X$ is given by,
+	If $X$ is a continuous random variable, the \textbf{variance} of $X$ is given by,
 	\begin{align}
 	Var[X] &= E[X^2] - {E[X]}^2, \\
 	 &= \int_{-\infty}^{\infty}x^2 f(x).dx - {(\int_{-\infty}^{\infty}x f(x).dx)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
@@ -317,7 +313,7 @@ P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{m
 \end{defn}
 
 \begin{law} \label{mod2:law:UnconsciousStat}
-	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statiscian (LOTUS)} is used. This law states that if $X$ is a continuous randon varibale with probability mass function $f$, then for any function g,
+	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statiscian (LOTUS)} is used. This law states that if $X$ is a continuous randon varibale with probability density function $f$, then for any function g,
 	\begin{equation}
 		E[g(X)] = \int_{-\infty}^{\infty}g(x) f(x).dx. \label{mod2:eq:LOTUS:ContinuousRV}
 	\end{equation}
@@ -331,7 +327,7 @@ P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{m
 
 
 \begin{defn} \label{mod2:defn:ContinuousRV:CDF}
-	For a continuous random variable $X$ with p.m.f $f$, we define the \textbf{cumulative distribution function, F,} as follows,
+	For a continuous random variable $X$ with p.d.f $f$, we define the \textbf{cumulative distribution function, F,} as follows,
 	\begin{equation}
 		F(x) = P(X \leq x), \
 	\end{equation}
@@ -383,13 +379,26 @@ P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{m
 \end{note}
 
 
+\section{Normal Approximation to the Poisson Distribution} \label{mod2:section:NormalApproxPois}
 
+\begin{defn}
+	A poisson distributions $X \sim \text{Pois}(\lambda)$ where $\lambda > 15$, can be approximated by a normal distribution, $X \sim \text{N}(\lambda, \sqrt{\lambda})$.
+\end{defn}
 
-
-
-
-
-
+\begin{note}\label{mod2:note:NormalApproxtoPois:Continuity}
+	To use this approximation, we must note that because the poisson is a discrete integer-valued random variable and the normal is a continuous random variable, we must write
+	\begin{align}
+	P(X=i) &= P \left( i -\frac{1}{2} < X < i + \frac{1}{2} \right), \\
+	P(X \leq a) &= P \left( X < a + \frac{1}{2} \right), \\
+	P(X \geq a) &= P \left( X > a - \frac{1}{2} \right), \\
+	P(X < a) &= P \left( X < a - \frac{1}{2} \right), \\
+	P(X > a) &= P \left( X > a + \frac{1}{2} \right), \\
+	P(a \leq X < b) &= P \left( a - \frac{1}{2} < X < b - \frac{1}{2} \right), \\
+	P(a < X \leq  b) &= P \left( a + \frac{1}{2} < X < b + \frac{1}{2} \right), \\
+	P(a  \leq  X \leq  b) &= P \left( a - \frac{1}{2} < X < b + \frac{1}{2} \right).
+	\end{align}
+	This is called the \textbf{continuity correction}.
+\end{note}
 
 
 
