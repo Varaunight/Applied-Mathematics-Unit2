@@ -1,1 +1,443 @@
-Module 2 notes
+\section{Probability Theory}\label{mod2:section:ProbabilityTheory}
+
+
+\begin{axiom}  \label{mod2:axiom:ProbabilityAxioms}
+	Consider an experiment whose sample space is $S$. The \textbf{probability of the event $E$}, denoted as $P(E)$, is a number that satisfies the following three axioms	
+	\begin{enumerate}[label = \bfseries (\arabic*)]
+		\item 	$0 \leq P(E) \leq 1 , $ \label{mod2:axiom:ProbabilityAxiom:1}
+				
+			
+		
+		\item 	$	P(S) = 1, $ \label{mod2:axiom:ProbabilityAxiom:2}
+				
+			
+		
+		\item 	For any sequence of mutually exclusive events $E_1, E_2, ... , E_n$.
+		
+			
+					$P\left( \cup_{i=1}^n E_i \right) = \sum_{i=1}^n P(E_i), $ \label{mod2:axiom:ProbabilityAxiom:3}
+			
+			
+			
+				Eg. $P(E_1 \cup E_2) = P(E_1)+P(E_2)$.
+		
+		
+	\end{enumerate}
+\end{axiom}
+
+
+\begin{defn} \label{mod2:defn:Probability}
+	Furthermore, we define,
+	\begin{equation}
+		P(\text{event E occurs}) = \frac{\text{no. of times A can occur}}{\text{total number of outcomes}}. 
+	\end{equation}
+\end{defn}
+
+
+
+\begin{defn} \label{mod2:defn:Complement}
+	The probability of the \textbf{complement} of event $A$, denoted as $P(A^c)$ or $P(\bar{A})$ or $P(A^\prime)$, is defined as
+	\begin{equation}
+		P(\bar{A}) = 1 - P(A).
+	\end{equation}
+\end{defn}
+
+
+\begin{prop} \label{mod2:prop:SetPropositions}
+Some useful propositions can be easily derived using the above and drawing your own diagrams
+\begin{align}
+P(A \cup B) &= P(A) + P(B) - P(A \cap B), \label{mod2:eq:SetProp:1}  \\ 
+P(A^c \cap B) &= P(B) - P(A \cap B), \label{mod2:eq:SetProp:2} \\ 
+P(A^c \cap B^c) &=  P(A \cup B)^c ,\label{mod2:eq:SetProp:3} \\ 
+P(A^c \cup B^c) &= P (A \cap B) ^c .\label{mod2:eq:SetProp:4} \ 
+\end{align}
+\end{prop}
+
+
+\begin{defn} \label{mod2:defn:MutuallyExclusive}
+Two events $A$ and $B$ are said to be \textbf{mutually exclusive} if and only if
+\begin{equation}	
+	P ( A \cap B) = 0. \label{mod2:eq:MutuallyExclusive:1} \ 
+\end{equation}
+Applying Eq~[\ref{mod2:eq:SetProp:1}], this implies 
+\begin{equation}
+	P(A \cup B) = P(A) + P(B).\  \label{mod2:eq:MutuallyExclusive:2}
+\end{equation}
+\end{defn}
+
+
+\begin{defn} \label{mod2:defn:Independent}
+Two events $A$ and $B$ are said to be \textbf{independent} if and only if
+\begin{equation}
+P(A \cap B) = P (A) \times P(B). \label{mod2:eq:Independent} \ 
+\end{equation}
+\end{defn}
+
+\begin{defn} \label{mod2:defn:Conditional}
+For events $A$ and $B$, the \textbf{conditional probability} of $A$ given $B$ has occurred, denoted by $P(A|B)$, is defined by
+\begin{equation}
+P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \ 
+\end{equation}
+\end{defn}
+
+
+
+
+\section{Discrete Random Variables} \label{mod2:section:DiscreteRandomVariables}
+
+
+\begin{defn} \label{mod2:defn:DiscreteRandomVar}
+	A \textbf{discrete random variable}, $X$, can take on at most a countable number of possible values. We define its \textit{probability mass} function, $P(x)$ by
+	\begin{equation}
+	P(x) =P(X = x).
+	\end{equation}
+\end{defn}
+
+\begin{prop}\label{mod2:prop:Discrete:Properties}
+	If $X$ is a discrete random variable with probability mass function $P(x)$, then we know from Axiom~[\ref{mod2:axiom:ProbabilityAxiom:1}] that
+	\begin{equation}
+	0 \leq P(X=x) \leq 1 \: \forall x.
+	\end{equation}
+	and from Axiom~[\ref{mod2:axiom:ProbabilityAxiom:2}] and Axiom~[\ref{mod2:axiom:ProbabilityAxiom:3}] that
+	\begin{equation}
+	\sum_{\forall x}P(X=x) = 1 .
+	\end{equation}
+\end{prop}
+
+\begin{defn} \label{mod2:defn:Discrete:Expectation}
+	If $X$ is a discrete random variable, the \textbf{expectation value}, \textbf{mean} or \textbf{first moment of $X$}, $E[X]$, is defined by
+	\begin{equation}
+	E[X]= \sum_{\forall i} x_i P(X=x_i). \label{mod2:eq:Discrete:Expectation}\ 
+	\end{equation}
+\end{defn}
+
+\begin{defn} \label{mod2:defn:Discrete:SecondMoment}
+	If $X$ is a discrete random variable, the \textbf{second moment of $X$} is defined by
+	\begin{equation}
+	E[X^2] = \sum_{\forall i} x_i^2 P(X=x_i). \label{mod2:eq:Discrete:SecondMoment} \ 
+	\end{equation}
+\end{defn}
+
+\begin{defn}\label{mod2:defn:Discrete:Variance}
+	If $X$ is a random variable with mean $\mu$, then the \textbf{variance}, $Var[X]$, is defined by
+	\begin{align}
+	Var[X] &= E[(X-\mu)^2],  \label{mod2:eq:Discrete:Variance:1}  \\
+	&= E[X^2] - (E[X])^2  = E[X^2] - \mu^2 . \label{mod2:eq:Discrete:Variance:2} \
+	\end{align}
+\end{defn}
+
+
+
+\section{Discrete Uniform Distribution} \label{mo2:section:DiscreteUniform}
+
+\begin{defn} \label{mod2:defn:DiscreteUniform}
+	A discrete random variable $X$ is said to follow a \textbf{discrete uniform distribution} if $X$ can take a finite number of values which are observed with equal probabilities. Therefore, the probability mass function, $P$, of $X$ which can take $n$ possible values,  is given by
+	\begin{equation}
+		P(X = x_i) = \frac{1}{n} \label{mod2:eq:DiscreteUniform}.
+	\end{equation}
+\end{defn}
+
+\begin{note}\label{mod2:note:DiscreteUniform}
+	In the discrete case, the notation $X \sim \text{Unif}(a, b)$ or $X \sim \text{U}(a, b)$ implies that $X$ can take \textbf{integer} values $x$ such that $a \leq x \leq b$. Here, the total numer of values $X$ can take is given by
+	\begin{equation}
+		n = b - a + 1,
+	\end{equation}
+	Therefore the p.m.f of $X$ can be given by
+	\begin{equation}
+	P(X = x)= \frac{1}{b - a + 1}\ \quad a \leq x \leq b.
+	\end{equation}
+		The \textit{expected value (mean)} and \textit{variance} of $X \sim \text{U}(a,b)$ are given by:
+	\begin{align}
+	E[X] &= \frac{a+b}{2}, \label{mod2:eq:DiscreteUniform:Mean} \\
+	Var[X] &= \frac{(b-a+1)^2 - 1}{12}. \label{mod2:eq:DiscreteUniform:Variance} 
+	\end{align}
+\end{note}
+
+
+
+
+\section{Binomial Distribution} \label{mod2:section:Binomial}
+\begin{defn} \label{mod2:defn:Binomial}
+	A discrete random variable $X$ is said to follow a \textbf{binomial distribution} with parameters $n$ and $p$, $X \sim \text{Bin}(n,p)$, if its probability mass function, $P$, is given by
+	\begin{equation}
+	P(X = x) = { n \choose x} p^x (1-p)^{n-x} \quad x \in ( 0, 1, 2, ... , n). \label{mod2:eq:BinomialDist} \ 
+	\end{equation} 
+\end{defn}
+
+\begin{note}
+	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
+	\begin{align}
+	E[X] &= np,  \label{mod2:eq:Binomial:Mean} \\ 
+	Var[X] &= np(1-p), \label{mod2:eq:Binomial:Variance} \\
+	&= npq  \: \text{ where } q = (1-p).\ 
+	\end{align}
+\end{note}
+
+\begin{note} \label{mod2:note:Binomial:Conditions}
+	There are four conditions that describe a binomial distribution
+	\begin{enumerate}[label = (\roman*)]
+		\item The experiment consist of a fixed number of trials, $n$.
+		\item The trials are independent.
+		\item Each trial can be classified as a success or failure.
+		\item The probability of success, $p$, is constant
+	\end{enumerate}
+\end{note}
+
+
+
+\section{Geometric Distribution} \label{mod2:section:Geometric}
+\begin{defn}\label{mod2:defn:Geomtric}
+	A discrete random variable $X$ is said to follow a \textbf{geomteric distribution} with parameter $p$, $X \sim \text{Geo}(p)$, if its probability mass function, $P$, is given by
+\begin{equation}
+P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \ 
+\end{equation} 
+\end{defn}
+
+\begin{note}
+	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
+	\begin{align}
+	E[X] &= \frac{1}{p},  \label{mod2:eq:Geometric:Mean} \\ 
+	Var[X] &= \frac{1-p}{p^2}, \label{mod2:eq:Geomtric:Variance} \\
+	&= \frac{q}{p^2}  \: \text{ where } q = (1-p).\ 
+	\end{align}
+\end{note}
+
+\begin{note} \label{mod2:note:Geometric:Conditions}
+	There are three conditions that describe a geometric distribution
+	\begin{enumerate}[label = (\roman*)]
+		\item The trials are independent.
+		\item Each trial can be classified as a success or failure.
+		\item The probability of success, $p$, is constant
+	\end{enumerate}
+\end{note}
+
+
+
+\section{Poisson Distribution}\label{mod2:section:Poisson}
+\begin{defn} \label{mod2:defn:Poisson}
+	A discrete random variable $X$ is said to follow a \textbf{poisson distribution} with parameter $\lambda$, $X \sim \text{Pois}(\lambda)$, if its probability mass function, $P$, is given by
+\begin{equation}
+P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{mod2:eq:PoissonDist} \ 
+\end{equation} 
+\end{defn}
+
+
+\begin{note}
+	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
+	\begin{align}
+	E[X] &= \lambda,  \label{mod2:eq:Poisson:Mean} \\ 
+	Var[X] &= \lambda. \label{mod2:eq:Poisson:Variance} 
+	\end{align}
+\end{note}
+
+
+\begin{note} \label{mod2:note:Poisson:Conditions}
+	The Poisson distribution is popular for modeling the number of times an event occurs in an interval of time. There are two conditions that describe a poisson distribution
+	\begin{enumerate}[label = (\roman*)]
+		\item Events are independent of each other.
+		\item The average rate at which events occur, $\lambda$, is independent of any occurrences.
+	\end{enumerate}
+\end{note}
+
+
+\section {Poisson Approximation to the Binomial Distribution} \label{mod2:section:PoissonApproxBinomial}
+ 
+ \begin{defn} \label{mod2:defn:PoissonApproxBinomial}
+The \textbf{Poisson limit theorem} states that a binomially distributed random variable $X \sim \text{Bin}\{n, p\}$ can be approximated by a poisson distribution if the following hold;
+\begin{enumerate}[label = (\roman*)]
+	\item $n > 50$,
+	\item $np < 5$.
+\end{enumerate}
+
+Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X \sim \text{Pois}(np)$, $\lambda = E[X]$.
+
+\end{defn}
+	
+
+
+\section{Continuous Random Varibales} \label{mod2:section:ContinuousRandomVar}
+
+\begin{defn} \label{mod2:defn:ContinuousRandomVar}
+	We say that $X$ is a \textbf{continuous random variable}, if there exists a non-negative function $f$, defined for all real $x \in (-\infty,\infty)$, having the property that, for any set of real numbers $B$,
+	\begin{equation}
+	P(X \in B) = \int_B f(x).dx. \
+	\end{equation}
+	The function $f$ is called the \textit{probability density function} of the random variable $X$.
+\end{defn}
+
+
+\begin{prop} \label{mod2:prop:ContinuousRV:1}
+	Since $X$ must assume some value, $f$ must satisfy,
+	\begin{equation}
+	1 = P(X \in (-\infty,\infty)) = \int_{-\infty}^{\infty} f(x).dx.  \
+	\end{equation}
+\end{prop}
+
+\begin{note} \label{mod2:note:ContinuousRV:Note1}
+	If $B=[a,b]$, then
+	\begin{align}
+	P(X\in B) &= P(a \leq X \leq b), \\
+	&= \int_a^b f(x) .dx. \
+	\end{align}
+\end{note}
+
+\begin{prop} \label{mod2:prop:ContinuousRV:2}
+	For any continuous random variable $X$ and real number $a$,
+	\begin{equation}
+	P(X=a) = 0.\
+	\end{equation}
+\end{prop}
+
+\begin{note} 
+	This implies
+	\begin{equation}
+	P( X \leq a) = P(X<a). \
+	\end{equation}
+\end{note}
+
+\begin{defn} \label{mod2:defn:ContinuousRV:Expectation}
+	If $X$ is a continuous random variable, the \textbf{expectation (mean)} of $X$ is given by,
+	\begin{equation}
+	E[X] = \int_{-\infty}^{\infty}x f(x).dx. \label{mod2:eq:ContinuousRV:Expectation} \
+	\end{equation}
+\end{defn}
+
+\begin{defn} \label{mod2:defn:ContinuousRV:Variance}
+	If $X$ is a continuous random variable, the \textbf{variance} of $X$ is given by,
+	\begin{align}
+	Var[X] &= E[X^2] - {E[X]}^2, \\
+	 &= \int_{-\infty}^{\infty}x^2 f(x).dx - {(\int_{-\infty}^{\infty}x f(x).dx)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
+	\end{align}
+\end{defn}
+
+\begin{law} \label{mod2:law:UnconsciousStat}
+	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statiscian (LOTUS)} is used. This law states that if $X$ is a continuous randon varibale with probability density function $f$, then for any function g,
+	\begin{equation}
+		E[g(X)] = \int_{-\infty}^{\infty}g(x) f(x).dx. \label{mod2:eq:LOTUS:ContinuousRV}
+	\end{equation}
+	
+	The law also extends to the discrete case. If $X$ is a discrete random variable, then by \textbf{LOTUS}, 
+	
+	\begin{equation}
+	E[g(X)] =  \sum_{\forall i} g(x_i) P(X=x_i). \label{mod2:eq:LOTUS:DiscreteRV}
+	\end{equation}
+\end{law}	
+
+
+\begin{defn} \label{mod2:defn:ContinuousRV:CDF}
+	For a continuous random variable $X$ with p.d.f $f$,  the \textbf{cumulative distribution function, F,} is defined as follows,
+	\begin{equation}
+		F(x) = P(X \leq x), \
+	\end{equation}
+	
+	Using Eq~[\ref{mod2:note:ContinuousRV:Note1}], where $B = (-\infty, x]$,
+	\begin{equation}
+		F(x) = \int_{-\infty}^{x} f(x).dx, \
+	\end{equation}
+	
+	Using the \textbf{Fundamental Law of Calculus}, then
+	\begin{equation}
+	f(x) = \frac{d}{dx}F(x)
+.	\end{equation}
+	
+	
+\end{defn}	
+
+\begin{note} \label{mod2:note:ContinuousRV:CDF}
+	This implies
+	\begin{equation}
+		P( a \leq X \leq b) = F(b) - F(a).
+	\end{equation}
+\end{note}
+
+\begin{prop} \label{mod2:prop:ContinuousRV:CDF}
+	The c.d.f can be used to calculate the median and quartiles of a distribution. If a continuous random variable $X$ has c.d.f $F$,  then 
+	\begin{align}
+	F(M) &= 0.5, \\
+	F(LQ) &= 0.25, \\
+	F(UQ) &= 0.75.
+	\end{align}	
+	where $M$ denotes the median, $LQ$ denotes the lower quartile and $UQ$ denotes the upper quartile.
+\end{prop}
+		
+
+
+
+
+\section{Normal Distribution}\label{mod2:section:Normal}
+
+\begin{defn}\label{mod2:defn:Normal}
+	A continuous random variable $X$ is said to follow a \textbf{normal distribution} with parameters $\mu$ and $\sigma^2$, $X \sim \text{N}(\mu,\sigma^2)$, if its probability density function, $f$, is given by
+	\begin{equation}
+	f(x) = \frac{1}{\sqrt{2 \pi}\sigma} e^{-(x-\mu)^2/2\sigma^2} \quad -\infty < x < \infty  \label{mod2:eq:Normal}\
+	\end{equation}
+	The parameters $\mu$ and $\sigma^2$ represent the expected value (mean) and variance respectively.
+\end{defn}
+
+\begin{note}
+	Normal random variables have important properties
+	\begin{enumerate}[label = (\roman*)]
+		\item If $X$ is normally distributed with parameters $\mu$ and $\sigma^2$, then $Y = aX + b$ is normally distributed with parameters $a\mu + b$ and $a^2\sigma^2$ respectively. \label{mod2:note:Normal:Property1}
+		\item The previous property implies that if $X$ is normally distributed with parameters $\mu$ and $\sigma^2$, then $Z=(X-\mu)\sigma$ is normally distributed with parameters $0$ and $1$. We call $Z$ a \textit{standard} or \textit{unit} normal random variable. \label{mod2:note:Normal:Property2}
+	\end{enumerate}
+\end{note}
+
+
+\section{Normal Approximation to the Poisson Distribution} \label{mod2:section:NormalApproxPois}
+
+\begin{defn}
+	A poisson distributions $X \sim \text{Pois}(\lambda)$ where $\lambda > 15$, can be approximated by a normal distribution, $X \sim \text{N}(\lambda, \sqrt{\lambda})$.
+\end{defn}
+
+\begin{note}\label{mod2:note:NormalApproxtoPois:Continuity}
+	To use this approximation, we must note that because the poisson is a discrete integer-valued random variable and the normal is a continuous random variable, we must write
+	\begin{align}
+	P(X=a) &= P \left( a -\frac{1}{2} < X < a + \frac{1}{2} \right), \\
+	P(X \leq a) &= P \left( X < a + \frac{1}{2} \right), \\
+	P(X \geq a) &= P \left( X > a - \frac{1}{2} \right), \\
+	P(X < a) &= P \left( X < a - \frac{1}{2} \right), \\
+	P(X > a) &= P \left( X > a + \frac{1}{2} \right), \\
+	P(a \leq X < b) &= P \left( a - \frac{1}{2} < X < b - \frac{1}{2} \right), \\
+	P(a < X \leq  b) &= P \left( a + \frac{1}{2} < X < b + \frac{1}{2} \right), \\
+	P(a  \leq  X \leq  b) &= P \left( a - \frac{1}{2} < X < b + \frac{1}{2} \right).
+	\end{align}
+	This is called the \textbf{continuity correction}.
+\end{note}
+
+
+\section{Expectation and Variance} \label{mod2:section:ExpectationVariance}
+
+\begin{prop}
+
+Define  functions $g$ and $f$ with $a, b, c \in \mathbb{R}$. For \textbf{ANY} random variables (discrete or cotinuous) $X$ and $Y$, the following properties hold
+\begin{align}
+E[aX + b] &= aE[X] + b, \\
+E[X + Y] &= E[X] + E[Y], \\
+E[ag(X) + bf(Y)  + c] &= aE[g(X) ]+ bE[f(Y)] + c, \\
+Var[ag(X) + b] &= a^2Var[g(X)].
+\end{align}
+
+If $X$ and $Y$ are \textbf{independent} random variables, then the following properties also hold
+\begin{align}
+E[XY] &= E[X] \ E[Y], \\
+E[g(X)f(Y)] &= E[g(X)] \ E[f(Y)], \\
+Var[X + Y] &= Var[X]+ Var[Y].
+\end{align}
+
+\end{prop}
+
+\begin{note} \label{mod2:note:Independence:Non-implication}
+	
+	If $E[XY] = E[X] \ E[Y]$ or $Var[X + Y] = Var[X]+ Var[Y]$, this does not imply $X$ and $Y$ are independent.
+	
+\end{note}
+
+
+
+
+
+
+
+
+
+
