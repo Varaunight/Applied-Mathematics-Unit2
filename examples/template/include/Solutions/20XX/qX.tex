@@ -1,0 +1,97 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Your Name
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 20XX 
+%     Module: X
+%     Question: X
+%------------------------------------------------------------------------------
+
+You solution should be submitted in a document of this form.
+
+For writing math, the package \texttt{amsmath} package has already been loaded.
+This has many features.
+For single line equations use the \texttt{equation} environment,
+\begin{equation}
+	x = 5 \, .
+\end{equation}
+Note that punctuation was included.
+If you have multiple equations use the \texttt{align} environment,
+\begin{align}
+   x = 5 \, , \\
+   y = 4 \,.
+\end{align}
+For clarity, we do not need to number every equation in an environment, but
+we require a number on every block of equations for referencing. To achieve this,
+you must use \texttt{\textbackslash nonumber} which has already been shortened to \texttt{\textbackslash nn}.
+\begin{align}
+   x = 5 \, , \nn \\
+   y = 4 \,.
+\end{align}
+
+For simplifying, additional punctuation is not needed
+\begin{align}
+   x &= 3 - 2 \nn \\
+   &= 1 \, .
+\end{align}
+
+
+Sometimes, it would be clearer to label subequations.
+
+
+If $X$ is a random variable with mean $\mu$, then the \textbf{variance}, $Var[X]$, is defined by
+\begin{subequations}\label{mod2:eq:Discrete:Variance}
+   \begin{align}
+      Var[X] &= E[(X-\mu)^2]   \label{mod2:eq:Discrete:Variance:1}  \\
+      &= E[X^2] - (E[X])^2  \nn \\
+      &= E[X^2] - \mu^2 \, . \label{mod2:eq:Discrete:Variance:2} \  
+   \end{align}
+   The \texttt{subequations} environment can operate across text also
+   \begin{equation}
+      Var[X] \equiv \sigma^2 \label{mod2:eq:Discrete:Variance:3}
+   \end{equation}
+\end{subequations}
+The references will work as you'd expect: \ref{mod2:eq:Discrete:Variance:1},
+\ref{mod2:eq:Discrete:Variance:2} and \ref{mod2:eq:Discrete:Variance:3} are all part of \ref{mod2:eq:Discrete:Variance}.
+
+
+All figures and tables should be referenced in the text and should be
+placed at the top of the page where they are first cited or in
+subsequent pages. Positioning them in the source file
+after the paragraph where you first reference them usually yield good
+results. See figure~\ref{fig:i} and table~\ref{mod1:tab:LogicSymbols}.
+
+\begin{figure}[tbp]
+   \centering % \begin{center}/\end{center} takes some additional vertical space
+   \includegraphics[width=.5\textwidth]{images.jpeg}
+   \caption{\label{fig:i} Always give a caption.}
+\end{figure}
+
+\begin{table}[ht]
+   \centering
+   \begin{tabular}{|c|c|c|}
+      \hline
+         Symbol & Name & Read as\\
+      \hline
+      $\land$ & Conjunction & And \\
+      $\lor$ & Disjunction & Or \\
+      $\lnot$ & Negation & Not\\
+      $\Rightarrow$ & Conditional & If ... then ...\\
+      $\Leftrightarrow$ & Bi-conditional & If and only if; iff\\
+      \hline
+   \end{tabular}
+    \caption{\label{mod1:tab:LogicSymbols} We prefer to have borders around the tables.}
+\end{table}
+
+All figures must be drawn using a vector graphics. We strongly recommend using
+TikZ and have provided common examples in the tikzfigs folder.   
+
+Do not abbreviate and ``table'', 
+but ``Eq.'', ``Def'', ``Prop'' and ``Ref.'' are welcome.
