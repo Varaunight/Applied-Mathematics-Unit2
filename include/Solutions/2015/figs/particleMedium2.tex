@@ -1,0 +1,84 @@
+% The following was edited from https://texample.net/tikz/examples/free-body-diagrams/
+
+\documentclass[crop,tikz]{standalone}
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usetikzlibrary{scopes}
+\begin{document}
+
+\def\iangle{35} % Angle of the inclined plane
+\def\down{-90}
+\def\arcr{0.5cm} % Radius of the arc used to indicate angles
+
+% Define some basic objects of the diagrams
+\tikzstyle{m1}= [rectangle,draw=black,fill=lightgray,inner sep = 1pt,minimum size=0.5cm,thin,font=\small]
+\tikzstyle{m2}= [rectangle,draw=black,fill=lightgray,minimum size=0.5cm,thin,font=\small]
+\tikzstyle{plane}= [draw=black,fill=blue!10]
+\tikzstyle{string}= [draw=red, thick]
+\tikzstyle{pulley}= [thick]
+\tikzstyle{particle}= [thick,circle,draw=black,fill=lightgray,inner sep = 1pt,minimum size=0.5cm,thin,font=\small]
+% line styles
+\tikzstyle{force}= [>=latex,draw=blue,fill=blue]
+\tikzstyle{internal_axis}= [densely dashed,gray,font=\small]
+\tikzstyle{external_axis}= [font=\small]
+
+\tikzset
+    {
+        extaxis1/.pic = 
+        {
+            \draw[->] (0,0) -- (0,.7) node[left] {$+y_1$} ;
+            \draw[->] (0,0) --(.7,0) node[right] {$+x_1$};
+        }
+}
+
+\tikzset
+    {
+        extaxis2/.pic = 
+        {
+            \draw[->] (0,0) -- (0,.7) node[left] {$+y_2$} ;
+            \draw[->] (0,0) --(.7,0) node[right] {$+x_2$};
+        }
+}
+
+\tikzset
+    {
+        extaxis3/.pic = 
+        {
+            \draw[->] (0,0) -- (0,.7) node[left] {$+y_3$} ;
+            \draw[->] (0,0) --(.7,0) node[right] {$+x_3$};
+        }
+}
+
+\tikzset
+    {
+        extaxis1n/.pic = 
+        {
+            \draw[->] (0,0) -- (0,-.7) node[below] {$+y_1$} ;
+            \draw[->] (0,0) --(-.7,0) node[above] {$+x_1$};
+        }
+}
+
+\begin{tikzpicture}
+
+% Free body diagram
+\draw[particle] circle (0.25cm);
+
+\begin{scope}[rotate = 180]
+% Internal Axis
+{[internal_axis,->]
+    \draw(0,0) -- (0,3) node[left] {$+y_1$};   
+    \draw(0,0) -- (1,0) node[below] {$+x_1$};   
+}
+
+% Insert forces
+{[force,->]
+    \draw(0,-.25) -- (0,-2) node[left] {$F_r$};
+    \draw(0,.25) -- (0,2) node[left] {$mg$};
+}
+    
+{[external_axis] \draw (-2,-1)  pic {extaxis1n};}
+\end{scope}
+
+
+\end{tikzpicture}
+
+\end{document}
