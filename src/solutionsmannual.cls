@@ -67,8 +67,9 @@
 
 % Shortcuts for enviroments
 \newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\begin{equation}}
 \newcommand{\bal}{\begin{align}}
-
+\newcommand{\eal}{\begin{align}}
 % Shortcuts for citation related commands
 \newcommand{\req}[1]{Eq.~(\ref{})} % reference equation
 \newcommand{\reqs}[2]{Eqs.~(\ref{#1}) and (\ref{#2})} % reference 2 equations
