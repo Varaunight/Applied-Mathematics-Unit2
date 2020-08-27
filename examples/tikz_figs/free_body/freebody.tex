@@ -1,23 +1,17 @@
 % The following was edited from https://texample.net/tikz/examples/free-body-diagrams/
 
 \documentclass[crop,tikz]{standalone}
+\usepackage{../../../src/tikzappmath}
 %\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
 \usetikzlibrary{scopes}
+
 \begin{document}
 
 \def\iangle{35} % Angle of the inclined plane
 \def\down{-90}
 \def\arcr{0.5cm} % Radius of the arc used to indicate angles
 
-% Define some basic objects of the diagrams
-\tikzstyle{M}= [rectangle,draw,fill=lightgray,minimum size=0.5cm,thin]
-\tikzstyle{m}= [rectangle,draw=black,fill=lightgray,minimum size=0.3cm,thin]
-\tikzstyle{plane}= [draw=black,fill=blue!10]
-\tikzstyle{string}= [draw=red, thick]
-\tikzstyle{pulley}= [thick]
-% line styles
-\tikzstyle{force}= [>=latex,draw=blue,fill=blue]
-\tikzstyle{axis}= [densely dashed,gray,font=\small]
+
 
 \begin{tikzpicture}
 
