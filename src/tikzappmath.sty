@@ -1,0 +1,39 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tikzappmath}[2020/08/27 Package for drawing objects with tikz]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Module 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------
+% Circuit diagrams
+%-----------------------------------------------------------
+\tikzstyle{gatestyle}=[draw = black,fill=lightgray,scale = 1.3,thick]
+\def \gatetext{\small}
+% \tikzstyle{circuitdot} = [circle(1pt),fill]%
+\tikzstyle{circuitdot} = [circle,fill,inner sep=1pt]%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Module 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Module 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-----------------------------------------------------------
+% Free body diagram styles
+%-----------------------------------------------------------
+\tikzstyle{M}= [rectangle,draw,fill=lightgray,minimum size=0.5cm,thin]
+\tikzstyle{m}= [rectangle,draw=black,fill=lightgray,minimum size=0.3cm,thin]
+\tikzstyle{plane}= [draw=black,fill=blue!10]
+\tikzstyle{string}= [draw=red, thick]
+\tikzstyle{pulley}= [thick]
+% line styles
+\tikzstyle{force}= [>=latex,draw=blue,fill=blue]
+\tikzstyle{axis}= [densely dashed,gray,font=\small]

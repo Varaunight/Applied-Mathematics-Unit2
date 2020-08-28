@@ -1,0 +1,143 @@
+% The following was edited from https://texample.net/tikz/examples/free-body-diagrams/
+
+\documentclass[crop,tikz]{standalone}
+%\usetikzlibrary{...}% tikz package already loaded by 'tikz' option
+\usetikzlibrary{scopes}
+\begin{document}
+
+\def\iangle{35} % Angle of the inclined plane
+\def\down{-90}
+\def\arcr{0.5cm} % Radius of the arc used to indicate angles
+
+% Define some basic objects of the diagrams
+\tikzstyle{m1}= [rectangle,draw,fill=lightgray,inner sep = 1pt,minimum size=0.5cm,thin,font=\small]
+\tikzstyle{m2}= [rectangle,draw=black,fill=lightgray,minimum size=0.5cm,thin,font=\small,inner sep = 1pt]
+\tikzstyle{plane}= [draw=black,fill=blue!10]
+\tikzstyle{string}= [draw=red, thick]
+\tikzstyle{pulley}= [thick]
+% line styles
+\tikzstyle{force}= [>=latex,draw=blue,fill=blue]
+\tikzstyle{internal_axis}= [densely dashed,gray,font=\small]
+\tikzstyle{external_axis}= [font=\small]
+
+\tikzset
+    {
+        extaxis1/.pic = 
+        {
+            \draw[->] (0,0) -- (0,.7) node[left] {$+y_1$} ;
+            \draw[->] (0,0) --(.7,0) node[right] {$+x_1$};
+        }
+}
+
+\tikzset
+    {
+        extaxis2/.pic = 
+        {
+            \draw[->] (0,0) -- (0,.7) node[left] {$+y_2$} ;
+            \draw[->] (0,0) --(.7,0) node[right] {$+x_2$};
+        }
+}
+
+\tikzset
+    {
+        extaxis3/.pic = 
+        {
+            \draw[->] (0,0) -- (0,.7) node[left] {$+y_3$} ;
+            \draw[->] (0,0) --(.7,0) node[right] {$+x_3$};
+        }
+}
+
+\begin{tikzpicture}
+
+\matrix[column sep=1cm] { % draws the objects in 3 columns 
+
+    %% Sketch
+    
+    % grid for ease of drawing
+    % \draw[step = 0.5cm, very thin, gray] (-1,-2) grid (4,2); % comment out for final figure
+
+    % draws the triangle
+    % use 'coordinate' when defining shapes
+    \draw[plane] (0,-1) coordinate (base)
+                     -- coordinate[pos=0.5] (mid) ++(\iangle:3) coordinate (top)
+                     |- (base) -- cycle;
+
+    \path (mid) node[m1,rotate=\iangle,yshift=0.25cm] (m1) {$m_1$};
+    \draw[pulley] (top) -- ++(\iangle:0.25) circle (0.25cm)
+                   ++ (90-\iangle:0.5) coordinate (pulley);
+    \draw[string] (m1.east) -- ++(\iangle:1.5cm) arc (90+\iangle:0:0.25)
+                  -- ++(0,-1) node[m2] {$m_2$} {};
+
+    \draw[->] (base)++(\arcr,0) arc (0:\iangle:\arcr);
+    \path (base)++(\iangle*0.5:\arcr+5pt) node {$\theta$};
+    %%
+&
+    %% Free body diagram of M
+    \begin{scope}[rotate=\iangle]
+        \node[m1,transform shape] (m1) {}; %transform shape causes the current “external” transformation matrix to be applied to the shape
+
+        % Draw axes and help lines
+        {[external_axis,transform shape] \draw (-2,-2)  pic {extaxis1};}
+        
+        {[internal_axis,->]
+            \draw (0,-1) -- (0,2) node[right] {$+y_1$};
+            \draw (m1) -- ++(2,0) node[right] {$+x_1$};
+            % Indicate angle. The code is a bit awkward.
+
+            \draw[solid,shorten >=0.5pt] (\down-\iangle:\arcr)
+                arc(\down-\iangle:\down:\arcr);
+            \node at (\down-0.5*\iangle:1.3*\arcr) {$\theta$};
+        }
+
+        % Forces
+        {[force,->]
+            % Assuming that Mg = 1. The normal force will therefore be cos(alpha)
+            \draw (m1.center) -- ++(0,{cos(\iangle)}) node[above right] {$N$};
+            \draw (m1.west) -- ++(-1,0) node[left] {$f_R$};
+            \draw (m1.east) -- ++(1,0) node[above] {$T$};
+        }
+
+    \end{scope}
+    % Draw gravity force. The code is put outside the rotated
+    % scope for simplicity. No need to do any angle calculations. 
+    \draw[force,->] (m1.center) -- ++(0,-1) node[below] {$m_1g$};
+    %%
+
+&
+    %%%
+    % Free body diagram of m
+    \node[m2] (m) {};
+    \draw[internal_axis,->] (m) -- ++(0,2) node[left] {$+y_2$};
+    {[force,->]
+        \draw (m.north) -- ++(0,1) node[left] {$T'$};
+        \draw (m.south) -- ++(0,-1) node[right] {$m_2g$};
+    }
+    {[external_axis,transform shape] \draw (-1,-2)  pic {extaxis2};}
+
+
+\\
+    %%%
+    % Free body diagram of string
+    \node[above] (s) {$m_s$};
+    \draw[string]  (-.5,0) -- (.5,0);
+    {[force,->]
+        \draw (0.5,0) -- ++ (.7,0) node[above]{$T^\prime$};
+        \draw (-0.5,0) -- ++ (-.7,0)node[above]{$T$};}
+
+&
+    \begin{scope}
+    %%%
+    % Free body diagram of pulley
+    {[pulley] \draw (0,0) circle (0.25cm);}
+    {[force,->]
+    \draw (0,0) -- (0,-1) node[below]{};
+    \draw (0,0) -- (1,0)node[below]{};
+    }
+    {[external_axis,transform shape] \draw (-1,-1)  pic {extaxis3};}    \end{scope}
+&
+
+\\
+};
+\end{tikzpicture}
+
+\end{document}

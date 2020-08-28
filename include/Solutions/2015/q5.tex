@@ -1,0 +1,163 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Brad Bachu
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 2015 
+%     Module: 3
+%     Question: 5
+%------------------------------------------------------------------------------
+
+\begin{enumerate}[label = \bfseries (\alph*)]
+
+%------------------------------------------------------------------------
+% 5 (a)
+%------------------------------------------------------------------------
+\item 
+
+We are given that $m_1 = 5$ kg, $m_2 = 6$ kg, $\theta = \arcsin\left(\frac{1}{10}\right)$ and $\mu = \frac{1}{4}$. Representing the positions of $m_1$ and $m_2$ with the coordinates $(x_1,y_1)$ and $(x_2,y_2)$ respectively, we summarize this information in Fig.~\ref{2015:q5:fig:force1}
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/particleOnPlane}
+\caption{\label{2015:q5:fig:force1} A figure caption. The figure captions are
+automatically numbered.}
+\end{center}
+\end{figure}
+
+
+%------------------------------------------------------------------------
+% 5 (a) (i)
+%------------------------------------------------------------------------
+\item See Fig.~\ref{2015:q5:fig:force1}
+
+%------------------------------------------------------------------------
+% 5 (a) (ii)
+%------------------------------------------------------------------------
+\item We would like to find the tension and acceleration of the particles.
+
+
+The next step is to represent mathematically.
+Now we apply Newton's 2nd law in component form for each component.
+For $m_1$, since it is stationary in the $\hat{y}_1$ component throughout
+its motion, have
+\begin{align}
+   \hat{y}_1 &: m_1 \ddot{y}_1 = N - m_1 g \cos\theta = 0  \,,\nn \\
+   \hat{x}_1 &:m_1 \ddot{x}_1 = T - f_R \,.
+\end{align}
+For $m_2$, we only have to consider one component,
+\begin{align}
+   \hat{y}_2 &: m_2 \ddot{y}_2 = T^\prime - m_2g \,.
+\end{align}
+Since the string is light $m_s=0$, we have for any position along the string $x_s$,
+\begin{align}
+   \hat{x}_s: 0 = T - T^\prime \,.
+\end{align}
+Since the string is inelastic, the two masses move with the same speed and acceleration,
+\begin{align}
+   \ddot{x}_1 &= -\ddot{y}_2 \nn  \, ,\\
+   \dot{x}_1 &= -\dot{y}_2  \, . 
+\end{align}
+
+Next, we solve and evaluate. We see that
+\begin{align}
+   T &= \frac{m_1m_2g(1 - \cos\theta)}{m_1 + m_2} \nn \\
+   \ddot{x}_1 = - \ddot{y}_2 &= \frac{g(m_2 - m_1\cos\theta)}{m_1+m_2}
+\end{align}
+
+Thus, summarizing the results, we have the accelerations of each particle
+\begin{align}
+   \vec{a}_1 &=  () \hat{x}_1 + () \hat{y}_1 \nn \\
+   \vec{a}_2 &=  () \hat{x}_2 + () \hat{y}_2  
+\end{align}
+with the tension, following the same format
+\begin{align}
+   \vec{T}_1 &= () \hat{x}_1 + () \hat{y}_1 \nn \\
+   \vec{T}_2 &= () \hat{x}_2 + () \hat{y}_2 
+\end{align}
+
+%------------------------------------------------------------------------
+% 1 (a) (iii)
+%------------------------------------------------------------------------
+\item
+
+
+
+%------------------------------------------------------------------------
+% 1 (b)
+%------------------------------------------------------------------------
+\item We are given that $\vec{x}(t=0) = \vec{0}$ and $\vec{v}(t) = 5t^2 \hat{i} - (t-4)\hat{j}$
+%------------------------------------------------------------------------
+% 1 (b) (i)
+%------------------------------------------------------------------------
+\item We want to find $\vec{a}(t=3)$.
+\begin{align}
+   \vec{a}(t) & = \frac{d^2 \vec{x}}{dt^2} = \frac{d\vec{v}}{dt} \nn \\
+   &= 10 t \hat{i}  - \hat{j}  \nn \\
+   \vec{a} (t=3) &= 30 \hat{i} - \hat{j}
+\end{align}
+
+\item We want to find $\vec{x}(t=3)$.
+\begin{align}
+   \vec{v} &= \frac{d\vec{x}}{dt} \nn \\
+   \int_{t_1}^{t_2} \vec{v} dt &=  \int_{t_1}^{t_2} \frac{d\vec{x}}{dt}  dt\nn \\
+         &=\vec{x}(t_2) - \vec{x}(t_1)
+\end{align}
+
+Solving the integral, 
+\begin{align}
+   \vec{x}(t=3) - \vec{x}(t=0) &= \left[ \frac{5}{3}t^3 \hat{i} - \left(\frac{t^2}{2} - 4t\right)\hat{j}\right]^{3}_0 \nn \\
+   &= 45 \hat{i} + 7.5 \hat{j}
+\end{align}
+
+
+%------------------------------------------------------------------------
+% 1 (c)
+%------------------------------------------------------------------------
+\item We are given that $\vec{v}(t=0) = 0$ (at rest) and $\vec{F}_r \propto -\vec{v}$ (resistance to motion proportional to $\vec{v}$). 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/particleMedium.pdf}
+\caption{\label{2015:q5:fig:particle1} A figure caption. The figure captions are
+automatically numbered.}
+\end{center}
+\end{figure}
+
+Look at Fig.~\ref{2015:q5:fig:particle1}
+\begin{align}
+   m \vec{a} &= \sum \vec{F} \nn\\
+    &= \vec{F}_w + F_r \nn \\
+   &= -m g - c \vec{v} \nn \\
+   m \frac{d\vec{v}}{dt} &= -mg - c \vec{v} \nn \\
+    \frac{d\vec{v}}{dt} &= -g - \frac{c}{m} \vec{v}
+\end{align}
+where $c$ is some undetermined constant of proportionality. This answer is completely correct once the coordinate system is specified as in the figure.
+
+An important point here is that if our coordinate system, our answer would change slightly. We could have picked the system shown in Fig.~\ref{2015:q5:fig:particle2}
+\begin{figure}
+\begin{center}
+\includegraphics{figures/particleMedium2.pdf}
+\caption{\label{2015:q5:fig:particle2} A figure caption. The figure captions are
+automatically numbered.}
+\end{center}
+\end{figure}
+Then Newton's 2nd law would read,
+\begin{align}
+   m \vec{a} &= \sum \vec{F} \nn\\
+   &= \vec{F}_w + F_r \nn \\
+   &= m g - c \vec{v} \nn \\
+   m \frac{d\vec{v}}{dt} &= mg - c \vec{v} \nn \\
+   \frac{d\vec{v}}{dt} &= g - \frac{c}{m} \vec{v} 
+\end{align}
+
+
+\end{enumerate}
+

@@ -1,0 +1,28 @@
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{../../../../src/tikzappmath}
+
+\usetikzlibrary{scopes}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+
+
+\begin{document}
+   \begin{tikzpicture}
+
+      % make these defs here so that I can change all after
+      % note that you do not have to keep them consistent
+      % I just defined this to make initial coding easier
+      \def\xspace{3} % set the horizonal distance between gates
+      \def\yspace{2} % set the vertical distance between gates
+      \def\shift{.8cm} % sets some spacing to draw connecting lines
+
+      % initial node
+      \node at (0,0) [circuitdot] (in) {}; 
+      % from the t draw the top wires
+      \draw (in)--++ (\shift,0) {}--++ (0,\shift) --++(\shift,0) node[circuitdot] {} ++(.5*\shift,0) node (p) {$p$} ++(0.5*\shift,0)  node[circuitdot]{} --++(\shift,0) node[circuitdot] {} ++(.5*\shift,0) node (nq) {$\lnot q$} ++(0.5*\shift,0)  node[circuitdot] {} --++(\shift,0)  --++(0,-\shift) node (t2) {} --++ (\shift,0) node[circuitdot] (out) {};
+      % from the t draw the bottom wire (just negate the y values)
+      \draw (in)--++ (\shift,0) {}--++ (0,-\shift) --++(\shift,0) node[circuitdot] {} ++(.5*\shift,0) node (np) {$\lnot p$} ++(0.5*\shift,0)  node[circuitdot]{} --++(\shift,0) node[circuitdot] {} ++(.5*\shift,0) node (q) {$q$} ++(0.5*\shift,0)  node[circuitdot] {} --++(\shift,0)  --++(0,\shift) node (t2) {} --++ (\shift,0) node[circuitdot] (out) {};
+
+   \end{tikzpicture}
+
+\end{document} 

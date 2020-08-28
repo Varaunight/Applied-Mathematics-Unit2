@@ -1,0 +1,26 @@
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{../../../../src/tikzappmath}
+
+\usetikzlibrary{scopes}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+
+
+\begin{document}
+   \begin{tikzpicture}
+
+      % make these defs here so that I can change all after
+      % note that you do not have to keep them consistent
+      % I just defined this to make initial coding easier
+      \def\xspace{3} % set the horizonal distance between gates
+      \def\yspace{2} % set the vertical distance between gates
+      \def\shift{.8cm} % sets some spacing to draw connecting lines
+
+      % draw bottom wire
+      \draw (0,0) node[circuitdot] (in){} --++ (\shift,0) coordinate (t1) {} |-++ (.5*\shift,-\shift) coordinate[circuitdot] {} ++(.5*\shift,0) node (b) {$B$} ++(.5*\shift,0) node[circuitdot] {} --++(\shift,0) node[circuitdot]{} ++(.5*\shift,0) node (c) {$C$} ++ (.5*\shift,0)coordinate[circuitdot]{} -|++ (.5*\shift,\shift) --++(\shift,0) coordinate[circuitdot]{}; 
+      % draw top wire
+      % from the t draw the bottom wire 
+      \draw (t1) |-++ (1.5*\shift,\shift) coordinate[circuitdot] ++ (.5*\shift,0) node (A) {$A$} ++ (.5*\shift,0) coordinate[circuitdot] {} -|++ (1.5*\shift,-\shift);
+   \end{tikzpicture}
+
+\end{document} 

@@ -10,78 +10,26 @@
 % sub-files you write so that if you make a mistke you dont break
 % everything in the code.
 
-\documentclass[fleqn,titlepage]{book}
+\documentclass{solutionsmannual}
 
 % add packages here if needed
-\usepackage[T1]{fontenc}
-\usepackage{amsthm}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{hyperref}
-\usepackage{listings}
-\usepackage{xcolor}
-\usepackage{mathtools}
-\usepackage{textcomp}
-\usepackage{amssymb} 
-\usepackage{enumitem}
-\usepackage{geometry} 
-\usepackage{tikz} 
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{lmodern}
-% Equation numbering 
-\numberwithin{equation}{section}
-
-% Used in cover page
-\usepackage{xcolor}
-\hypersetup{
-    colorlinks,
-    linkcolor={blue!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
-}
-\providecommand{\HUGE}{\Huge}% if not using memoir
-\newlength{\drop}% for my convenience
-\usepackage{epstopdf}
-\usepackage{epsfig}
 
 % Draft
-\usepackage{draftwatermark}
-\SetWatermarkScale{1}\usepackage{epsfig}
+% \usepackage{draftwatermark}
+% \SetWatermarkScale{1}\usepackage{epsfig}
 
-% Set up format for definitions and axioms etc.
-\theoremstyle{plain}
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{law}[thm]{Law}
-\newtheorem{prop}[thm]{Proposition}
-\newtheorem*{cor}{Corollary}
-\newtheorem*{axiom}{Axiom}
 
-\theoremstyle{definition}
-\newtheorem{defn}{Definition}[section]
-\newtheorem{conj}{Conjecture}[section]
-\newtheorem{exmp}{Example}[section]
-\newtheorem{note}{Note}[section]
-
-\theoremstyle{remark}
-\newtheorem*{rem}{Remark}
-
-%Set up the format for the listing structure
-\renewcommand{\theenumi}{\Roman{enumi}} 
-\renewcommand{\labelenumi}{(\theenumi)} 
-\renewcommand{\theenumii}{\alph{enumii}} 
-\renewcommand{\labelenumii}{\theenumi.~\theenumii}
+\graphicspath{{../include/Solutions/2015/}}
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % \input{../include/Cover/cover}
 
 \pagestyle{plain}
 
 %========================================================================
 \frontmatter
+
 %========================================================================
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +83,6 @@
 \part{Solutions}
 %------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %------------------------------------------------------------------------
 \chapter{20XX}
