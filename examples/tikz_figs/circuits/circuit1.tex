@@ -29,7 +29,7 @@
 
       % Draw all wires
       % Connect all gates internally
-      \draw (x1.output) -| ([xshift = -\shift]x5.input 2) node (l1) {} --++(\shift,0);
+      \draw (x1.output) -| ([xshift = -\shift]x5.input 2) --++(\shift,0);
       \draw (x4.output) -| ([xshift = -\shift]x5.input 1) --++(\shift,0);
       \draw (x2.output) -| ([xshift = -\shift]x4.input 2) --++(\shift,0);
       \draw (x3.output) -| ([xshift = -\shift]x4.input 1) --++(\shift,0);
@@ -47,11 +47,11 @@
       \draw (x3.input 2) -|++ (-\shift,-\shift) --++(-\shift,0) node[left]{$b$};
 
       % Insert labels
-      \node[above] at ($(x3.output) + (\shift,0)$) (l1) {\small$a \land b$};
-      \node[above] at ($(x2.output) + (\shift,0)$) (l1) {\small$a \land c$};
-      \node[above] at ($(x1.output) + (\shift,0)$) (l1) {\small$a \lor b$};
-      \node[above] at ($(x4.output) + (2*\shift,0)$) (l1) {\small$(a \land b)\lor (a\land c)$};
-      \node[above] at ($(x5.output) + (4*\shift,0)$) (l1) {\small$((a \land b)\lor (a\land c))\land(a\lor b)$};
+      \node[above] at ($(x3.output) + (\shift,0)$) (l1) {\gatetext$a \land b$};
+      \node[above] at ($(x2.output) + (\shift,0)$) (l2) {\gatetext$a \land c$};
+      \node[above] at ($(x1.output) + (\shift,0)$) (l3) {\gatetext$a \lor b$};
+      \node[above] at ($(x4.output) + (2*\shift,0)$) (l4) {\gatetext$(a \land b)\lor (a\land c)$};
+      \node[above] at ($(x5.output) + (4*\shift,0)$) (l5) {\gatetext$((a \land b)\lor (a\land c))\land(a\lor b)$};
 
    \end{tikzpicture}
 
