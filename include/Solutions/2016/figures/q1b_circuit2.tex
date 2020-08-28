@@ -18,10 +18,10 @@
 
       % initial node
       \node at (0,0) [circuitdot] (in) {}; 
-      % from the t draw the top wires
+      % draw the top wires
       \draw (in)--++ (\shift,0) {}|-++ (\shift,\shift) node[circuitdot] {} ++(.5*\shift,0) node (p) {$p$} ++(0.5*\shift,0)  node[circuitdot]{} -|++(\shift,-\shift)  --++ (\shift,0) |-++(\shift,\shift) node[circuitdot] {} ++ (.5*\shift,0) node (np) {$\lnot p$} ++ (.5*\shift,0) node[circuitdot] {} -|++ (\shift,-\shift) --++ (\shift,0) node[circuitdot] (end) {} ;
-      % now draw bottom half (just negating the y value)
+      % now draw bottom half
       \draw (in)--++ (\shift,0) {}|-++ (\shift,-\shift) node[circuitdot] {} ++(.5*\shift,0) node (q) {$q$} ++(0.5*\shift,0)  node[circuitdot]{} -|++(\shift,\shift)  --++ (\shift,0) |-++(\shift,-\shift) node[circuitdot] {} ++ (.5*\shift,0) node (nq) {$\lnot q$} ++ (.5*\shift,0) node[circuitdot] {} -|++ (\shift,\shift) --++ (\shift,0) node[circuitdot] (end) {} ;
    \end{tikzpicture}
-   
+
 \end{document} 
