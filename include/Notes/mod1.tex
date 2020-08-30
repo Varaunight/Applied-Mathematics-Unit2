@@ -1,57 +1,21 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Arjun Mohammed, Brad Bachu
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Module 1 notes.
+%------------------------------------------------------------------------------
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Module 1 Notes and Definitions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%------------------------------------------------------------------------
-%\begin{thm}\label{mod1:thm:name}
-%Theorem 
-%\end{thm}	
-%
-%%------------------------------------------------------------------------
-%\begin{lem}\label{mod1:lem:name}
-%lemma
-%\end{lem}	
-%
-%%------------------------------------------------------------------------
-%\begin{law}\label{mod1:law:name}
-%law
-%\end{law}
-%
-%%------------------------------------------------------------------------
-%\begin{prop}\label{mod1:prop:name}
-%proposition
-%\end{prop}
-%
-%%------------------------------------------------------------------------
-%\begin{cor}\label{mod1:cor:name}
-%corollary
-%\end{cor} 
-%
-%%------------------------------------------------------------------------
-%\begin{axiom}\label{mod1:axiom:name}
-%axiom
-%\end{axiom}
-%
-%%------------------------------------------------------------------------
-%\begin{defn}\label{mod1:defn:name}
-%definition
-%\end{defn}
-%
-%%------------------------------------------------------------------------
-%\begin{conj}\label{mod1:conj:name}
-%conjecture
-%\end{conj}
-%
-%%------------------------------------------------------------------------
-%\begin{exmp}\label{mod1:exmp:name}
-%example
-%\end{exmp}
-%
-%%------------------------------------------------------------------------
-%\begin{note}\label{mod1:note:name}
-%note
-%\end{note}
-
 
 
 \section{Graph Theory and Critical Analysis} \label{Module1:GraphTheoryCriticalAnalysis}
@@ -59,226 +23,146 @@
 \textcolor{red} {DIAGRAMS FOR GRAPH DEFINITIONS  AND CRITICAL ANALYSIS ALGORITHMS}\\
 \textcolor{red}{HUNGARIAN ALGO}
 \begin{defn}\label{mod1:defn:Vertex}
-	\textbf{Vertex}: The Vertex is the fundamental unit from which graphs are formed.
+   \textbf{Vertex}: The Vertex is the fundamental unit from which graphs are formed.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Edge}
-	\textbf{Edge}: In an undirected graph, an unordered pair of nodes that signify  a line joining  two nodes are said to form an edge. For a directed graph, the edge is an ordered pair of nodes. An edge may also connect a node to itself.
+   \textbf{Edge}: In an undirected graph, an unordered pair of nodes that signify  a line joining  two nodes are said to form an edge. For a directed graph, the edge is an ordered pair of nodes. An edge may also connect a node to itself.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Path}
-	 \textbf{Path}: A path in a graph is a sequence of edges which joins multiple vertices, in which all vertices (and edges) are distinct.
+    \textbf{Path}: A path in a graph is a sequence of edges which joins multiple vertices, in which all vertices (and edges) are distinct.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Degree}
-	\textbf{Degree}: The degree of a vertex  in a graph is the number of edges that are incident to the vertex. A loop is counted as two incident edges.
+   \textbf{Degree}: The degree of a vertex  in a graph is the number of edges that are incident to the vertex. A loop is counted as two incident edges.
 \end{defn}
 
 
 \section{Logic and Boolean Algebra}
 
 \begin{defn}\label{mod1:defn:Proposition}
-	\textbf{Propsition}: A proposition is a declarative statment which is either true or false.
+   \textbf{Propsition}: A proposition is a declarative statment which is either true or false.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:LogicSymbols}
-	Propositional Logical Symbols
-		
-	\begin{table}[ht]
-		\centering
-		\begin{tabular}{|c|c|c|}
-			\hline
-				Symbol & Name & Read as\\
-			\hline
-			$\land$ & Conjunction & And \\
-			$\lor$ &	Disjunction & Or \\
-			$\lnot$ & Negation & Not\\
-			$\Rightarrow$ & Conditional & If ... then ...\\
-			$\Leftrightarrow$ & Bi-conditional & If and only if; iff\\
-			\hline
-		\end{tabular}
-		\label{mod1:tab:LogicSymbols}
-	\end{table}
+   Propositional Logical Symbols
+      
+   \begin{table}[ht]
+      \centering
+      \begin{tabular}{|c|c|c|}
+         \hline
+            Symbol & Name & Read as\\
+         \hline
+         $\land$ & Conjunction & And \\
+         $\lor$ &   Disjunction & Or \\
+         $\lnot$ & Negation & Not\\
+         $\Rightarrow$ & Conditional & If ... then ...\\
+         $\Leftrightarrow$ & Bi-conditional & If and only if; iff\\
+         \hline
+      \end{tabular}
+      \label{mod1:tab:LogicSymbols}
+   \end{table}
 
-\end{defn}		
-\newpage
-\begin{defn}\label{mod1:axiom:Negation}
-	Truth tables of the propositional logic operators
+\end{defn}      
 
-		\begin{table}[ht]
-				\centering
-		\begin{tabular}{|c |c|}
-			\hline
-			p &  $\lnot$p\\
-			\hline
-			T & F\\
-			F & T\\
-			\hline
-		\end{tabular}
-		\caption{Negation}
-		\label{mod1:tab:Negation}
-		\medskip
-
-
-		\centering
-		\begin{tabular}{|c c|c|}
-			\hline
-			p & q & p $\land$ q\\
-			\hline
-			T & T & T\\
-			T & F & F\\
-			F & T & F\\
-			F & F & F\\
-			
-			\hline
-		\end{tabular}
-		\caption{Conjunction}
-		\label{mod1:tab:Conjunction}
-		\medskip
-	
-		\begin{tabular}{|c c|c|}
-			\hline
-			p & q & p $\lor$ q\\
-			\hline
-			T & T & T\\
-			T & F & T\\
-			F & T & T\\
-			F & F & F\\
-			
-			\hline
-		\end{tabular}
-		\caption{Disjunction}
-		\label{mod1:tab:Disjunction}
-		\medskip
-	
-	
-		\begin{tabular}{|c c|c|}
-			\hline
-			p & q & p $\Rightarrow$ q\\
-			\hline
-			T & T & T\\
-			T & F & F\\
-			F & T & T\\
-			F & F & T\\
-			
-			\hline
-		\end{tabular}
-		\caption{Conditional}
-		\label{mod1:tab:Conditional}
-		\medskip
-		
-		\begin{tabular}{|c c|c|}
-			\hline
-			p & q & p $\Leftrightarrow$ q\\
-			\hline
-			T & T & T\\
-			T & F & F\\
-			F & T & F\\
-			F & F & T\\
-			
-			\hline
-		\end{tabular}
-		\caption{Bi-conditional}
-		\label{mod1:tab:Bi-conditional}
-		\end{table}
-
+\begin{defn}\lbl{mod1:defn:TruthTables}
+\begin{table}[!htb]
+   \centering
+   \begin{minipage}{0.2\textwidth}
+   \centering
+      \begin{tabular}{|c |c|}
+         \hline
+         p &  $\lnot$p\\
+         \hline
+         T & F\\
+         F & T\\
+         \hline
+      \end{tabular}
+      \caption{\label{mod1:tab:Negation}Negation}
+   \end{minipage}
+   \begin{minipage}{0.38\textwidth}
+      \centering
+      \begin{tabular}{|c c|c|}
+            \hline
+            p & q & p $\land$ q\\
+            \hline
+            T & T & T\\
+            T & F & F\\
+            F & T & F\\
+            F & F & F\\
+            \hline
+      \end{tabular}
+      \caption{\label{mod1:tab:Conjunction}Conjunction}
+   \end{minipage}
+   \vspace{1cm}
+   \begin{minipage}{0.38\textwidth}
+   \centering
+            \begin{tabular}{|c c|c|}
+         \hline
+         p & q & p $\lor$ q\\
+         \hline
+         T & T & T\\
+         T & F & T\\
+         F & T & T\\
+         F & F & F\\
+         \hline
+      \end{tabular}
+      \caption{\label{mod1:tab:Disjunction}Disjunction}
+   \end{minipage}
+   \hspace{6cm}
+   \begin{minipage}{0.38\textwidth}
+      \centering
+      \begin{tabular}{|c c|c|}
+         \hline
+         p & q & p $\Rightarrow$ q\\
+         \hline
+         T & T & T\\
+         T & F & F\\
+         F & T & T\\
+         F & F & T\\
+         \hline
+      \end{tabular}
+      \caption{\label{mod1:tab:Conditional}Conditional}
+   \end{minipage}
+   % \hspace{1cm}
+   \begin{minipage}{0.38\textwidth}
+      \centering
+      \begin{tabular}{|c c|c|}
+         \hline
+         p & q & p $\Leftrightarrow$ q\\
+         \hline
+         T & T & T\\
+         T & F & F\\
+         F & T & F\\
+         F & F & T\\
+         \hline
+      \end{tabular}
+      \caption{\label{mod1:tab:Bi-conditional}Bi-conditional}
+   \end{minipage}
+\end{table}
 \end{defn}
 
-\begin{table}[!htb]
-	\centering
-	\begin{minipage}{0.2\textwidth}
-	\centering
-		\begin{tabular}{|c |c|}
-			\hline
-			p &  $\lnot$p\\
-			\hline
-			T & F\\
-			F & T\\
-			\hline
-		\end{tabular}
-		\caption{\label{mod1:tab:Negation}Negation}
-	\end{minipage}
-	\begin{minipage}{0.38\textwidth}
-		\centering
-		\begin{tabular}{|c c|c|}
-				\hline
-				p & q & p $\land$ q\\
-				\hline
-				T & T & T\\
-				T & F & F\\
-				F & T & F\\
-				F & F & F\\
-				\hline
-		\end{tabular}
-		\caption{\label{mod1:tab:Conjunction}Conjunction}
-	\end{minipage}
-	\vspace{1cm}
-	\begin{minipage}{0.38\textwidth}
-	\centering
-				\begin{tabular}{|c c|c|}
-			\hline
-			p & q & p $\lor$ q\\
-			\hline
-			T & T & T\\
-			T & F & T\\
-			F & T & T\\
-			F & F & F\\
-			\hline
-		\end{tabular}
-		\caption{\label{mod1:tab:Disjunction}Disjunction}
-	\end{minipage}
-	\hspace{6cm}
-	\begin{minipage}{0.38\textwidth}
-		\centering
-		\begin{tabular}{|c c|c|}
-			\hline
-			p & q & p $\Rightarrow$ q\\
-			\hline
-			T & T & T\\
-			T & F & F\\
-			F & T & T\\
-			F & F & T\\
-			\hline
-		\end{tabular}
-		\caption{\label{mod1:tab:Conditional}Conditional}
-	\end{minipage}
-	% \hspace{1cm}
-	\begin{minipage}{0.38\textwidth}
-		\centering
-		\begin{tabular}{|c c|c|}
-			\hline
-			p & q & p $\Leftrightarrow$ q\\
-			\hline
-			T & T & T\\
-			T & F & F\\
-			F & T & F\\
-			F & F & T\\
-			\hline
-		\end{tabular}
-		\caption{\label{mod1:tab:Bi-conditional}Bi-conditional}
-	\end{minipage}
-\end{table}
 
-\newpage
 \noindent Suppose we have the proposition $p \Rightarrow q$, we make the following three definitions:
 \begin{defn}\label{mod1:defn:Inverse}
-	\textbf{Inverse}: $\lnot p \Rightarrow \lnot q$ 
+   \textbf{Inverse}: $\lnot p \Rightarrow \lnot q$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Converse}
-	\textbf{Converse}: $q \Rightarrow p$ 
+   \textbf{Converse}: $q \Rightarrow p$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Contrapositive}
-	\textbf{Contrapositive}: $\lnot q \Rightarrow \lnot p$ 
+   \textbf{Contrapositive}: $\lnot q \Rightarrow \lnot p$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Tautology}
-	\textbf{Tautology}: A tautology is a proposition which is true in every possible interpretation.
+   \textbf{Tautology}: A tautology is a proposition which is true in every possible interpretation.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Contradiction}
-	\textbf{Contradiction}: A contradiction is a proposition which is false in every possible interpretation.
+   \textbf{Contradiction}: A contradiction is a proposition which is false in every possible interpretation.
 \end{defn}
 
 
@@ -293,83 +177,83 @@
 
 
 \begin{law}\label{mod1:law:Annulment}
-	\textbf{Annulment}
-	\begin{align}
-	p \land F &= F  \\
-	p \lor T &= T 
-	\end{align}
+   \textbf{Annulment}
+   \begin{align}
+   p \land F &= F  \\
+   p \lor T &= T 
+   \end{align}
 \end{law}
 
 
 \begin{law}\label{mod1:law:Identity}
-	\textbf{Identity}
-	\begin{align}
-	p \land T &= p  \\
-	p \lor F &= p
-	\end{align}
+   \textbf{Identity}
+   \begin{align}
+   p \land T &= p  \\
+   p \lor F &= p
+   \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Idempotent}
-	\textbf{Idempotent}
-	\begin{align}
-	p \lor p &= p\\
-	p \land p &= p
-	\end{align}
+   \textbf{Idempotent}
+   \begin{align}
+   p \lor p &= p\\
+   p \land p &= p
+   \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Complement}
-	\textbf{Complement}
-	\begin{align}
-	p \lor \lnot p &= T\\
-	p \land \lnot p &= F
-	\end{align}
+   \textbf{Complement}
+   \begin{align}
+   p \lor \lnot p &= T\\
+   p \land \lnot p &= F
+   \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:DoubleNegation}
-	\textbf{Double Negation}
-	\begin{align}
-	\lnot(\lnot p) &= p
-	\end{align}
+   \textbf{Double Negation}
+   \begin{align}
+   \lnot(\lnot p) &= p
+   \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:DeMorgan}
-	\textbf{De Morgan's}
-	\begin{align}
-	\lnot (p \land q) &= \lnot p \lor \lnot q \\
-	\lnot (p \lor q) &= \lnot p \land \lnot q 
-	\end{align}
+   \textbf{De Morgan's}
+   \begin{align}
+   \lnot (p \land q) &= \lnot p \lor \lnot q \\
+   \lnot (p \lor q) &= \lnot p \land \lnot q 
+   \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Associative}
-	\textbf{Associative}
-	\begin{align}
-	(p \lor q) \lor r &= p \lor (q \lor r) \\
-	(p \land q) \land r &= p \land (q \land r) 
-	\end{align}
+   \textbf{Associative}
+   \begin{align}
+   (p \lor q) \lor r &= p \lor (q \lor r) \\
+   (p \land q) \land r &= p \land (q \land r) 
+   \end{align}
 \end{law}
 
  \begin{law}\label{mod1:law:Commutative}
-	\textbf{Commutative}
-	\begin{align}
-	p \land q &= q \land p \\
-	p \lor q &= q \lor p
-	\end{align}
+   \textbf{Commutative}
+   \begin{align}
+   p \land q &= q \land p \\
+   p \lor q &= q \lor p
+   \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Distributive}
-	\textbf{Distributive}
-	\begin{align}
-	p \land (q \lor r) &= (p \land q) \lor (p \land r) \\
-	p \lor (q \land r) &= (p \lor q) \land (p \lor r) 
-	\end{align}
+   \textbf{Distributive}
+   \begin{align}
+   p \land (q \lor r) &= (p \land q) \lor (p \land r) \\
+   p \lor (q \land r) &= (p \lor q) \land (p \lor r) 
+   \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Absorptive}
-	\textbf{Absorptive}
-	\begin{align}
-	p \land (p \lor p) &= p\\
-	p \lor (p \land p) &= p
-	\end{align}
+   \textbf{Absorptive}
+   \begin{align}
+   p \land (p \lor q) &= p\\
+   p \lor (p \land q) &= p
+   \end{align}
 \end{law}
 
 
@@ -384,15 +268,15 @@
 
 
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
