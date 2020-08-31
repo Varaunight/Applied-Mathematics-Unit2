@@ -31,6 +31,13 @@
 % Equation numbering 
 \numberwithin{equation}{section}
 
+
+% Draft Editing Macros
+\newcommand{\TODO}[1]{\marginpar{\raggedright\scriptsize\textbf{TODO:} #1} (\textbf{TODO})}
+\newcommand{\NOTE}[1]{\marginpar{\footnotesize\textbf{NOTE}} (\textbf{#1})}
+\newcommand{\README}{\marginpar{\footnotesize\textbf{READ}}}
+%
+
 % Used in cover page
 \hypersetup{
     colorlinks,
