@@ -76,6 +76,16 @@
 \renewcommand{\theenumii}{\alph{enumii}} 
 \renewcommand{\labelenumii}{\theenumi.~\theenumii}
 
+
+\newcommand{\bModule}[2]
+{
+  \section*{Module #1: #2}
+  \begin{enumerate}[label=\bfseries  \arabic*.]
+}
+\newcommand{\eModule}{\end{enumerate}}
+\newcommand{\ques}[1]{\setcounter{enumi}{#1 -1}\setcounter{section}{#1}\setcounter{equation}{0} \item}
+
+
 %------------------------------------------------------------------------------
 % Referencing 
 %------------------------------------------------------------------------------
@@ -96,7 +106,7 @@
 \theoremstyle{remark}
 \newtheorem*{rem}{Remark}
 % Shortcuts for citation related commands
-\newcommand{\req}[1]{Eq.~(\ref{})} % reference equation
+\newcommand{\req}[1]{Eq.~(\ref{#1})} % reference equation
 \newcommand{\reqs}[2]{Eqs.~(\ref{#1}) and (\ref{#2})} % reference 2 equations
 \newcommand{\rfig}[1]{Fig.~\ref{#1}} % reference figure
 \newcommand{\rfigs}[2]{Figs.~\ref{#1} and \ref{#2}} % reference 2 figures
