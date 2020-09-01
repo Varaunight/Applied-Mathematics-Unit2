@@ -1,3 +1,16 @@
+%------------------------------------------------------------------------------
+% Author(s):
+%  Brad Bachu
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description: A class for formatting and creating macros
+%------------------------------------------------------------------------------
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{solutionsmannual}[2020/08/25]
 
@@ -77,13 +90,29 @@
 \renewcommand{\labelenumii}{\theenumi.~\theenumii}
 
 
-\newcommand{\bModule}[2]
-{
-  \section*{Module #1: #2}
-  \begin{enumerate}[label=\bfseries  \arabic*.]
-}
+% The begin module could not be made into a newenviroment because the input function cannot be nested
+% further, I left the titles as input in case they change the heading name
+% begin module
+\newcommand{\bModule}[2]{\setcounter{section}{#1-1}\section{Module #1: #2}\begin{enumerate}[label=\bfseries  \arabic*.]}
+% end module
 \newcommand{\eModule}{\end{enumerate}}
-\newcommand{\ques}[1]{\setcounter{enumi}{#1 -1}\setcounter{section}{#1}\setcounter{equation}{0} \item}
+\newcommand{\ques}[1]{\setcounter{section}{#1}\setcounter{enumi}{#1 -1}\setcounter{equation}{0} \item}
+% begin subquestion, the first level of question (a), (b) etc
+\newenvironment{subquestions}
+{\begin{enumerate}[label = \bfseries (\alph*)]}
+{\end{enumerate}}
+% begin subsubquestion, the second level of question (i), (ii) etc
+\newenvironment{subsubquestions}
+{\begin{enumerate}[label = \bfseries (\roman*)]}
+{\end{enumerate}}
+% begin subsubsubquestion, the third level of question a), b) etc
+\newenvironment{subsubsubquestions}
+{\begin{enumerate}[label = \bfseries \alph*)]}
+{\end{enumerate}}
+% these are just redefinitions of item to help keep track of what place you are at
+\newcommand{\subquestion}{\item}
+\newcommand{\subsubquestion}{\item}
+\newcommand{\subsubsubquestion}{\item}
 
 
 %------------------------------------------------------------------------------
@@ -136,43 +165,11 @@
 % MODULE 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%------------------------------------------------------------------------------
-% Hungarian Algorithm 
-%------------------------------------------------------------------------------
-% TikZ allows you to reference nodes outside the current picture. This feature is enabled using the remember picture option
-\newcommand{\holdcolor}{gray} % Hungarian old color: sets the color for the previous lines; this is default
-%------------------------------------------------------------------------------
-% Horizontal Lines
-% horizontal lines are drawn from left to right
-% place a node on the LEFT of the character where you want to START a line
-% the name of the node is important as the lines are drawn to connect nodes
-% hhs = Hungarian Horizontal Start
-\newcommand{\hhs}[1]{\begin{tikzpicture}[overlay,remember picture]\node(#1)at (-0.5em,.7ex){};\end{tikzpicture}}
-% place a node on the RIGHT of the character where you want to END the line
-% the optional argument is the color and its default is set to \holdcolor
-% hhe = Hungarian Horizontal End
-\newcommand{\hhe}[2][\holdcolor]{\begin{tikzpicture}[overlay,remember picture]\draw[color=#1,thick](#2)--(0,.7ex);\end{tikzpicture}}
-%------------------------------------------------------------------------------
-% Vertical Lines
-% vertical lines are drawn top down
-% place a node at the LEFT of the character where you want to START a line
-% hvs = Hungarian Vertical Start
-\newcommand{\hvs}[1]{\begin{tikzpicture}[overlay,remember picture]\node(#1)at (.3em,3ex){};\end{tikzpicture}}
-% place a node at the LEFT of the character where you want to END a line
-% the optional argument is the color and its default is set to \holdcolor
-% \hve = Hungarian Vertical End
-\newcommand{\hve}[2][\holdcolor]{\begin{tikzpicture}[overlay,remember picture]\draw[color=#1,thick](#2)--(.3em,-1ex);\end{tikzpicture}}
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MODULE 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Shortcuts for mod 2
 \newcommand{\var}{\text{Var}}
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
