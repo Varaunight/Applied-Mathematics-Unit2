@@ -67,7 +67,7 @@
 % place a node at the LEFT of the character where you want to END a line
 % the optional argument is the color and its default is set to \holdcolor
 % \hve = Hungarian Vertical End
-\newcommand{\hve}[2][\holdcolor]\
+\newcommand{\hve}[2][\holdcolor]
 {
    \begin{tikzpicture}[overlay,remember picture]\draw[color=#1,thick](#2)--(.3em,-1ex);
    \end{tikzpicture}
@@ -86,8 +86,8 @@
 {
    \draw[carrow] (#1) -- (#2); 
    \node[above] (above) at  ($(#1)!0.5!(#2)$) {#3};
-   \node[below] (below) at ($(#1)!0.5!(#2)$) {#4} ;
-  }
+   \node[below] (below) at ($(#1)!0.5!(#2)$) {#4};
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
