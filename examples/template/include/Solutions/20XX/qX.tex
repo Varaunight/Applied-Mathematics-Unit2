@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-% Your Name
+%  Brad Bachu
 %
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
@@ -8,7 +8,7 @@
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
-%  Description:
+%  Description: Some conventions and examples how best practices that we require
 %     Year: 20XX 
 %     Module: X
 %     Question: X
@@ -42,10 +42,7 @@ For simplifying, additional punctuation is not needed
    &= 1 \, .
 \end{align}
 
-
 Sometimes, it would be clearer to label subequations.
-
-
 If $X$ is a random variable with mean $\mu$, then the \textbf{variance}, $Var[X]$, is defined by
 \begin{subequations}\label{mod2:eq:Discrete:Variance}
    \begin{align}
@@ -61,13 +58,11 @@ If $X$ is a random variable with mean $\mu$, then the \textbf{variance}, $Var[X]
 The references will work as you'd expect: \ref{mod2:eq:Discrete:Variance:1},
 \ref{mod2:eq:Discrete:Variance:2} and \ref{mod2:eq:Discrete:Variance:3} are all part of \ref{mod2:eq:Discrete:Variance}.
 
-
 All figures and tables should be referenced in the text and should be
 placed at the top of the page where they are first cited or in
 subsequent pages. Positioning them in the source file
 after the paragraph where you first reference them usually yield good
 results. See figure~\ref{fig:i} and table~\ref{mod1:tab:LogicSymbols}.
-
 \begin{figure}[tbp]
    \centering % \begin{center}/\end{center} takes some additional vertical space
    \includegraphics[width=.5\textwidth]{images.jpeg}
@@ -95,3 +90,17 @@ TikZ and have provided common examples in the tikzfigs folder.
 
 Do not abbreviate and ``table'', 
 but ``Eq.'', ``Def'', ``Prop'' and ``Ref.'' are welcome.
+
+We control how subquestions are formatted and thus you must use the
+\texttt{subquestions},\texttt{subsubquestions} and \texttt{subsubsubquestions} environments as shown
+\begin{subquestions}
+   \subquestion This is the first level of a question
+      \begin{subsubquestions}
+         \subsubquestion Most have another level of questions
+         \begin{subsubsubquestions}
+            \subsubsubquestion Very few need to go this far
+         \end{subsubsubquestions}
+         \subsubquestion You can always come out of the environment and continue working
+      \end{subsubquestions}
+   \subquestion and again move out another level
+\end{subquestions}

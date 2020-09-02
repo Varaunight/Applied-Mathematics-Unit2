@@ -7,3 +7,5 @@
 *.out
 *.bak
 *.pdf
+*.bbl
+*.blg

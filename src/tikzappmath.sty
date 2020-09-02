@@ -1,8 +1,21 @@
+%------------------------------------------------------------------------------
+% Author(s):
+%  Brad Bachu
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description: A TikZ package for our Applied Math needs
+%------------------------------------------------------------------------------
+
+
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{tikzappmath}[2020/08/27 Package for drawing objects with tikz]
-
-
-
+\usetikzlibrary{calc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Module 1
@@ -15,6 +28,66 @@
 \def \gatetext{\small}
 % \tikzstyle{circuitdot} = [circle(1pt),fill]%
 \tikzstyle{circuitdot} = [circle,fill,inner sep=1pt]%
+
+
+%------------------------------------------------------------------------------
+% Hungarian Algorithm 
+%------------------------------------------------------------------------------
+% TikZ allows you to reference nodes outside the current picture. This feature is enabled using the remember picture option
+\newcommand{\holdcolor}{gray} % Hungarian old color: sets the color for the previous lines; this is default
+%------------------------------------------------------------------------------
+% Horizontal Lines
+% horizontal lines are drawn from left to right
+% place a node on the LEFT of the character where you want to START a line
+% the name of the node is important as the lines are drawn to connect nodes
+% hhs = Hungarian Horizontal Start
+\newcommand{\hhs}[1]
+{
+   \begin{tikzpicture}[overlay,remember picture]\node(#1)at (-0.5em,.7ex){};
+   \end{tikzpicture}
+}
+% place a node on the RIGHT of the character where you want to END the line
+% the optional argument is the color and its default is set to \holdcolor
+% hhe = Hungarian Horizontal End
+\newcommand{\hhe}[2][\holdcolor]
+{
+   \begin{tikzpicture}[overlay,remember picture]\draw[color=#1,thick](#2)--(0,.7ex);
+   \end{tikzpicture}
+}
+%------------------------------------------------------------------------------
+% Vertical Lines
+% vertical lines are drawn top down
+% place a node at the LEFT of the character where you want to START a line
+% hvs = Hungarian Vertical Start
+\newcommand{\hvs}[1]
+{
+   \begin{tikzpicture}[overlay,remember picture]\node(#1)at (.3em,3ex){};
+   \end{tikzpicture}
+}
+% place a node at the LEFT of the character where you want to END a line
+% the optional argument is the color and its default is set to \holdcolor
+% \hve = Hungarian Vertical End
+\newcommand{\hve}[2][\holdcolor]
+{
+   \begin{tikzpicture}[overlay,remember picture]\draw[color=#1,thick](#2)--(.3em,-1ex);
+   \end{tikzpicture}
+}
+
+
+%------------------------------------------------------------------------------
+% Critical Path 
+%------------------------------------------------------------------------------
+% Define the style of the critical path node
+\tikzstyle{cnode} = [circle, draw, fill = lightgray,minimum size=0.8cm]
+% Define the style of the addow
+\tikzstyle{carrow} = [->,>=latex,draw=blue,fill=blue]
+% Command to connect to nodes and label it at the middle
+\newcommand{\connectcnode}[4]
+{
+   \draw[carrow] (#1) -- (#2); 
+   \node[above] (above) at  ($(#1)!0.5!(#2)$) {#3};
+   \node[below] (below) at ($(#1)!0.5!(#2)$) {#4};
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,7 +106,7 @@
 \tikzstyle{m}= [rectangle,draw=black,fill=lightgray,minimum size=0.3cm,thin]
 \tikzstyle{plane}= [draw=black,fill=blue!10]
 \tikzstyle{string}= [draw=red, thick]
-\tikzstyle{pulley}= [thick]
+\tikzstyle{pulley}= [thick,fill=blue!10]   
 % line styles
 \tikzstyle{force}= [>=latex,draw=blue,fill=blue]
 \tikzstyle{axis}= [densely dashed,gray,font=\small]

@@ -11,57 +11,61 @@
 %  Description:
 %     How to make tables for the Hungarian algorithm 
 %------------------------------------------------------------------------------
+The Hungarian Algorithm
+\begin{subquestions} 
+   \subquestion 
+   We will use \texttt{minipage} enviroment to place the tables.
+   In \texttt{solutionmannual.cls} we have defined \texttt{\textbackslash hhs}
+   \texttt{\textbackslash hhe},\texttt{\textbackslash hvs} and \texttt{\textbackslash hve}
+   to assist with drawing lines on the matrix. Please see that document for details.
 
-We will use \texttt{minipage} enviroment to place the tables.
-In \texttt{solutionmannual.cls} we have defined \texttt{\textbackslash hhs}
-\texttt{\textbackslash hhe},\texttt{\textbackslash hvs} and \texttt{\textbackslash hve}
-to assist with drawing lines on the matrix. Please see that document for details.
+   \begin{table}[!hbt]
+      % \centering
+      \begin{minipage}{0.3\textwidth}
+         \centering
+         \begin{tabular}{cccc}
+             0 & 0 & 0 & 0 \\
+             0 & 0 & 1 & 3 \\
+             0 & 1 & 4 & 5 \\
+             0 & 2 & 4 & 8 \\
+         \end{tabular}
+         \caption*{Step 1} % it might be convinent to get rid of all the 'Table 1.2' stuff. Use the * next to caption.If you do this you need to get rid of the label as well otherwise it will not work.
+      \end{minipage}
+      \begin{minipage}{0.3\textwidth}
+         \centering
+         \begin{tabular}{cccc}
+            \hhs{h1}0 & 0 & 0 & 0 \hhe[red]{h1} \\
+                    0 & 0 & 1 & 3 \\
+                    0 & 1 & 4 & 5 \\
+                    0 & 2 & 4 & 8\\
+         \end{tabular}
+         \caption{\label{20XX:hung1:step2} Step 2}
+      \end{minipage}
+      \begin{minipage}{0.3\textwidth}
+         \centering
+         \begin{tabular}{cccc}
+            \hhs{h1}\hvs{v1}0 &       \hvs{v2}0 & 0 & 0 \hhe{h1} \\
+                            0 &               0 & 1 & 3          \\
+                            0 &               1 & 4 & 5          \\
+               \hve[red]{v1}0 & \hve[red]{v2}2 & 4 & 8          \\
+         \end{tabular}
+         \caption{\label{20XX:hung1:step2} Step 3}
+      \end{minipage}
 
-\begin{table}[!hbt]
-   % \centering
-   \begin{minipage}{0.3\textwidth}
-      \centering
-      \begin{tabular}{cccc}
-          0 & 0 & 0 & 0 \\
-          0 & 0 & 1 & 3 \\
-          0 & 1 & 4 & 5 \\
-          0 & 2 & 4 & 8 \\
-      \end{tabular}
-      \caption*{Step 1} % it might be convinent to get rid of all the 'Table 1.2' stuff. Use the * next to caption.If you do this you need to get rid of the label as well otherwise it will not work.
-   \end{minipage}
-   \begin{minipage}{0.3\textwidth}
-      \centering
-      \begin{tabular}{cccc}
-         \hhs{h1}0 & 0 & 0 & 0 \hhe[red]{h1} \\
-                 0 & 0 & 1 & 3 \\
-                 0 & 1 & 4 & 5 \\
-                 0 & 2 & 4 & 8\\
-      \end{tabular}
-      \caption{\label{20XX:hung1:step2} Step 2}
-   \end{minipage}
-   \begin{minipage}{0.3\textwidth}
-      \centering
-      \begin{tabular}{cccc}
-         \hhs{h1}\hvs{v1}0 &       \hvs{v2}0 & 0 & 0 \hhe{h1} \\
-                         0 &               0 & 1 & 3          \\
-                         0 &               1 & 4 & 5          \\
-            \hve[red]{v1}0 & \hve[red]{v2}2 & 4 & 8          \\
-      \end{tabular}
-      \caption{\label{20XX:hung1:step2} Step 3}
-   \end{minipage}
+      \vspace{20pt} % when you need to move to a new line give it some vertical space
+      \begin{minipage}{0.3\textwidth}
+         \centering
+         \begin{tabular}{cccc}
+            \hhs{h1}\hvs{v1}0 &       \hvs{v2}0 & 0 & 0 \hhe{h1} \\
+                            0 &               0 & 1 & 3          \\
+                            0 &               1 & 4 & 5          \\
+               \hve[red]{v1}0 & \hve[blue]{v2}2 & 4 & 8          \\
+         \end{tabular}
+         \caption{\label{20XX:hung1:step2} Step 4}
+      \end{minipage}
+      \caption{\label{ex:20XX:hungarian_main} Here is an example of how to setup the Hungarian algorithm}
+   \end{table}
 
-   \vspace{20pt} % when you need to move to a new line give it some vertical space
-   \begin{minipage}{0.3\textwidth}
-      \centering
-      \begin{tabular}{cccc}
-         \hhs{h1}\hvs{v1}0 &       \hvs{v2}0 & 0 & 0 \hhe{h1} \\
-                         0 &               0 & 1 & 3          \\
-                         0 &               1 & 4 & 5          \\
-            \hve[red]{v1}0 & \hve[blue]{v2}2 & 4 & 8          \\
-      \end{tabular}
-      \caption{\label{20XX:hung1:step2} Step 4}
-   \end{minipage}
-   \caption{\label{ex:20XX:hungarian_main} Here is an example of how to setup the Hungarian algorithm}
-\end{table}
+   You might want to consider not labeling the individual tables but labeling the overall table, or vice-versa. Clearly doing both doesnt make sense since I didnt use the subcaption package.
 
-You might want to consider not labeling the individual tables but labeling the overall table, or vice-versa. Clearly doing both doesnt make sense since I didnt use the subcaption package.
+\end{subquestions}
