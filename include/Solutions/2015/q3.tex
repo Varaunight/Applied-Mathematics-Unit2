@@ -1,0 +1,117 @@
+%------------------------------------------------------------------------------
+% Author(s): Varaun Ramgoolie
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 2015
+%     Module: 2
+%     Question: 3
+%------------------------------------------------------------------------------
+
+\begin{subquestions}
+	
+	%------------------------------------------------------------------------
+	% 3 (a)
+	%------------------------------------------------------------------------
+	
+\subquestion
+
+It is given that 20\% of bolts manufactured at a factory are defective. Therefore, we shall say the probability a bolt is defective, $P(D)= 0.2$. 
+
+\begin{subsubquestions}
+	
+	
+	%-------------------------------------------------------------------------------------
+	% 3 (a) i
+	%------------------------------------------------------------------------------------
+\subsubquestion	
+In a random sample of 15 bolts, we want to find the probability that more than 1 bolt is defective. We should therefore set up a suitable distribution that can assist in this calculation. \\
+In this case, we should use a Binomial distribution.\\
+
+Let X be "the number of defective bolts in some sample" \\
+Therefore, 
+\begin{align}
+ X \sim \text{Bin}(n,0.2) \nn	\\ \nn
+	\end{align}
+
+
+We want to find the probability that, in a sample of 15 bolts, more than 1 is defective. Mathematically, we want to find $P(X>1)$.
+
+Using the Binomial distribution with parameters $n=15$ and $p=0.2$, we get that
+\begin{align}
+		P(X = x) = { 15 \choose x} 0.2^x (1-0.2)^{15-x} \nn
+\end{align}
+
+To solve this question, we can either find the sum of the different probabilities for defective bolts from 2 to 15 OR we can find the probability that the number of defective bolts is $\leq$ 1. This is because of the fact that $P(X>1)=1-P(X\leq1)$.  \\
+
+Using the latter, we see that it is much simpler to calculate $P(X\leq1) $   by noticing that 
+\begin{align}
+P(X \leq 1)  =  P(X=1)+P(X=0) \nn
+\end{align}
+
+Solving this, we get
+\begin{align}
+	P(X=0)&={ 15 \choose 0} 0.2^0 (1-0.2)^{15-0} \nn \\
+	&=1\times1\times0.8^{15} \nn \\
+	&=0.8^{15}\nn \\ \nn \\
+	P(X=1)&={ 15 \choose 1} 0.2^1 (1-0.2)^{15-1} \nn \\
+	&=15 \times 0.2 \times 0.8^{14} \nn \\
+	&=3\times 0.8^{14} \nn
+\end{align}
+
+Evaluating the probability,
+\begin{align}
+	P(X>1)&=1-P(X\leq1) \nn \\
+	&=1-(P(X=0)+P(X=1)) \nn \\
+	&=1-(0.8^{15}+3\times0.8^{14}) \nn \\
+	&=1- 0.167 \nn \\
+	&=0.833. \nn \\ \nn
+	\end{align}
+
+
+%------------------------------------------------------------------------
+% 3 a ii
+%--------------------------------------------------------------------------
+
+\subsubquestion
+We now want to find the smallest value of $n$ that satisfies the following criteria: \\The ratio of the Standard Deviation of X to the Mean of X is less than 0.1.\\
+
+Mathematically, we can express this as
+\begin{align}
+	\frac{\sqrt{Var[X]}}{E[X]}< 0.1.  \\ \nn
+	\end{align}
+
+Using $Var[X]=np(1-p)$, $E[X]=np$ and $p=0.2$, we can simplify this expression to
+\begin{align}
+	\frac{\sqrt{np(1-p)}}{np}<0.1 \implies \sqrt{\frac{np(1-p)}{n^2p^2}}<0.1.  \\ \nn
+	\end{align}
+
+Simplifying this expression yields,
+\begin{align}
+	\sqrt{\frac{1-p}{np}}<0.1.
+	\end{align}
+
+Now, we evaluate the expression and solve for $n$,
+\begin{align}
+		&\implies \sqrt{\frac{0.8}{0.2n}}<0.1 \nn \\
+		&\implies \sqrt{\frac{4}{n}}<0.1 \nn \\
+		&\implies \frac{2}{\sqrt{n}}<0.1 \nn \\
+		&\implies \frac{2}{0.1}<\sqrt{n} \nn \\
+		&\implies 20<\sqrt{n}.  \\ \nn
+	\end{align}
+
+Lastly, we square the expression to give
+\begin{align}
+	400<n. \nn 
+\end{align}
+
+We get that $n$ must be an integer that is greater than $400$. \\
+Therefore, the smallest value of $n$ that satisfies our given criteria is $n=401$. \\
+
+	\end{subsubquestions}  
+\end{subquestions}
