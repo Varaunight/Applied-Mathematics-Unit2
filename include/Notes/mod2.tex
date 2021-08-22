@@ -202,6 +202,12 @@ P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \
 	\end{align}
 \end{note}
 
+\begin{note} \label{mod2:eq:Geometric:Prop}
+	The probability of $X>k$ is given as
+	\begin{equation}
+		P(X>k)=q^k
+	\end{equation}
+\end{note}
 \begin{note} \label{mod2:note:Geometric:Conditions}
 	There are three conditions that describe a geometric distribution
 	\begin{enumerate}[label = (\roman*)]
@@ -217,7 +223,7 @@ P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \
 \begin{defn} \label{mod2:defn:Poisson}
 	A discrete random variable $X$ is said to follow a \textbf{poisson distribution} with parameter $\lambda$, $X \sim \text{Pois}(\lambda)$, if its probability mass function, $P$, is given by
 \begin{equation}
-P(X = x) =\frac{ \lambda ^ x e^\lambda}{x!} \quad x \in (0, 1, 2, ...). \label{mod2:eq:PoissonDist} \ 
+P(X = x) =\frac{ \lambda ^ x e^{-\lambda}}{x!} \quad x \in (0, 1, 2, ...). \label{mod2:eq:PoissonDist} \ 
 \end{equation} 
 \end{defn}
 
@@ -374,18 +380,18 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 	The parameters $\mu$ and $\sigma^2$ represent the expected value (mean) and variance respectively.
 \end{defn}
 
-\begin{note}
+\begin{note} \label{mod2:note:Normal:Properties}
 	Normal random variables have important properties
 	\begin{enumerate}[label = (\roman*)]
 		\item If $X$ is normally distributed with parameters $\mu$ and $\sigma^2$, then $Y = aX + b$ is normally distributed with parameters $a\mu + b$ and $a^2\sigma^2$ respectively. \label{mod2:note:Normal:Property1}
-		\item The previous property implies that if $X$ is normally distributed with parameters $\mu$ and $\sigma^2$, then $Z=(X-\mu)\sigma$ is normally distributed with parameters $0$ and $1$. We call $Z$ a \textit{standard} or \textit{unit} normal random variable. \label{mod2:note:Normal:Property2}
+		\item The previous property implies that if $X$ is normally distributed with parameters $\mu$ and $\sigma^2$, then $Z=\frac{(X-\mu)}{\sigma}$ is normally distributed with parameters $0$ and $1$. We call $Z$ a \textit{standard} or \textit{unit} normal random variable. \label{mod2:note:Normal:Property2}
 	\end{enumerate}
 \end{note}
 
 
 \section{Normal Approximation to the Poisson Distribution} \label{mod2:section:NormalApproxPois}
 
-\begin{defn}
+\begin{defn}\label{mod2:def:NormalApproxToPois:Definition}
 	A poisson distributions $X \sim \text{Pois}(\lambda)$ where $\lambda > 15$, can be approximated by a normal distribution, $X \sim \text{N}(\lambda, \sqrt{\lambda})$.
 \end{defn}
 
