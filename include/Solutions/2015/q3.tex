@@ -30,28 +30,29 @@ It is given that 20\% of bolts manufactured at a factory are defective. Therefor
 	% 3 (a) i
 	%------------------------------------------------------------------------------------
 \subsubquestion	
-In a random sample of 15 bolts, we want to find the probability that more than 1 bolt is defective. We should therefore set up a suitable distribution that can assist in this calculation. \\
-In this case, we should use a Binomial distribution.\\
+
+In a random sample of 15 bolts, we want to find the probability that more than 1 bolt is defective. From Def \ref{mod2:defn:Binomial}, we see that this can be modelled using a Binomial Distribution.\\
 
 Let X be "the number of defective bolts in some sample" \\
 Therefore, 
 \begin{equation}
- X \sim \text{Bin}(n,0.2). 	\\ \nn
-	\end{equation}
+	 X \sim \text{Bin}(n,0.2). 	\\ \nn
+\end{equation}
+
 
 
 We want to find the probability that, in a sample of 15 bolts, more than 1 is defective. Mathematically, we want to find $P(X>1)$.
 
-Using the Binomial distribution with parameters $n=15$ and $p=0.2$, we get that
+Using the Binomial distribution and setting $n=15$, we get that
 \begin{equation}
-		P(X = x) = { 15 \choose x} 0.2^x (1-0.2)^{15-x}. 
+	P(X = x) = { 15 \choose x} 0.2^x (1-0.2)^{15-x} . 
 \end{equation}
 
 To solve this question, we can either find the sum of the different probabilities for defective bolts from 2 to 15 OR we can find the probability that the number of defective bolts is $\leq$ 1. This is because of the fact that $P(X>1)=1-P(X\leq1)$.  \\
 
 Using the latter, we see that it is much simpler to calculate $P(X\leq1) $   by noticing that 
 \begin{equation}
-P(X \leq 1)  =  P(X=1)+P(X=0). 
+	P(X \leq 1)  =  P(X=1)+P(X=0). 
 \end{equation}
 
 Solving this, we get
@@ -71,7 +72,7 @@ Evaluating the probability,
 	&=1-(0.8^{15}+3\times0.8^{14}) \nn \\
 	&=1- 0.167 \nn \\
 	&=0.833. \\ \nn
-	\end{align}
+\end{align}
 
 
 %------------------------------------------------------------------------
@@ -84,17 +85,17 @@ We now want to find the smallest value of $n$ that satisfies the following crite
 Mathematically, we can express this as
 \begin{equation}
 	\frac{\sqrt{Var[X]}}{E[X]}< 0.1.  \\ 
-	\end{equation}
+\end{equation}
 
-Using $Var[X]=np(1-p)$, $E[X]=np$ and $p=0.2$, we can simplify this expression to
+From Equations \ref{mod2:eq:Binomial:Mean} and \ref{mod2:eq:Binomial:Variance}, we can simplify this expression to
 \begin{equation}
 	\frac{\sqrt{np(1-p)}}{np}<0.1 \implies \sqrt{\frac{np(1-p)}{n^2p^2}}<0.1.  \\ 
-	\end{equation}
+\end{equation}
 
 Simplifying this expression yields,
 \begin{equation}
 	\sqrt{\frac{1-p}{np}}<0.1.
-	\end{equation}
+\end{equation}
 
 Now, we evaluate the expression and solve for $n$,
 \begin{align}
@@ -103,7 +104,7 @@ Now, we evaluate the expression and solve for $n$,
 		&\implies \frac{2}{\sqrt{n}}<0.1 \nn \\
 		&\implies \frac{2}{0.1}<\sqrt{n} \nn \\
 		&\implies 20<\sqrt{n}.  \\ \nn
-	\end{align}
+\end{align}
 
 Lastly, we square the expression to give
 \begin{equation}
@@ -113,5 +114,90 @@ Lastly, we square the expression to give
 We get that $n$ must be an integer that is greater than $400$. \\
 Therefore, the smallest value of $n$ that satisfies our given criteria is $n=401$. \\
 
-	\end{subsubquestions}  
+\end{subsubquestions}  
+
+%---------------------
+% 3 b
+%----------------------------------
+
+\subquestion
+
+We are given that $X \sim \text{Bin} (500,0.005)$. In order to find $P(X\leq2)$, we can use a Poisson Approximation to the Binomial Distribution. \\ \\
+From Def \ref{mod2:defn:PoissonApproxBinomial}, we know that certain conditions must hold for a Binomial Distribution to be approximated by a Poisson Distribution. \\ \\
+From the given distribution, we can see that $n=500>50$ and $np=2.5<5$. \\
+
+Therefore, by Def \ref{mod2:defn:PoissonApproxBinomial} again, we see that X can be apporximated as $X \sim \text{Pois} (2.5)$.\\
+
+Now, we have $X \sim \text{Pois} (2.5)$ and we want to find $P(X\leq2)$. \\
+
+We can notice that, for a Poisson Distribution, 
+\begin{align}
+	P(X \leq 2) = P(0) + P(1) + P(2). \\ \nn
+\end{align}
+
+By using Eq. \ref{mod2:eq:PoissonDist}, we can evaluate that, 
+
+\begin{align}
+	P(X = 0) & =\frac{ 2.5 ^ 0 \times e^{-2.5}}{0!} \nn \\
+  & =\frac{1 \times e^{-2.5}}{1} \nn \\
+  & =e^{-2.5} \nn \\
+  & = 0.082.
+\end{align}
+
+\begin{align}
+	P(X = 1) & =\frac{ 2.5 ^ 1 \times e^{-2.5}}{1!} \nn \\
+	& =\frac{2.5 \times e^{-2.5}}{1} \nn \\
+	& =2.5 \times e^{-2.5} \nn \\
+	& = 0.205. 
+\end{align}
+
+\begin{align}
+	P(X = 2) & =\frac{ 2.5 ^ 2 \times e^{-2.5}}{2!} \nn \\
+	& =\frac{2.5^2 \times e^{-2.5}}{2} \nn \\
+	& = 0.257. \\ \nn
+\end{align}
+	
+	Finally, solving for $P(X \leq 2)$, we get 
+	
+\begin{align}
+		P(X \leq 2) & = 0.082 + 0.205 + 0.257 \nn \\
+		& = 0.544 \\ \nn
+\end{align}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 3 c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subquestion
+
+We are given that $X \sim \text{Pois} (20)$. In order to find, $P(X\leq 25)$, we must use a Normal Approximation to the Poisson Distribution as seen in Def \ref{mod2:def:NormalApproxToPois:Definition}.\\
+
+Therefore, by Note \ref{mod2:note:NormalApproxtoPois:Continuity} and using a continuity correction, we will find the probabilty that $P(X \leq 25.5)$.
+
+Standardizing using Property \ref{mod2:note:Normal:Property2} in Note \ref{mod2:note:Normal:Properties}, we evaluate the probability as follows,
+
+\begin{align}
+	P(X \leq 25.5) &= P(Z< \frac{25.5-20}{\sqrt{20}}) \nn \\
+	&=P(Z<1.23) \nn \\ 
+	&=0.891 \\ \nn 
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% 3 d %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subquestion
+
+We are given that $X \sim \text{Geo} (0.3)$. \\
+To find $P(X<4)$, we can either sum all the individual probabilites from $X=1$ to $3$ OR we can find $P(X>3)$ using the property of \ref{mod2:eq:Geometric:Prop}. This is because of the fact that $P(X<4)=1-P(X>3)$.
+
+Evaluating this, we get,
+\begin{align}
+	P(X<4) &= 1-P(X>3) \nn \\
+	&=1-0.7^3 \nn \\
+	&=1-0.343 \nn \\
+	&=0.657 \\ \nn		
+\end{align}
+
+
 \end{subquestions}
