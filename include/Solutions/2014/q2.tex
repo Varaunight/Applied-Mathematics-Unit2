@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -8,10 +8,98 @@
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2014
+%     Module: 1
+%     Question: 2
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% 2 a %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subquestion
+\begin{subsubquestions}
+	
+\subsubquestion
+See Fig. \ref{2014:q2:fig:ActNet}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2014/figures/ActNet}
+		\caption{\label{2014:q2:fig:ActNet} Showing the Activity Network of the operation.}
+	\end{center}
+\end{figure}
+
+\subsubquestion
+
+ See Table \ref{2014:tab:Act}. 
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Activity&Earliest Start Time&Latest Start Time&Float Time\\
+		\hline
+		A&0&0&0 \\
+		B&6&16&10 \\
+		C&6&13&7 \\
+		D&6&6&0 \\
+		E&9&9&0 \\
+		F&12&12&0 \\
+		G&12&12&0 \\
+		H&21&21&0 \\
+		\hline
+		
+	\end{tabular}
+\caption{\label{2014:tab:Act} Showing the completed table.}
+\end{table}
+
+\subsubquestion
+
+Using Def. \ref{mod1:defn:CritPath} and looking at Fig. \ref{2014:q2:fig:ActNet} and Table \ref{2014:tab:Act}, we can see that the two Critical Paths of this Activity Network are:
+
+\begin{align}
+	\text{Start} \rightarrow A \rightarrow D \rightarrow E \rightarrow F \rightarrow H \rightarrow \text{End} \nn \\
+	\text{Start} \rightarrow A \rightarrow D \rightarrow E \rightarrow G \rightarrow H \rightarrow \text{End} \nn \\ \nn
+\end{align}
+	
+\end{subsubquestions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 2 b %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subquestion
+\begin{subsubquestions}
+	
+\subsubquestion
+
+The Boolean expression for the circuit is 
+
+\begin{align}
+	p \wedge (p \: \vee \sim q) \label{2014:q2:eqn:Bool}
+\end{align}
+
+\subsubquestion
+
+See Table \ref{2014:tab:TrthTab}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		p&q& $\sim$ q & p $\vee$ $\sim$ q& p $\wedge$ ( p $\vee$ $\sim$ q) \\
+		\hline
+		0&0&1&1&0 \\
+		0&1&0&0&0 \\
+		1&0&1&1&1 \\
+		1&1&0&1&1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2014:tab:TrthTab} Showing the Truth values for the Boolean Expression \ref{2014:q2:eqn:Bool}.}
+\end{table}
+
+\end{subsubquestions}
+
+\end{subquestions}
