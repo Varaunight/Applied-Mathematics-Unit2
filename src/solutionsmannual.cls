@@ -40,6 +40,7 @@
 \usepackage{epstopdf}
 \usepackage{epsfig}
 \usepackage{caption}
+\usepackage{circuitikz}
 
 % Equation numbering 
 \numberwithin{equation}{section}
