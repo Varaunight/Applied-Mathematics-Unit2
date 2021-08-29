@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------
 % Author(s):
-%
 % Varaun Ramgoolie
+% 
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -28,7 +28,6 @@
 		The Hungarian algorithm is shown here.
 		
 		\begin{table}[!hbt]
-			% \centering
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular}{cccc}
@@ -65,17 +64,17 @@
 				\caption*{Matrix after Reducing Columns} 
 			\end{minipage}
 			
-			\vspace{20pt} % when you need to move to a new line give it some vertical space
+			\vspace{20pt} 
 			
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular} {cccccc}
 					&   &        & \hspace{-3.25mm} \hvs{v1} &   &          \\ 
-					\hhs{h1} & 0 &      0 &                         1 & 4 & \hhe{h1} \\
-					\hhs{h2} & 5 &      1 &                         0 & 0 & \hhe{h2}  \\
+	       \hhs{h1} & 0 &      0 &                         1 & 4 & \hhe[blue]{h1} \\
+           \hhs{h2} & 5 &      1 &                         0 & 0 & \hhe[blue]{h2} \\
 					& 1 &      1 &                         0 & 5 &          \\
 					& 3 &      3 &                         0 & 3 &          \\
-					&   &        & \hspace{-3.25mm} \hve{v1} &   &          \\
+					&   &        & \hspace{-3.25mm} \hve[blue]{v1} &   &    \\
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
 				\caption*{Shading 0's using the least \\ \centering number of lines}
@@ -84,12 +83,12 @@
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular}{cccc}
-					&   &   &   \\
+					  &   &   &   \\
 					0 & 0 & 3 & 4 \\
 					5 & 1 & 2 & 0 \\
 					0 & 0 & 0 & 5 \\
 					2 & 2 & 0 & 3 \\
-					&   &   &   \\	 
+				  	  &   &   &   \\	 
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
 				\caption*{Applying Step \ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
@@ -98,12 +97,12 @@
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular} {cccccc}
-					&   &        & \hspace{-3.25mm} \hvs{v3} & \hspace{-3.25mm} \hvs{v4}   &          \\ 
-					\hhs{h3} & 0 &      0 &                         3 &                          4 & \hhe{h3} \\
-					& 5 &      1 &                         2 &                          0 &          \\ 
-					\hhs{h4} & 0 &      0 &                         0 &                          5 & \hhe{h4} \\
-					& 2 &      2 &                         0 &                          3 &          \\ 
-					&   &        & \hspace{-3.25mm} \hve{v3} & \hspace{-3.25mm} \hve{v4}    &          \\
+					&   &        & \hspace{-3.25mm} \hvs{v3}      & \hspace{-3.25mm} \hvs{v4}       &               \\ 
+		   \hhs{h3} & 0 &      0 &                         3      &                          4      & \hhe[red]{h3} \\
+					& 5 &      1 &                         2      &                          0      &               \\ 
+		   \hhs{h4} & 0 &      0 &                         0      &                          5      & \hhe[red]{h4} \\
+					& 2 &      2 &                         0      &                          3      &               \\ 
+					&   &        & \hspace{-3.25mm} \hve[red]{v3} & \hspace{-3.25mm} \hve[red]{v4}  &               \\
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
 				\caption*{Shading 0's using the least \\ \centering number of lines}
@@ -116,22 +115,24 @@
 			\caption{\label{2015:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
 		\end{table}	
 		
-		From \ref{2015:q2:tab:HungAlgo}, we can see that the possible matchings for the teachers are as follows:
+		
+		
+		From \rtab{2015:q2:tab:HungAlgo}, we can see that the possible matchings for the teachers are as follows:
 		
 		\begin{align}
-			&\text{Mr Jones} \rightarrow \text{Class 1, Class 2}, \nn \\
-			&\text{Mr James} \rightarrow \text{Class 4}, \nn \\
-			&\text{Mr Wright} \rightarrow \text{Class 1, Class 2, Class 3}, \nn \\
-			&\text{Mr Small} \rightarrow \text{Class 3}. \nn \\ \nn
+			&\text{Mr Jones} \rightarrow \text{Class 1, Class 2}\,, \nn \\
+			&\text{Mr James} \rightarrow \text{Class 4}\,, \nn \\
+			&\text{Mr Wright} \rightarrow \text{Class 1, Class 2, Class 3}\,, \nn \\
+			&\text{Mr Small} \rightarrow \text{Class 3}\,. 
 		\end{align}
 		
-		Therefore, this means that the matchings to minimize the total time are,
+		Therefore, the matchings to minimize the total time are,
 		
 		\begin{align}
-			&\text{Mr Jones} \rightarrow \text{Class 1 or Class 2}, \nn \\
-			&\text{Mr James} \rightarrow \text{Class 4}, \nn \\
-			&\text{Mr Wright} \rightarrow \text{Class 1 or Class 2}, \nn \\
-			&\text{Mr Small} \rightarrow \text{Class 3}.  \\ \nn
+			&\text{Mr Jones} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
+			&\text{Mr James} \rightarrow \text{Class 4}\,, \nn \\
+			&\text{Mr Wright} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
+			&\text{Mr Small} \rightarrow \text{Class 3}\,.  
 		\end{align}
 		
 		\subsubquestion
@@ -139,13 +140,13 @@
 		The total time spent in the classroom by the four teachers can be found by summing the individual times of the teachers (based on the result of the Hungarian Algorithm). Evaluating this, we get
 		
 		\begin{align}
-			\text{Minimum time} = 30+30+31+29 = 120 \text{minutes} \\ \nn 
+			\text{Minimum time} = 30+30+31+29 = 120 \, \text{minutes}\,. \\ \nn 
 		\end{align}	
 	\end{subsubquestions}
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%% 2 b %%%%%%%%%%%%%%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%--------------------------------------------------------
+	% 2 b
+	%--------------------------------------------------------
 	
 	\subquestion
 	
@@ -166,11 +167,11 @@
 		\caption{\label{2015:q2:tab:TrthTab} Showing the truth values of the expression.}
 	\end{table}        
 	
-	Looking at Table \ref{2015:q2:tab:TrthTab} and using Def. \ref{mod1:defn:Tautology}, we can see that the expression, $(p \: \land \: q) \implies p$, is a \textbf{tautology}.  \\
+	Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we can see that the expression, $(p \: \land \: q) \implies p$, is a \textbf{tautology}.  \\
 	
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%%%%%%%%%% 2 c %%%%%%%%%%%%%%%%%%
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%------------------------------------------------------------------
+	% 2 c
+	%------------------------------------------------------------------
 	
 	\subquestion
 	
@@ -181,7 +182,7 @@
 		The Boolean expression for the circuit is,
 		
 		\begin{align}
-			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b)).\\ \nn
+			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))\,.
 		\end{align}	
 		
 		\subsubquestion
@@ -189,19 +190,40 @@
 		Using Laws \ref{mod1:section:BooleanAlgebraLaws}, we can simplify this expression as follows,
 		
 		\begin{align}
-			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b)) & \equiv a \land ((b \lor a) \land (b \lor b)) \land ((a \lor \sim a) \land (a \lor b))...\text{using \ref{mod1:law:Distributive}} \nn \\ 
-			& \equiv a \land ((b \lor a) \land (b \lor b)) \land (T \land  (a \lor b))........\text{using \ref{mod1:law:Complement}},  \nn \\
-			& \equiv a \land ((b \lor a) \land (b \lor b)) \land (a \lor b)........\text{using \ref{mod1:law:Identity}},  \nn \\
-			& \equiv a \land ((b \lor a) \land b) \land (a \lor b)........\text{using \ref{mod1:law:Idempotent}},  \nn \\	
-			& \equiv a \land (b \land (b \lor a)) \land (a \lor b)........\text{using \ref{mod1:law:Commutative}}, \nn \\ 
-			& \equiv a \land b \land (a \lor b)........\text{using \ref{mod1:law:Absorptive}}, \nn \\
-			& \equiv a \land (a \lor b) \land b........\text{using \ref{mod1:law:Commutative}}, \nn \\
-			& \equiv (a \land (a \lor b)) \land b........\text{using \ref{mod1:law:Associative}}, \nn \\
-			& \equiv a \land b........\text{using \ref{mod1:law:Absorptive}}. \\ \nn
+			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))
+			& \equiv a \land (\underline{b \lor (a \land b)}) \land (\underline{a \lor (\sim a \land b)})\,, \nn \\
+	...\text{using \ref{mod1:law:Distributive}}
+			& \equiv a \land (\mathbf{(b \lor a) \land (b \lor b)}) \land (\underline{\mathbf{(a \lor \sim a)}} \mathbf{\land (a \lor b)})\,, \nn \\
+	...\text{using \ref{mod1:law:Complement}} 
+			& \equiv a \land ((b \lor a) \land (b \lor b)) \land (\underline{\mathbf{T} \land  (a \lor b)})\,,  \nn \\
+	...\text{using \ref{mod1:law:Identity}}	
+			& \equiv a \land ((b \lor a) \land \underline{(b \lor b)}) \land \mathbf{(a \lor b)}\,,  \nn \\
+	...\text{using \ref{mod1:law:Idempotent}}
+			& \equiv a \land (\underline{(b \lor a) \land \mathbf{b}}) \land (a \lor b)\,,  \nn \\	
+	...\text{using \ref{mod1:law:Commutative}}
+			& \equiv a \land (\mathbf{\underline{b \land (b \lor a)}}) \land (a \lor b)\,, \nn \\ 
+	...\text{using \ref{mod1:law:Absorptive}}
+			& \equiv a \land \underline{\mathbf{b} \land (a \lor b)}\,, \nn \\
+	...\text{using \ref{mod1:law:Commutative}}
+			& \equiv \underline{a \land \mathbf{(a \lor b)}} \land \mathbf{b}\,, \nn \\
+	...\text{using \ref{mod1:law:Associative}}
+			& \equiv \mathbf{(\underline{a \land (a \lor b)})} \land b\,, \nn \\
+	...\text{using \ref{mod1:law:Absorptive}}
+			& \equiv \mathbf{a} \land b\,. \\ \nn
 		\end{align}
 		
-		See Fig. corresponding circuit that represents $a \land b$.
+The expression, $a \land b$, can be expressed as a switching circuit as follows, \\
 		
+		\centering
+		\begin{circuitikz}
+			\draw [thick] (1,0) to (2,0);
+			\draw (2,0) to [nos](3,0);
+			\path (2,0) -- (3,0) node[pos=0.5, below]{$a$};
+			\draw [thick] (3,0) to (5,0);
+			\draw (5,0) to [nos](6,0);
+			\path (5,0) -- (6,0) node[pos=0.5, below]{$b$};
+			\draw [thick] (6,0) to (7,0);
+		\end{circuitikz}
 		
 		
 	\end{subsubquestions}
