@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -8,10 +8,196 @@
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2013
+%     Module: 1
+%     Question: 2
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+
+%---------------------------------------------------------
+% 2 a 
+%---------------------------------------------------------
+
+\subquestion
+
+From \rfig{2013:q2:fig:ActNet},
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2013/figures/2013q2CriticalPath}
+		\caption{\label{2013:q2:fig:ActNet} Showing the complete activity network.}
+	\end{center}
+\end{figure}
 
 
+
+%----------------------------------------------------------
+% Lots of subsubquestions
+%----------------------------------------------------------
+
+\begin{subsubquestions}
+
+\subsubquestion 
+
+The earliest start time of $S$ is 4 days. The earliest start time for $X$ is 7 days.
+
+\subsubquestion
+
+The minimum completion time of the project if 13 days.
+
+\subsubquestion
+
+The latest start time of $Q$ is 0 days. The latest start time of $X$ is 7 days.
+
+\subsubquestion
+
+From \rdef{mod1:defn:CritPath}, there are three critical paths for the project. They are,
+
+\begin{align}
+	\text{Start} \rightarrow Q \rightarrow S \rightarrow X \rightarrow \text{End}\,, \nn \\
+	\text{Start} \rightarrow Q \rightarrow T \rightarrow X \rightarrow \text{End}\,, \nn \\
+	\text{Start} \rightarrow R \rightarrow T \rightarrow X \rightarrow \text{End}\,.
+\end{align}
+
+\subsubquestion
+
+The float time of activity $T$ is 0 days, using \rdef{mod1:defn:FloatTime}.
+
+\end{subsubquestions}
+
+See \rfig{2013:q2:fig:ActNet} to see the full activity network with the relevant start and end times.
+
+%--------------------------------------------------------
+% 2 b 
+%--------------------------------------------------------
+
+\subquestion
+
+From \rdef{mod1:defn:Degree}, we see that the degree of $A$ is 4 and the degree of $C$ is 2.
+
+%--------------------------------------------------------
+% 2 c 
+%--------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+
+\subsubquestion 
+
+See \rtab{2013:q2:tab:HungAlgo} for the Hungarian Algorithm.
+
+\begin{table}[!hbt]
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+			6 & 5 & 7 & 9 \\
+			2 & 6 & 5 & 8 \\
+			10 & 5 & 1 & 9 \\
+			11 & 6 & 3 & 8 \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Matrix From question}
+	\end{minipage}
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+			1 & 0 & 2 & 4 \\
+			0 & 4 & 3 & 6 \\
+			9 & 4 & 0 & 8 \\
+			8 & 3 & 0 & 5 \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Matrix after Reducing Rows}
+	\end{minipage}
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+			1 & 0 & 2 & 0 \\
+			0 & 4 & 3 & 2 \\
+			9 & 4 & 0 & 4 \\
+			8 & 3 & 0 & 1 \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Matrix after Reducing Columns} 
+	\end{minipage}
+	
+	\vspace{20pt} 
+	
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular} {cccccc}
+			&   &        & \hspace{-3.25mm} \hvs{v1}       &   &                \\ 
+   \hhs{h1} & 1 &      0 &                               2 & 0 & \hhe[blue]{h1} \\
+   \hhs{h2} & 0 &      4 &                               3 & 2 & \hhe[blue]{h2} \\
+			& 9 &      4 &                               0 & 4 &                \\
+			& 8 &      3 &                               0 & 1 &                \\
+			&   &        & \hspace{-3.25mm} \hve[blue]{v1} &   &                \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
+	\end{minipage}
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+		      &   &   &   \\
+	    	1 & 0 & 4 & 0 \\
+			0 & 4 & 5 & 2 \\
+			8 & 3 & 0 & 3 \\
+			7 & 2 & 0 & 0 \\
+		      &   &   &   \\	 
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Applying Step ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} % The reference here is a placeholder until that note is put in%
+	\end{minipage}
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular} {cccccc}
+			&   &        & \hspace{-3.25mm} \hvs{v3}      & \hspace{-3.25mm} \hvs{v4}       &               \\ 
+   \hhs{h3} & 1 &      0 &                         4      &                          0      & \hhe[red]{h3} \\
+   \hhs{h4}	& 0 &      4 &                         5      &                          2      & \hhe[red]{h4} \\ 
+            & 8 &      3 &                         0      &                          3      &               \\
+			& 7 &      2 &                         0      &                          0      &               \\ 
+			&   &        & \hspace{-3.25mm} \hve[red]{v3} & \hspace{-3.25mm} \hve[red]{v4}  &               \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
+	\end{minipage}
+		
+	\caption{\label{2013:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
+\end{table}	
+
+From \rtab{2013:q2:tab:HungAlgo}, the possible pairings of warehouses and supermarkets are as follows,
+
+\begin{align}
+	& W_1 \rightarrow S_2 \,, S_4 \,, \nn \\
+	& W_2 \rightarrow S_1 \,, \nn \\
+	& W_3 \rightarrow S_3 \,, \nn \\
+	& W_4 \rightarrow S_3 \,, S_4 \,.
+\end{align}
+
+Therefore, the optimum pairings to minimize the cost of delivery are,
+
+\begin{align}
+	& W_1 \rightarrow S_2\,, \nn \\
+	& W_2 \rightarrow S_1\,, \nn \\
+	& W_3 \rightarrow S_3\,, \nn \\
+	& W_4 \rightarrow S_4\,.
+\end{align}
+
+\subsubquestion
+
+The total cost for each item at the 4 warehouses is,
+
+\begin{align}
+	\text{Total cost} = 5+2+1+8=16 \, \text{dollars} \,.
+\end{align}
+
+\end{subsubquestions}
+
+\end{subquestions}

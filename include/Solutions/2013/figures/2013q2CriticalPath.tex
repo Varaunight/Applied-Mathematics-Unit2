@@ -1,0 +1,57 @@
+%------------------------------------------------------------------------------
+% Author(s):
+%  Varaun Ramgoolie
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Activity Network for 2013 q2
+%------------------------------------------------------------------------------
+
+\documentclass[crop,tikz]{standalone}
+\usepackage{../../../../src/tikzappmath}
+\usetikzlibrary{scopes}
+
+\begin{document}
+	
+	\def \pradius{10cm} % pulley radius
+	\def \scale{.8cm} % adjust this parameter to change the spread
+	
+	\begin{tikzpicture}
+		
+		\node[cnode] at (0,0) (n1) {Start};
+		\node[cnode] at (3*\scale,0) (n2) {$Q (0,0)$};
+		\node[cnode] at (3*\scale,4*\scale) (n3) {$P (0,1)$};
+		\node[cnode] at (3*\scale,-4*\scale) (n4) {$R (0,0)$};
+		\node[cnode] at (6*\scale,2*\scale) (n5) {$S (4,4)$};
+		\node[cnode] at (6*\scale,-2*\scale) (n6) {$T (5,5)$};
+		\node[cnode] at (9*\scale,0) (n7) {$X (7,7)$};
+		\node[cnode] at (9*\scale,4*\scale) (n9) {$W (7,8)$};
+		\node[cnode] at (9*\scale,-4*\scale) (n10) {$U (5,7)$};
+		\node[cnode] at (15*\scale,0*\scale) (n11) {End (13,13)};
+		
+		% Now connect the nodes with arrows and labels
+		\connectcnode{n1}{n2}{0}{}
+		\connectcnode{n1}{n3}{0}{}
+		\connectcnode{n1}{n4}{0}{}
+		\connectcnode{n2}{n5}{4}{}
+		\connectcnode{n2}{n6}{4}{}
+		\connectcnode{n5}{n7}{3}{}
+		\connectcnode{n6}{n7}{2}{}
+		\connectcnode{n7}{n11}{6}{}
+		\connectcnode{n3}{n9}{7}{}
+		\connectcnode{n4}{n10}{5}{}
+		\connectcnode{n9}{n11}{5}{}
+		\connectcnode{n10}{n11}{6}{}
+		\connectcnode{n5}{n9}{3}{}
+		\connectcnode{n4}{n6}{5}{}
+
+		
+
+	\end{tikzpicture}
+	
+\end{document}
