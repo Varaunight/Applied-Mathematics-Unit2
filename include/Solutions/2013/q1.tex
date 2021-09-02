@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -8,10 +8,160 @@
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2013
+%     Module: 1
+%     Question: 1 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
 
+%----------------------------------------------------------------------------
+% 1 a 
+%----------------------------------------------------------------------------
+
+\subquestion
+
+See \rtab{2013:q1:tab:TruthTab1}.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		p & q & p $\land$ q & p $\lor$ q & $\sim$ (p $\lor$ q) & (p $\land$ q) $\land$ $\sim$ (p $\lor$ q) \\
+		\hline
+		0 & 0 & 0 & 0 & 1 & 0 \\
+		0 & 1 & 0 & 1 & 0 & 0 \\
+		1 & 0 & 0 & 1 & 0 & 0 \\
+		1 & 1 & 1 & 1 & 0 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2013:q1:tab:TruthTab1} Showing the truth table of $(p \land q) \land \sim (p \lor q)$\,.}
+\end{table}
+
+%------------------------------------------------------------------------------
+% 1 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+From \rdef{mod1:defn:Contradiction}, we see that $(p \land q)\, \land \sim (p \lor q)$ is a contradiction.
+
+%------------------------------------------------------------------------------
+% 1 c
+%------------------------------------------------------------------------------
+
+\subquestion
+
+Using \rdef{mod1:law:DeMorgan}, we can see that,
+
+\begin{equation}
+	\sim (p \lor q) \equiv \, \sim p \, \land \sim q \,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 1 d
+%------------------------------------------------------------------------------
+
+\subquestion
+
+Let $p$="It is sunny" and let $q$="It is hot". \\ 
+Therefore, "It is not true that it is hot and sunny" $\equiv$ $\sim (p \land q) \,.$ \\
+Using \rdef{mod1:law:DeMorgan},
+
+\begin{equation}
+	\sim (p \land q) \equiv \, \sim p \, \lor \sim q \,.
+\end{equation}
+
+Thus, the equivalent statement of 	$(\sim p \, \lor \sim q)$ is "It is not hot or it is not sunny."
+
+%------------------------------------------------------------------------------
+% 1 e
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	 
+\subsubquestion
+
+The switching circuit is shown.
+
+\begin{circuitikz}
+		
+	\draw (0,0) to[normal open switch, *-*](3,0);
+	\path (0,0) -- (3,0) node[pos=0.5,below]{p};
+	
+	\draw (3,0) to[normal open switch, *-*](6,0);
+	\path (3,0) -- (6,0) node[pos=0.5,below]{q};
+	
+	\draw [color=black, thin] (6,0) -- (6,1);
+	\draw [color=black, thin] (6,0) -- (6,-1);
+	
+	\draw (6,1) to[normal open switch, *-*](9,1);
+	\path (6,1) -- (9,1) node[pos=0.5, below]{p};
+	
+	\draw (6,-1) to[normal open switch, *-*](9,-1);
+	\path (6,-1) -- (9,-1) node[pos=0.5, below]{r};
+	
+	\draw [color=black, thin] (6,1) -- (6,0);
+    \draw [color=black, thin] (6,-1) -- (6,0);	
+    
+  	\draw [color=black, thin] (9,0) -- (9,1);
+    \draw [color=black, thin] (9,0) -- (9,-1);
+
+	\draw [color=black, thin] (9,0) -- (11,0);
+	\draw [color=black, thin] (11,0) -- (11,1);
+	\draw [color=black, thin] (11,0) -- (11,-1);
+		
+	\draw (11,0) to[normal open switch, *-*](14,0);
+	\draw (11,1) to[normal open switch, *-*](14,1);
+	\draw (11,-1) to[normal open switch, *-*](12.5,-1);
+	\draw (12.5,-1) to[normal open switch, *-*](14,-1);
+	
+	\path (11,0) -- (14,0) node[pos=0.5,below]{s};
+	\path (11,1) -- (14,1) node[pos=0.5,below]{q};
+	\path (11,-1) -- (12.5,-1) node[pos=0.5,below]{r};
+	\path (12.5,-1) -- (14,-1) node[pos=0.5,below]{p};
+	
+	\draw [color=black, thin] (14,1) -- (14,0);
+	\draw [color=black, thin] (14,-1) -- (14,0);
+	
+	\draw [color=black, thin] (14,0) -- (15,0);	
+\end{circuitikz}
+	
+\subsubquestion
+
+Using the laws from ~\ref{mod1:section:BooleanAlgebraLaws}, we can simplify the expression as follows,
+
+\begin{align}
+	p \land q \land (p \lor r) \land (q \lor (r \land p) \lor s)
+	& \equiv 	p \land \underline{q \land (p \lor r)} \land (q \lor (r \land p) \lor s)\,, \nn \\
+	...\text{using ~\ref{mod1:law:Commutative}}
+	& \equiv 	\underline{p \land (p \lor r)} \land q \land (q \lor (r \land p) \lor s)\,, \nn \\
+	...\text{using ~\ref{mod1:law:Absorptive}}
+	& \equiv 	p \land q \land (\underline{q \lor (r \land p) \lor s})\,, \nn \\
+	...\text{using ~\ref{mod1:law:Associative}}
+	& \equiv 	p \land \underline{q \land (q \lor ((r \land p) \lor s))}\,, \nn \\
+	...\text{using ~\ref{mod1:law:Absorptive}}
+	& \equiv 	p \land q \,. 
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 1 f
+%------------------------------------------------------------------------------
+
+\subquestion
+
+See \rfig{2013:q1:fig:LogicGates}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2013/figures/2013q1LogicGate}
+		\caption{\label{2013:q1:fig:LogicGates} Showing the logic gate equivalent of $\sim((p \land q) \lor r)$\,.}
+	\end{center}
+\end{figure}
+
+\end{subquestions}
 
