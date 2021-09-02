@@ -1,0 +1,56 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Varaun Ramgoolie
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%        Logic gate diagram for 2012 q2 e
+%------------------------------------------------------------------------------
+
+\documentclass[crop,tikz]{standalone}
+
+\usepackage{../../../../src/tikzappmath}
+
+\usetikzlibrary{scopes}
+\usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
+
+
+\begin{document}
+	\begin{tikzpicture}
+	
+		\def\xspace{3} % set the horizonal distance between gates
+		\def\yspace{2} % set the vertical distance between gates
+		\def\shift{0.5cm} % sets some spacing to draw connecting lines
+		
+		% Drawing gates
+		\node[not gate US,gatestyle] at (0,-2) (x1){};
+		\node[not gate US,gatestyle] at (0,-4) (x2){};
+		\node[and gate US,gatestyle] at (7,0) (x3) {};
+		\node[or gate US,gatestyle] at (3,-3) (x4) {};
+		
+		% Connecting internals of gates
+		\draw (x1.output) -| ([xshift = -\shift]x4.input 1) --++(\shift,0);
+		\draw (x2.output) -| ([xshift = -\shift]x4.input 2) --++(\shift,0);
+		\draw (x4.output) -| ([xshift = -\shift]x3.input 2) --++(\shift,0);
+		
+		% Setting the input names 
+		\draw (x1.input) -|++ (-\shift,\shift) --++(-\shift,0) node[left,]{${p}$};
+		\draw (x2.input) -|++ (-\shift,\shift) --++(-\shift,0) node[left,]{${q}$};
+		\draw (x3.input 1) -|++ (-\shift,\shift) --++(-\shift,0) node[left,]{${p}$};
+		
+		% End piece
+		\draw (x3.output) --++ (3*\shift,0);
+		
+		% Naming Gate Outputs
+		\node[above] at ($(x1.output) + (\shift,0)$) (l1) {\gatetext${\sim p}$};
+		\node[above] at ($(x2.output) + (\shift,0)$) (l1) {\gatetext${\sim q}$};
+		\node[above] at ($(x3.output) + (2.5*\shift,0)$) (l1) {\gatetext${p \land (\sim p \, \lor \sim q)}$};
+		\node[above] at ($(x4.output) + (\shift,0)$) (l1) {\gatetext${\sim p \, \lor \sim q}$};
+		
+	\end{tikzpicture}
+	
+\end{document}
