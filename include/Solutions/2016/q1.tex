@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -8,10 +8,188 @@
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2016
+%     Module: 1
+%     Question: 1
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
 
+%------------------------------------------------------------------------------
+% 1 a -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rtab{2016:q1:tab:TruthTab1}, we can see that the truth values for $(p ~\land \sim q) \lor (\sim p \land q)$ and $(p \lor q) \land (\sim p ~\lor \sim q)$ are the same.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		p & q & $\sim$ p & $\sim$ q & (p $\land$ $\sim$ q) & ($\sim$ p $\land$ q) & (p $\land$ $\sim$ q) $\lor$ ($\sim$ p $\land$ q) & (p $\lor$ q) & ($\sim$ p $\lor$ $\sim$ q) & (p $\lor$ q) $\land$ ($\sim$ p $\lor$ $\sim$ q) \\
+		\hline
+		0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 0  \\
+		0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1  \\ 
+		1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1  \\
+		1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0  \\
+		\hline
+	\end{tabular}
+	\caption{\label{2016:q1:tab:TruthTab1} Showing the relevant truth values.}
+\end{table}
+
+\subsubquestion
+
+Using the laws of Boolean algebra, we can see that,
+
+\begin{align}
+	(p ~\land \sim q) \lor (\sim p \land q) 
+	& \equiv ((p ~\land \sim q) \lor \sim p) \land ((p ~\land \sim q) \lor q)\,, \nn \\
+	& \equiv (\sim p \lor (p ~\land \sim q)) \land (q \lor (p ~\land \sim q))\,, \nn \\
+	& \equiv ((\sim p \lor p) \land (\sim p ~\lor \sim q)) \land ((q \lor p) \land (q ~\lor \sim q))\,, \nn \\
+	& \equiv (T \land (\sim p ~\lor \sim q)) \land ((q \lor p) \land T)\,, \nn \\
+	& \equiv (\sim p ~\lor \sim q) \land (q \lor p)\,, \nn \\
+	& \equiv (\sim p ~\lor \sim q) \land (p \lor q)\,, \nn \\
+	& \equiv (p \lor q) \land (\sim p ~\lor \sim q)\,. 
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 1 b -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+See the switching circuit for $(p \land \sim q) \lor (\sim p \land q)$ below.
+
+\begin{circuitikz}
+	\draw [color=black, thin] (0,0) -- (2,0);
+	\draw [color=black, thin] (2,0) -- (2,2);
+	\draw [color=black, thin] (2,0) -- (2,-2);
+	
+	\draw (2,2) to[normal open switch, *-*](6,2);
+	\draw (6,2) to[normal open switch, *-*](10,2);
+	
+	\path (2,2) -- (6,2) node[pos=0.5,below]{$p$};
+	\path (6,2) -- (10,2) node[pos=0.5,below]{$\sim q$};
+	
+	\draw (2,-2) to[normal open switch, *-*](6,-2);
+	\draw (6,-2) to[normal open switch, *-*](10,-2);
+	
+	\path (2,-2) -- (6,-2) node[pos=0.5,below]{$\sim p$};
+	\path (6,-2) -- (10,-2) node[pos=0.5,below]{$q$};
+
+	\draw [color=black, thin] (10,2) -- (10,0);
+	\draw [color=black, thin] (10,-2) -- (10,0);
+	\draw [color=black, thin] (10,0) -- (12,0);
+	
+\end{circuitikz}
+
+\subsubquestion
+
+See the switching circuit for $(p \lor q) \land (\sim p \lor \sim q)$ below.
+
+\begin{circuitikz}
+	\draw [color=black, thin] (0,0) -- (2,0);
+	\draw [color=black, thin] (2,0) -- (2,2);
+	\draw [color=black, thin] (2,0) -- (2,-2);
+	
+	\draw (2,2) to[normal open switch, *-*](6,2);
+	\draw (2,-2) to[normal open switch, *-*](6,-2);
+	
+	\path (2,2) -- (6,2) node[pos=0.5,below]{$p$};
+	\path (2,-2) -- (6,-2) node[pos=0.5,below]{$q$};
+	
+	\draw [color=black, thin] (6,2) -- (6,0);
+	\draw [color=black, thin] (6,-2) -- (6,0);
+	
+	\draw [color=black, thin] (6,0) -- (8,0);
+	\draw [color=black, thin] (8,0) -- (8,2);
+	\draw [color=black, thin] (8,0) -- (8,-2);
+	
+	\draw (8,2) to[normal open switch, *-*](12,2);
+	\draw (8,-2) to[normal open switch, *-*](12,-2);
+	
+	\path (8,2) -- (12,2) node[pos=0.5,below]{$\sim p$};
+	\path (8,-2) -- (12,-2) node[pos=0.5,below]{$\sim q$};
+	
+	\draw [color=black, thin] (12,2) -- (12,0);
+	\draw [color=black, thin] (12,-2) -- (12,0);
+	\draw [color=black, thin] (12,0) -- (14,0);
+	
+\end{circuitikz}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 1 c -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The Boolean expression for $s$ is,
+
+\begin{equation}
+	(p ~\land \sim q) \lor (p ~\land \sim r)\,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 1 d -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+The Boolean expression is,
+
+\begin{equation}
+	p \implies (q \lor s)\,.
+\end{equation}
+
+\subsubquestion
+
+The Boolean expression is,
+
+\begin{equation}
+	\sim s \implies (r ~\land \sim p)\,.
+\end{equation}
+
+\subsubquestion
+
+From \rtab{2016:q1:tab:TruthTab2} and using \rdef{mod1:defn:Tautology}, we can see that $p \implies (q \lor s)$ is not a tautology.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		p & q & r & q $\lor$ s & p $\implies$ (q $\lor$ s) \\
+		\hline
+		0 & 0 & 0 & 0 & 1 \\
+		0 & 0 & 1 & 1 & 1 \\
+		0 & 1 & 0 & 1 & 1 \\
+		0 & 1 & 1 & 1 & 1 \\
+		1 & 0 & 0 & 0 & 0 \\
+		1 & 0 & 1 & 1 & 1 \\
+		1 & 1 & 0 & 1 & 1 \\
+		1 & 1 & 1 & 1 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2016:q1:tab:TruthTab2} Showing the truth values of $p \implies (q \lor s)$\,.}
+\end{table}
+
+\end{subsubquestions}
+
+\end{subquestions}
 
