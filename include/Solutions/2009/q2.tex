@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Vraaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -8,10 +8,153 @@
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2009
+%     Module: 1
+%     Question: 2 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+
+%------------------------------------------------------------------------------
+% 2 a--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+"Tom works hard if and only if Tom is successful."
+
+%------------------------------------------------------------------------------
+% 2 b--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+	
+\subquestion 
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+\begin{equation}
+	\sim p \implies \sim q\,.
+\end{equation}
+
+\subsubquestion
+
+\begin{equation}
+	q \implies p\,.
+\end{equation}
+
+\subsubquestion
+
+\begin{equation}
+	\sim q \implies \sim p\,.
+\end{equation}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 2 c--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+From \rtab{2009:q2:tab:TruthTab1} and \rdef{mod1:defn:Contradiction}, we can see that $(a \land (a \implies b)) \land \sim b$ is a contradiction.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		a & b & $\sim$ b & a $\implies$ b & a $\land$ (a $\implies$ b) & (a $\land$ (a $\implies$ b)) $\land$ $\sim$ b \\
+		\hline
+		0 & 0 & 1 & 1 & 0 & 0 \\
+		0 & 1 & 0 & 1 & 0 & 0 \\
+		1 & 0 & 1 & 0 & 0 & 0 \\
+		1 & 1 & 0 & 1 & 1 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2009:q2:tab:TruthTab1} Showing the truth table of $(a \land (a \implies b)) \land \sim b$.}
+\end{table}
+
+%------------------------------------------------------------------------------
+% 2 d--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+From $A$ to $E$, the paths are,
+
+\begin{align}
+	& A \rightarrow E\,, \\
+	& A \rightarrow D \rightarrow E\,, \\
+	& A \rightarrow B \rightarrow D \rightarrow E\,, \\
+	& A \rightarrow B \rightarrow C \rightarrow E\,, \\
+	& A \rightarrow B \rightarrow C \rightarrow D \rightarrow E\,, \\
+	& A \rightarrow B \rightarrow D \rightarrow C \rightarrow E\,. 	
+\end{align}
+
+%------------------------------------------------------------------------------
+% 2 e--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The degree of vertex $D$ is $4$.
+
+%------------------------------------------------------------------------------
+% 2 f--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+See \rfig{2009:q2:fig:LogicGates}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2009/figures/2009q2LogicGate}
+		\caption{\label{2009:q2:fig:LogicGates} Showing the logic gate equivalent of $(x \land y) \lor \sim y$.}
+	\end{center}
+\end{figure}
+
+%------------------------------------------------------------------------------
+% 2 f--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+\begin{equation}
+	\sim (a \lor b)\,.
+\end{equation}
+
+\subsubquestion
+
+\begin{equation}
+	\sim a ~\land \sim b\,.
+\end{equation}
+
+\subsubquestion
+
+From \rtab{2009:q2:tab:TruthTab2}, we see that $\sim (a \lor b)$ and $(\sim a ~\land \sim b)$ are logically equivalent.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		a & b & $\sim$ a & $\sim$ b & a $\lor$ b & $\sim$ (a $\lor$ b) & $\sim$ a $\land$ $\sim$ b \\
+		\hline
+		0 & 0 & 1 & 1 & 0 & 1 & 1 \\
+		0 & 1 & 1 & 0 & 1 & 0 & 0 \\
+		1 & 0 & 0 & 1 & 1 & 0 & 0 \\
+		1 & 1 & 0 & 0 & 1 & 0 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2009:q2:tab:TruthTab2} Showing the truth table of $\sim (a \lor b)$ and $(\sim a ~\land \sim b)$.}
+\end{table}
+
+\end{subsubquestions}
+
+\end{subquestions}
 
 
