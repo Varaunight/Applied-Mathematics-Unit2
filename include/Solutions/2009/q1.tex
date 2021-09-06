@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -8,10 +8,72 @@
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2009
+%     Module: 1
+%     Question: 1 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
 
+%------------------------------------------------------------------------------
+% 1 a -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+See \rfig{2001:q1:fig:ActNet}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2009/figures/2009q1ActNet}
+		\caption{\label{2001:q1:fig:ActNet} Showing the Activity Network of the project.}
+	\end{center}
+\end{figure}
+
+%------------------------------------------------------------------------------
+% 1 b -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+See \rtab{2009:q1:tab:CritPath}.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Activity & Earliest Start Time & Latest Start Time & Float Time \\
+		\hline
+		A & 0 & 0 & 0 \\
+		B & 0 & 23 & 23 \\ 
+		C & 22 & 22 & 0 \\
+		D & 9 & 9 & 0 \\
+		E & 22 & 25 & 3 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2009:q1:tab:CritPath} Showing the start times and float times of the activities.}
+\end{table}
+
+%------------------------------------------------------------------------------
+% 1 c -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rdef{mod1:defn:CritPath}, the critical path is,
+
+\begin{equation}
+	\text{Start} \rightarrow A \rightarrow D \rightarrow C \rightarrow \text{End}\,.
+\end{equation}
+
+\subsubquestion
+
+The minimum completion time of the project is $28$ days.
+\end{subsubquestions}
+
+\end{subquestions}
 
