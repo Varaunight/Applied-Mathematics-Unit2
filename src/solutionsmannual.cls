@@ -41,6 +41,7 @@
 \usepackage{epsfig}
 \usepackage{caption}
 \usepackage{circuitikz}
+\usepackage{pgfplots}
 
 % Equation numbering 
 \numberwithin{equation}{section}
