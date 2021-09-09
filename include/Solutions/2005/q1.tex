@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
@@ -8,10 +8,172 @@
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2005 C
+%     Module: 1
+%     Question: 1 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+
+%------------------------------------------------------------------------------
+% 1 a -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+See \rtab{2005:q1:tab:TruthTab1}.
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		p & q & p $\lor$ q \\
+		\hline
+		0 & 0 & 0 \\
+		0 & 1 & 1 \\
+		1 & 0 & 1 \\
+		1 & 1 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2005:q1:tab:TruthTab1} Truth table of $p \lor q$.}
+\end{table}
+
+\subsubquestion
+
+See \rtab{2005:q1:tab:TruthTab2}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		p & q & $\sim$ p & p $\implies$ q & $\sim$ p $\land$ q & (p $\implies$ q) $\iff$ ($\sim$ p $\land$ q) \\
+		\hline
+		0 & 0 & 1 & 1 & 0 & 0 \\
+		0 & 1 & 1 & 1 & 1 & 1 \\
+		1 & 0 & 0 & 0 & 0 & 1 \\
+		1 & 1 & 0 & 1 & 0 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2005:q1:tab:TruthTab2} Truth table of $(p \implies q) \iff (\sim p \land q)$.}
+\end{table}
+
+\subsubquestion
+
+\begin{subsubsubquestions}
+	
+\subsubsubquestion
+
+Since the truth values of \rtab{2005:q1:tab:TruthTab1} and \rtab{2005:q1:tab:TruthTab2} are not the same, the expressions ($p \lor q$) and ($(p \implies q) \iff (\sim p \land q)$) are not logically equivalent.
+
+\subsubsubquestion
+
+From \rdef{mod1:defn:Tautology}, we can see that ($(p \implies q) \iff (\sim p ~\land q)$) is \textbf{not a tautology}.
+
+\end{subsubsubquestions}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 1 b -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+$(x ~\land \sim y)$ can be expressed as "I do Statistical Analysis and I do not do Applied Mathematics."
+
+\subsubquestion
+
+"I do Statistical Analysis so I will do Applied Mathematics" can be expressed as,
+
+\begin{equation}
+	x \implies y\,.
+\end{equation}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 1 c -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+Using Laws ~\ref{mod1:section:BooleanAlgebraLaws}, we can see that
+
+\begin{align*}
+	\hspace{-10mm}
+	(l \land m \land n) \lor (l \land m ~\land \sim n) & \equiv \underline{(l \land m \land n) \lor (l \land m ~\land \sim n)}
+	& \text{using ~\ref{mod1:law:Distributive}}\,, \nn \\ 
+	 												  & \equiv (\underline{\textcolor{red}{(l \land m \land n) \lor l)}} \land (\underline{\textcolor{blue}{(l \land m \land n) \lor m})} \land ((l \land m    \land n) \lor \sim n)
+    & \text{using ~\ref{mod1:law:Absorptive}}\,, \nn \\ 
+													  & \equiv \textcolor{red}{l} \land \textcolor{blue}{m} \land (\underline{(l \land m \land n) ~\lor \sim n})
+	& \text{using ~\ref{mod1:law:Commutative}}\,, \nn \\ 
+													  & \equiv l \land m \land (\underline{\textcolor{red}{\sim n \lor (l \land m \land n)}})
+  	& \text{using ~\ref{mod1:law:Distributive}}\,, \nn \\
+  													  & \equiv l \land m \land (\textcolor{red}{(\sim n \lor l)} \land \textcolor{red}{(\sim n \lor m)} \land \underline{\textcolor{red}{(\sim n \lor n)}})
+    & \text{using ~\ref{mod1:law:Complement}}\,, \nn \\
+    										    	  & \equiv l \land m \land (\underline{(\sim n \lor l) \land (\sim n \lor m) \land (\textcolor{red}{T})})
+    & \text{using ~\ref{mod1:law:Identity}}\,, \nn \\    
+    										    	  & \equiv \underline{l \land m \land (\textcolor{red}{(\sim n \lor l) \land (\sim n \lor m)})}
+    & \text{using ~\ref{mod1:law:Associative}}\,, \nn \\  
+    												  & \equiv \textcolor{red}{l \land \underline{(\sim n \lor l)}} \land \textcolor{blue}{m \land \underline{(\sim n \lor m)}}
+    & \text{using ~\ref{mod1:law:Commutative}}\,, \nn \\     
+    				    	    					  & \equiv \underline{l \land (\textcolor{red}{l ~\lor \sim n})} \land \underline{m \land (\textcolor{blue}{m ~\lor \sim n})}
+    & \text{using ~\ref{mod1:law:Absorptive}}\,, \nn \\ 	
+    												  & \equiv \textcolor{red}{l} \land \textcolor{blue}{m}\,, \\	
+													  & \equiv l \land m\,. \\							  			    	    					  				 											
+\end{align*}
+
+%------------------------------------------------------------------------------
+% 1 d -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+See the switching circuit of $((a \land b) \lor (a \land c)) \land (a \lor b)$.
+
+\begin{circuitikz}
+	\draw [color=black, thick] (0,0) -- (2,0);
+	\draw [color=black, thick] (2,0) -- (2,1);
+	\draw [color=black, thick] (2,0) -- (2,-1);
+	
+	\draw (2,1) to[normal open switch, *-*](4,1);	
+	\path (2,1) -- (4,1) node[pos=0.5,below]{a};
+	
+	\draw (4,1) to[normal open switch, *-*](6,1);
+	\path (4,1) -- (6,1) node[pos=0.5,below]{b};
+		
+	\draw (2,-1) to[normal open switch, *-*](4,-1);
+	\path (2,-1) -- (4,-1) node[pos=0.5,below]{a};
+	
+	\draw (4,-1) to[normal open switch, *-*](6,-1);
+	\path (4,-1) -- (6,-1) node[pos=0.5,below]{c};
+	
+	\draw [color=black, thick] (6,1) -- (6,0);
+	\draw [color=black, thick] (6,-1) -- (6,0);
+	\draw [color=black, thick] (6,0) -- (7,0);
+	
+	\draw [color=black, thick] (7,0) -- (7,1);
+	\draw [color=black, thick] (7,0) -- (7,-1);
+	
+	\draw (7,1) to[normal open switch, *-*](9,1);	
+	\path (7,1) -- (9,1) node[pos=0.5,below]{a};
+	
+	\draw (7,-1) to[normal open switch, *-*](9,-1);	
+	\path (7,-1) -- (9,-1) node[pos=0.5,below]{b};
+	
+	\draw [color=black, thick] (9,1) -- (9,0);
+	\draw [color=black, thick] (9,-1) -- (9,0);
+	\draw [color=black, thick] (9,0) -- (11,0);
+\end{circuitikz}
+
+\end{subquestions}
 
 
