@@ -42,6 +42,7 @@
 \usepackage{caption}
 \usepackage{circuitikz}
 \usepackage{pgfplots}
+\usepackage{xcolor}
 
 % Equation numbering 
 \numberwithin{equation}{section}
