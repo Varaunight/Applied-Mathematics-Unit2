@@ -1,0 +1,47 @@
+%------------------------------------------------------------------------------
+% Author(s):
+%  Brad Bachu
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     A simplified version of the entire project 
+%     Use this to experiment, debug, etc. 
+%------------------------------------------------------------------------------
+
+\documentclass[crop,tikz]{standalone}
+\usepackage{../../../../src/tikzappmath}
+\usetikzlibrary{scopes}
+
+\begin{document}
+	
+	\def \pradius{10cm} % pulley radius
+	\def \scale{.8cm} % adjust this parameter to change the spread
+	
+	\begin{tikzpicture}
+		
+		\node[cnode] at (0,0) (n1) {Start};
+		\node[cnode] at (3*\scale,0) (n2) {$T$};
+		\node[cnode] at (6*\scale,0) (n3) {$U$};
+		\node[cnode] at (9*\scale,3*\scale) (n4) {$R$};
+		\node[cnode] at (10.5*\scale,-3*\scale) (n5) {$S$};
+		\node[cnode] at (12*\scale,3*\scale) (n6) {$P$};
+		\node[cnode] at (15*\scale,0) (n7) {$Q$};
+		\node[cnode] at (18*\scale,0) (n8) {End};
+
+		
+		\connectcnode{n1}{n2}{0}{0}
+		\connectcnode{n2}{n3}{5}{}
+		\connectcnode{n3}{n4}{6}{}
+		\connectcnode{n3}{n5}{6}{}
+		\connectcnode{n4}{n6}{3}{}
+		\connectcnode{n5}{n7}{4}{}
+		\connectcnode{n6}{n7}{1}{}
+		\connectcnode{n7}{n8}{2}{}
+	\end{tikzpicture}
+	
+\end{document}
