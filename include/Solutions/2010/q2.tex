@@ -23,35 +23,39 @@
 
 See the switching circuit below.
 
+\begin{center}
+	
 \begin{circuitikz}
-\draw [color=black, thin] (0,0) -- (2,0);
-\draw [color=black, thin] (2,0) -- (2,2);
-\draw [color=black, thin] (2,0) -- (2,-2);
+	\draw [color=black, thin] (0,0) -- (2,0);
+	\draw [color=black, thin] (2,0) -- (2,2);
+	\draw [color=black, thin] (2,0) -- (2,-2);
 
-\draw (2,2) to[normal open switch, *-*](6,2);
-\draw (6,2) to[normal open switch, *-*](10,2);
+	\draw (2,2) to[normal open switch, *-*](6,2);
+	\draw (6,2) to[normal open switch, *-*](10,2);
 
-\path (2,2) -- (6,2) node[pos=0.5,below]{A};
-\path (6,2) -- (10,2) node[pos=0.5,below]{B};
+	\path (2,2) -- (6,2) node[pos=0.5,below]{A};
+	\path (6,2) -- (10,2) node[pos=0.5,below]{B};
 
-\draw (2,-2) to[normal open switch, *-*](6,-2);
-\draw (6,-2) to[normal open switch, *-*](10,-2);
+	\draw (2,-2) to[normal open switch, *-*](6,-2);
+	\draw (6,-2) to[normal open switch, *-*](10,-2);
 
-\path (2,-2) -- (6,-2) node[pos=0.5,below]{B};
-\path (6,-2) -- (10,-2) node[pos=0.5,below]{C};
+	\path (2,-2) -- (6,-2) node[pos=0.5,below]{B};
+	\path (6,-2) -- (10,-2) node[pos=0.5,below]{C};
 
-\draw (2,0) to[normal open switch, *-*](6,0);
-\draw (6,0) to[normal open switch, *-*](10,0);
+	\draw (2,0) to[normal open switch, *-*](6,0);
+	\draw (6,0) to[normal open switch, *-*](10,0);
 
-\path (2,0) -- (6,0) node[pos=0.5,below]{A};
-\path (6,0) -- (10,0) node[pos=0.5,below]{C};
+	\path (2,0) -- (6,0) node[pos=0.5,below]{A};
+	\path (6,0) -- (10,0) node[pos=0.5,below]{C};
 
-\draw [color=black, thin] (10,2) -- (10,0);
-\draw [color=black, thin] (10,-2) -- (10,0);
+	\draw [color=black, thin] (10,2) -- (10,0);
+	\draw [color=black, thin] (10,-2) -- (10,0);
 
-\draw [color=black, thin] (10,0) -- (12,0);
+	\draw [color=black, thin] (10,0) -- (12,0);
 
 \end{circuitikz}
+
+\end{center}
 
 %------------------------------------------------------------------------------
 % 1 b--------------------------------------------------------------------------
@@ -99,7 +103,9 @@ See \rfig{2010:q2:fig:Circuit1}.
 \subquestion
 
 \begin{subsubquestions}
-	
+
+%-----------------------------------------------------------------------------
+
 \subsubquestion
 
 See \rtab{2011:q2:tab:CritPath}.
@@ -119,8 +125,10 @@ See \rtab{2011:q2:tab:CritPath}.
 		G & 22 & 22 & 0 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2011:q2:tab:CritPath} Showing the float time of the activities.}
+	\caption{\label{2011:q2:tab:CritPath} Float time of the activities.}
 \end{table}
+
+%-----------------------------------------------------------------------------
 
 \subsubquestion
 
