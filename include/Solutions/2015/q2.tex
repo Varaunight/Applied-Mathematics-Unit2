@@ -19,13 +19,13 @@
 
 \begin{subquestions}
 	
-	\subquestion
+\subquestion
 	
-	\begin{subsubquestions}
+\begin{subsubquestions}
 		
-		\subsubquestion
+\subsubquestion
 		
-		The Hungarian algorithm is shown here.
+The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 		
 		\begin{table}[!hbt]
 			\begin{minipage}{0.3\textwidth}
@@ -40,6 +40,7 @@
 				\caption*{Matrix From question}
 			\end{minipage}
 			\hspace{20pt}
+			%---------------------------------------------------
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular}{cccc}
@@ -52,6 +53,7 @@
 				\caption*{Matrix after Reducing Rows}
 			\end{minipage}
 			\hspace{20pt}
+			%---------------------------------------------------
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular}{cccc}
@@ -65,7 +67,7 @@
 			\end{minipage}
 			
 			\vspace{20pt} 
-			
+			%---------------------------------------------------
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular} {cccccc}
@@ -80,6 +82,7 @@
 				\caption*{Shading 0's using the least \\ \centering number of lines}
 			\end{minipage}
 			\hspace{20pt}
+			%---------------------------------------------------
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular}{cccc}
@@ -94,6 +97,7 @@
 				\caption*{Applying Step \ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
 			\end{minipage}
 			\hspace{20pt}
+			%---------------------------------------------------
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular} {cccccc}
@@ -107,17 +111,11 @@
 				\captionsetup{width=1.1\linewidth}
 				\caption*{Shading 0's using the least \\ \centering number of lines}
 			\end{minipage}
-			
-			
-			
-			
-			
-			\caption{\label{2015:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
+
+			\caption{\label{2015:q2:tab:HungAlgo} Steps of the Hungarian Algorithm.}
 		\end{table}	
-		
-		
-		
-		From \rtab{2015:q2:tab:HungAlgo}, we can see that the possible matchings for the teachers are as follows:
+			
+From \rtab{2015:q2:tab:HungAlgo}, we can see that the possible matchings for the teachers are as follows:
 		
 		\begin{align}
 			&\text{Mr Jones} \rightarrow \text{Class 1, Class 2}\,, \nn \\
@@ -126,7 +124,7 @@
 			&\text{Mr Small} \rightarrow \text{Class 3}\,. 
 		\end{align}
 		
-		Therefore, the matchings to minimize the total time are,
+Therefore, the matchings to minimize the total time are,
 		
 		\begin{align}
 			&\text{Mr Jones} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
@@ -134,8 +132,10 @@
 			&\text{Mr Wright} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
 			&\text{Mr Small} \rightarrow \text{Class 3}\,.  
 		\end{align}
-		
-		\subsubquestion
+
+%----------------------------------------------------------
+
+\subsubquestion
 		
 		The total time spent in the classroom by the four teachers can be found by summing the individual times of the teachers (based on the result of the Hungarian Algorithm). Evaluating this, we get
 		
@@ -144,15 +144,15 @@
 		\end{align}	
 	\end{subsubquestions}
 	
-	%--------------------------------------------------------
-	% 2 b
-	%--------------------------------------------------------
+%--------------------------------------------------------
+% 2 b----------------------------------------------------
+%--------------------------------------------------------
 	
-	\subquestion
+\subquestion
 	
-	The truth table is as follows,
+The truth table is as follows,
 	
-	\begin{table}[ht]
+\begin{table}[ht]
 		\centering
 		\begin{tabular}{|c|c|c|c|}
 			\hline
@@ -165,29 +165,31 @@
 			\hline
 		\end{tabular}
 		\caption{\label{2015:q2:tab:TrthTab} Showing the truth values of the expression.}
-	\end{table}        
+\end{table}        
 	
-	Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we can see that the expression, $(p \: \land \: q) \implies p$, is a \textbf{tautology}.  \\
+Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we can see that the expression, $(p \: \land \: q) \implies p$, is a \textbf{tautology}.  \\
 	
-	%------------------------------------------------------------------
-	% 2 c
-	%------------------------------------------------------------------
-	
-	\subquestion
-	
-	\begin{subsubquestions}
+%------------------------------------------------------------------
+% 2 c
+%------------------------------------------------------------------
 		
-		\subsubquestion
+\subquestion
+	
+\begin{subsubquestions}
 		
-		The Boolean expression for the circuit is,
+\subsubquestion
+		
+The Boolean expression for the circuit is,
 		
 		\begin{align}
 			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))\,.
 		\end{align}	
 		
-		\subsubquestion
+%-----------------------------------------------------------------
+
+\subsubquestion
 		
-		Using Laws \ref{mod1:section:BooleanAlgebraLaws}, we can simplify this expression as follows,
+Using Laws \ref{mod1:section:BooleanAlgebraLaws}, we can simplify this expression as follows,
 		
 		\begin{align}
 			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))
@@ -214,8 +216,8 @@
 		
 The expression, $a \land b$, can be expressed as a switching circuit as follows, \\
 		
-		\centering
-		\begin{circuitikz}
+\begin{center}	
+	\begin{circuitikz}
 			\draw [thick] (1,0) to (2,0);
 			\draw (2,0) to [nos](3,0);
 			\path (2,0) -- (3,0) node[pos=0.5, below]{$a$};
@@ -223,11 +225,10 @@ The expression, $a \land b$, can be expressed as a switching circuit as follows,
 			\draw (5,0) to [nos](6,0);
 			\path (5,0) -- (6,0) node[pos=0.5, below]{$b$};
 			\draw [thick] (6,0) to (7,0);
-		\end{circuitikz}
+	\end{circuitikz}
+\end{center}
 		
-		
-	\end{subsubquestions}
-	
+\end{subsubquestions}
 	
 \end{subquestions}
 
