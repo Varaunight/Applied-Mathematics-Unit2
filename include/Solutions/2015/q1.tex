@@ -92,6 +92,10 @@ See Graph ~\ref{2015:q1:graph:Graph1}.
 			axis line style={-latex},
 			samples=100,
 			domain = -20:20,
+			xlabel={$x$},
+			ylabel={$y$},
+			x label style={at={(axis description cs:1,0.15)},anchor=north west},
+			y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
 			]
 	
 			\addplot [mark=dot] coordinates{(1000,0)  (0,500)};
