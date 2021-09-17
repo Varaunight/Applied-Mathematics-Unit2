@@ -42,6 +42,8 @@ See \rtab{2005:q1:tab:TruthTab1}.
 	\caption{\label{2005:q1:tab:TruthTab1} Truth table of $p \lor q$.}
 \end{table}
 
+%-----------------------------------------------------------------------------
+
 \subsubquestion
 
 See \rtab{2005:q1:tab:TruthTab2}
@@ -61,6 +63,8 @@ See \rtab{2005:q1:tab:TruthTab2}
 	\caption{\label{2005:q1:tab:TruthTab2} Truth table of $(p \implies q) \iff (\sim p \land q)$.}
 \end{table}
 
+%-----------------------------------------------------------------------------
+
 \subsubquestion
 
 \begin{subsubsubquestions}
@@ -68,6 +72,8 @@ See \rtab{2005:q1:tab:TruthTab2}
 \subsubsubquestion
 
 Since the truth values of \rtab{2005:q1:tab:TruthTab1} and \rtab{2005:q1:tab:TruthTab2} are not the same, the expressions ($p \lor q$) and ($(p \implies q) \iff (\sim p \land q)$) are not logically equivalent.
+
+%-----------------------------------------------------------------------------
 
 \subsubsubquestion
 
@@ -89,6 +95,7 @@ From \rdef{mod1:defn:Tautology}, we can see that ($(p \implies q) \iff (\sim p ~
 
 $(x ~\land \sim y)$ can be expressed as "I do Statistical Analysis and I do not do Applied Mathematics."
 
+%-----------------------------------------------------------------------------
 \subsubquestion
 
 "I do Statistical Analysis so I will do Applied Mathematics" can be expressed as,
@@ -139,7 +146,9 @@ Using Laws ~\ref{mod1:section:BooleanAlgebraLaws}, we can see that
 
 See the switching circuit of $((a \land b) \lor (a \land c)) \land (a \lor b)$.
 
-\begin{circuitikz}
+\begin{center}
+	\begin{circuitikz}
+		
 	\draw [color=black, thick] (0,0) -- (2,0);
 	\draw [color=black, thick] (2,0) -- (2,1);
 	\draw [color=black, thick] (2,0) -- (2,-1);
@@ -172,7 +181,9 @@ See the switching circuit of $((a \land b) \lor (a \land c)) \land (a \lor b)$.
 	\draw [color=black, thick] (9,1) -- (9,0);
 	\draw [color=black, thick] (9,-1) -- (9,0);
 	\draw [color=black, thick] (9,0) -- (11,0);
-\end{circuitikz}
+	
+	\end{circuitikz}
+\end{center}
 
 \end{subquestions}
 
