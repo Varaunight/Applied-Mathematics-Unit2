@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -12,7 +12,6 @@
 %     Module: 1
 %     Question: 1 
 %------------------------------------------------------------------------------
-\usetikzlibrary{patterns}
 
 \begin{subquestions}
 	
@@ -23,15 +22,12 @@
 \subquestion
 
 Let $x$ be the number of newspaper advertisements and let $y$ be the number of television advertisements.	
-
 The objective function that we want to maximize is,
-
 \begin{equation}
 	C =2x+5y \,.
 \end{equation} 
 
 The constraints of this linear programming model are as follows,
-
 \begin{align}
 	1500x + 5000y & \leq 5000 \,, \nn \\
 	1500x & \leq 30000 \,, \nn \\
@@ -51,51 +47,19 @@ The constraints of this linear programming model are as follows,
 	
 \subsubquestion
 
-The feasible region is shaded in the graph below.
-
-\begin{center}
-	\begin{tikzpicture}
-		\begin{axis}
-			[
-			xmin=-0,xmax=10,
-			ymin=0,ymax=10,
-			grid=both,
-			grid style={line width=.1pt, draw=darkgray!10},
-			major grid style={line width=.2pt,draw=darkgray!20},
-			axis lines=left,
-			minor tick num=1,
-			enlargelimits={abs=0},
-			axis line style={-latex},
-			samples=100,
-			domain = -20:20,
-			ytick={0,1,...,10},
-			xtick={0,1,...,10},
-			xlabel={$x$},
-			ylabel={$y$},
-			x label style={at={(axis description cs:1,0.15)},anchor=north west},
-			y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
-			]
-			
-			\addplot [mark=dot] coordinates{(5, 0)  (0,5)} {};
-			
-			\addplot [mark=dot] coordinates {(2.8,0) (0, 7)} {};
-			
-			\addplot [mark=dot] coordinates {(2,0) (2, 10)} {};
-			
-			\addplot [mark=dot] coordinates {(0, 1) (10, 1)} {};
-			
-			\addplot [pattern=north east lines,pattern color=blue] coordinates {(2,2) (2, 3) (4, 1) (2.4,1) (2,2)} \closedcycle;	
-				
-		\end{axis}	
-	\end{tikzpicture}
-\end{center}
+The feasible region is shaded in \rfig{2008M:q1:fig:Graph}.
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2007/figures/2008Mq1Graph}
+		\caption{\label{2008M:q1:fig:Graph} Linear Programming Graph.}
+	\end{center}
+\end{figure}
 
 %-----------------------------------------------------------------------------------------
 
 \subsubquestion
 
 Using \rdef{mod1:defn:TourOfVertices},
-
 \begin{align}
 	\text{Using (2,2)} \,, \nn \\
 	P & = 2x + 7y \,, \nn \\
