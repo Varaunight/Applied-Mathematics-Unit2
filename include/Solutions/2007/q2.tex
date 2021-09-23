@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -22,7 +22,6 @@
 \subquestion
 
 The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
-
 \begin{table}[!hbt]
 	\begin{minipage}{0.3\textwidth}
 		\centering
@@ -103,17 +102,14 @@ The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
 			\hhs{h3}	&	0 & 2 & 3 & 2 &    \hhe[red]{h3} \\
 			\hhs{h4}	&	2 & 2 & 0 & 0 &    \hhe[red]{h4} \\
 						&	  &   &   &   &     			 \\
-		
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
 		\caption*{Shading 0's using the least \\ \centering number of lines}
 	\end{minipage}
-	
 	\caption{\label{2008M:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
 \end{table}
 
-From \rtab{2008M:q2:tab:HungAlgo}, the possible pairings of the runners and the parts of the race are as follows,
-
+From \rtab{2008M:q2:tab:HungAlgo}, the possible pairings of the runners and the parts of the race are,
 \begin{align}
 	W & \rightarrow 1 ~\text{or} ~4 \,, \nn \\
 	X & \rightarrow 2 ~\text{or} ~3 \,, \nn \\
@@ -122,7 +118,6 @@ From \rtab{2008M:q2:tab:HungAlgo}, the possible pairings of the runners and the 
 \end{align}
 
 Thus, the optimal pairing to minimize the total race time is,
-
 \begin{align}
 	W \rightarrow 4 \,, \nn \\
 	X \rightarrow 2 \,, \nn \\
@@ -136,8 +131,7 @@ Thus, the optimal pairing to minimize the total race time is,
 
 \subquestion
 
-see \rfig{2008M:q2:fig:ActNet1}.
-
+See \rfig{2008M:q2:fig:ActNet1}.
 \begin{figure}
 	\begin{center}
 		\includegraphics{../2007/figures/2008M-ActNet1}
@@ -156,7 +150,6 @@ see \rfig{2008M:q2:fig:ActNet1}.
 \subsubquestion
 
 See \rtab{2008M:q2:tab:ActNet2}
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -184,7 +177,6 @@ See \rtab{2008M:q2:tab:ActNet2}
 \subsubsubquestion
 
 From \rtab{2008M:q2:tab:ActNet2} and \rdef{mod1:defn:CritPath}, we can see that the critical path is,
-
 \begin{equation}
 	\text{Start} \rightarrow A \rightarrow C \rightarrow D \rightarrow F \rightarrow G \rightarrow \text{Finish} \,.
 \end{equation}	
