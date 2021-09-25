@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -12,7 +12,6 @@
 %     Module: 1
 %     Question: 1 
 %------------------------------------------------------------------------------
-\usetikzlibrary{patterns}
 
 \begin{subquestions}
 	
@@ -23,13 +22,11 @@
 \subquestion
 
 The objective function that we want to maximize is,
-
 \begin{equation}
 	P=15x + 27y \,. 
 \end{equation}
 
 Using $x$ as the number of units of product X and $y$ as the number of units of product Y, our inequalities are,
-
 \begin{align}
 	x & \geq 0 \,, \nn \\
 	y & \geq 0 \,, \nn \\
@@ -43,44 +40,16 @@ Using $x$ as the number of units of product X and $y$ as the number of units of 
 
 \subquestion
 
-The feasible region is shaded in the graph below.
+The feasible region is shaded in \rfig{2008J:q1:fig:Graph}.
 
 \begin{center}
 
-\begin{tikzpicture}
-	\begin{axis}
-		[
-		xmin=-0,xmax=80,
-		ymin=0,ymax=80,
-		grid=both,
-		grid style={line width=.1pt, draw=darkgray!10},
-		major grid style={line width=.2pt,draw=darkgray!30},
-		axis lines=left,
-		minor tick num=9,
-		enlargelimits={abs=0},
-		axis line style={-latex},
-		samples=100,
-		domain = -20:20,
-		ytick={0,10,...,80},
-		xtick={0,10,...,80},
-		xlabel={$x$},
-		ylabel={$y$},
-		x label style={at={(axis description cs:1,0.15)},anchor=north west},
-		y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
-		]
-		
-		\addplot [mark=dot] coordinates{(60, 0)  (0,40)};
-		
-		\addplot [mark=dot] coordinates {(45,0) (0, 75)};
-		
-		\addplot [red,pattern=north east lines,pattern color=blue] coordinates {(0,40) (35, 150/9) (45, 0)} \closedcycle;	
-		
-		\node [pin=30:{$(35, \frac{150}{9})$}] at (axis cs:(35, 150/9) {};
-		
-		\addplot [mark=otimes] coordinates{(35, 150/9)};
-				
-	\end{axis}	
-\end{tikzpicture}
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2008/figures/2008Jq1Graph}
+		\caption{\label{2008J:q1:fig:Graph} Linear Programming Graph.}
+	\end{center}
+\end{figure}
 
 \end{center}
 
@@ -91,7 +60,6 @@ The feasible region is shaded in the graph below.
 \subquestion
 
 From \rdef{mod1:defn:TourOfVertices}, we can calculate $P$ by,
-
 \begin{align}
 	\text{Using (0,40)} \,, \nn \\
 	P & = 15x + 27y \,, \nn \\
