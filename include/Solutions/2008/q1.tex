@@ -1,17 +1,81 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2008 June
+%     Module: 1
+%     Question: 1 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% 1 a -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
+\subquestion
+
+The objective function that we want to maximize is,
+\begin{equation}
+	P=15x + 27y \,. 
+\end{equation}
+
+Using $x$ as the number of units of product X and $y$ as the number of units of product Y, our inequalities are,
+\begin{align}
+	x & \geq 0 \,, \nn \\
+	y & \geq 0 \,, \nn \\
+	6x + 9y & \leq 360 \,, \nn \\
+	15x + 9y & \leq 675 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+% 1 b -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The feasible region is shaded in \rfig{2008J:q1:fig:Graph}.
+
+\begin{center}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2008/figures/2008Jq1Graph}
+		\caption{\label{2008J:q1:fig:Graph} Linear Programming Graph.}
+	\end{center}
+\end{figure}
+
+\end{center}
+
+%------------------------------------------------------------------------------
+% 1 c -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+From \rdef{mod1:defn:TourOfVertices}, we can calculate $P$ by,
+\begin{align}
+	\text{Using (0,40)} \,, \nn \\
+	P & = 15x + 27y \nn \\
+	  & = (15 \times 0) + (27 \times 40)  \nn \\
+	  & = 1080 \,. \label{2008:q1:eqn:Profit} \\
+	\text{Using (35, $\frac{150}{9})$} \,, \nn \\
+	P & = 15x + 27y  \nn \\
+	  & = (15 \times 35) + (27 \times \frac{150}{9})  \nn \\
+	  & = 705 \,.    \\		  
+	\text{Using (45,0)} \,, \nn \\
+	P & = 15x + 27y \nn \\
+	  & = (15 \times 45) + (27 \times 0)  \nn \\
+	  & = 675 \,. 
+\end{align}
+
+Thus, from \req{2008:q1:eqn:Profit}, the maximum value of $P$ is $1080$.
+
+\end{subquestions}
 
