@@ -1,17 +1,196 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2008 May
+%     Module: 1
+%     Question: 2 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
 
+%------------------------------------------------------------------------------
+% 2 a--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
+\begin{table}[!hbt]
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+			48 & 46 & 50 & 44  \\
+			49 & 45 & 46 & 49  \\
+			47 & 46 & 48 & 44  \\
+			51 & 48 & 47 & 45  \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Matrix From question}
+	\end{minipage}
+	%-------------------------------------------------------------------------------
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+			4 & 2 & 6 & 0  \\
+			4 & 0 & 1 & 4  \\
+			3 & 2 & 4 & 0  \\
+			6 & 3 & 2 & 0  \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Matrix after Reducing Rows}
+	\end{minipage}
+	%-------------------------------------------------------------------------------
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+			1 & 2 & 5 & 0  \\
+			1 & 0 & 0 & 4  \\
+			0 & 2 & 3 & 0  \\
+			3 & 3 & 1 & 0  \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Matrix after Reducing Columns} 
+	\end{minipage}
+	%-------------------------------------------------------------------------------
+	\vspace{20pt} 
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular} {cccccc}
+			&   &   &   & \hspace{-3.25mm} \hvs{v1} 	   &     			  \\
+            & 1 & 2 & 5 & 0								   &   			      \\
+   \hhs{h1} & 1 & 0 & 0 & 4 						 	   &    \hhe[blue]{h1}\\
+   \hhs{h2}	& 0 & 2 & 3 & 0								   &    \hhe[blue]{h2}\\
+            & 3 & 3 & 1 & 0							       &                  \\
+			&   &   &   & \hspace{-3.25mm} \hve[blue]{v1}  &                  \\
+
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
+	\end{minipage}
+	%-------------------------------------------------------------------------------
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccc}
+			  &   &   &      \\
+			0 & 1 & 4 & 0   \\
+			1 & 0 & 0 & 6   \\
+			0 & 2 & 3 & 2   \\
+			2 & 2 & 0 & 0   \\
+			  &   &   &    \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Applying Step ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
+	\end{minipage}
+	%-------------------------------------------------------------------------------
+	\hspace{20pt}
+	\begin{minipage}{0.3\textwidth}
+		\centering
+		\begin{tabular}{cccccc}
+						&     &   &   &   &    			     \\
+			\hhs{h1}	&	0 & 1 & 4 & 0 &    \hhe[red]{h1} \\
+			\hhs{h2}	&	1 & 0 & 0 & 6 &    \hhe[red]{h2} \\
+			\hhs{h3}	&	0 & 2 & 3 & 2 &    \hhe[red]{h3} \\
+			\hhs{h4}	&	2 & 2 & 0 & 0 &    \hhe[red]{h4} \\
+						&	  &   &   &   &     			 \\
+		\end{tabular}
+		\captionsetup{width=1.1\linewidth}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
+	\end{minipage}
+
+	\caption{\label{2008M:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
+\end{table}
+
+From \rtab{2008M:q2:tab:HungAlgo}, the possible pairings of the runners and the parts of the race are,
+\begin{align}
+	W & \rightarrow 1 ~\text{or} ~4 \,, \nn \\
+	X & \rightarrow 2 ~\text{or} ~3 \,, \nn \\
+	Y & \rightarrow 1 \,, \nn \\
+	Z & \rightarrow 3 ~\text{or} ~4 \,.
+\end{align}
+
+Thus, the optimal pairing to minimize the total race time is,
+\begin{align}
+	W \rightarrow 4 \,, \nn \\
+	X \rightarrow 2 \,, \nn \\
+	Y \rightarrow 1 \,, \nn \\
+	Z \rightarrow 3 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+% 2 b--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+See \rfig{2008M:q2:fig:ActNet1}.
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2007/figures/2008M-ActNet1}
+		\caption{\label{2008M:q2:fig:ActNet1} Activity Network of the project.}
+	\end{center}
+\end{figure}
+
+%------------------------------------------------------------------------------
+% 2 c--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion 
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+See \rtab{2008M:q2:tab:ActNet2}
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Activity & Earliest Start Time & Latest Start Time & Float Time \\
+		\hline
+		A & 0 & 0 & 0 \\
+		B & 6 & 7 & 1 \\
+		C & 6 & 6 & 0 \\
+		D & 15 & 15 & 0 \\
+		E & 21 & 22 & 1 \\
+		F & 21 & 21 & 0 \\
+		G & 34 & 34 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2008M:q2:tab:ActNet2} Float times of the activities.}
+\end{table} 
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+
+\begin{subsubsubquestions}
+
+\subsubsubquestion
+
+From \rtab{2008M:q2:tab:ActNet2} and \rdef{mod1:defn:CritPath}, we can see that the critical path is,
+\begin{equation}
+	\text{Start} \rightarrow A \rightarrow C \rightarrow D \rightarrow F \rightarrow G \rightarrow \text{Finish} \,.
+\end{equation}	
+
+%----------------------------------------------------------------------------
+
+\subsubsubquestion
+
+From \rtab{2008M:q2:tab:ActNet2}, the latest finish time of $E$ is $22$ hours.
+
+\end{subsubsubquestions}
+
+\end{subsubquestions}
+
+\end{subquestions}
 
