@@ -1,17 +1,179 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2012
+%     Module: 1
+%     Question: 2
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+
+%-----------------------------------------------------------------------------
+% 2 a
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rtab{2012:q2:TruthTab1}, we see that both $(p \implies r) \land (p \implies q)$ and $(p \implies (q \land r))$ are equivalent due to their corresponding truth values.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		p & q & r & p $\implies$ r & p $\implies$ q & (p $\implies$ r) $\land$ (p $\implies$ q) & q $\land$ r & (p $\implies$ (q $\land$ r)) \\
+		\hline
+		0 & 0 & 0 & 1 & 1 & 1 & 0 & 1 \\
+		0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 \\
+		0 & 1 & 0 & 1 & 1 & 1 & 0 & 1 \\
+		0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+		1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+		1 & 0 & 1 & 1 & 0 & 0 & 0 & 0  \\
+		1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 \\
+		1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+		\hline
+	\end{tabular}
+\caption{\label{2012:q2:TruthTab1} Truth Table of the expressions.}
+\end{table}
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rtab{2012:q2:TruthTab2}, we see that the truth values of $(p \lor q) \implies p$ are not constant. Therefore, the expression is neither \textit{true} nor \textit{false}.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		p & q & p $\lor$ q & (p $\lor$ q) $\implies$ p \\
+		\hline
+		0 & 0 & 0 & 1 \\
+		0 & 1 & 1 & 0 \\
+		1 & 0 & 1 & 1 \\
+		1 & 1 & 1 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2012:q2:TruthTab2} Showing the truth values of $(p \lor q) \implies p$\,.}
+\end{table}
+\end{subsubquestions}
+
+%-----------------------------------------------------------------------------
+% 2 b
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+Let $p$ $\equiv$ "2+3=5", $q$ $\equiv$ "2+2=4" and $r$ $\equiv$ "4+4=8". \\	
+The expression in the question is a conditional statement. We can express it as, 
+\begin{equation}
+	p \implies \sim (q \land r)\,.
+\end{equation}
+
+From the statement, we know that $p$ is true, $q$ is true and $r$ is true. \\
+Therefore, we get the truth value of,
+\begin{align}
+	T & \implies \sim(T \land T)\,, \nn \\
+	\rightarrow T & \implies \sim(T)\,, \nn \\
+	\rightarrow T & \implies F \equiv F\,.
+\end{align}
+
+%-----------------------------------------------------------------------------
+% 2 c
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+Let $p$ $\equiv$ "It is hot" and $q$ $\equiv$ "It is sunny". \\
+
+The statement in the question can be expressed as,
+
+\begin{equation}
+	\sim(\sim p \lor q)\,.
+\end{equation}
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+
+Using \rdef{mod1:law:DeMorgan}, we can simplify the expression as follows,
+\begin{equation}
+		\sim(\sim p \lor q) \equiv p \, \land \sim q\,.
+\end{equation}
+
+\end{subsubquestions}
+
+%-----------------------------------------------------------------------------
+% 2 d
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+
+\subsubquestion
+The Boolean expression for the switching circuit is,
+
+\begin{equation}
+	A \land (\sim B \lor C)\,.
+\end{equation}
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rtab{2012:q2:TruthTab3}, the 3 combinations that will put the circuit on are,
+\begin{align}
+	& A (\text{on}),\, B (\text{off}),\, C (\text{off})\,, \nn \\
+	& A (\text{on}),\, B (\text{off}),\, C (\text{on})\,, \nn \\
+	& A (\text{on}),\, B (\text{on}),\, C (\text{on})\,.
+\end{align}
+
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		A & B & C & $\sim$ B & $\sim$ B $\lor$ C & A $\land$ ($\sim$ B $\lor$ C) \\
+		\hline
+		0 & 0 & 0 & 1 & 1 & 0 \\
+		0 & 0 & 1 & 1 & 1 & 0 \\
+		0 & 1 & 0 & 0 & 0 & 0 \\
+		0 & 1 & 1 & 0 & 1 & 0 \\
+		1 & 0 & 0 & 1 & 1 & 1 \\
+		1 & 0 & 1 & 1 & 1 & 1 \\
+		1 & 1 & 0 & 0 & 0 & 0 \\
+		1 & 1 & 1 & 0 & 1 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2012:q2:TruthTab3} Truth Table of $A \land (\sim B \lor C)$.}
+\end{table}
+
+\end{subsubquestions}
+
+%-----------------------------------------------------------------------------
+% 2 e
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+See \rfig{2012:q2:LogicGate}.
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2012/figures/2012q2LogicGate}
+		\caption{\label{2012:q2:LogicGate} Showing logic gate representation of $p \land (\sim p \, \lor \sim q)$.}
+	\end{center}
+\end{figure}
 
 
+\end{subquestions}
