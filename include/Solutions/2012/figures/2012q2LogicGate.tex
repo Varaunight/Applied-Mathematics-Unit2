@@ -40,10 +40,10 @@
 		% Setting the input names 
 		\draw (x1.input) -|++ (-\shift,0) --++(-\shift,0) node[left,]{${p}$};
 		\draw (x2.input) -|++ (-\shift,0) --++(-\shift,0) node[left,]{${q}$};
-		\draw (x3.input 1) -|++ (-\shift,\shift) --++(-\shift,0) node[left,]{${p}$};
+		\draw (x3.input 1) -|++ (-15.5*\shift,0) --++(0,0) node[left,]{${p}$};
 		
 		% End piece
-		\draw (x3.output) --++ (3*\shift,0);
+		\draw (x3.output) --++ (5*\shift,0);
 		
 		% Naming Gate Outputs
 		\node[above] at ($(x1.output) + (\shift,0)$) (l1) {\gatetext${\sim p}$};
