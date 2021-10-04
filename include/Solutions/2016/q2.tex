@@ -23,7 +23,6 @@
 \subquestion
 
 We must maximize the expression, $P=6x+4y$, given the following inequalities:
-
 \begin{align}
 	4x+6y & \leq 48\,, \nn \\
 	4x+2y & \leq 32\,, \nn \\
@@ -40,51 +39,13 @@ We must maximize the expression, $P=6x+4y$, given the following inequalities:
 \subsubquestion
 
 See Graph ~\ref{2016:q2:graph:Graph1}.
-
 \begin{figure}
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}
-			[
-			xmin=-0,xmax=20,
-			ymin=0,ymax=20,
-			grid=both,
-			grid style={line width=.1pt, draw=darkgray!10},
-			major grid style={line width=.2pt,draw=darkgray!50},
-			axis lines=left,
-			minor tick num=1,
-			enlargelimits={abs=0},
-			axis line style={latex-latex},
-			samples=100,
-			domain = -20:20,
-			ytick={0,2,4,...,20},
-			xtick={0,2,4,...,20},
-			xlabel={$x$},
-			ylabel={$y$},
-			x label style={at={(axis description cs:1,0.15)},anchor=north west},
-			y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
-			]
-			
-			\addplot [mark=dot] coordinates{(12,0)  (0,8)};
-			
-			\addplot [mark=dot] coordinates {(8,0) (0,16)};
-			
-			\addplot [mark=dot] coordinates {(0,5) (100,5)};
-			
-			\addplot [red,pattern=north east lines,pattern color=blue] coordinates {(0,5) (4.5,5) (6, 4) (8,0)} \closedcycle;	
-
-			\node [pin=104:{$(4.5,5)$}] at (axis cs:4.5,5) {};
-
-			\addplot [mark=*] coordinates{(4.5, 5)};
-
-			\node [pin=60:{$(6,4)$}] at (axis cs:6,4) {};
-			
-			\addplot [mark=*] coordinates{(6,4)};
-			
-		\end{axis}
-	\end{tikzpicture}
-	\caption{\label{2016:q2:graph:Graph1} Graph showing the feasible region of the problem.} 
+	\begin{center}
+		\includegraphics{../2016/figures/2016q2LinGraph}
+		\caption{\label{2016:q2:graph:Graph1} Linear Programming Graph.}
+	\end{center}
 \end{figure}
+
 
 %------------------------------------------------------------------------------
 % 2 a ii------------------------------------------------------------------------
@@ -101,7 +62,6 @@ The feasible region is shaded in Graph ~\ref{2016:q2:graph:Graph1}.
 \subsubquestion
 
 From ~\ref{mod1:defn:TourOfVertices}, we can calculate $P$ by,
-
 \begin{align}
 	\text{Using (0,5)} \,, \nn \\
 	P & = 6x + 4y \,, \nn \\
@@ -136,7 +96,6 @@ From \req{2016:q2:eqn:Profit}, we see that the maximum value of $P$ is 52.
 \subsubquestion
 
 The Hungarian algorithm is shown in \rtab{2016:q2:tab:HungAlgo}.
-
 \begin{table}[!hbt]
 	\begin{minipage}{0.3\textwidth}
 		\centering
@@ -195,7 +154,6 @@ The Hungarian algorithm is shown in \rtab{2016:q2:tab:HungAlgo}.
 \end{table}
 
 From \rtab{2016:q2:tab:HungAlgo}, the possible matchings of the passengers and drivers are,
-
 \begin{align}
 	& A \rightarrow R,P \,, \nn \\
 	& B \rightarrow H \,, \nn \\
@@ -204,7 +162,6 @@ From \rtab{2016:q2:tab:HungAlgo}, the possible matchings of the passengers and d
 \end{align} 
 
 Thus, the matchings that minimize the total travel time is,
-
 \begin{align}
 	& A \rightarrow R ~\text{or} ~P \,, \nn \\
 	& B \rightarrow H \,, \nn \\
@@ -217,7 +174,6 @@ Thus, the matchings that minimize the total travel time is,
 \subsubquestion
 
 Therefore, the minimum total travel time is,
-
 \begin{equation}
 	\text{Minimum Time} = 23+20+25+20 = 88\, \text{minutes}\,.
 \end{equation}
