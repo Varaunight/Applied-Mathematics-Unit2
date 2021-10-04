@@ -1,0 +1,54 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Varaun Ramgoolie
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Linear Programming graph for 2006 C q2
+%------------------------------------------------------------------------------
+
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\usepackage{../../../../src/tikzappmath}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+	\begin{tikzpicture}[scale=1.5]
+		\begin{axis}
+			[
+			xmin=-0,xmax=1200,
+			ymin=0,ymax=1000,
+			grid=both,
+			grid style={line width=.1pt, draw=darkgray!10},
+			major grid style={line width=.2pt,draw=darkgray!50},
+			axis lines=left,
+			minor tick num=9,
+			enlargelimits={abs=0.5},
+			axis line style={-latex},
+			samples=100,
+			domain = -20:20,
+			xlabel={$x$},
+			ylabel={$y$},
+			x label style={at={(axis description cs:1,0.15)},anchor=north west},
+			y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
+			]
+			
+			\addplot [mark=dot] coordinates{(1000,0)  (0,500)};
+			
+			\addplot [mark=dot] coordinates {(0,750) (750,0)};
+			
+			\addplot [mark=dot] coordinates {(0,500) (500,250) (750,0)};
+			
+			\addplot [red,pattern=north east lines,pattern color=blue] coordinates {(0,500) (500,250) (750,0)} \closedcycle;	
+			
+			\node [pin=45:{$(500,250)$}] at (axis cs:500,250) {};
+			
+		\end{axis}
+	\end{tikzpicture}
+	
+\end{document}

@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -38,7 +38,6 @@ Let $x$ be the number of cases of glass bottles and let $y$ be the number of cas
 \subsubsubquestion
 
 The profit function to be maximized is,
-
 \begin{equation}
 	P = 20x + 15y \,.
 \end{equation}
@@ -50,7 +49,6 @@ The profit function to be maximized is,
 \subsubsubquestion
 
 The inequalities in this problem are,
-
 \begin{align}
 	x & \geq 0 \,, \nn \\
 	y & \geq 0 \,, \nn \\
@@ -77,40 +75,10 @@ The inequalities in this problem are,
 See Graph ~\ref{2015:q1:graph:Graph1}.
 
 \begin{figure}
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}
-			[
-			xmin=-0,xmax=1200,
-			ymin=0,ymax=1000,
-			grid=both,
-			grid style={line width=.1pt, draw=darkgray!10},
-			major grid style={line width=.2pt,draw=darkgray!50},
-			axis lines=left,
-			minor tick num=9,
-			enlargelimits={abs=0.5},
-			axis line style={-latex},
-			samples=100,
-			domain = -20:20,
-			xlabel={$x$},
-			ylabel={$y$},
-			x label style={at={(axis description cs:1,0.15)},anchor=north west},
-			y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
-			]
-	
-			\addplot [mark=dot] coordinates{(1000,0)  (0,500)};
-		
-			\addplot [mark=dot] coordinates {(0,750) (750,0)};
-		
-			\addplot [mark=dot] coordinates {(0,500) (500,250) (750,0)};
-			
-			\addplot [red,pattern=north east lines,pattern color=blue] coordinates {(0,500) (500,250) (750,0)} \closedcycle;	
-
-			\node [pin=45:{$(500,250)$}] at (axis cs:500,250) {};
-			
-		\end{axis}
-	\end{tikzpicture}
-	\caption{\label{2015:q1:graph:Graph1} Graph showing the feasible region of the problem.} 
+	\begin{center}
+		\includegraphics{../2015/figures/2015q1LinGraph}
+		\caption{\label{2015:q1:graph:Graph1} Linear Programming Graph.}
+	\end{center}
 \end{figure}
 
 %------------------------------------------------------------------------------
@@ -138,7 +106,6 @@ The feasible region is shaded in Graph ~\ref{2015:q1:graph:Graph1}.
 \subsubsubquestion
 
 Using \rdef{mod1:defn:TourOfvertices},
-
 \begin{align}
 	\text{Using (0,500)}\,, \nn \\
 	P & = 20x + 15y\,, \nn \\
@@ -175,15 +142,13 @@ From \req{2015:q1:eqn:Profit}, the maximum profit is $\$ 15000$.
 \subquestion
 
 The shortest path from Town S to Town G is,
-
 \begin{equation}
-	S \rightarrow C \rightarrow D \rightarrow F \rightarrow G ~\text{(20)} \,.
+	S \rightarrow C \rightarrow D \rightarrow F \rightarrow G ~~~~\text{(20)} \,.
 \end{equation}
 
 The longest path from Town S to Town G is ,
-
 \begin{equation}
-	S \rightarrow D \rightarrow F \rightarrow E \rightarrow G ~\text{(31)} \,.
+	S \rightarrow D \rightarrow F \rightarrow E \rightarrow G ~~~~\text{(31)} \,.
 \end{equation}
 
 \end{subquestions}
