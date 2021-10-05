@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -26,7 +26,6 @@
 \subsubquestion
 
 From \rtab{2016:q1:tab:TruthTab1}, we can see that the truth values for $(p ~\land \sim q) \lor (\sim p \land q)$ and $(p \lor q) \land (\sim p ~\lor \sim q)$ are the same.
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
@@ -46,17 +45,37 @@ From \rtab{2016:q1:tab:TruthTab1}, we can see that the truth values for $(p ~\la
 
 \subsubquestion
 
-Using the laws of Boolean algebra, we can see that,
-
+Using \rdef{mod1:law:Distributive}, we can see that,
 \begin{align}
 	(p ~\land \sim q) \lor (\sim p \land q) 
-	& \equiv ((p ~\land \sim q) \lor \sim p) \land ((p ~\land \sim q) \lor q)\,, \nn \\
-	& \equiv (\sim p \lor (p ~\land \sim q)) \land (q \lor (p ~\land \sim q))\,, \nn \\
-	& \equiv ((\sim p \lor p) \land (\sim p ~\lor \sim q)) \land ((q \lor p) \land (q ~\lor \sim q))\,, \nn \\
-	& \equiv (T \land (\sim p ~\lor \sim q)) \land ((q \lor p) \land T)\,, \nn \\
-	& \equiv (\sim p ~\lor \sim q) \land (q \lor p)\,, \nn \\
-	& \equiv (\sim p ~\lor \sim q) \land (p \lor q)\,, \nn \\
-	& \equiv (p \lor q) \land (\sim p ~\lor \sim q)\,. 
+	& \equiv ((p ~\land \sim q) ~\lor \sim p) \land ((p ~\land \sim q) \lor q)\,. \label{2016:q1:Bool1}
+\end{align}
+\\
+Let "$A \equiv (p ~\land \sim q) ~\lor \sim p$" and "$B \equiv (p ~\land \sim q) \lor q$". Thus, 
+\begin{align}
+	(p ~\land \sim q) \lor (\sim p \land q) 
+	& \equiv A \land B \,.
+\end{align}
+
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity}, we see that
+\begin{align}
+	A & \equiv (p ~\land \sim q) ~\lor \sim p \nn \\
+	  & \equiv (\sim p \lor p) \land (\sim p ~\lor \sim q) \nn \\
+	  & \equiv T \land (\sim p ~\lor \sim q) \nn \\
+	  & \equiv (\sim p ~\lor \sim q) \,.
+\end{align}
+
+Similarly, using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity},
+\begin{align}
+	B & \equiv (p ~\land \sim q) \lor q \nn \\
+	  & \equiv (q \lor p) \land (q \lor \sim q) \nn \\
+	  & \equiv (q \lor p) \land T \nn \\
+	  & \equiv (q \lor p) \,.  
+\end{align}
+
+Therefore, \req{2016:q1:Bool1} becomes,
+\begin{align}
+	(p ~\land \sim q) \lor (\sim p \land q) \equiv (\sim p ~\lor \sim q) \land (q \lor p) \,.
 \end{align}
 
 \end{subsubquestions}
@@ -71,10 +90,8 @@ Using the laws of Boolean algebra, we can see that,
 	
 \subsubquestion
 
-See the switching circuit for $(p \land \sim q) \lor (\sim p \land q)$ below.
-
+See the switching circuit for $(p ~\land \sim q) \lor (\sim p ~\land q)$ below.
 \begin{center}
-
 \begin{circuitikz}
 	\draw [color=black, thin] (0,0) -- (2,0);
 	\draw [color=black, thin] (2,0) -- (2,2);
@@ -107,7 +124,6 @@ See the switching circuit for $(p \land \sim q) \lor (\sim p \land q)$ below.
 See the switching circuit for $(p \lor q) \land (\sim p \lor \sim q)$ below.
 
 \begin{center}
-
 \begin{circuitikz}
 	\draw [color=black, thin] (0,0) -- (2,0);
 	\draw [color=black, thin] (2,0) -- (2,2);
@@ -149,7 +165,6 @@ See the switching circuit for $(p \lor q) \land (\sim p \lor \sim q)$ below.
 \subquestion
 
 The Boolean expression for $s$ is,
-
 \begin{equation}
 	(p ~\land \sim q) \lor (p ~\land \sim r)\,.
 \end{equation}
@@ -165,7 +180,6 @@ The Boolean expression for $s$ is,
 \subsubquestion
 
 The Boolean expression is,
-
 \begin{equation}
 	p \implies (q \lor s)\,.
 \end{equation}
@@ -175,7 +189,6 @@ The Boolean expression is,
 \subsubquestion
 
 The Boolean expression is,
-
 \begin{equation}
 	\sim s \implies (r ~\land \sim p)\,.
 \end{equation}
@@ -185,7 +198,6 @@ The Boolean expression is,
 \subsubquestion
 
 From \rtab{2016:q1:tab:TruthTab2} and using \rdef{mod1:defn:Tautology}, we can see that $p \implies (q \lor s)$ is not a tautology.
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|}
