@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -22,7 +22,6 @@
 \subquestion
 
 See \rtab{2013:q1:tab:TruthTab1}.
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
@@ -53,7 +52,6 @@ From \rdef{mod1:defn:Contradiction}, we see that $(p \land q)\, \land \sim (p \l
 \subquestion
 
 Using \rdef{mod1:law:DeMorgan}, we can see that,
-
 \begin{equation}
 	\sim (p \lor q) \equiv \, \sim p \, \land \sim q \,.
 \end{equation}
@@ -64,10 +62,11 @@ Using \rdef{mod1:law:DeMorgan}, we can see that,
 
 \subquestion
 
-Let $p$="It is sunny" and let $q$="It is hot". \\ 
+Let $p$="It is sunny" and let $q$="It is hot". 
+ 
 Therefore, "It is not true that it is hot and sunny" $\equiv$ $\sim (p \land q) \,.$ \\
-Using \rdef{mod1:law:DeMorgan},
 
+Using \rdef{mod1:law:DeMorgan},
 \begin{equation}
 	\sim (p \land q) \equiv \, \sim p \, \lor \sim q \,.
 \end{equation}
@@ -85,7 +84,6 @@ Thus, the equivalent statement of 	$(\sim p \, \lor \sim q)$ is "It is not hot o
 \subsubquestion
 
 The switching circuit is shown.
-
 \begin{center}
 
 \begin{circuitikz}
@@ -137,19 +135,29 @@ The switching circuit is shown.
 
 \subsubquestion
 
-Using the laws from ~\ref{mod1:section:BooleanAlgebraLaws}, we can simplify the expression as follows,
-
+Using \rdef{mod1:law:Associative}, we can manipulate the expression as follows,
 \begin{align}
 	p \land q \land (p \lor r) \land (q \lor (r \land p) \lor s)
-	& \equiv 	p \land \underline{q \land (p \lor r)} \land (q \lor (r \land p) \lor s)\,, \nn \\
-	...\text{using ~\ref{mod1:law:Commutative}}
-	& \equiv 	\underline{p \land (p \lor r)} \land q \land (q \lor (r \land p) \lor s)\,, \nn \\
-	...\text{using ~\ref{mod1:law:Absorptive}}
-	& \equiv 	p \land q \land (\underline{q \lor (r \land p) \lor s})\,, \nn \\
-	...\text{using ~\ref{mod1:law:Associative}}
-	& \equiv 	p \land \underline{q \land (q \lor ((r \land p) \lor s))}\,, \nn \\
-	...\text{using ~\ref{mod1:law:Absorptive}}
-	& \equiv 	p \land q \,. 
+	  \equiv 	p \land (p \lor r) \land q \land (q \lor (r \land p) \lor s) \,. \label{2013:q1:BooleanEquation}
+\end{align}
+
+Let $A \equiv p \land (p \lor r)$ and $B \equiv q \land (q \lor (r \land p) \lor s)$. \\
+
+Using \rdef{mod1:law:Absorptive}, we can simplify $A$ as,
+\begin{align}
+	A & \equiv p \land (p \lor r) \nn \\
+	  & \equiv p \,.
+\end{align}
+
+Similarly, using \rdef{mod1:law:Absorptive}, $B$ can be simplified as,
+\begin{align}
+	B & \equiv q \land (q \lor (r \land p) \lor s) \nn \\
+	  & \equiv q \,.
+\end{align}
+
+Thus, \req{2013:q1:BooleanEquation} can be simplified to,
+\begin{align}
+	p \land (p \lor r) \land q \land (q \lor (r \land p) \lor s) \equiv p \land q \,.
 \end{align}
 
 \end{subsubquestions}
@@ -161,11 +169,10 @@ Using the laws from ~\ref{mod1:section:BooleanAlgebraLaws}, we can simplify the 
 \subquestion
 
 See \rfig{2013:q1:fig:LogicGates}.
-
 \begin{figure}
 	\begin{center}
 		\includegraphics{../2013/figures/2013q1LogicGate}
-		\caption{\label{2013:q1:fig:LogicGates} Showing the logic gate equivalent of $\sim((p \land q) \lor r)$\,.}
+		\caption{\label{2013:q1:fig:LogicGates} Logic Gate representation of $\sim((p \land q) \lor r)$\,.}
 	\end{center}
 \end{figure}
 
