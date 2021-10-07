@@ -1,17 +1,14 @@
-------------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 % Author(s):
 % Varaun Ramgoolie
 % 
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
 %     Year: 2015
 %     Module: 1
 %     Question: 2
@@ -26,7 +23,6 @@
 \subsubquestion
 		
 The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
-		
 		\begin{table}[!hbt]
 			\begin{minipage}{0.3\textwidth}
 				\centering
@@ -116,7 +112,6 @@ The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 		\end{table}	
 			
 From \rtab{2015:q2:tab:HungAlgo}, we can see that the possible matchings for the teachers are as follows:
-		
 		\begin{align}
 			&\text{Mr Jones} \rightarrow \text{Class 1, Class 2}\,, \nn \\
 			&\text{Mr James} \rightarrow \text{Class 4}\,, \nn \\
@@ -125,7 +120,6 @@ From \rtab{2015:q2:tab:HungAlgo}, we can see that the possible matchings for the
 		\end{align}
 		
 Therefore, the matchings to minimize the total time are,
-		
 		\begin{align}
 			&\text{Mr Jones} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
 			&\text{Mr James} \rightarrow \text{Class 4}\,, \nn \\
@@ -136,9 +130,8 @@ Therefore, the matchings to minimize the total time are,
 %----------------------------------------------------------
 
 \subsubquestion
-		
-		The total time spent in the classroom by the four teachers can be found by summing the individual times of the teachers (based on the result of the Hungarian Algorithm). Evaluating this, we get
-		
+
+The total time spent in the classroom by the four teachers can be found by summing the individual times of the teachers (based on the result of the Hungarian Algorithm). Evaluating this, we get
 		\begin{align}
 			\text{Minimum time} = 30+30+31+29 = 120 \, \text{minutes}\,. \\ \nn 
 		\end{align}	
@@ -151,7 +144,6 @@ Therefore, the matchings to minimize the total time are,
 \subquestion
 	
 The truth table is as follows,
-	
 \begin{table}[ht]
 		\centering
 		\begin{tabular}{|c|c|c|c|}
@@ -167,7 +159,7 @@ The truth table is as follows,
 		\caption{\label{2015:q2:tab:TrthTab} Showing the truth values of the expression.}
 \end{table}        
 	
-Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we can see that the expression, $(p \: \land \: q) \implies p$, is a \textbf{tautology}.  \\
+Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we can see that the expression, $(p \land q) \implies p$, is a \textbf{tautology}.  \\
 	
 %------------------------------------------------------------------
 % 2 c
@@ -180,7 +172,6 @@ Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we c
 \subsubquestion
 		
 The Boolean expression for the circuit is,
-		
 		\begin{align}
 			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))\,.
 		\end{align}	
@@ -189,33 +180,33 @@ The Boolean expression for the circuit is,
 
 \subsubquestion
 		
-Using Laws \ref{mod1:section:BooleanAlgebraLaws}, we can simplify this expression as follows,
-		
+Using \rdef{mod1:law:Associative}, we can manipulate this expression as follows,
 		\begin{align}
 			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))
-			& \equiv a \land (\underline{b \lor (a \land b)}) \land (\underline{a \lor (\sim a \land b)})\,, \nn \\
-	...\text{using \ref{mod1:law:Distributive}}
-			& \equiv a \land (\mathbf{(b \lor a) \land (b \lor b)}) \land (\underline{\mathbf{(a \lor \sim a)}} \mathbf{\land (a \lor b)})\,, \nn \\
-	...\text{using \ref{mod1:law:Complement}} 
-			& \equiv a \land ((b \lor a) \land (b \lor b)) \land (\underline{\mathbf{T} \land  (a \lor b)})\,,  \nn \\
-	...\text{using \ref{mod1:law:Identity}}	
-			& \equiv a \land ((b \lor a) \land \underline{(b \lor b)}) \land \mathbf{(a \lor b)}\,,  \nn \\
-	...\text{using \ref{mod1:law:Idempotent}}
-			& \equiv a \land (\underline{(b \lor a) \land \mathbf{b}}) \land (a \lor b)\,,  \nn \\	
-	...\text{using \ref{mod1:law:Commutative}}
-			& \equiv a \land (\mathbf{\underline{b \land (b \lor a)}}) \land (a \lor b)\,, \nn \\ 
-	...\text{using \ref{mod1:law:Absorptive}}
-			& \equiv a \land \underline{\mathbf{b} \land (a \lor b)}\,, \nn \\
-	...\text{using \ref{mod1:law:Commutative}}
-			& \equiv \underline{a \land \mathbf{(a \lor b)}} \land \mathbf{b}\,, \nn \\
-	...\text{using \ref{mod1:law:Associative}}
-			& \equiv \mathbf{(\underline{a \land (a \lor b)})} \land b\,, \nn \\
-	...\text{using \ref{mod1:law:Absorptive}}
-			& \equiv \mathbf{a} \land b\,. \\ \nn
+			 \equiv a \land (a \lor (\sim a \land b)) \land (b \lor (a \land b))\,, \label{2015:q2:BooleanEquation} \nn \\
 		\end{align}
 		
+Let $A \equiv a \land (a \lor (\sim a \land b))$ and let $B \equiv (b \lor (a \land b))$. \\
+
+Using \rdef{mod1:law:Idempotent} on $A$, we see that,
+\begin{align}
+	A & \equiv a \land (a \lor (\sim a \land b)) \nn \\
+	  & \equiv a \,.
+\end{align}
+
+Similarly, using \rdef{mod1:law:Associative} and \rdef{mod1:law:Idempotent} on $B$, we see that,
+\begin{align}
+	B & \equiv (b \lor (a \land b)) \nn \\
+	  & \equiv (b \lor (b \land a)) \nn \\
+	  & \equiv b \,.
+\end{align}
+
+Therefore, \req{2015:q2:BooleanEquation} becomes,
+\begin{align}
+	a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b)) \equiv a \land b \,.
+\end{align}
+
 The expression, $a \land b$, can be expressed as a switching circuit as follows, \\
-		
 \begin{center}	
 	\begin{circuitikz}
 			\draw [thick] (1,0) to (2,0);
