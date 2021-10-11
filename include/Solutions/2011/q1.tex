@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -22,7 +22,6 @@
 \subquestion
 
 From \rtab{2011:q2:tab:TruthTab1}, we see that $(\sim p ~\lor \sim q) \implies (p ~\land \sim q)$ always has the same truth value of $p$.
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|}
@@ -45,7 +44,6 @@ From \rtab{2011:q2:tab:TruthTab1}, we see that $(\sim p ~\lor \sim q) \implies (
 \subquestion
 
 The Boolean expression of the circuit is,
-
 \begin{equation}
 	(p \land (q ~\lor \sim r)) \lor r\,.
 \end{equation}
@@ -57,7 +55,6 @@ The Boolean expression of the circuit is,
 \subquestion
 
 See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below.
-
 \begin{center}
 	
 \begin{circuitikz}
@@ -109,7 +106,6 @@ See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below
 \subsubsubquestion
 
 "If there is a west wind, then we shall have rain" can be expressed as,
-
 \begin{equation}
 	p \implies q\,.
 \end{equation}
@@ -119,7 +115,6 @@ See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below
 \subsubsubquestion
 
 "If there is no rain, then the west wind does not blow" can be expressed as,
-
 \begin{equation}
 	\sim q \implies \sim p\,.
 \end{equation}
@@ -131,7 +126,6 @@ See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below
 \subsubquestion
 
 From \rtab{2011:q1:tab:TruthTab2}, we can see that $p \implies q$ and $\sim q \implies \sim p$ are logically equivalent.
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
@@ -155,24 +149,32 @@ From \rtab{2011:q1:tab:TruthTab2}, we can see that $p \implies q$ and $\sim q \i
 
 \subquestion
 
-Using Laws ~\ref{mod1:section:BooleanAlgebraLaws}, we can see that,
+Using \rdef{mod1:law:DeMorgan}, we can see that,
+\begin{equation}	
+	\sim((p \land q) ~\lor \sim p)  \equiv ~\sim(p \land q) \land p \,. \label{2012BoolEqn}
+\end{equation}
 
-\begin{align}	
-	\sim((p \land q) \lor \sim p) 
-	& \equiv ~ \sim(\underline{(p \land q) \lor \sim p}) \,, \nn \\
-	...\text{using ~\ref{mod1:law:Commutative}}	
-	& \equiv ~ \sim(\underline{\sim p \lor (p \land q)}) \,, \nn \\
-	...\text{using ~\ref{mod1:law:Distributive}}
-	& \equiv ~ \sim(\underline{(\sim p \lor p)} \land (\sim p \lor q)) \,, \nn \\
-	...\text{using ~\ref{mod1:law:Complement}}
-	& \equiv ~ \sim(\underline{T \land (\sim p \lor q)}) \,, \nn \\
-	...\text{using ~\ref{mod1:law:Identity}}
-	& \equiv ~ \underline{\sim((\sim p \lor q))} \,, \nn \\
-	...\text{using ~\ref{mod1:law:DeMorgan}}
-	& \equiv ~ \underline{ p ~\land \sim q} \,,  \nn \\
-	...\text{using ~\ref{mod1:law:Commutative}}	
-	& \equiv ~ \sim q \land p \,.
+From \rdef{mod1:law:DeMorgan}, we also know that,
+\begin{equation}
+	\sim(p \land q) \equiv (\sim p ~\lor \sim q) \,.
+\end{equation}
+
+Therefore, \req{2012BoolEqn} becomes,
+\begin{equation}
+	\sim((p \land q) ~\lor \sim p)  \equiv (\sim p ~\lor \sim q) \land p \,.
+\end{equation}
+
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity},
+\begin{align}
+	(\sim p ~\lor \sim q) \land p & \equiv (p ~\land \sim p) \lor (p \land \sim q) \nn \\
+	                              & \equiv (F) \lor (p ~\land \sim q) \nn \\
+	                              & \equiv (p ~\land \sim q) \,.
 \end{align}
+
+Thus,
+\begin{equation}
+	\sim((p \land q) ~\lor \sim p) \equiv (p ~\land \sim q) \,.
+\end{equation}
 
 \end{subquestions}
 
