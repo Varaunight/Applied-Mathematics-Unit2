@@ -2,21 +2,20 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
 %     
-%     Logic Gate diagram for 2008 q2 d ii
+%     Logic Gate diagram for 2008 June q2 d ii
 %     
 %------------------------------------------------------------------------------
 
 \documentclass[crop,tikz]{standalone}
 
-\usepackage{../../../src/tikzappmath}
-
+\usepackage{../../../../src/tikzappmath}
 \usetikzlibrary{scopes}
 \usetikzlibrary{arrows,shapes.gates.logic.US,shapes.gates.logic.IEC,calc}
 
@@ -48,7 +47,7 @@
 		\draw (x1.input 2) -|++ (-\shift,-\shift) --++(-\shift,0) node[left]{$b$};
 		
 		% inputs 2
-		\draw (x2.input) -|++ (-\shift,0) --++(0,0) node[left]{$a$};
+		\draw (x2.input) -|++ (-2.2*\shift,0) --++(0,0) node[left]{$a$};
 	
 		% Insert labels
 		\node[above] at ($(x3.output) + (2*\shift,0)$) (l1) {\gatetext$\sim a \land (a \lor b)$};

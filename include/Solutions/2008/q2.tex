@@ -2,13 +2,13 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 2008
+%     Year: 2008 June
 %     Module: 1
 %     Question: 2 
 %------------------------------------------------------------------------------
@@ -30,13 +30,12 @@ In words, $(\sim p ~\land \sim q)$, is equivalent to "He is not tall and he is n
 \subquestion
 	
 Let $p$ = "London is in England," and let $q$ = "2 $\times$ 3 = 5". 
-	
+
 The statement in the question is equivalent to $(p \lor q)$. 
 	
 We know that $p$ has a truth value of 1 and $q$ has a truth value of 0. 
 	
 Thus, we get that the truth value of the statement is equal to,
-	
 \begin{align}
 		p \lor q &= 1 \lor 0\,, \nn \\
 		&= 1\,.
@@ -49,7 +48,6 @@ Thus, we get that the truth value of the statement is equal to,
 \subquestion
 	
 From \rtab{2008:q2:tab:TruthTab1} and \rdef{mod1:defn:Tautology}, wee see that $(p \land q) \implies (p \lor q)$ is a tautology.
-	
 \begin{table}[ht]
 		\centering
 		\begin{tabular}{|c|c|c|c|c|}
@@ -76,9 +74,7 @@ From \rtab{2008:q2:tab:TruthTab1} and \rdef{mod1:defn:Tautology}, wee see that $
 \subsubquestion
 		
 See the switching circuit below.
-
 \begin{center}
-	
 \begin{circuitikz}
 			\draw [color=black, thin] (0,0) -- (2,0);
 			\draw [color=black, thin] (2,0) -- (2,2);
@@ -110,9 +106,7 @@ See the switching circuit below.
 			\draw [color=black, thin] (10,-2) -- (10,0);
 			\draw [color=black, thin] (10,2) -- (10,0);
 			\draw [color=black, thin] (10,0) -- (12,0);
-			
-\end{circuitikz}
-		
+\end{circuitikz}	
 \end{center}
 
 %------------------------------------------------------------------------------
@@ -120,7 +114,6 @@ See the switching circuit below.
 \subsubquestion
 		
 See \rfig{2008:q2:fig:LogicGate}.
-		
 \begin{figure}
 		\begin{center}
 				\includegraphics{../2008/figures/2008q2LogicGate}
@@ -136,35 +129,65 @@ See \rfig{2008:q2:fig:LogicGate}.
 
 \subquestion
 
-Using Laws ~\ref{mod1:section:BooleanAlgebraLaws}, we can see that
+Let $Q$="$(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B)$". \\
 
+Let $R$="$(A \land B) \lor (A ~\land \sim B)$". \\
+
+From this, we see that,
+\begin{equation}
+	Q = R \lor (\sim A ~\land \sim B). \label{2008:q2:BooleanMainEqn}
+\end{equation}
+
+Using \rdef{mod1:law:Distributive} and \rdef{mod1:law:Absorptive} on $R$, it becomes
 \begin{align}
-	(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B) 
-	& \equiv \underline{(A \land B) \lor (A ~\land \sim B)} \lor (\sim A ~\land \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Commutative}}...
-	& \equiv \underline{(A ~\land \sim B) \lor (A \land B)} \lor (\sim A ~\land \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Distributive}}...
-	& \equiv (\underline{((A ~\land \sim B) \lor A)} \land \underline{((A ~\land \sim B) \lor B)}) \lor (\sim A ~\land \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Commutative}}...
-	& \equiv (\underline{(A \lor (A ~\land \sim B)}) \land (B \lor (A ~\land \sim B))) \lor (\sim A ~\land \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Absorptive}}...	
-	& \equiv (A \land \underline{(B \lor (A ~\land \sim B))}) \lor (\sim A ~\land \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Distributive}}...
-	& \equiv (A \land ((B \lor A) \land \underline{(B \lor \sim B)})) \lor (\sim ~A \land \sim B)\,, \nn \\	
-	\text{using ~\ref{mod1:law:Complement}}...	
-	& \equiv (A \land (\underline{(B \lor A) \land T)}) \lor (\sim A ~\land \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Identity}}...	
-	& \equiv (A \land \underline{(B \lor A)}) \lor (\sim A ~\land \sim B)\,, \nn \\		
-	\text{using ~\ref{mod1:law:Commutative}}...	
-	& \equiv \underline{(A \land (A \lor B))} \lor (\sim A ~\land \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Absorptive}}...
-	& \equiv \underline{A \lor (\sim A ~\land \sim B)}\,, \nn \\	
-	\text{using ~\ref{mod1:law:Distributive}}...
-	& \equiv \underline{(A ~\lor \sim A)} \land (A ~\lor \sim B)\,, \nn \\
-	\text{using ~\ref{mod1:law:Complement}}...	
-	& \equiv \underline{T \land (A ~\lor \sim B)}\,, \nn \\	
-	\text{using ~\ref{mod1:law:Identity}}...	
-	& \equiv (A ~\lor \sim B)\,.	
+	R & = (A \land B) \lor (A ~\land \sim B) \nn \\
+	  & = ((A \land B) \lor A) \land ((A \land B) ~\lor \sim B) \nn \\
+	  & = A \land ((A \land B) ~\lor \sim B) \,.
 \end{align}
-	
+
+Let $S$="$(A \land B) \lor \sim B$". \\
+
+We can notice that,
+\begin{equation}
+	R = A \land S \,.
+\end{equation}
+
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity} on $S$, we can see that,
+\begin{align}
+	S & = (A \land B) ~\lor \sim B \nn \\
+	  & = (\sim B \lor A) \land (\sim B \lor B) \nn \\
+	  & = (\sim B \lor A) \land T \nn \\
+	  & = (\sim B \lor A) \,.
+\end{align}
+
+Therefore, $R$ now becomes,
+\begin{align}
+	R & = A \land S \nn \\
+	  & = A \land (\sim B \lor A) \,.
+\end{align}
+
+Using \rdef{mod1:law:Absorptive}, $R$ becomes,
+\begin{align}
+	R & = A \land (\sim B \lor A) \nn \\
+	  & = A \,.
+\end{align}
+
+\req{2008:q2:BooleanMainEqn} now becomes,
+\begin{equation}
+	Q = A \lor (\sim A ~\land \sim B).
+\end{equation}
+
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity}, $Q$ becomes,
+\begin{align}
+	Q & = A \lor (\sim A ~\land \sim B) \nn \\
+	  & = (A ~\lor \sim A) \land (A ~\lor \sim B) \nn \\
+	  & = T \land (A ~\lor \sim B) \nn \\
+	  & = (A ~\lor \sim B) \,. 
+\end{align}
+
+Thus,
+\begin{equation}
+	(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B) \equiv (A ~\lor \sim B) \,.
+\end{equation}
+
 \end{subquestions}
