@@ -2,7 +2,7 @@
 % Author(s):
 % Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -26,7 +26,6 @@
 \subsubquestion
 
 See \rtab{2005:q1:tab:TruthTab1}.
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|}
@@ -47,7 +46,6 @@ See \rtab{2005:q1:tab:TruthTab1}.
 \subsubquestion
 
 See \rtab{2005:q1:tab:TruthTab2}
-
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
@@ -99,7 +97,6 @@ $(x ~\land \sim y)$ can be expressed as "I do Statistical Analysis and I do not 
 \subsubquestion
 
 "I do Statistical Analysis so I will do Applied Mathematics" can be expressed as,
-
 \begin{equation}
 	x \implies y\,.
 \end{equation}
@@ -112,31 +109,43 @@ $(x ~\land \sim y)$ can be expressed as "I do Statistical Analysis and I do not 
 
 \subquestion
 
-Using Laws ~\ref{mod1:section:BooleanAlgebraLaws}, we can see that
+Let $A$="$(l \land m \land n) \lor (l \land m ~\land \sim n)$". \\
+Let $B$="$(l \land m)$". \\
+$A$ then becomes,
+\begin{equation}
+	A \equiv (B \land n) \lor (B \land \sim n) \,.
+\end{equation}
 
-\begin{align*}
-	\hspace{-10mm}
-	(l \land m \land n) \lor (l \land m ~\land \sim n) & \equiv \underline{(l \land m \land n) \lor (l \land m ~\land \sim n)}
-	& \text{using ~\ref{mod1:law:Distributive}}\,, \nn \\ 
-	 												  & \equiv (\underline{\textcolor{red}{(l \land m \land n) \lor l)}} \land (\underline{\textcolor{blue}{(l \land m \land n) \lor m})} \land ((l \land m    \land n) \lor \sim n)
-    & \text{using ~\ref{mod1:law:Absorptive}}\,, \nn \\ 
-													  & \equiv \textcolor{red}{l} \land \textcolor{blue}{m} \land (\underline{(l \land m \land n) ~\lor \sim n})
-	& \text{using ~\ref{mod1:law:Commutative}}\,, \nn \\ 
-													  & \equiv l \land m \land (\underline{\textcolor{red}{\sim n \lor (l \land m \land n)}})
-  	& \text{using ~\ref{mod1:law:Distributive}}\,, \nn \\
-  													  & \equiv l \land m \land (\textcolor{red}{(\sim n \lor l)} \land \textcolor{red}{(\sim n \lor m)} \land \underline{\textcolor{red}{(\sim n \lor n)}})
-    & \text{using ~\ref{mod1:law:Complement}}\,, \nn \\
-    										    	  & \equiv l \land m \land (\underline{(\sim n \lor l) \land (\sim n \lor m) \land (\textcolor{red}{T})})
-    & \text{using ~\ref{mod1:law:Identity}}\,, \nn \\    
-    										    	  & \equiv \underline{l \land m \land (\textcolor{red}{(\sim n \lor l) \land (\sim n \lor m)})}
-    & \text{using ~\ref{mod1:law:Associative}}\,, \nn \\  
-    												  & \equiv \textcolor{red}{l \land \underline{(\sim n \lor l)}} \land \textcolor{blue}{m \land \underline{(\sim n \lor m)}}
-    & \text{using ~\ref{mod1:law:Commutative}}\,, \nn \\     
-    				    	    					  & \equiv \underline{l \land (\textcolor{red}{l ~\lor \sim n})} \land \underline{m \land (\textcolor{blue}{m ~\lor \sim n})}
-    & \text{using ~\ref{mod1:law:Absorptive}}\,, \nn \\ 	
-    												  & \equiv \textcolor{red}{l} \land \textcolor{blue}{m}\,, \\	
-													  & \equiv l \land m\,. \\							  			    	    					  				 											
-\end{align*}
+Using \rdef{mod1:law:Distributive} and \rdef{mod1:law:Absorptive}, $A$ becomes,
+\begin{align}
+	A & \equiv ((B \land n) \lor B) \land ((B \land n) \lor \sim n) \nn \\
+	  & \equiv B \land ((B \land n) \lor \sim n) \,.
+\end{align}
+
+Let $C$="$(B \land n) \lor \sim n$". \\
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity} on $C$, it becomes,
+\begin{align}
+	C & \equiv (B \land n) \lor \sim n \nn \\
+	  & \equiv (\sim n \lor B) \land (\sim n \lor n) \nn \\
+	  & \equiv (\sim n \lor B) \land T \nn \\
+	  & \equiv (\sim n \lor B) \,.
+\end{align}
+
+From this, $A$ now becomes,
+\begin{equation}
+	A \equiv B \land (\sim n \lor B) \,.
+\end{equation}
+
+Using \rdef{mod1:law:Absorptive}, $A$ becomes,
+\begin{align}
+	A & \equiv B \land (\sim n \lor B) \nn \\
+	  & \equiv B \,.
+\end{align}
+
+Therefore,
+\begin{equation}
+	(l \land m \land n) \lor (l \land m ~\land \sim n) \equiv l \land m \,.
+\end{equation}
 
 %------------------------------------------------------------------------------
 % 1 d -------------------------------------------------------------------------
@@ -145,7 +154,6 @@ Using Laws ~\ref{mod1:section:BooleanAlgebraLaws}, we can see that
 \subquestion
 
 See the switching circuit of $((a \land b) \lor (a \land c)) \land (a \lor b)$.
-
 \begin{center}
 	\begin{circuitikz}
 		
