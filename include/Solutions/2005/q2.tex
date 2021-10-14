@@ -1,8 +1,8 @@
 %------------------------------------------------------------------------------
 % Author(s):
-% Varaun Ramgoole
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -12,7 +12,6 @@
 %     Module: 1
 %     Question: 2 
 %------------------------------------------------------------------------------
-\usetikzlibrary{patterns}
 
 \begin{subquestions}
 	
@@ -23,7 +22,6 @@
 \subquestion
 
 The objective function is,
-
 \begin{equation}
 	P = 300x + 550y \,.
 \end{equation}
@@ -35,7 +33,6 @@ The objective function is,
 \subquestion
 
 The 4 constraints to this problem are, 
-
 \begin{align}
 	x & \geq 0 \,, \nn \\
 	y & \geq 0 \,, \nn \\
@@ -45,7 +42,7 @@ The 4 constraints to this problem are,
 
 It should also be noted that
 \begin{equation}
-	100x + 250y \leq 1250 \equiv 2x + 5y \leq 25 \,.
+	100x + 250y \leq 1250 \implies 2x + 5y \leq 25 \,.
 \end{equation}
 
 %------------------------------------------------------------------------------
@@ -54,46 +51,13 @@ It should also be noted that
 
 \subquestion
 
-The feasible region is shaded in the graph below.
-
-\begin{center}
-
-\begin{tikzpicture}
-	\begin{axis}
-		[
-		xmin=-0,xmax=15,
-		ymin=0,ymax=10,
-		grid=both,
-		grid style={line width=.1pt, draw=darkgray!10},
-		major grid style={line width=.2pt,draw=darkgray!30},
-		axis lines=left,
-		minor tick num=1,
-		enlargelimits={abs=0},
-		axis line style={-latex},
-		samples=100,
-		domain = -20:20,
-		ytick={0,1,...,10},
-		xtick={0,1,...,15},
-		xlabel={$x$},
-		ylabel={$y$},
-		x label style={at={(axis description cs:1,0.15)},anchor=north west},
-		y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
-		]
-		
-		\addplot [mark=dot] coordinates{(10, 0)  (0,6)};
-		
-		\addplot [mark=dot] coordinates {(12.5,0) (0, 5)};
-		
-		\addplot [red,pattern=north east lines,pattern color=blue] coordinates {(0,5) (5, 3) (10, 0)} \closedcycle;	
-		
-		\node [pin=30:{$(5, 3)$}] at (axis cs:(5, 3) {};
-		
-		\addplot [mark=otimes] coordinates{(5, 3)};
-		
-	\end{axis}	
-\end{tikzpicture}
-
-\end{center}
+The feasible region is shaded in \rfig{2005:q2:fig:LinGraph}.
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2005/figures/2005q2LinGraph}
+		\caption{\label{2005:q2:fig:LinGraph} Linear Programming Graph.}
+	\end{center}
+\end{figure}
 
 %------------------------------------------------------------------------------
 % 2 d -------------------------------------------------------------------------
@@ -102,7 +66,6 @@ The feasible region is shaded in the graph below.
 \subquestion
 
 From \rdef{mod1:defn:TourOfVertices}, we can calculate $P$ by,
-
 \begin{align}
 	\text{Using (0,5)} \,, \nn \\
 	P & = 300x + 550y \,, \nn \\
