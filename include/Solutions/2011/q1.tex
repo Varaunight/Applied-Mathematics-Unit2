@@ -1,17 +1,181 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2011
+%     Module: 1
+%     Question: 1 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+
+%-----------------------------------------------------------------------------
+% 1 a
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+From \rtab{2011:q2:tab:TruthTab1}, we see that $(\sim p ~\lor \sim q) \implies (p ~\land \sim q)$ always has the same truth value of $p$.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		p & q & $\sim$ p & $\sim$ q & ($\sim$ p $\lor$ $\sim$ q) & (p $\land$ $\sim$ q) & ($\sim$ p $\lor$ $\sim$ q) $\implies$ (p $\land$ $\sim$ q) \\
+		\hline
+		0 & 0 & 1 & 1 & 1 & 0 & 0 \\
+		0 & 1 & 1 & 0 & 1 & 0 & 0 \\
+		1 & 0 & 0 & 1 & 1 & 1 & 1 \\
+		1 & 1 & 0 & 0 & 0 & 0 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2011:q2:tab:TruthTab1} Truth Table of $(\sim p ~\lor \sim q) \implies (p ~\land \sim q)$.}
+\end{table}
+
+%-----------------------------------------------------------------------------
+% 1 b
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+The Boolean expression of the circuit is,
+\begin{equation}
+	(p \land (q ~\lor \sim r)) \lor r\,.
+\end{equation}
+
+%-----------------------------------------------------------------------------
+% 1 c
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below.
+\begin{center}
+	
+\begin{circuitikz}
+	\draw [color=black, thin] (0,0) -- (2,0);
+	\draw [color=black, thin] (2,0) -- (2,2);
+	\draw [color=black, thin] (2,0) -- (2,-2);
+	
+	\draw (2,2) to[normal open switch, *-*](6,2);
+	\draw (6,2) to[normal open switch, *-*](10,2);
+	
+	\path (2,2) -- (6,2) node[pos=0.5,below]{a};
+	\path (6,2) -- (10,2) node[pos=0.5,below]{b};
+	
+	\draw (2,-2) to[normal open switch, *-*](6,-2);
+    \path (2,-2) -- (6,-2) node[pos=0.5,below]{a};
+
+	\draw [color=black, thin] (6,-2) -- (6,-1);
+	\draw [color=black, thin] (6,-2) -- (6,-3);
+	
+	\draw (6,-1) to[normal open switch, *-*](10,-1);
+	\draw (6,-3) to[normal open switch, *-*](10,-3);
+	
+	\path (6,-1) -- (10,-1) node[pos=0.5,below]{$\sim$ b};
+	\path (6,-3) -- (10,-3) node[pos=0.5,below]{c};
+	
+	\draw [color=black, thin] (10,-1) -- (10,-2);
+	\draw [color=black, thin] (10,-3) -- (10,-2);
+	\draw [color=black, thin] (10,-2) -- (11,-2);
+	\draw [color=black, thin] (10,2) -- (11,2);
+	\draw [color=black, thin] (11,-2) -- (11,2);
+	
+	\draw [color=black, thin] (11,0) -- (13,0);
+	
+\end{circuitikz}
+
+\end{center}
+%-----------------------------------------------------------------------------
+% 1 d
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+
+\subsubquestion
+
+\begin{subsubsubquestions}
+	
+\subsubsubquestion
+
+"If there is a west wind, then we shall have rain" can be expressed as,
+\begin{equation}
+	p \implies q\,.
+\end{equation}
+
+%-----------------------------------------------------------------------------
+
+\subsubsubquestion
+
+"If there is no rain, then the west wind does not blow" can be expressed as,
+\begin{equation}
+	\sim q \implies \sim p\,.
+\end{equation}
+
+\end{subsubsubquestions}
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rtab{2011:q1:tab:TruthTab2}, we can see that $p \implies q$ and $\sim q \implies \sim p$ are logically equivalent.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		p & q & $\sim$ p & $\sim$ q & p $\implies$ q & $\sim$ q $\implies$ $\sim$ p \\
+		\hline
+		0 & 0 & 1 & 1 & 1 & 1 \\
+	    0 & 1 & 1 & 0 & 1 & 1 \\
+	    1 & 0 & 0 & 1 & 0 & 0 \\
+	    1 & 1 & 0 & 0 & 1 & 1 \\
+	    \hline
+	\end{tabular}
+	\caption{\label{2011:q1:tab:TruthTab2} Truth values of  $p \implies q$ and $\sim q \implies \sim p$.}
+\end{table}
+
+\end{subsubquestions}
+
+%-----------------------------------------------------------------------------
+% 1 e
+%-----------------------------------------------------------------------------
+
+\subquestion
+
+Using \rdef{mod1:law:DeMorgan}, we can see that,
+\begin{equation}	
+	\sim((p \land q) ~\lor \sim p)  \equiv ~\sim(p \land q) \land p \,. \label{2012BoolEqn}
+\end{equation}
+
+From \rdef{mod1:law:DeMorgan}, we also know that,
+\begin{equation}
+	\sim(p \land q) \equiv (\sim p ~\lor \sim q) \,.
+\end{equation}
+
+Therefore, \req{2012BoolEqn} becomes,
+\begin{equation}
+	\sim((p \land q) ~\lor \sim p)  \equiv (\sim p ~\lor \sim q) \land p \,.
+\end{equation}
+
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity},
+\begin{align}
+	(\sim p ~\lor \sim q) \land p & \equiv (p ~\land \sim p) \lor (p \land \sim q) \nn \\
+	                              & \equiv (F) \lor (p ~\land \sim q) \nn \\
+	                              & \equiv (p ~\land \sim q) \,.
+\end{align}
+
+Thus,
+\begin{equation}
+	\sim((p \land q) ~\lor \sim p) \equiv (p ~\land \sim q) \,.
+\end{equation}
+
+\end{subquestions}
 
 
