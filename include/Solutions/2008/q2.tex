@@ -1,17 +1,193 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2008 June
+%     Module: 1
+%     Question: 2 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% 2 a -------------------------------------------------------------------------
+%------------------------------------------------------------------------------	
+	
+\subquestion
+	
+In words, $(\sim p ~\land \sim q)$, is equivalent to "He is not tall and he is not happy."
+	
+%------------------------------------------------------------------------------
+% 2 b -------------------------------------------------------------------------
+%------------------------------------------------------------------------------	
+	
+\subquestion
+	
+Let $p$ = "London is in England," and let $q$ = "2 $\times$ 3 = 5". 
 
+The statement in the question is equivalent to $(p \lor q)$. 
+	
+We know that $p$ has a truth value of 1 and $q$ has a truth value of 0. 
+	
+Thus, we get that the truth value of the statement is equal to,
+\begin{align}
+		p \lor q &= 1 \lor 0 \nn \\
+		&= 1\,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+% 2 c -------------------------------------------------------------------------
+%------------------------------------------------------------------------------	
+	
+\subquestion
+	
+From \rtab{2008:q2:tab:TruthTab1} and \rdef{mod1:defn:Tautology}, wee see that $(p \land q) \implies (p \lor q)$ is a tautology.
+\begin{table}[ht]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			p & q & p $\land$ q & p $\lor$ q & (p $\land$ q) $\implies$ (p $\lor$ q) \\
+			\hline
+			0 & 0 & 0 & 0 & 1 \\
+			0 & 1 & 0 & 1 & 1 \\
+			1 & 0 & 0 & 1 & 1 \\
+			1 & 1 & 1 & 1 & 1 \\
+			\hline
+		\end{tabular}
+		\caption{\label{2008:q2:tab:TruthTab1} Showing the truth values of $(p \land q) \implies (p \lor q)$.}
+\end{table}
+	
+%------------------------------------------------------------------------------
+% 2 d -------------------------------------------------------------------------
+%------------------------------------------------------------------------------	
+	
+\subquestion
+	
+\begin{subsubquestions}
+		
+\subsubquestion
+		
+See the switching circuit below.
+\begin{center}
+\begin{circuitikz}
+			\draw [color=black, thin] (0,0) -- (2,0);
+			\draw [color=black, thin] (2,0) -- (2,2);
+			\draw [color=black, thin] (2,0) -- (2,-2);
+			
+			\draw (2,2) to[normal open switch, *-*](6,2);
+			\draw (6,2) to[normal open switch, *-*](10,2);
+			
+			\path (2,2) -- (6,2) node[pos=0.5,below]{A};
+			\path (6,2) -- (10,2) node[pos=0.5,below]{$\sim$ B};
+			
+			\draw [color=black, thin] (2,-2) -- (3,-2);
+			\draw [color=black, thin] (3,-2) -- (3,-1);
+			\draw [color=black, thin] (3,-2) -- (3,-3);
+			
+			\draw (3,-1) to[normal open switch, *-*](5,-1);
+			\draw (3,-3) to[normal open switch, *-*](5,-3);	
+			
+			\path (3,-1) -- (5,-1) node[pos=0.5,below]{$\sim$ A};
+			\path (3,-3) -- (5,-3) node[pos=0.5,below]{C};
+			
+			\draw [color=black, thin] (5,-1) -- (5,-2);
+			\draw [color=black, thin] (5,-3) -- (5,-2);
+			\draw [color=black, thin] (5,-2) -- (6,-2);
+			
+			\draw (6,-2) to[normal open switch, *-*](10,-2);
+			\path (6,-2) -- (10,-2) node[pos=0.5,below]{B};
+			
+			\draw [color=black, thin] (10,-2) -- (10,0);
+			\draw [color=black, thin] (10,2) -- (10,0);
+			\draw [color=black, thin] (10,0) -- (12,0);
+\end{circuitikz}	
+\end{center}
 
+%------------------------------------------------------------------------------
+
+\subsubquestion
+		
+See \rfig{2008:q2:fig:LogicGate}.
+\begin{figure}
+		\begin{center}
+				\includegraphics{../2008/figures/2008q2LogicGate}
+				\caption{\label{2008:q2:fig:LogicGate} Showing the logic circuit of $\sim a \land (a \lor b)$.}
+		\end{center}
+\end{figure}
+	
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 2 e -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+Let $Q$="$(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B)$". \\
+
+Let $R$="$(A \land B) \lor (A ~\land \sim B)$". \\
+
+From this, we see that,
+\begin{equation}
+	Q = R \lor (\sim A ~\land \sim B). \label{2008:q2:BooleanMainEqn}
+\end{equation}
+
+Using \rdef{mod1:law:Distributive} and \rdef{mod1:law:Absorptive} on $R$, it becomes
+\begin{align}
+	R & = (A \land B) \lor (A ~\land \sim B) \nn \\
+	  & = ((A \land B) \lor A) \land ((A \land B) ~\lor \sim B) \nn \\
+	  & = A \land ((A \land B) ~\lor \sim B) \,.
+\end{align}
+
+Let $S$="$(A \land B) \lor \sim B$". \\
+
+We can notice that,
+\begin{equation}
+	R = A \land S \,.
+\end{equation}
+
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity} on $S$, we can see that,
+\begin{align}
+	S & = (A \land B) ~\lor \sim B \nn \\
+	  & = (\sim B \lor A) \land (\sim B \lor B) \nn \\
+	  & = (\sim B \lor A) \land T \nn \\
+	  & = (\sim B \lor A) \,.
+\end{align}
+
+Therefore, $R$ now becomes,
+\begin{align}
+	R & = A \land S \nn \\
+	  & = A \land (\sim B \lor A) \,.
+\end{align}
+
+Using \rdef{mod1:law:Absorptive}, $R$ becomes,
+\begin{align}
+	R & = A \land (\sim B \lor A) \nn \\
+	  & = A \,.
+\end{align}
+
+\req{2008:q2:BooleanMainEqn} now becomes,
+\begin{equation}
+	Q = A \lor (\sim A ~\land \sim B).
+\end{equation}
+
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity}, $Q$ becomes,
+\begin{align}
+	Q & = A \lor (\sim A ~\land \sim B) \nn \\
+	  & = (A ~\lor \sim A) \land (A ~\lor \sim B) \nn \\
+	  & = T \land (A ~\lor \sim B) \nn \\
+	  & = (A ~\lor \sim B) \,. 
+\end{align}
+
+Thus,
+\begin{equation}
+	(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B) \equiv (A ~\lor \sim B) \,.
+\end{equation}
+
+\end{subquestions}
