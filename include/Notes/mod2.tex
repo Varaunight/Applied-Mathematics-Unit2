@@ -388,6 +388,22 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 	\end{enumerate}
 \end{note}
 
+\begin{defn} \label{mod2:note:NormalConvention}
+	The convention for Normal Probability is the symbol $\phi$. $\phi(k)$ is defined as,
+	\begin{equation}
+		\phi(k) = P(Z<k).
+	\end{equation}
+\end{defn}
+
+\begin{note}
+	Some useful results for Normal Probability are,
+	\begin{align}
+		\phi(-k) & = 1 - \phi(k) \nn \\
+		P(Z>k) & = 1 - \phi(k) \nn \\
+		P(a<Z<b) & = \phi(b) - \phi(a).
+	\end{align}	
+\end{note}
+
 
 \section{Normal Approximation to the Poisson Distribution} \label{mod2:section:NormalApproxPois}
 
@@ -419,8 +435,12 @@ Define  functions $g$ and $f$ with $a, b, c \in \mathbb{R}$. For \textbf{ANY} ra
 \begin{align}
 E[aX + b] &= aE[X] + b, \\
 E[X + Y] &= E[X] + E[Y], \\
+E[X - Y] &= E[X] - E[Y], \\
 E[ag(X) + bf(Y)  + c] &= aE[g(X) ]+ bE[f(Y)] + c, \\
-Var[ag(X) + b] &= a^2Var[g(X)].
+Var[a] &= 0, \\
+Var[ag(X) + b] &= a^2Var[g(X)], \\
+Var[ag(X) + bf(Y)] &= a^2Var[g(X)] + b^2Var[f(Y)], \\
+Var[ag(X) - bf(Y)] &= a^2Var[g(X)] + b^2Var[f(Y)].
 \end{align}
 
 If $X$ and $Y$ are \textbf{independent} random variables, then the following properties also hold
