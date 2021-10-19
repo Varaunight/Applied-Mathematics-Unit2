@@ -1,17 +1,95 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2005 C
+%     Module: 1
+%     Question: 2 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% 2 a -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
+\subquestion
+
+The objective function is,
+\begin{equation}
+	P = 300x + 550y \,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 2 b -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The 4 constraints to this problem are, 
+\begin{align}
+	x & \geq 0 \,, \nn \\
+	y & \geq 0 \,, \nn \\
+	3x + 5y & \leq 30 \,, \nn \\
+	100x + 250y & \leq 1250 \,.
+\end{align}
+
+It should also be noted that
+\begin{equation}
+	100x + 250y \leq 1250 \implies 2x + 5y \leq 25 \,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 2 c -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The feasible region is shaded in \rfig{2005:q2:fig:LinGraph}.
+\begin{figure}
+	\begin{center}
+		\includegraphics{../2005/figures/2005q2LinGraph}
+		\caption{\label{2005:q2:fig:LinGraph} Linear Programming Graph.}
+	\end{center}
+\end{figure}
+
+%------------------------------------------------------------------------------
+% 2 d -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+From \rdef{mod1:defn:TourOfVertices}, we can calculate $P$ by,
+\begin{align}
+	\text{Using (0,5)}  \nn \\
+	P & = 300x + 550y  \nn \\
+	& = (300 \times 0) + (550 \times 5)  \nn \\
+	& = 2750 \,.  \\
+	\text{Using (5, 3)}  \nn \\
+	P & = 300x + 550y  \nn \\
+	& = (300 \times 5) + (550 \times 3)  \nn \\
+	& = 2550 \,.    \\		  
+	\text{Using (10,0)}  \nn \\
+	P & = 300x + 550y  \nn \\
+	& = (300 \times 10) + (550 \times 0)  \nn \\
+	& = 3000 \,. \label{2005:q2:eqn:Profit}
+\end{align}
+
+From \req{2005:q2:eqn:Profit}, we see that maximum profit $P$ is $ \$ 3000$.
+
+%------------------------------------------------------------------------------
+% 2 e -------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The Profit Line method can also be used to determine the maximum value of $P$. It relies on drawing parallel lines, starting from the origin, which have the gradient of the objective function. This line is then drawn at different points on the $x$ or $y$ axes. The furthest point on the feasible region which the Profit Line touches (just before leaving the feasible region) is the point which will yield the maximum value of the objective function. 
+
+\end{subquestions}
 
