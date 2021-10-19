@@ -1,17 +1,137 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2014
+%     Module: 1
+%     Question: 1
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% 1 a--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
 
+\subquestion
+
+\begin{equation}
+	q \implies \sim p\,. 
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 1 b--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+See \rtab{2014:q1:tab:Tab1}. Note that the inverse of ($p \implies \sim q$) is ($\sim p \implies q$).
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		p & $\sim$ q & $\sim$ p & q & ($\sim$ p $\implies$ q) \\
+		\hline
+		0 & 0 & 1 & 1 & 1 \\
+		0 & 1 & 1 & 0 & 0 \\
+		1 & 0 & 0 & 1 & 1 \\
+		1 & 1 & 0 & 0 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2014:q1:tab:Tab1} Truth Table of $\sim p \implies q$.}
+\end{table}
+		
+%------------------------------------------------------------------------------
+% 1 c--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+		
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+See \rtab{2014:q1:tab:Tab2}.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		p & q & r & (p $\implies$ q) & (q $\implies$ r) & (p $\implies$ q) $\lor$ (q $\implies$ r) \\
+		\hline
+		0 & 0 & 0 & 1 & 1 & 1 \\
+		0 & 0 & 1 & 1 & 1 & 1 \\
+		0 & 1 & 0 & 1 & 0 & 1 \\
+		0 & 1 & 1 & 1 & 1 & 1 \\
+		1 & 0 & 0 & 0 & 1 & 1 \\
+		1 & 0 & 1 & 0 & 1 & 1 \\
+		1 & 1 & 0 & 1 & 0 & 1 \\
+		1 & 1 & 1 & 1 & 1 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2014:q1:tab:Tab2} Truth Table of $(p \implies q) \lor (q \implies r)$.}
+\end{table}
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rdef{mod1:defn:Tautology}, we can see that $(p \implies q) \lor (q \implies r)$ is a tautology.
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 1 d--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The Boolean expression for the circuit shown is,
+\begin{equation}
+	\sim (a \land b) \lor \sim c\,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 1 e--------------------------------------------------------------------------
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+
+\subsubquestion
+
+The switching circuit for $A \lor (B \land C)$ is shown below.
+
+\begin{circuitikz}
+	\draw [color=black, thick] (0,0) -- (2,0);
+	\draw [color=black, thick] (2,0) -- (2,1);
+	\draw [color=black, thick] (2,0) -- (2,-1);
+	\draw (2,1) to[normal open switch, *-*](6,1);
+	\path (2,1) -- (6,1) node[pos=0.5,below]{A};
+	\draw (2,-1) to[normal open switch, *-*](4,-1);
+	\path (2,-1) -- (4,-1) node[pos=0.5,below]{B};
+	\draw (4,-1) to[normal open switch, *-*](6,-1);
+	\path (4,-1) -- (6,-1) node[pos=0.5,below]{C};
+	\draw [color=black, thick] (6,1) -- (6,0);
+	\draw [color=black, thick] (6,-1) -- (6,0);
+	\draw [color=black, thick] (6,0) -- (8,0);
+\end{circuitikz}
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+
+Using \rdef{mod1:law:Distributive}, we see that,
+\begin{equation}
+	A \lor (B \land C) \equiv (A \lor B) \land (A \lor C) \,.
+\end{equation}
+
+\end{subsubquestions}
+
+\end{subquestions}
 
