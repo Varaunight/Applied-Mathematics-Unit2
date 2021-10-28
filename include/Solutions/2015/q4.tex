@@ -1,8 +1,8 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun  Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -13,5 +13,79 @@
 %     Question: 4
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% q4 a
+%------------------------------------------------------------------------------
+\subquestion
 
+\begin{subsubquestions}
+	
+\subsubquestion
+It is given that the probability distribution function of a continuous random variable $X$ is,
+\[
+f(x) =
+\begin{cases}
+	a+bx & \text{$0<x<1$} \\
+	0    & \text{otherwise} \\
+\end{cases}
+\]
+and $F(0.5)=0.8.$ \\
+
+From \rprop{mod2:prop:ContinuousRV:1}, we can formulate the equation,
+\begin{align}
+	\int_{0}^{1} (a+bx).dx = 1, \nn \\
+	\left[ax + \frac{bx^2}{2}\right]_0^1 = 1, \nn \\
+	\left[a(1) + \frac{b(1)^2}{2}\right] - \left[a(0) + \frac{b(0)^2}{2}\right]= 1, \nn \\
+	a + \frac{b}{2} = 1. \label{2015:q4:eqn:crv1}
+\end{align}
+
+In order to solve for $a$ and $b$, we must formulate the cumulative distribution function of $X$ given as $F(x)$. From \rdef{mod2:defn:ContinuousRV:CDF}, 
+\begin{align}
+	F(x) & = \int_{-\infty}^{x} f(x).dx \nn \\
+	     & = \int_{0}^{x} (a+bx)dx \nn \\
+	     & = \left[ax + \frac{bx^2}{2}\right]_0^x \nn \\
+	     & = \left[a(x) + \frac{b(x)^2}{2}\right] - \left[a(0) + \frac{b(0)^2}{2}\right] \nn \\
+	     & = ax + \frac{bx^2}{2}.
+\end{align}
+
+Since we are given that $F(0.5)=0.8$, we can formulate another equation as follows,
+\begin{align}
+	F(0.5) & = a(0.5) + \frac{b(0.5)^2}{2} = 0.8, \nn \\
+  \implies &  0.5 \times a + 0.25 \times \frac{b}{2} = 0.8, \nn \\
+  \implies & \frac{a}{2} + \frac{b}{8} = \frac{4}{5}. \label{2015:q4:eqn:crv2}
+\end{align}
+
+We can manipulate \req{2015:q4:eqn:crv2} by multiplying by 4 to obtain,
+\begin{equation}
+	2a + \frac{b}{2} = \frac{16}{5}. \label{2015:q4:eqn:crv3}
+\end{equation}
+
+We can now solve for $a$ by subtracting \req{2015:q4:eqn:crv3} from \req{2015:q4:eqn:crv1}.
+\begin{align}
+	\left[2a + \frac{b}{2} \right] - \left[a + \frac{b}{2} \right] & = \left[\frac{16}{5} \right] - [1] \nn \\
+	a & = \frac{11}{5} \nn \\
+	  & = 2.2.
+\end{align}
+
+Finally, substituting $a=2.2$ into \req{2015:q4:eqn:crv1}, we can solve for $b$ as follows,
+\begin{align}
+	2.2 + \frac{b}{2} & = 1 \nn \\
+	\frac{b}{2} & = 1 - 2.2 \nn \\
+	            & = -1.2 \nn \\
+	\implies  b & = -1.2 \times 2 \nn \\
+	            & = -2.4
+\end{align}
+
+Thus, $a=2.2$ and $b=-2.4$.
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+
+\end{subsubquestions}
+
+\end{subquestions}
 
