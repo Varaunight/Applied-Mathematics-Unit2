@@ -84,6 +84,46 @@ Thus, $a=2.2$ and $b=-2.4$.
 
 \subsubquestion
 
+From \rdef{mod2:note:ContinuousRV:CDF2}, we can solve for $P(X>0.5)$ as follows,
+\begin{align}
+	P(X>0.5) & = 1 - F(0.5) \nn \\
+	         & = 1 - 0.8 \nn \\
+	         & = 0.2.
+\end{align}
+
+Thus, $P(X>0.5)=0.2$.
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% q4 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+It is given that $X \sim N(9,1^2)$. The values of $m$ and $n$ can be given as,
+\begin{align}
+	m & = \text{Total} \times P(8 \leq X < 9) \nn \\
+	  & = 400 \times P(8 \leq X < 9). \nn \\
+    n & = \text{Total} \times P(X \geq 10) \nn \\
+      & = 400 \times P(X \geq 10). 
+\end{align}
+	
+To calculate $P(8 \leq X < 9)$, we must first standardize the random variable $Z$, to the normal random variable $Z$. From Section ~\ref{mod2:section:Normal}, we standardize and calculate as follows,
+\begin{align}
+	P(8 \leq X < 9) & = P\left(\frac{8- \mu}{\sigma} \leq \frac{(X-\mu)}{\sigma} < \frac{9-\mu}{\sigma} \right) \nn \\
+	                & = P\left(\frac{8- 9}{1} \leq Z < \frac{9-9}{1} \right) \nn \\
+	                & = P\left(-1 \leq Z < 0 \right) \nn \\
+	                & = \Phi(0) - \Phi(-1) \nn \\
+	                & = \Phi(0) - (1 - \Phi(1)) \nn \\
+	                & = \Phi(0) + \Phi(1) - 1 \nn \\
+	                & = 0.5 + 0.841 - 1 \nn \\
+	                & = 0.341 \,.
+\end{align}
+	
 
 \end{subsubquestions}
 
