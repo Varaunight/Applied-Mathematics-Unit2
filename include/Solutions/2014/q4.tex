@@ -1,17 +1,172 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2014
+%     Module: 2
+%     Question: 4 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+%------------------------------------------------------------------------------
+% 4 a
+%------------------------------------------------------------------------------
+\subquestion
 
+\begin{subsubquestions}
+	
+\subsubquestion
+
+We are given that faults occur randomly at a rate of 3 every 15 meters. Let the random variable, $X$ be "the number of faults which occur in 15 meters of cloth". We can then say that $X$ follows a Poisson distribution with parameter, $\lambda = 3$. \\
+Thus, we define the distribution of $X$ as
+\begin{equation}
+	X \sim \text{Pois}(3) \,.
+\end{equation}
+	
+From Section ~\ref{mod2:section:Poisson}, the probability of $X=x$ as follows,
+\begin{equation}
+	P(X=x) = \frac{3^{x} \times e^{-3}}{x!}, ~~~ x \in (0, 1, 2, ...)\,. \label{2014:q4:PoisEqn}
+\end{equation}
+	
+Using \req{2014:q4:PoisEqn}, the probability that $X=4$ is,
+\begin{align}
+	P(X=4) & = \frac{3^{4} \times e^{-3}}{4!} \nn \\
+	       & = \frac{81 \times e^{-3}}{24} \nn \\
+	       & = 0.168 \,.
+\end{align} 
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We are asked to find the probability that at least 2 faults occur in a 60 meter length of cloth. Since we know that  the rate of faults in 15 meters of cloth is equal to 3, the rate of faults in 60 meters of cloth is $\frac{60}{15} \times 3 = 12$. \\
+Let the random variable, $Y$, be "the number of faults which occur in 60 meters of cloth". Thus, we can define the distribution of $Y$ as
+\begin{equation}
+	Y \sim \text{Pois}(12) \,.
+\end{equation}
+
+From Section ~\ref{mod2:section:Poisson}, the probability of $Y=x$ as follows,
+\begin{equation}
+	P(Y=x) = \frac{12^{x} \times e^{-12}}{x!}, ~~~ x \in (0, 1, 2, ...)\,. \label{2014:q4:PoisEqn2}
+\end{equation}
+
+The probability of $Y \geq 2$ can be given as,
+\begin{align}
+	P(Y \geq 2) & = 1 - P(Y<2) \nn \\
+	            & = 1 - (P(Y=0) + P(Y=1)) \,.
+\end{align}
+
+Finally, using \req{2014:q4:PoisEqn2}, we can calculate  $P(Y \geq 2)$ as follows,
+\begin{align}
+	P(Y \geq 2) & = 1 - (P(Y=0) + P(Y=1)) \nn \\
+	            & = 1 - \left(\frac{12^{0} \times e^{-12}}{0!} + \frac{12^{1} \times e^{-12}}{1!} \right) \nn \\
+	            & = 1 - \left(\frac{1 \times e^{-12}}{1} + \frac{12 \times e^{-12}}{1} \right) \nn \\
+	            & = 1 - \left(13 \times e^{-12} \right) \nn \\
+	            & = 1 - 0.00008 \nn \\
+	            & = 0.99992
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------
+	
+\subquestion
+
+We are given that the mass of oranges, $X$, can be modeled by a normal distribution with mean 62 and standard deviation 3.6. This can be expressed as follows,
+\begin{equation}
+	X \sim N(62.2, 3.6^2) \,.
+\end{equation}
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+In order to find the probability that $X<60$, we must first standardize the random variable, $X$, to the normal random variable, $Z$. From Section ~\ref{mod2:section:Normal}, we standardize and calculate as follows,
+\begin{align}
+	P (X<60) & = P\left(\frac{X - \mu}{\sigma} < \frac{60 - \mu}{\sigma} \right) \nn \\
+	         & = P\left(Z < \frac{60-62.2}{3.6} \right) \nn \\
+	         & = P\left(Z < -\frac{2.2}{3.6} \right) \nn \\	
+	         & = P\left(Z < -\frac{11}{18} \right) \nn \\
+	         & = \Phi\left(-\frac{11}{18} \right) \nn \\
+	         & = 1 - \Phi\left(\frac{11}{18} \right) \nn \\
+	         & = 1 - 0.729 \nn \\
+	         & = 0.271 \,.	
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Similar to (b)(i), we can calculate $P(61<X<64)$ by standardizing as follows,
+\begin{align}
+	P(61<X<64) & = P\left(\frac{61- \mu}{\sigma} < \frac{X - \mu}{\sigma} < \frac{64 - \mu}{\sigma} \right) \nn \\
+	           & = P\left(\frac{61- 62.2}{3.6} < Z < \frac{64 - 62.2}{3.6} \right) \nn \\
+	           & = P\left(-\frac{1.2}{3.6} < Z < \frac{1.8}{3.6} \right) \nn \\
+	           & = P\left(-\frac{1}{3} < Z < \frac{1}{2} \right) \nn \\
+	           & = \Phi\left(\frac{1}{2} \right) - \Phi\left(-\frac{1}{3}\right) \nn \\
+	           & = \Phi\left(\frac{1}{2} \right) - \left(1 - \Phi\left(\frac{1}{3}\right) \right) \nn \\
+	           & = 0.691 - (1 - 0.631) \nn \\
+	           & = 0.322 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 4 c
+%------------------------------------------------------------------------------
+
+\subquestion
+
+We are given the relevant probabilities of 2 independent random variables, $X$ and $Y$. See \rtab{2014:q4:Tab1}.
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$X$ & $P(X=x)$ & $Y$ & $P(Y=y)$ \\
+		\hline
+		0 & 0.2 & 0 & 0.2 \\
+		1 & 0.3 & 1 & 0.1 \\
+		2 & 0.5 & 2 & 0.3 \\
+		  &     & 3 & 0.25 \\
+		  &     & 4 & 0.15 \\
+		  \hline
+	\end{tabular}
+	\caption{\label{2014:q4:Tab1} Probabilities of $X$ and $Y$.}
+\end{table}
+
+\begin{subsubquestions} 
+
+\subsubquestion
+
+We want to find $P(X+Y=3)$. This can happen in exactly 3 ways:
+\begin{itemize}
+	\item $X = 0$ and $Y = 3$
+	\item $X = 1$ and $Y = 2$
+	\item $X = 2$ and $Y = 1$
+\end{itemize}
+
+Since $X$ and $Y$ are independent, $P(X=x ~\text{and}~ Y=y) = P(X=x) \times P(Y=y)$.
+
+Thus, we can calculate $P(X+Y=3)$ as follows,
+\begin{align}
+	P(X+Y=3) & = (X=0 ~\text{and}~ Y=3) + (X=1 ~\text{and}~ Y=2) + (X=2 ~\text{and}~ Y=1) \nn \\
+	         & = [P(X=0) \times P(Y=3)] + [P(X=1) \times P(Y=2)] + [P(X=2) \times P(Y=1)] \nn \\
+	         & = [0.2 \times 0.25] + [0.3 \times 0.3] + [0.5 \times 0.1] \nn \\ 
+	         & = 0.05 + 0.075+0.05 \nn \\
+	         & = 0.175.
+\end{align}
+
+
+	
+\end{subsubquestions}
+
+\end{subquestions}
 
