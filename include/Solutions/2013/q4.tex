@@ -1,17 +1,105 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2013
+%     Module: 2
+%     Question: 4 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% 4 a
+%------------------------------------------------------------------------------
 
+\subquestion
+
+It is given that accidents occur on a certain highway at an average rate of 1 per week. This can be modeled using a Poisson distribution.
+
+Let $X$ be the discrete random variable representing the number of accidents which occur on that highway per week. We can express this as $X \sim $ Pois$(1)$.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+We want to find $P(X=2)$. Using \req{mod2:eq:PoissonDist}, we know that,
+\begin{equation}
+	P(X=k)= \frac{1^k \times e^{-1}}{k!} \,.
+\end{equation}
+	
+Therefore, we can find $P(X=2)$ as follows,
+\begin{align}
+	P(X=2) & = \frac{1^2 \times e^{-1}}{2!} \nn \\
+	       & = \frac{1 \times e^{-1}}{2} \nn \\
+	       & = \frac{1}{2 \times e} \nn \\
+	       & = 0.184 \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We are now given that an average of 4 accidents occur in a 4-week period. 
+
+Let $Y$ be the discrete random variable representing the number of accidents which occur on that highway during a 4-week period. We can express this as $Y \sim $ Pois$(4)$.
+
+We want to show that $P(Y \geq 4) = 0.567$. Using \req{mod2:eq:PoissonDist}, we know that,
+\begin{equation}
+	P(Y=k)= \frac{4^k \times e^{-4}}{k!} \,. \label{2013:q4:eq:Pois1}
+\end{equation}
+
+We can notice that,
+\begin{align}
+	P(Y \geq 4) & = 1 - P(Y \leq 3) \nn \\
+	            & = 1 - \left[P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3) \right] \,.
+\end{align}
+
+Using \req{2013:q4:eq:Pois1}, we can calculate $P(Y \leq 3)$ as follows,
+\begin{align}
+	P(Y=0) & = \frac{4^0 \times e^{-4}}{0!} 
+	         = \frac{1 \times e^{-4}}{1} \nn \\
+	       & = \frac{1}{e^4} \,. \\	\nn \\
+	P(Y=1) & = \frac{4^1 \times e^{-4}}{1!} 
+	         = \frac{4 \times e^{-4}}{1} \nn \\
+	       & = \frac{4}{e^4} \,. \\	\nn \\       
+	P(Y=2) & = \frac{4^2 \times e^{-4}}{2!} 
+		     = \frac{16 \times e^{-4}}{2} \nn \\
+           & = \frac{8}{e^4} \,. \\ \nn \\            
+	P(Y=3) & = \frac{4^3 \times e^{-4}}{3!} 
+             = \frac{64 \times e^{-4}}{6} \nn \\
+           & = \frac{64}{6 \times e^4} \,. \\ \nn \\         
+    P(Y \leq 3) & = P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3) \nn \\
+                & = \frac{1}{e^4} + \frac{4}{e^4} + \frac{8}{e^4} + \frac{64}{6 \times e^4} \nn \\
+                & = \frac{1}{e^4} \times \left(1+4+8+\frac{64}{6} \right) \nn \\
+                & = \frac{1}{e^4} \times \left(\frac{142}{6} \right) \nn \\
+                & = \frac{142}{6 \times e^4} \nn \\
+                & = 0.433 \,.
+\end{align}
+
+Thus,
+\begin{align}
+	P(Y \geq 4) & = 1 - P(Y \leq 3) \nn \\
+	            & = 1 - 0.433 \nn \\
+	            & = 0.567 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+
+\end{subsubquestions}
+
+
+
+
+
+\end{subquestions}
 
