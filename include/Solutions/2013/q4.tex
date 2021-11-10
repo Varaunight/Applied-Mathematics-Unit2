@@ -29,7 +29,7 @@ Let $X$ be the discrete random variable representing the number of accidents whi
 	
 \subsubquestion
 
-We want to find $P(X=2)$. Using \req{mod2:eq:PoissonDist}, we know that,
+We want to find $P(X=2)$. Using \rdef{mod2:defn:Poisson}, we know that,
 \begin{equation}
 	P(X=k)= \frac{1^k \times e^{-1}}{k!} \,.
 \end{equation}
@@ -94,12 +94,131 @@ Thus,
 
 \subsubquestion
 
+We want to find the probability that, in a year consisting of 13 4-week periods, exactly 11 4-week periods have at least 4 accidents. This can be found using a Binomial Distribution. Let $Z$ be the number of 4-week periods in which at least 4 accidents occurred. From \textbf{(4)(a)(ii)}, we know that the probability that at least 4 accidents occur in a 4-week period is 0.567.
+
+From this information and \rdef{mod2:defn:Binomial}, the probability mass function, $P(Z=z)$, can be expressed as,
+\begin{equation}
+		P(Z = z) = { 13 \choose z} (0.567)^z  (1-0.567)^{13-z} \,.
+\end{equation}
+
+Thus, to find the probability that exactly 11 4-week periods have at least 4 accidents, we set $z=11$ and calculate it as follows,
+\begin{align}
+	P(Z = 11) & = { 13 \choose 11} (0.567)^{11}  (1-0.567)^{13-11} \nn \\
+	          & = { 13 \choose 11} (0.567)^{11}  (0.433)^{2} \nn \\
+	          & = 78 \times (0.567)^{11} \times (0.433)^{2} \nn \\
+	          & = 0.028 \,.
+\end{align}
 
 \end{subsubquestions}
 
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------
 
+\subquestion
 
+We are given that nails are packaged in boxes of 100 and the probability that a nail is defective is 0.02. We want to find the probability that there are at most 2 defective nails in a box (using a justified probability distribution approximation). Let $X$ be the number of defective nails in a box.
 
+From the information given, we know that $n=100$ and $p=0.02$. From ~\ref{mod2:section:PoissonApproxBinomial}, we can notice that $n=100 \geq 15$ and $np= 100 \times 0.02=2<15.$ Thus, we can approximate the probability using a Poisson Distribution as follows,
+\begin{align}
+	& X \sim \text{Pois}(np) \nn \\
+	\Longrightarrow & X \sim \text{Pois}(2) \,.
+\end{align}
+
+Using \rdef{mod2:defn:Poisson}, the probability mass function of $X$ is,
+\begin{equation}
+	P(X=x)= \frac{2^x \times e^{-2}}{x!} \,.
+\end{equation}
+
+We know that,
+\begin{equation}
+	P(X \leq 2) = P(X=0)+P(X=1)+P(X=2) \,.
+\end{equation}
+
+We can now begin calculating $P(X \leq 2)$ as follows,
+\begin{align}
+	P(Y=0) & = \frac{2^0 \times e^{-2}}{0!} 
+             = \frac{1 \times e^{-2}}{1} \nn \\
+	       & = \frac{1}{e^2} \,. \\	\nn \\
+	P(Y=1) & = \frac{2^1 \times e^{-2}}{1!} 
+	         = \frac{2 \times e^{-2}}{1} \nn \\
+	       & = \frac{2}{e^2} \,. \\	\nn \\       
+	P(Y=2) & = \frac{2^2 \times e^{-2}}{2!} 
+	         = \frac{4 \times e^{-2}}{2} \nn \\
+	       & = \frac{2}{e^2} \,. \\ \nn \\     
+	P(X \leq 2) & = P(X=0)+P(X=1)+P(X=2) \nn \\
+	            & = \frac{1}{e^2} + \frac{2}{e^2} + \frac{2}{e^2} \nn \\
+	            & = \frac{5}{e^2} \nn \\
+	            & = 0.677 \,. 
+\end{align}
+
+%------------------------------------------------------------------------------
+% 4 c
+%------------------------------------------------------------------------------
+
+\subquestion
+
+It is given that the continuous random variable, $X$, has a uniform distribution given as,
+\[
+f(x) =
+\begin{cases}
+	k & \text{$0 \leq x \leq 3$} \\
+	0    & \text{otherwise} \\
+\end{cases}
+\]
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rprop{mod2:prop:ContinuousRV:1}, we know that,
+\begin{equation}
+	\int_{-\infty}^{\infty} f(x).dx = 1
+\end{equation}
+
+Thus, we get that,
+\begin{align}
+	\int_{0}^{3} k.dx & = 1 \,, \nn \\
+	\left[\frac{kx}{1} \right]_0^3 & = 1 \,, \nn \\
+	[k(3)]-[k(0)] & = 1 \,, \nn \\
+	3k & = 1 \,, \nn \\
+	\implies k & = \frac{1}{3} \,.
+\end{align}
+
+Thus,
+\[
+f(x) =
+\begin{cases}
+	\frac{1}{3} & \text{$0 \leq x \leq 3$} \\
+	0    & \text{otherwise} \\
+\end{cases}
+\]
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We are given that $P(X>t) = \frac{1}{4}$. Since $f(x)$ is continuous between 0 and 3, we can then notice that $P(X<t)=1-\frac{1}{4}=\frac{3}{4}$.
+
+From \rdef{mod2:defn:ContinuousRV:CDF}, we know that the cumulative distribution function, $F(x)$ is defined as $P(X<x)$. Thus, to solve for $t$, we must first find $F(x)$.
+
+Using \rdef{mod2:defn:ContinuousRV:CDF},
+\begin{align}
+	F(x) & = \int_{-\infty}^{x} f(x).dx \nn \\
+	     & = \int_{0}^{x} \frac{1}{3}.dx \nn \\
+	     & = \left[\frac{x}{3} \right]_0^x \nn \\
+	     & = \left[\frac{x}{3} \right] - \left[\frac{0}{3} \right] \nn \\
+	     & = \frac{x}{3} \,.
+\end{align}
+
+Hence, $F(x)=P(X<x)=\frac{x}{3}$. Therefore, we can now input $x=t$ and solve for $t$ as follows,
+\begin{align}
+	P(X<t)=  F(t) & =\frac{3}{4}\,, \nn \\
+	        \frac{t}{3} & = \frac{3}{4} \,. \nn \\
+	        \implies  t & = \frac{3 \times 3}{4} \nn \\
+	                    & = \frac{9}{4} \,.
+\end{align}
+
+\end{subsubquestions}
 
 \end{subquestions}
 
