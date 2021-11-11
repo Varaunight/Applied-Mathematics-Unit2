@@ -1,17 +1,84 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2016
+%     Module: 2
+%     Question: 3
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 3 a
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+\subquestion
 
+We are given that there are 10 water-color paintings and 7 oil paintings available to students to create a portfolio of 12 paintings.	
+	
+\begin{subsubquestions}
+	
+\subsubquestion
+
+In total, there are 17 paintings available. Thus, using \rdef{mod2:defn:CombinationEqn}, the number of portfolios that can be created is,
+\begin{align}
+	^{17}C_{12} & = \frac{17!}{(17-12)! \times 12!} \nn \\
+	            & = \frac{17!}{5! \times 12!} \nn \\
+	            & = 6188 \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+	
+\subsubquestion 
+
+In order to find the number of portfolios with 8 water-color and 4 oil paintings, we must first find the number of ways to choose 8 water-color paintings from 10 paintings and the number of ways to choose 4 oil paintings from 7 paintings.
+
+For the 8 water-color paintings,
+\begin{align}
+	^{10}C_{8} & = \frac{10!}{(10-8)! \times 8!} \nn \\
+	           & = \frac{10!}{2! \times 8!} \nn \\
+	           & = 45 \,.
+\end{align}
+
+For the 4 oil paintings,
+\begin{align}
+	^{7}C_{4} & = \frac{7!}{(7-4)! \times 4!} \nn \\
+	          & = \frac{7!}{3! \times 4!} \nn \\
+	          & = 35 \,.
+\end{align}
+
+Therefore, using \rdef{mod2:defn:MultiplicationRule}, the number of portfolios with 8 water-color \textbf{and} 4 oil paintings is,
+\begin{align}
+	^{10}C_{8} ~\times ~ ^7C_{4} & = 45 \times 35 \nn \\
+	                            & = 1575 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Given that the selection of paintings are random, the probability that 8 water-color and 4 oil paintings are chosen can be calculated by dividing the number of portfolios with 8 water-color and 4 oil paintings by the total number of portfolios. This would be,
+\begin{align}
+	P(\text{8 water-color and 4 oil paintings}) & = \frac{\text{Portfolios with 8 water-color and 4 oil paintings}}{\text{Total number of portfolios}} \nn \\
+	                                            & = \frac{1575}{6188} \nn \\
+	                                            & = \frac{225}{884} \nn \\
+	                                            & = 0.255 \,.
+\end{align}
+
+\end{subsubquestions}
+	
+%------------------------------------------------------------------------------
+% 3 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+It is given that a player must roll a 6 on a fair die in order to start a certain game. We know that the probability of rolling a 6 on a fair die is $\frac{1}{6}$. Let a discrete random variable $X$ be "the number of rolls a player does before starting a game".
+\end{subquestions}
