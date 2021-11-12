@@ -38,7 +38,7 @@ In total, there are 17 paintings available. Thus, using \rdef{mod2:defn:Combinat
 	
 \subsubquestion 
 
-In order to find the number of portfolios with 8 water-color and 4 oil paintings, we must first find the number of ways to choose 8 water-color paintings from 10 paintings and the number of ways to choose 4 oil paintings from 7 paintings.
+In order to find the number of portfolios with 8 water-color and 4 oil paintings, we must first find the number of ways to choose 8 water-color paintings from 10 paintings and the number of ways to choose 4 oil paintings from 7 paintings. \\
 
 For the 8 water-color paintings,
 \begin{align}
@@ -80,5 +80,118 @@ Given that the selection of paintings are random, the probability that 8 water-c
 
 \subquestion
 
-It is given that a player must roll a 6 on a fair die in order to start a certain game. We know that the probability of rolling a 6 on a fair die is $\frac{1}{6}$. Let a discrete random variable $X$ be "the number of rolls a player does before starting a game".
+It is given that a player must roll a 6 on a fair die in order to start a certain game. We know that the probability of rolling a 6 on a fair die is $\frac{1}{6}$. Let a discrete random variable $X$ be "the number of rolls a player does before starting a game, up to and including the 6".
+
+From this, we know that $X$ follows a Geometric Distribution with probability of success, $p=\frac{1}{6}$, as follows
+\begin{equation}
+	X \sim \text{Geo} \left(\frac{1}{6} \right) \,.
+\end{equation}
+
+\begin{subsubquestions}
+	
+\subquestion
+
+We want to find the probability that a player starts on their third roll, or $X=3$. From \rdef{mod2:defn:Geomtric}, the probability mass function, $P(X=x)$ is,
+\begin{align}
+	P(X = x) & = \frac{1}{6} \times \left(1-\frac{1}{6} \right)^{x-1} \nn \\
+	         & = \frac{1}{6} \times \left(\frac{5}{6} \right)^{x-1}
+\end{align}
+	
+Thus, $P(X=3)$ can be calculated as,
+\begin{align}
+	P(X = 3) & = \frac{1}{6} \times \left(\frac{5}{6} \right)^{3-1} \nn \\
+	         & = \frac{1}{6} \times \left(\frac{5}{6} \right)^{2} \nn \\
+	         & = \frac{1}{6} \times \left(\frac{25}{36} \right) \nn \\
+	         & = \frac{25}{216} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+The probability that \textbf{at most} 5 rolls are necessary to start the game is the same as $P(X<6)$. 
+
+We can notice that, since $X$ is a discrete random variable,
+\begin{equation}
+	P(X<6) = 1 - P(X>5) \,.
+\end{equation}
+
+From \req{mod2:eq:Geometric:Prop}, we know that,
+\begin{align}
+	P(X>5) & = \left(1 - \frac{1}{6} \right)^5 \nn \\
+	       & = \left(\frac{5}{6} \right)^5 \nn \\
+	       & = \frac{3125}{7776} \,.
+\end{align}
+
+Therefore, we can calculate $P(X<6)$ as follows,
+\begin{align}
+	P(X<6) & = 1 - P(X>5) \nn \\
+	       & = 1 - \frac{3125}{7776} \nn \\
+	       & = \frac{4651}{7776} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rdef{mod2:eq:Geometric:Mean}, we can find the expectation of $X$, $E(X)$, as follows,
+\begin{align}
+	E(X) & = \frac{1}{p} \nn \\
+	     & = \frac{1}{\frac{1}{6}} \nn \\
+	     & = 6 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 3 c
+%------------------------------------------------------------------------------
+
+\subquestion
+
+There are, on average, 2.5 faulty reports made per day to a company. If we let the random variable, $X$, represent the number of faulty reports per day, we can see that $X$ follows a Poisson Distribution with mean 2.5 or,
+\begin{equation}
+	X \sim \text{Pois}(2.5) \,.
+\end{equation}
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+We want to find the probability that 4 faulty reports will be made on Monday. From \rdef{mod2:defn:Poisson}, we know that the probability mass function, $P(X=x)$ is,
+\begin{equation}
+	P(X=x) = \frac{2.5^x \times e^{-2.5}}{x!} \,.
+\end{equation}
+
+Thus, we can calculate $P(X=4)$ as follows,
+\begin{align}
+	P(X=4) & = \frac{2.5^4 \times e^{-2.5}}{4!} \nn \\
+	       & = \frac{39.065 \times e^{-2.5}}{24} \nn \\
+	       & = \frac{39.065}{24 \times e^{2.5}} \nn \\
+	       & = 0.134 \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Over a five-day period, the average rate will be 5 times the daily rate ($5 \times 2.5 = 12.5$). If we let $Y$ represent the number of faulty reports per five-day period, we can see that $Y$ follows a Poisson Distribution with mean 12.5 or,
+\begin{equation}
+	Y \sim \text{Pois}(12.5) \,.
+\end{equation}
+
+Similarly, the probability mass function, $P(Y=y)$ is
+\begin{equation}
+	P(Y=y) = \frac{12.5^y \times e^{-12.5}}{y!} \,.
+\end{equation}
+
+Thus, the probability that 5 reports will be made in the next five-day period, $P(Y=5)$, can be calculated as follows,
+\begin{align}
+	P(Y=5) & = \frac{12.5^5 \times e^{-12.5}}{5!} \nn \\
+	       & = \frac{12.5^5 \times e^{-12.5}}{120} \nn \\
+	       & = \frac{12.5^5}{120 \times e^{12.5}} \nn \\
+	       & = 0.00948 \,.
+\end{align}
+
+\end{subsubquestions}
 \end{subquestions}
