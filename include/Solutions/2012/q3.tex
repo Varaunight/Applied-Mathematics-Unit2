@@ -1,17 +1,237 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2012
+%     Module: 2
+%     Question:3 
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 3 a
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+\subquestion
+It is given that the probability distribution function of some continuous random variable (we will call $X$) is,
+\[
+f(x) =
+\begin{cases}
+	ax^2+bx & \text{$0 \leq x \leq 4$} \\
+	0       & \text{otherwise} \\
+\end{cases}
+\]	
 
+It is also given that $E(X) = \frac{7}{3}$. 
+\begin{subsubquestions}
+	
+\subsubquestion
+	
+In order to solve for the values of $a$ and $b$, we need to formulate 2 equations and solve them simultaneously. 
+
+We can obtain the first equation by recalling \rprop{mod2:prop:ContinuousRV:1}. From this, we know that,
+\begin{equation}
+	\int_{-\infty}^{\infty} f(x).dx = 1 \,.
+\end{equation}	
+	
+Using this with $f(x)$, we see that,
+\begin{align}
+	\int_{-\infty}^{\infty} f(x).dx & = \int_{0}^{4} \left(ax^2 + bx \right).dx \nn \\
+	                                & = \left[a \times \frac{x^3}{3} + b \times \frac{x^2}{2}\right]^{4}_{0} \nn \\
+	                                & = \left[a \times \frac{4^3}{3} + b \times \frac{4^2}{2}\right] - \left[a \times \frac{0^3}{3} + b \times \frac{0^2}{2}\right] \nn \\
+	                                & = \left[\frac{a \times 64}{3} + \frac{b \times 16}{2}\right] \nn \\
+	                                & = \left[\frac{a \times 64}{3} + \frac{b \times 8}{1}\right] \nn \\
+	                                & \implies \frac{64a}{3} + 8b = 1 \,. \label{2012:q3:CRV1}           
+\end{align}
+
+We obtain the second equation by using \rdef{mod2:defn:ContinuousRV:Expectation} and the fact that $E(X) = \frac{7}{3}$. Therefore,
+\begin{equation}
+		E[X] = \int_{-\infty}^{\infty}x f(x).dx = \frac{7}{3}\,.
+\end{equation}
+
+Using $f(x)$, we obtain,
+\begin{align}
+	E[X] = \int_{-\infty}^{\infty}x f(x).dx & = \int_{0}^{4} (x \times (ax^2 +bx)).dx \nn \\
+	                                        & = \int_{0}^{4} (ax^3 +bx^2).dx \nn \\
+	                                        & = \left[a \times \frac{x^4}{4} + b \times \frac{x^3}{3} \right]^{4}_{0} \nn \\
+	                                        & = \left[a \times \frac{4^4}{4} + b \times \frac{4^3}{3} \right] - \left[a \times \frac{0^4}{4} + b \times \frac{0^3}{3} \right] \nn \\
+	                                        & = \left[\frac{a \times 256}{4} + \frac{b \times 64}{3} \right] \nn \\
+	                                        & = \left[\frac{a \times 64}{1} + \frac{b \times 64}{3} \right] \nn \\
+	                                        & \implies 64a + \frac{64b}{3} = \frac{7}{3} \,. \label{2012:q3:CRV2}
+\end{align}
+
+Multiplying \req{2012:q3:CRV2} by 3, we get the second equation as,
+\begin{align}
+		\left[64a + \frac{64b}{3} \right] \times 3  & = \frac{7}{3} \times 3 \nn \\
+		 \implies 192a + 64b & = 7 \,. \label{2012:q3:CRV3}
+\end{align}
+
+Therefore, we solve \req{2012:q3:CRV1} and \req{2012:q3:CRV3} simlutaneously as follows,
+\begin{align}
+	\text{\req{2012:q3:CRV1} $\times$ 9} \implies \left[ \frac{64a}{3} + 8b \right] \times 9 & = 1 \times 9 \nn \\
+	                                                   192a + 72b & = 9 \label{2012:q3:CRV4} \\ 
+	                                                   \nn \\
+	\text{[\req{2012:q3:CRV4}] - [\req{2012:q3:CRV3}]} \implies \left[ 192a + 72b \right] - \left[192a + 64b \right]  & = [9]-[7] \nn \\
+		                                                               72b-64b & = 2 \nn \\
+		                                                               8b & = 2 \nn \\
+		                                                               \implies b & = \frac{2}{8} \nn \\
+		                                                                          & = \frac{1}{4} \,. \\ \nn \\
+\text{Using $b=\frac{1}{4}$ into \req{2012:q3:CRV4}} \implies 192a + \left (72 \times \frac{1}{4} \right) & = 9 \nn \\
+                                                                    192a + 18 & = 9 \nn \\
+                                                                    192a & = -9 \nn \\ 
+                                                                   \implies a & = \frac{-9}{192} \nn \\
+                                                                   & = \frac{-3}{64} \,.
+\end{align}
+
+Therefore, $a= \frac{-3}{64}$ and $b=\frac{1}{4}$.
+
+%------------------------------------------------------------------------------
+
+\subsubquestion 
+
+We now know that the probability distribution function is 
+\[
+f(x) =
+\begin{cases}
+	\left(\frac{-3}{64}\right)x^2+\left(\frac{1}{4}\right)x & \text{$0 \leq x \leq 4$} \\
+	0       & \text{otherwise} \\
+\end{cases}
+\]
+
+We want to find $P(X \geq 1)$. Since $X$ is a continuous random variable, we know that, 
+\begin{equation}
+	P(X \geq 1) = 1 - P(X < 1) \,.
+\end{equation}
+
+From \rdef{mod2:defn:ContinuousRV:CDF}, the cumulative distribution function, $F(x)$, is defined as $P(X<x)$.
+We get that,
+\begin{align}
+		F(x) & = \int_{-\infty}^{x} f(x).dx	\nn \\
+		     & = \int_{0}^{x} \left( \left( \frac{-3}{64}\right)x^2+\left(\frac{1}{4}\right)x \right) .dx \nn \\
+		     & = \left[ \left(\frac{-3}{64} \times \frac{x^3}{3}\right)+\left(\frac{1}{4}\times \frac{x^2}{2}\right) \right]^{x}_{0} \nn \\
+		     & = \frac{-x^3}{64} + \frac{x^2}{8} \,.
+\end{align}
+
+To find $P(X<1)$, we calculate $F(1)$ as follows,
+\begin{align}
+	F(1) & = \frac{-1 \times 1^3}{64} + \frac{1^2}{8} \nn \\
+	     & = \frac{-1}{64} + \frac{1}{8} \nn \\
+	     & = \frac{7}{64}
+\end{align}
+
+Therefore, $P(X \geq 1)$ is calculated as,
+\begin{align}
+	P(X \geq 1) & = 1 - P(X < 1) \nn \\
+	            & = 1 - \frac{7}{64} \nn \\
+	            & = \frac{57}{64} \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 3 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+The cumulative distribution function of some random variable $X$ is given as,
+\[
+F(x) =
+\begin{cases}
+	0, & x<0 \\
+	\frac{x^3}{125}, & \text{$0 \leq x < 5$} \\
+	1,       & \text{otherwise} \\
+\end{cases}
+\]	
+	
+\begin{subsubquestions}
+
+\subsubquestion
+
+We want to find $P(1 < X \leq 3)$. From Note ~\ref{mod2:note:ContinuousRV:CDF}, we know that,
+\begin{equation}
+	P( 1 < X \leq 3) = F(3) - F(1) \,.
+\end{equation}
+
+Therefore, we can calculate $P(1 < X \leq 3)$ as follows,
+\begin{align}
+	P( 1 < X \leq 3) & = F(3) - F(1) \nn \\
+	                 & = \frac{3^3}{125} - \frac{1^3}{125} \nn \\
+	                 & = \frac{27}{125} - \frac{1}{125} \nn \\
+	                 & = \frac{26}{125} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rprop{mod2:prop:ContinuousRV:CDF}, we know that the median of $X$, denoted as $M$, is,
+\begin{equation}
+	F(M) = \frac{1}{2} \,.
+\end{equation}
+
+We can use the given $F(x)$ and solve for M as follows,
+\begin{align}
+	F(M) = \frac{M^3}{125} & = \frac{1}{2} \nn \\
+	        \implies M^3 & = \frac{125}{2} \nn \\
+	        \implies M & = \frac{5}{\sqrt[3]{2}} \,.
+\end{align}
+
+\end{subsubquestions}
+	
+%------------------------------------------------------------------------------
+% 3 c
+%------------------------------------------------------------------------------	
+	
+\subquestion
+
+We are given that $X$ is a random variable normally distributed with mean 16 and standard deviation 3. This can be expressed as,
+\begin{equation}
+	X \sim N(16, 3^2) \,.
+\end{equation}
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+We want to find $P(X<11.5)$. In order to do this, we must first standardize the random variable $X$ to the normal random variable $Z$ as follows,
+\begin{align}
+	P(X<11.5) & = P\left(\frac{X- \mu}{\sigma} < \frac{11.5- \mu}{\sigma}\right) \nn \\
+	          & = P\left(Z < \frac{11.5- 16}{3}\right) \nn \\
+	          & = P\left(Z < \frac{-4.5}{3}\right) \nn \\
+	          & = P\left(Z < \frac{-3}{2}\right) \nn \\
+	          & = \Phi\left(\frac{-3}{2}\right) \nn \\
+	          & = 1 - \Phi\left(\frac{3}{2} \right) \nn \\
+	          & = 1 - 0.933 \nn \\
+	          & = 0.067 \,.
+\end{align}
+
+%------------------------------------------------------------------------------	
+
+\subsubquestion
+
+We want to find the value of $x$ such that $P(X<x)=0.6732$. By standardizing, we know that,
+\begin{align}
+	P(X<x) & = P\left(\frac{X-\mu}{\sigma} < \frac{x - \mu}{\sigma}\right) \nn \\
+	       & = P\left(Z < \frac{x - 16}{3}\right) \nn \\
+	       & = \Phi\left(\frac{x-16}{3}\right) \,.
+\end{align}
+
+Thus, we need to find the value of $k=\frac{x-16}{3}$, such that $\Phi(k)=0.6732$. From the Z-tables, $k=0.449$. Therefore, we can find $x$ as follows,
+\begin{align}
+	k = \frac{x-16}{3} & = 0.449 \nn \\
+	   \implies x-16 & = 0.449 \times 3 \nn \\
+	   \implies x & = (0.449 \times 3) + 16 \nn \\
+	              & = 17.347 \,.
+\end{align}
+
+\end{subsubquestions}
+
+\end{subquestions}
