@@ -23,15 +23,15 @@
 	
 \subsubquestion
 
-We are given that faults occur randomly at a rate of 3 every 15 meters. Let the random variable, $X$ be "the number of faults which occur in 15 meters of cloth". We can then say that $X$ follows a Poisson distribution with parameter, $\lambda = 3$. \\
+Let the random variable, $X$ be "the number of faults which occur in 15 meters of cloth". We can then say that $X$ follows a Poisson distribution with parameter, $\lambda = 3$. \\
 Thus, we define the distribution of $X$ as
 \begin{equation}
 	X \sim \text{Pois}(3) \,.
 \end{equation}
 	
-From Section ~\ref{mod2:section:Poisson}, the probability of $X=x$ as follows,
+From Section ~\ref{mod2:section:Poisson}, we know that the probability of $X=x$ as follows,
 \begin{equation}
-	P(X=x) = \frac{3^{x} \times e^{-3}}{x!}, ~~~ x \in (0, 1, 2, ...)\,. \label{2014:q4:PoisEqn}
+	P(X=x) = \frac{3^{x} \times e^{-3}}{x!} \,. \label{2014:q4:PoisEqn}
 \end{equation}
 	
 Using \req{2014:q4:PoisEqn}, the probability that $X=4$ is,
@@ -45,15 +45,15 @@ Using \req{2014:q4:PoisEqn}, the probability that $X=4$ is,
 
 \subsubquestion
 
-We are asked to find the probability that at least 2 faults occur in a 60 meter length of cloth. Since we know that  the rate of faults in 15 meters of cloth is equal to 3, the rate of faults in 60 meters of cloth is $\frac{60}{15} \times 3 = 12$. \\
+Since we know that the rate of faults in 15 meters of cloth is equal to 3, the rate of faults in 60 meters of cloth is $\frac{60}{15} \times 3 = 12$. \\
 Let the random variable, $Y$, be "the number of faults which occur in 60 meters of cloth". Thus, we can define the distribution of $Y$ as
 \begin{equation}
 	Y \sim \text{Pois}(12) \,.
 \end{equation}
 
-From Section ~\ref{mod2:section:Poisson}, the probability of $Y=x$ as follows,
+From Section ~\ref{mod2:section:Poisson}, the probability of $Y=y$ as follows,
 \begin{equation}
-	P(Y=x) = \frac{12^{x} \times e^{-12}}{x!}, ~~~ x \in (0, 1, 2, ...)\,. \label{2014:q4:PoisEqn2}
+	P(Y=y) = \frac{12^{y} \times e^{-12}}{y!} \,. \label{2014:q4:PoisEqn2}
 \end{equation}
 
 The probability of $Y \geq 2$ can be given as,
@@ -80,7 +80,7 @@ Finally, using \req{2014:q4:PoisEqn2}, we can calculate  $P(Y \geq 2)$ as follow
 	
 \subquestion
 
-We are given that the mass of oranges, $X$, can be modeled by a normal distribution with mean 62 and standard deviation 3.6. This can be expressed as follows,
+We are given that the mass of oranges, $X$, can be modeled by a normal distribution. This can be expressed as follows,
 \begin{equation}
 	X \sim N(62.2, 3.6^2) \,.
 \end{equation}
@@ -126,7 +126,7 @@ Similar to \textbf{(b)(i)}, we can calculate $P(61<X<64)$ by standardizing as fo
 \subquestion
 
 We are given the relevant probabilities of 2 independent random variables, $X$ and $Y$. See \rtab{2014:q4:Tab1}.
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
@@ -146,7 +146,7 @@ We are given the relevant probabilities of 2 independent random variables, $X$ a
 
 \subsubquestion
 
-We want to find $P(X+Y=3)$. This can happen in exactly 3 ways:
+$(X+Y=3)$ can happen in exactly 3 ways:
 \begin{itemize}
 	\item $X = 0$ and $Y = 3$
 	\item $X = 1$ and $Y = 2$
@@ -172,7 +172,7 @@ Thus, we can calculate $P(X+Y=3)$ as follows,
 	
 \subsubsubquestion
 
-In order to calculate $E(X)$, we can use \rdef{mod2:defn:Discrete:Expectation} as follows,
+We can use \rdef{mod2:defn:Discrete:Expectation} as follows,
 \begin{align}
 	E(X) & =  \sum_{\forall k} \left(x_k \times P(X=x_k) \right) \nn \\
 	     & = (0 \times 0.2)+(1 \times 0.3)+(2 \times 0.5) \nn \\
@@ -182,7 +182,7 @@ In order to calculate $E(X)$, we can use \rdef{mod2:defn:Discrete:Expectation} a
 	
 \subsubsubquestion
 
-In order to calculate Var$(X)$, we can use \rdef{mod2:defn:Discrete:Variance} as follows,
+We can use \rdef{mod2:defn:Discrete:Variance} as follows,
 \begin{align}
 	Var(X) & = E(X^2) - (E(X))^2 \nn \\
 	       & =  \sum_{\forall k} \left(x^2_k \times P(X=x_k) \right) - (E(X))^2 \nn \\
@@ -196,7 +196,7 @@ In order to calculate Var$(X)$, we can use \rdef{mod2:defn:Discrete:Variance} as
 	
 \subsubsubquestion
 
-$E(Y)$ can be calculated in a similar manner from above as follows,
+We can use \rdef{mod2:defn:Discrete:Expectation} as follows,
 \begin{align}
 	E(Y) & =  \sum_{\forall k} \left(y_k \times P(Y=y_k) \right) \nn \\
 	& = (0 \times 0.2)+(1 \times 0.1)+(2 \times 0.3)+(3 \times 0.25)+(4 \times 0.15)\nn \\
@@ -206,7 +206,7 @@ $E(Y)$ can be calculated in a similar manner from above as follows,
 
 \subsubsubquestion
 
-Similarly, Var$(Y)$ can be found as
+Similarly, we can use \rdef{mod2:defn:Discrete:Variance} as follows
 \begin{align}
 	Var(Y) & = E(Y^2) - (E(Y))^2 \nn \\
 	& =  \sum_{\forall k} \left(y^2_k \times P(Y=y_k) \right) - (E(Y))^2 \nn \\
