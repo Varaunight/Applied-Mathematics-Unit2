@@ -21,15 +21,13 @@
 
 \subquestion
 
-It is given that accidents occur on a certain highway at an average rate of 1 per week. This can be modeled using a Poisson distribution.
-
 Let $X$ be the discrete random variable representing the number of accidents which occur on that highway per week. We can express this as $X \sim $ Pois$(1)$.
 
 \begin{subsubquestions}
 	
 \subsubquestion
 
-We want to find $P(X=2)$. Using \rdef{mod2:defn:Poisson}, we know that,
+Using \rdef{mod2:defn:Poisson}, we know that,
 \begin{equation}
 	P(X=k)= \frac{1^k \times e^{-1}}{k!} \,.
 \end{equation}
@@ -46,16 +44,14 @@ Therefore, we can find $P(X=2)$ as follows,
 
 \subsubquestion
 
-We are now given that an average of 4 accidents occur in a 4-week period. 
-
 Let $Y$ be the discrete random variable representing the number of accidents which occur on that highway during a 4-week period. We can express this as $Y \sim $ Pois$(4)$.
 
-We want to show that $P(Y \geq 4) = 0.567$. Using \req{mod2:eq:PoissonDist}, we know that,
+Using \req{mod2:eq:PoissonDist}, we know that,
 \begin{equation}
 	P(Y=k)= \frac{4^k \times e^{-4}}{k!} \,. \label{2013:q4:eq:Pois1}
 \end{equation}
 
-We can notice that,
+Because $Y$ is discrete, we notice that,
 \begin{align}
 	P(Y \geq 4) & = 1 - P(Y \leq 3) \nn \\
 	            & = 1 - \left[P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3) \right] \,.
@@ -94,7 +90,7 @@ Thus,
 
 \subsubquestion
 
-We want to find the probability that, in a year consisting of 13 4-week periods, exactly 11 4-week periods have at least 4 accidents. This can be found using a Binomial Distribution. Let $Z$ be the number of 4-week periods in which at least 4 accidents occurred. From \textbf{(4)(a)(ii)}, we know that the probability that at least 4 accidents occur in a 4-week period is 0.567.
+Let $Z$ be the number of 4-week periods in which at least 4 accidents occurred. From \textbf{(4)(a)(ii)}, we know that the probability that at least 4 accidents occur in a 4-week period is 0.567.
 
 From this information and \rdef{mod2:defn:Binomial}, the probability mass function, $P(Z=z)$, can be expressed as,
 \begin{equation}
@@ -117,9 +113,9 @@ Thus, to find the probability that exactly 11 4-week periods have at least 4 acc
 
 \subquestion
 
-We are given that nails are packaged in boxes of 100 and the probability that a nail is defective is 0.02. We want to find the probability that there are at most 2 defective nails in a box (using a justified probability distribution approximation). Let $X$ be the number of defective nails in a box.
+Let $X$ be the number of defective nails in a box.
 
-From the information given, we know that $n=100$ and $p=0.02$. From ~\ref{mod2:section:PoissonApproxBinomial}, we can notice that $n=100 \geq 15$ and $np= 100 \times 0.02=2<15.$ Thus, we can approximate the probability using a Poisson Distribution as follows,
+From the information given, we know that $n=100$ and $p=0.02$. From Section ~\ref{mod2:section:PoissonApproxBinomial}, we can notice that $n=100 \geq 15$ and $np= 100 \times 0.02=2<15.$ Thus, we can approximate the probability using a Poisson Distribution as follows,
 \begin{align}
 	& X \sim \text{Pois}(np) \nn \\
 	\Longrightarrow & X \sim \text{Pois}(2) \,.
@@ -130,7 +126,7 @@ Using \rdef{mod2:defn:Poisson}, the probability mass function of $X$ is,
 	P(X=x)= \frac{2^x \times e^{-2}}{x!} \,.
 \end{equation}
 
-We know that,
+We know that, since $X$ is discrete,
 \begin{equation}
 	P(X \leq 2) = P(X=0)+P(X=1)+P(X=2) \,.
 \end{equation}
@@ -158,14 +154,7 @@ We can now begin calculating $P(X \leq 2)$ as follows,
 
 \subquestion
 
-It is given that the continuous random variable, $X$, has a uniform distribution given as,
-\[
-f(x) =
-\begin{cases}
-	k & \text{$0 \leq x \leq 3$} \\
-	0    & \text{otherwise} \\
-\end{cases}
-\]
+It is given that the continuous random variable, $X$, has a uniform distribution.
 
 \begin{subsubquestions}
 	
