@@ -21,13 +21,13 @@
 	
 \subquestion
 
-There are 7 balls with numbers written on them. Two balls have the number 2 written on them, three balls have the number 3 on them, and 2 balls has the number 4 on them. In the system that we are given, the balls are drawn at random and they are not replaced. We have defined $X$ as the sum of the numbers drawn on two balls. 
+We will $X$ as the sum of the numbers drawn on two balls. 
 
 \begin{subsubquestions}
 	
 \subsubquestion
 
-We want to show that $P(X=8)=\frac{1}{21}$. For $X=8$, the first draw must be a 4 and the second draw must also be a 4. The probability that we get a 4 on the first draw is,
+If $X=8$, the first draw must be a 4 and the second draw must also be a 4. We can see that,
 \begin{align}
 	P(\text{first ball is 4}) & = \frac{\text{Number of ways to draw a 4}}{\text{Total number of ways to draw a ball}} \nn \\
 	                          & = \frac{2}{7} \,.
@@ -39,7 +39,7 @@ Since there is no replacement, the probability that the second ball that we draw
 	                                & = \frac{1}{6} \,.
 \end{align}
 
-Thus, we can calculate $P(X=8)$ as follows,
+Hence, we can show that,
 \begin{align}
 	P(X=8) & = P(\text{first ball is 4}) \times P(\text{second ball is also 4}) \nn \\
 	       & = \frac{2}{7} \times \frac{1}{6} \nn \\
@@ -56,9 +56,9 @@ The possible values of $X$ are 4, 5, 6, 7 and 8.
 
 \subsubquestion
 
-In order to find the probabilities of all the values of $X$, we can either do calculations or we can create a Sample Space for $X$. See \rtab{2012:q4:Sample} for the sample space of $X$.
+See \rtab{2012:q4:Sample} for the sample space of $X$.
 
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|c|}	
 	\hline
@@ -82,7 +82,7 @@ In order to find the probabilities of all the values of $X$, we can either do ca
 	\caption{\label{2012:q4:Sample} Sample Space of $X$.}
 \end{table}
 
-We can find the probabilities of all the values of $X$ as follows,
+We can notice that,
 \begin{align}
 	P(X=x) & = \frac{\text{Number of ways that x occurs in Sample Space}}{\text{Total outcomes in Sample Space}} \nn \\
 	       & = \frac{\text{Number of ways that x occurs in Sample Space}}{42}\,.	
@@ -111,7 +111,7 @@ From \rdef{mod2:defn:Discrete:Expectation}, we know that,
 	E(X)= \sum_{\forall k} x_k P(X=x_k). 
 \end{equation}
 
-Thus, we can calculate $E(X)$ as follows,
+We can use this as follows,
 \begin{align}
 	E(X) & = \sum_{\forall k} x_k P(X=x_k) \nn \\
 	     & = \left(4 \times P(X=4)\right) + \left(5 \times P(X=5)\right) + \left(6 \times P(X=6)\right) + \left(7 \times P(X=7)\right) + \left(8 \times P(X=8) \right) \nn \\
@@ -156,7 +156,7 @@ Thus, we can get that,
 	
 \subquestion
 
-We are given that, in some factory, 4\% of cameras produced are defective. Let $X$ be the number of defective cameras produced by the factory. This can be given as a Binomial Distribution with $p=0.04$, denoted as
+Let $X$ be the number of defective cameras produced by the factory. This is given as a Binomial Distribution with $p=0.04$, denoted as
 \begin{equation}
 	X \sim \text{Bin}(n,0.04) \,.
 \end{equation}
@@ -165,7 +165,7 @@ We are given that, in some factory, 4\% of cameras produced are defective. Let $
 	
 \subsubquestion
 
-We want to find the probability that, in a sample of 20 cameras, exactly 4 are defective. From \rdef{mod2:defn:Binomial}, we know that,
+From \rdef{mod2:defn:Binomial}, we know that,
 \begin{equation}
 	P(X = x) = { 20 \choose x} \times 0.04^x \times (1-0.04)^{20-x} \,.
 \end{equation}
@@ -181,7 +181,7 @@ Thus, we can calculate $P(X=4)$ as follows,
 
 \subsubquestion
 
-We want to find the probability that, in a sample of 100 cameras, at most 2 are defective. Since $X$ is discrete,
+Since $X$ is discrete,
 \begin{equation}
 	P(X \leq 2) = P(X=0)+P(X=1)+P(X=2) \,.
 \end{equation}
@@ -191,7 +191,7 @@ From \rdef{mod2:defn:Binomial}, we know that,
 	P(X = x) = { 100 \choose x} \times 0.04^x \times (1-0.04)^{100-x} \,.
 \end{equation}
 
-Thus, we can calculate $P(X=4)$ as follows,
+Thus, we can calculate $P(X\leq 2)$ as follows,
 \begin{align}
 	P(X = 0) & = { 100 \choose 0} \times 0.04^0 \times (1-0.04)^{100-0} \nn \\
              & = 1 \times 0.04^0 \times (0.96)^{100} \nn \\
