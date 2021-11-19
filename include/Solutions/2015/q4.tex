@@ -23,17 +23,15 @@
 \begin{subsubquestions}
 	
 \subsubquestion
-It is given that the probability distribution function of a continuous random variable $X$ is,
-\[
-f(x) =
-\begin{cases}
-	a+bx & \text{$0<x<1$} \\
-	0    & \text{otherwise} \\
-\end{cases}
-\]
-and $F(0.5)=0.8.$ \\
+The probability distribution function of a continuous random variable $X$ is given, as well as $F(0.5)=0.8.$ \\
 
-From \rprop{mod2:prop:ContinuousRV:1}, we can formulate the equation,
+From \rprop{mod2:prop:ContinuousRV:1}, we know that,
+\begin{equation}
+	 \int_{-\infty}^{\infty} f(x).dx. = 1
+\end{equation}
+
+
+Thus, we can formulate the equation,
 \begin{align}
 	\int_{0}^{1} (a+bx).dx = 1, \nn \\
 	\left[ax + \frac{bx^2}{2}\right]_0^1 = 1, \nn \\
@@ -104,7 +102,7 @@ Thus, $P(X>0.5)=0.2$.
 	
 \subsubquestion
 
-It is given that $X \sim N(9,1^2)$. The values of $m$ and $n$ can be given as,
+It is given that $X$ is normally distributed as $X \sim N(9,1^2)$. The values of $m$ and $n$ can be given as,
 \begin{align}
 	m & = \text{Total} \times P(8 \leq X < 9) \nn \\
 	  & = 400 \times P(8 \leq X < 9). \nn \\
@@ -114,7 +112,7 @@ It is given that $X \sim N(9,1^2)$. The values of $m$ and $n$ can be given as,
 	
 To calculate $P(8 \leq X < 9)$, we must first standardize the random variable $X$, to the normal random variable $Z$. From Section ~\ref{mod2:section:Normal}, we standardize and calculate as follows,
 \begin{align}
-	P(8 \leq X < 9) & = P\left(\frac{8- \mu}{\sigma} \leq \frac{(X-\mu)}{\sigma} < \frac{9-\mu}{\sigma} \right) \nn \\
+	P(8 \leq X < 9) & = P\left(\frac{8- \mu}{\sigma} \leq \frac{X-\mu}{\sigma} < \frac{9-\mu}{\sigma} \right) \nn \\
 	                & = P\left(\frac{8- 9}{1} \leq Z < \frac{9-9}{1} \right) \nn \\
 	                & = P\left(-1 \leq Z < 0 \right) \nn \\
 	                & = \Phi(0) - \Phi(-1) \nn \\
@@ -165,7 +163,7 @@ We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance 
 \end{equation}
 
 We will formulate a table and obtain the relevant values. See \rtab{2015:q4:tab:Chi}.
-\begin{table}[ht]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline 
