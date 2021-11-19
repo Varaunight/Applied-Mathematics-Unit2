@@ -21,7 +21,7 @@
 	
 \subquestion
 
-We are given that accidents occur at an average rate of 3 per week on a particular stretch of road. We will let $X$ represent the amount of accidents which occur in one week. Thus, we can see that $X$ follows a Poisson distribution, given as,
+We will let $X$ represent the amount of accidents which occur in one week. Thus, we can see that $X$ follows a Poisson distribution, given as,
 \begin{equation}
 	X \sim \text{Pois}(3) \,.
 \end{equation}
@@ -30,12 +30,12 @@ We are given that accidents occur at an average rate of 3 per week on a particul
 	
 \subsubquestion
 
-We want to find $P(X=0)$. From \rdef{mod2:defn:Poisson}, we know that,
+From \rdef{mod2:defn:Poisson}, we know that,
 \begin{equation}
 	P(X = x) =\frac{ 3 ^ x \times e^{-3}}{x!} \,. \label{2011:q4:Poisson1}
 \end{equation}
 	
-Thus, we can calculate $P(X=0)$ as,
+Thus,
 \begin{align}
 	P(X=0) & = \frac{ 3 ^0 \times e^{-3}}{0!} \nn \\
 	       & = \frac{ 1 \times e^{-3}}{1} \nn \\
@@ -46,13 +46,13 @@ Thus, we can calculate $P(X=0)$ as,
 
 \subsubquestion
 
-We want to find $P(X > 3)$. Since the Poisson Distribution is discrete, we get that,
+Since the Poisson Distribution is discrete, we know that,
 \begin{align}
 	P(X>3) & =1-P(X \leq 3) \nn \\
 	       & = 1 - [P(X=0)+P(X=1)+P(X=2)+P(X=3)] \,.
 \end{align}
 
-Using \req{2011:q4:Poisson1}, we can calculate $P(X>3)$ as follows,
+Using \req{2011:q4:Poisson1}, 
 \begin{align}
 	P(X=0) & = \frac{1}{e^3} \,. \\ \nn \\
 	P(X=1) & = \frac{ 3^1 \times e^{-3}}{1!} \nn \\
@@ -73,17 +73,19 @@ Using \req{2011:q4:Poisson1}, we can calculate $P(X>3)$ as follows,
 
 %------------------------------------------------------------------------------
 
-Given that there are 3 accidents in 1 week, there are therefore 6 accidents on average during a fortnight (2 week period). Thus, we will let $Y$ represent the number of accidents in a 2 week period. Since we know that $Y$ also follows a Poisson distribution, we can denote it as,
+\subsubquestion
+
+If there are 3 accidents in 1 week, there are therefore 6 accidents on average during a fortnight (2 week period). We will let $Y$ represent the number of accidents in a 2 week period. We denote this as,
 \begin{equation}
 	Y \sim \text{Pois}(6) \,.
 \end{equation} 
 
-From \rdef{mod2:defn:Poisson}, we know that,
+From \rdef{mod2:defn:Poisson},
 \begin{equation}
 	P(Y = y) =\frac{ 6 ^ y \times e^{-6}}{y!} \,.
 \end{equation}
 
-Thus, we can find $P(Y=6)$ as follows,
+Thus,
 \begin{align}
 	P(Y = 6) & = \frac{ 6 ^ 6 \times e^{-6}}{6!} \nn \\	
 	         & = \frac{46656 \times e^{-6}}{720} \nn \\
@@ -99,7 +101,7 @@ Thus, we can find $P(Y=6)$ as follows,
 	
 \subquestion
 
-It is given that the probability of a student passing the Statistics examination is $0.84$. If we let $X$ be the number of students that pass an examination, we can see that $X$ follows a Binomial distribution denoted as,
+We are given that the probability of success, $p=0.84$. If we let $X$ be the number of students that pass an examination, we can see that $X$ follows a Binomial distribution denoted as,
 \begin{equation}
 	X \sim \text{Bin}(0.84) \,.
 \end{equation} 
@@ -109,12 +111,12 @@ From \rdef{mod2:defn:Binomial}, we know that,
 	P(X = x) = { n \choose x} (0.84)^x (1-0.84)^{n-x} \,. \label{2011:q4:Bin1}
 \end{equation}
 
-In a group of 12 students, we want to find the probability that more than two thirds of the group passes the examination. That is, we want to find $P(X > 8)$. Since X is discrete, we know that,
+We should notice that two-thirds of 12 is 8. Since X is discrete, we know that,
 \begin{equation}
 	P(X > 8) = P(X=9)+P(X=10)+P(X=11)+P(X=12) \,.
 \end{equation}
 
-Using \req{2011:q4:Bin1}, we can calculate $P(X > 8)$ as follows,
+Using \req{2011:q4:Bin1}, we can find that,
 \begin{align}
 	P(X=9) & = { 12 \choose 9} \times (0.84)^9 \times (1-0.84)^{12-9} \nn \\
 	       & = 220 \times (0.84^9) \times (0.16)^3 \nn \\
@@ -138,14 +140,12 @@ Using \req{2011:q4:Bin1}, we can calculate $P(X > 8)$ as follows,
 %------------------------------------------------------------------------------
 
 \subquestion
-
-In a box, there are 4 white marbles, 2 red marbles, and 3 black marbles. Three marbles are drawn from the 9 marbles without replacement.  
-
+ 
 \begin{subsubquestions}
 	
 \subsubquestion
 
-We want to find the probability that the marbles will be drawn in the order of white $\rightarrow$ black $\rightarrow$ red. The probability that the first marble drawn is white is $\frac{4}{9}$. The probability that the second marble drawn is black is $\frac{3}{8}$. The probability that the third marble drawn is red is $\frac{2}{7}$. Thus, from \rdef{mod2:defn:MultiplicationRule}, 
+The probability that the first marble drawn is white is $\frac{4}{9}$. The probability that the second marble drawn is black is $\frac{3}{8}$. The probability that the third marble drawn is red is $\frac{2}{7}$. Thus, from \rdef{mod2:defn:MultiplicationRule}, 
 \begin{align}
 	P(white \rightarrow black \rightarrow red) & = \frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} \nn \\
 	                                           & = \frac{1}{21} \,.
@@ -155,14 +155,16 @@ We want to find the probability that the marbles will be drawn in the order of w
 
 \subsubquestion
 
-We want to find the probability that one marble of each color will be chosen. We should notice that the probability obtained in \textbf{(c)(i)} is the same probability as any other arrangement of the colors. For example, due to the commutative property of multiplication, the probability of [white $\rightarrow$ black $\rightarrow$ red] would be the same probability of [red $\rightarrow$ white $\rightarrow$ black]. Thus, in order to find the probability that one marble of each color will be chosen, we can multiply $P(white \rightarrow black \rightarrow red)$ by the number of permutations of the colors White, Red and Black. From \req{mod2:defn:PermutationEqn}, we can find the number of permutations of 3 colors as follows,
+We should notice that the probability obtained in \textbf{(c)(i)} is the same probability as any other arrangement of the \textbf{same set} of colors. For example, due to the commutative property of multiplication, the probability of [white $\rightarrow$ black $\rightarrow$ red] would be the same probability of [red $\rightarrow$ white $\rightarrow$ black]. 
+
+From \req{mod2:defn:PermutationEqn}, the number of permutations of the \textbf{set of 3} colors is,
 \begin{align}
 	^3P_3 & = \frac{3!}{(3-3)!} \nn \\
 	      & = \frac{3!}{1} \nn \\
 	      & = 6 \,.
 \end{align}
 
-Thus, the probability that one marble of each color will be chosen is,
+Thus, we can find that,
 \begin{align}
 	P(\text{one of each color}) & = P(white \rightarrow black \rightarrow red) \times 6 \nn \\
 	                     & = \frac{1}{21} \times 6 \nn \\
@@ -173,7 +175,9 @@ Thus, the probability that one marble of each color will be chosen is,
 
 \subsubquestion
 
-We want to find the probability that the 3rd marble is white. In order to do this, we will split the marbles into 2 groups: White marbles (W) and not White marbles (W'). In the setup, there are 4 W marbles and 5 W' marbles. The different combinations of the 3 marbles chosen, with white being the last marble, are (W,W,W), (W'W,W), (W,W',W) and (W', W',W). Thus, we find the probability that the 3rd marble is white by summing the probabilities of the different combinations as follows,
+We will split the marbles into 2 groups: White marbles (W) and not White marbles (W'). In the setup, there are 4 W marbles and 5 W' marbles. The different combinations of the 3 marbles chosen, with white being the last marble, are (W,W,W), (W'W,W), (W,W',W) and (W', W',W). 
+
+If the last marble is white, we can find that,
 \begin{align}
 	P(W,W,W) & = \frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} \nn \\
 	         & = \frac{1}{21} \,. \\ \nn \\
