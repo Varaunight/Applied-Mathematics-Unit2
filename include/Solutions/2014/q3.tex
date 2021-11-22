@@ -141,18 +141,18 @@ Thus, the probability that the committee chosen has exactly 2 basses and three t
 
 \subsubquestion 
 
-Since all the singers are distinct, we can place the singers in a line instead on a circle to make the calculation easier. We will denote bassists with $B_x$ where $x$ is the number of possible bass singers in this particular position. Similarly, we will denote $T_y$ where $y$ is the number of possible tenors in this position. The $T_{^6C_2}$ represents the two tenors that are next to each other.
+Since all the singers are distinct, we can place the singers in a line instead on a circle to make the calculation easier. We will denote bassists with $B_x$ where $x$ is the number of possible bass singers in this particular position. Similarly, we will denote $T_y$ where $y$ is the number of possible tenors in this position. The $T_{^6C_2}$ represents the two tenors that are next to each other. The $2!$ represents the number of ways that the 2 tenors can be arranged.
 
 The line can be formed as follows,
 \begin{equation}
-	(T_{^6C_2}):B_5: T_4: B_4: T_3: B_3: T_2: B_2: T_1: B_1 \,.
+	(2! \times T_{^6C_2}):B_5: T_4: B_4: T_3: B_3: T_2: B_2: T_1: B_1 \,.
 \end{equation}
 
 This line can then be wrapped around the circular table with any starting position and still retain the arrangement. Using \rdef{mod2:defn:MultiplicationRule}, we can find the number of ways to arrange the line by multiplying all of the $x$ and $y$ values as follows,
 \begin{align}
-	\text{Number of Arrangements} & = ~^6C_2 \times 5\times 4\times 4\times 3\times 3\times 2\times 2\times 1\times 1 \nn \\
-	                       & = 15 \times 5\times 4\times 4\times 3\times 3\times 2\times 2\times 1\times 1 \nn \\
-	                       & = 43200 \,.
+	\text{Number of Arrangements} & = 2! \times ~^6C_2 \times 5\times 4\times 4\times 3\times 3\times 2\times 2\times 1\times 1 \nn \\
+	                       & = 2 \times 15 \times 5\times 4\times 4\times 3\times 3\times 2\times 2\times 1\times 1 \nn \\
+	                       & = 86400 \,.
 \end{align}
 
 \end{subsubquestions}
