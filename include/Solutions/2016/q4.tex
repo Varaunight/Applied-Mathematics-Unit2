@@ -1,17 +1,182 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2016
+%     Module: 2
+%     Question: 4
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 4 a 
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+\subquestion
+
+We need to perform a $\chi^2$ test at the 5\% level of significance.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+The hypotheses can be given as
+\begin{itemize}
+	\item $H_0$: "The data is equally distributed."
+	
+	\item $H_1$: "The data is not equally distributed."
+\end{itemize}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+A frequency table is given and we want to find whether there is an equal distribution of grades. Therefore, we get that our Expected Value, $E$, for all of the Grades is $20$.
+
+We get,
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Grade & Observed,O & Expected,O & $\frac{(O-E)^2}{E}$ \\
+		\hline
+		A & 14 & 20 & 1.8 \\
+		B & 22 & 20 & 0.2 \\
+		C & 30 & 20 & 5 \\ 
+		D & 18 & 20 & 0.2 \\ 
+		F & 16 & 20 & 0.8 \\
+		\hline
+		Sum $\left( \frac{(O-E)^2}{E} \right) $ & & & 8 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2016:q4:ChiTable} $\chi^2$ Observed and Expected Values.}
+\end{table}
+	
+Since none of the $\frac{(O-E)^2}{E}$ values is less than 5, we get that the number of degrees of freedom, $\nu$, is,
+\begin{equation}
+	\nu = 5-1=4 \,.
+\end{equation}
+
+Thus, the critical value for this test will be,
+\begin{equation}
+	\chi^{2}_{0.05} (\nu) = \chi^{2}_{0.05} (4) = 9.488 \,.
+\end{equation}
+
+We will therefore reject $H_0$ if,
+\begin{equation}
+	\chi^{2}_{\text{calc.}} > 9.488 \,. \label{2016:q4:CritReg}
+\end{equation}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rtab{2016:q4:ChiTable}, we found that the test statistic is equal to 8.
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From \req{2016:q4:CritReg}, we see that $\left( \chi^{2}_{\text{calc.}}=8 \right)$ is not greater than $\left(\chi^{2}_{0.05} (4) = 9.488 \right)$. Thus, we do not reject $H_0$.
+
+\end{subsubquestions}
+	
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------
+	
+\subquestion
+
+We are given the probability density function, $f$, of the continuous random variable $X$.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rdef{mod2:prop:ContinuousRV:1}, we see that,
+\begin{align}
+	\int_{-\infty}^{\infty} f(x).dx. = \int_{0}^{3} (k(4-x)).dx. & = 1 \nn \\
+	\left[ 4kx- \frac{kx^2}{2} \right]^3_0 & = 1 \nn \\
+	\left[ 4k(3)- \frac{k(3)^2}{2} \right] - \left[ 4k(0)- \frac{k(0)^2}{2} \right] & = 1 \nn \\
+	12k - \frac{9k}{2} & = 1 \nn \\
+	k \left(12 - \frac{9}{2}\right) & = 1 \nn \\
+	k & = \frac{1}{\left(12 - \frac{9}{2}\right)} \nn \\
+	k & = \frac{1}{\left(\frac{15}{2}\right)} \nn \\
+	\implies k & = \frac{2}{15} \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Using Note ~\ref{mod2:note:ContinuousRV:Note1}, we can see that,
+\begin{align}
+	P(1<X) = P(1 \leq X \leq 3) & = \int_1^3 f(x).dx. \nn \\
+	& = \int_1^3 \left(\frac{2}{15}(4-x)\right).dx. \nn \\
+	& = \frac{2}{15} \times \int_1^3 \left(4-x\right).dx. \nn \\
+	& = \frac{2}{15} \times \left[ 4x- \frac{x^2}{2}\right]^3_1 \nn \\
+	& = \frac{2}{15} \times \left( \left[ 4(3)- \frac{(3)^2}{2}\right] -\left[ 4(1)- \frac{(1)^2}{2}\right] \right) \nn \\
+	& = \frac{2}{15} \times \left( \left[\frac{(15}{2}\right] -\left[ \frac{7}{2}\right] \right) \nn \\
+	& = \frac{2}{15} \times \frac{8}{2} \nn \\
+	& = \frac{8}{15} \,.	
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From, \rdef{mod2:defn:ContinuousRV:Expectation}, we get that,
+\begin{align}
+	E(X) = \int_{-\infty}^{\infty}x f(x).dx & = \int_{0}^{3}(x \times \left( \frac{2}{15}(4-x)\right)).dx \nn \\
+	                                        & = \frac{2}{15} \times \int_0^3 \left(4x-x^2 \right).dx. \nn \\
+	                                        & = \frac{2}{15} \times \left[ 2x^2 - \frac{x^3}{3} \right]_0^3 \nn \\
+	                                        & = \frac{2}{15} \times \left( \left[ 2(3)^2 - \frac{(3)^3}{3} \right] - \left[ 2(0)^2 - \frac{(0)^3}{3} \right] \right) \nn \\
+	                                        & = \frac{2}{15} \times 9 \nn \\
+	                                        & = \frac{18}{15} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From Note ~\ref{mod2:note:ContinuousRV:Note1}, we can find that,
+\begin{align}
+	F(x) = \int_{-\infty}^{x} f(x).dx & = F(x) = \int_{0}^{x}\left( \frac{2}{15}(4-x)\right).dx \nn \\
+	                                  & = \frac{2}{15} \times \left[4x - \frac{x^2}{2} \right]^x_0 \nn \\
+	                                  & = \frac{8x}{15} - \frac{x^2}{15} \,.
+\end{align}
+
+We should note that,
+\[ F(x) =
+\begin{cases} 
+	0, & x \leq 0 \\
+	\frac{8x}{15} - \frac{x^2}{15}, & 0 \leq x \leq 3 \\
+	1, & x \geq 3 \,.
+\end{cases}
+\]
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We can recall from Note ~\ref{mod2:note:ContinuousRV:CDF}, 
+\begin{align}
+		P( 1.5 < X < 2) & = F(2) - F(1.5) \nn \\
+		                & = \left(\frac{8(2)}{15} - \frac{(2)^2}{15}\right) - \left(\frac{8(1.5)}{15} - \frac{(1.5)^2}{15}\right) \nn \\
+		                & = \left(\frac{16}{15} - \frac{4}{15}\right) - \left(\frac{12}{15} - \frac{2.25}{15}\right) \nn \\
+		                & = \left(\frac{12}{15}\right) - \left(\frac{9.75}{15} \right) \nn \\
+		                & = \frac{2.25}{15} \,.
+\end{align}
+
+\end{subsubquestions}
+	
+	
+\end{subquestions}
 
