@@ -1,17 +1,135 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2010
+%     Module: 2
+%     Question: 4
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 4 a
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
 
+\subquestion
+
+We will define $X$ as the random variable representing the lengths of wood produced. We can therefore express $X$ as,
+\begin{equation}
+	X \sim N(3, \sigma^2) \,,
+\end{equation}	
+where $\sigma$ is the standard deviation of $X$.
+	
+\begin{subsubquestions}
+	
+\subsubquestion
+
+We should note that we have,
+\begin{equation}
+	P(X<2.75) = 0.15 \,.
+\end{equation}
+	
+To make sense of this, we need to standardize the random variable $X$ to the normal random variable $Z$ as follows,
+\begin{align}
+	P(X<2.75) = P\left(\frac{X - \mu}{\sigma}<\frac{2.75-\mu}{\sigma}\right) & = 0.15 \nn \\
+	            P\left(Z <\frac{2.75-3}{\sigma}\right) & = 0.15 \nn \\
+	            P\left(Z <\frac{-0.25}{\sigma}\right) & = 0.15 \nn \\
+	            \implies \Phi\left(\frac{-0.25}{\sigma}\right) & = 0.15 \,.
+\end{align}
+
+From our Z-tables, we see that $\Phi(-1.04)=0.15$. Thus, we get that,
+\begin{align}
+	\frac{-0.25}{\sigma} & = -1.04 \nn \\
+	\implies \sigma & = \frac{-0.25}{-1.04} \nn \\
+	                & \approx 0.24 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We have found that,
+\begin{equation}
+	X \sim N(3,0.24^2) \,.
+\end{equation}
+
+By standardizing from $X$ to $Z$, we get that,
+\begin{align}
+	P(X>3.2) & = P\left(\frac{X-\mu}{\sigma}>\frac{3.2-\mu}{\sigma} \right) \nn \\
+	         & = P\left(Z>\frac{3.2-3}{0.24} \right) \nn \\
+	         & = P\left(Z>\frac{0.2}{0.24} \right) \nn \\
+	         & = 1 - \Phi\left(\frac{5}{6}\right) \nn \\
+	         & = 1 - 0.798 \nn \\
+	         & = 0.202 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+The hypotheses for this test are,
+\begin{itemize}
+	\item $H_0$: These is no association between the number of employees working overtime and the distance from their home.
+	\item $H_1$: These is an association between the number of employees working overtime and the distance from their home.
+\end{itemize}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We should note that, if there is no association between the number of employees working overtime and the distance from their home, the expected value for the number of employees working overtime would be 20 $(\frac{Total=100}{5})$. 
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+See \rtab{2010:q4:ChiTab}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Distances & Observed Number of Employees, O & Expected Number of Employees, E & $\frac{(O-E)^2}{E}$\\
+		\hline 
+		10-14 & 30 & 20 & 5 \\
+		15-19 & 25 & 20 & 1.25 \\
+		20-24 & 14 & 20 & 1.8 \\
+		25-29 & 19 & 20 & 0.05 \\
+		30-34 & 12 & 20 & 3.2 \\
+		\hline
+		Total, $\chi^2_{\text{calc.}}$ & & & 11.3 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2010:q4:ChiTab} $\chi^2$ Table.}
+\end{table}	
+
+We know that the number of degrees of freedom, $\nu$, is,
+\begin{equation}
+	\nu = 5-1 = 4\,.
+\end{equation}
+
+At the 5\% significance level, we know that we will reject $H_0$ if,
+\begin{align}
+	&\chi^2_{\text{calc.}} > \chi^2_{0.05}(\nu) \nn \\
+	\implies & \chi^2_{\text{calc.}} > \chi^2_{0.05}(4) \nn \\
+	\implies & \chi^2_{\text{calc.}} > 9.488 \,.
+\end{align} 
+
+Therefore, from \rtab{2010:q4:ChiTab}, since $11.3>9.488$, we will reject $H_0$.
+\end{subsubquestions}
+
+\end{subquestions}
