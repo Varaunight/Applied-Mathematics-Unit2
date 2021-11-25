@@ -29,9 +29,9 @@ We need to perform a $\chi^2$ test at the 5\% level of significance.
 
 The hypotheses can be given as
 \begin{itemize}
-	\item $H_0$: "The data is equally distributed."
+	\item $H_0$: ``The data is equally distributed.''
 	
-	\item $H_1$: "The data is not equally distributed."
+	\item $H_1$: ``The data is not equally distributed.''
 \end{itemize}
 
 %------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ We are given the probability density function, $f$, of the continuous random var
 
 From \rdef{mod2:prop:ContinuousRV:1}, we see that,
 \begin{align}
-	\int_{-\infty}^{\infty} f(x).dx. = \int_{0}^{3} (k(4-x)).dx. & = 1 \nn \\
+	\int_{-\infty}^{\infty} f(x).dx. = \int_{0}^{3} (k(4-x))\, \mathrm{d}x & = 1 \nn \\
 	\left[ 4kx- \frac{kx^2}{2} \right]^3_0 & = 1 \nn \\
 	\left[ 4k(3)- \frac{k(3)^2}{2} \right] - \left[ 4k(0)- \frac{k(0)^2}{2} \right] & = 1 \nn \\
 	12k - \frac{9k}{2} & = 1 \nn \\
@@ -134,7 +134,7 @@ Using Note ~\ref{mod2:note:ContinuousRV:Note1}, we can see that,
 
 From, \rdef{mod2:defn:ContinuousRV:Expectation}, we get that,
 \begin{align}
-	E(X) = \int_{-\infty}^{\infty}x f(x).dx & = \int_{0}^{3}(x \times \left( \frac{2}{15}(4-x)\right)).dx \nn \\
+	E(X) = \int_{-\infty}^{\infty}x f(x).dx & = \int_{0}^{3} \Big(x \times \left( \frac{2}{15}(4-x)\right) \Big).dx \nn \\
 	                                        & = \frac{2}{15} \times \int_0^3 \left(4x-x^2 \right).dx. \nn \\
 	                                        & = \frac{2}{15} \times \left[ 2x^2 - \frac{x^3}{3} \right]_0^3 \nn \\
 	                                        & = \frac{2}{15} \times \left( \left[ 2(3)^2 - \frac{(3)^3}{3} \right] - \left[ 2(0)^2 - \frac{(0)^3}{3} \right] \right) \nn \\
@@ -172,7 +172,8 @@ We can recall from Note ~\ref{mod2:note:ContinuousRV:CDF},
 		                & = \left(\frac{8(2)}{15} - \frac{(2)^2}{15}\right) - \left(\frac{8(1.5)}{15} - \frac{(1.5)^2}{15}\right) \nn \\
 		                & = \left(\frac{16}{15} - \frac{4}{15}\right) - \left(\frac{12}{15} - \frac{2.25}{15}\right) \nn \\
 		                & = \left(\frac{12}{15}\right) - \left(\frac{9.75}{15} \right) \nn \\
-		                & = \frac{2.25}{15} \,.
+		                & = \frac{2.25}{15} \nn \\
+		                & = 0.15 \,.
 \end{align}
 
 \end{subsubquestions}
