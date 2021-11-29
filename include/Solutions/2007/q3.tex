@@ -1,17 +1,113 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2008 May
+%     Module: 2
+%     Question: 3 
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 3 a
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+\subquestion
 
+We are asked to calculate the corresponding expected frequencies using a Binomial Distribution. Let $X$ be the discrete random variable that represents ``the number of 3's thrown when a dice is rolled 4 times.'' From \rdef{mod2:defn:Binomial}, we get,
+\begin{equation}
+	X \sim \text{Bin}\left(4, \frac{1}{6}\right) \,.
+\end{equation}
+and 
+\begin{equation}
+	P(X = x) = { 4 \choose x} \times \left(\frac{1}{6} \right)^x \times \left(1-\frac{1}{6} \right)^{4-x} \,.
+\end{equation}
+	
+Thus, we get that,
+\begin{align}
+	P(X=0) & = { 4 \choose 0} \times \left(\frac{1}{6} \right)^0 \times \left(1-\frac{1}{6} \right)^{4-0} \nn \\
+	       & = 1 \times 1 \times \left(\frac{5}{6} \right)^{4} \nn \\
+	       & = \frac{625}{1296} \,. \\ \nn \\
+	P(X=1) & = { 4 \choose 1} \times \left(\frac{1}{6} \right)^1 \times \left(1-\frac{1}{6} \right)^{4-1} \nn \\
+		   & = 4 \times \frac{1}{6} \times \left(\frac{5}{6} \right)^{3} \nn \\
+		   & = \frac{500}{1296} \,. \\ \nn \\
+	P(X=2) & = { 4 \choose 2} \times \left(\frac{1}{6} \right)^2 \times \left(1-\frac{1}{6} \right)^{4-2} \nn \\
+		   & = 6 \times \left(\frac{1}{6}\right)^2 \times \left(\frac{5}{6} \right)^{2} \nn \\
+		   & = \frac{150}{1296} \,. \\ \nn \\
+	P(X=3) & = { 4 \choose 3} \times \left(\frac{1}{6} \right)^3 \times \left(1-\frac{1}{6} \right)^{4-3} \nn \\
+		   & = 4 \times \left(\frac{1}{6}\right)^3 \times \left(\frac{5}{6} \right) \nn \\
+      	   & = \frac{20}{1296} \,. \\ \nn \\
+    P(X=4) & = { 4 \choose 4} \times \left(\frac{1}{6} \right)^4 \times \left(1-\frac{1}{6} \right)^{4-4} \nn \\
+    	   & = 1 \times \left(\frac{1}{6}\right)^4 \times 1 \nn \\
+    	   & = \frac{1}{1296} \,. \\ \nn \\
+\end{align}
+
+Thus, we can give our expected frequencies in \rtab{2008M:q3:Bin1}.
+	
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		$X=x$ & $P(X=x)$ & Expected frequency, Total $\times P(X=x)$ \\
+		\hline
+		0 & 0.482 & 48.2 \\
+		1 & 0.386 & 38.6 \\
+		2 & 0.116 & 11.6 \\
+		3 & 0.015 & 1.5 \\
+		4 & 0.001 & 0.1 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2008M:q3:Bin1} Expected Frequencies.}
+\end{table}
+
+%------------------------------------------------------------------------------
+% 3 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+Our hypotheses are,
+\begin{itemize}
+	\item $H_0$: The data follows a binomial distribution with parameters $n=4$ and $p=\frac{1}{6}$. 
+	\item $H_1$: The data does not follow a binomial distribution with parameters $n=4$ and $p=\frac{1}{6}$.
+\end{itemize}
+
+We should note that the expected frequencies for $X=3$ and $X=4$ are both less than 5. Therefore, we must combine both classes with $X=2$ as follows,
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		$X=x$ & Observed Frequency, O & Expected Frequency, E & $\frac{(O-E)^2}{E}$ \\
+		\hline
+		0 & 57 & 48.2 & 1.607 \\
+		1 & 30 & 38.6 & 1.916 \\
+		$\geq$ 2 & 13 & 13.2 & 0.003 \\
+		\hline
+		Total, $\chi^2_\text{calc.}$ & & & 3.526 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2008M:q3:ChiTab} Expected and Observed Frequencies of experiment.}
+\end{table}
+
+From \rtab{2008M:q3:ChiTab}, we can see that our number of degrees of freedom, $\nu$, is,
+\begin{equation}
+	\nu = 3 - 1 = 2 \,.
+\end{equation}
+
+Thus, we will reject $H_0$ if,
+\begin{align}
+	\chi^2_\text{calc.} & > \chi^2_{0.05}(\nu) \nn \\
+	\implies \chi^2_\text{calc.} & > \chi^2_{0.05}(2) \nn \\
+	\implies \chi^2_\text{calc.} & > 5.991 \,.
+\end{align}
+
+Therefore, since our value of $\chi^2_\text{calc.}=3.526$ is not greater than $\chi^2_{0.05}(2)=5.991$, we will not reject $H_0$.
+
+\end{subquestions}
