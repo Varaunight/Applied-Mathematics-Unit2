@@ -36,7 +36,7 @@ We will let $X$ be the discrete random variable which represents ``the number of
 	
 Since $n=15$, from \rdef{mod2:defn:Binomial}, we get that,
 \begin{equation}
-	P(X = x) = { 15 \choose x} (0.05)^x (1-0.05)^{15-x} \,.
+	P(X = x) = { 15 \choose x} (0.05)^x (1-0.05)^{15-x} \,. \label{2005:q4:Bin1}
 \end{equation}
 
 Thus, we can find that,
@@ -55,14 +55,18 @@ Since $X$ is discrete, we know that,
 	P(X>2) = 1 - (P(X=0)+P(X=1)+P(X=2)) \,.
 \end{equation}
 
-Thus, we know that,
+Using \req{2005:q4:Bin1}, we can calculate,
 \begin{align}
 	P(X=0) & = { 15 \choose 0} \times (0.05)^0 \times (0.95)^{15-0} \nn \\
 	       & = 1 \times 1 \times (0.95)^{15} \nn \\
 	       & = 0.463 \,. \\ \nn \\
 	P(X=1) & = { 15 \choose 1} \times (0.05)^1 \times (0.95)^{15-1} \nn \\
 	       & = 15 \times 0.05 \times (0.95)^{14} \nn \\
-	       & = 0.366 \,. \\ \nn \\
+	       & = 0.366 \,. 
+\end{align}
+
+Substituting \reqs{...}, we can find that,       
+\begin{align}
 	P(X>2) & = 1 - (P(X=0)+P(X=1)+P(X=2)) \nn \\
 	       & = 1 - (0.463+0.366+0.135) \nn \\
 	       & = 1 - 0.964 \nn \\
@@ -75,6 +79,7 @@ Thus, we know that,
 
 \subsubquestion
 
+\note{Fix random variable Y}
 From the information given, we can see that $n=60$ and $p=0.05$. We therefore know that,
 \begin{align}
 	n=60 & >30, \text{and} \nn \\
