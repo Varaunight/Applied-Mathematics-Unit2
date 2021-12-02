@@ -46,7 +46,14 @@ From \rprop{mod2:prop:ContinuousRV:1}, we know that,
 
 From Note ~\ref{mod2:note:ContinuousRV:Note1}, we can get that,
 \begin{align}
-	P(2 \leq X) = P(2 \leq X \leq 4) & = \int_2^4 f(x)\mathrm{d}x \nn \\
+	P(2 \leq X) &= P(2\leq X \leq \infty) \nn \\
+	 &= P(2 \leq X \leq 4) + P(4 < X \leq \infty)\nn\\
+	&= \int_2^4 f(x)~\mathrm{d}x + 0
+\end{align}
+
+
+\begin{align}
+	P(2 \leq X) = P(2 \leq X \leq 4) + P(X>4) & = \int_2^4 f(x)~\mathrm{d}x \nn \\
 	                                 & = \frac{4}{255} \times \int_2^4 x^3{d}x \nn \\
 	                                 & = \frac{4}{255} \times \left[\frac{x^4}{4}\right]^4_2 \nn \\
 	                                 & = \frac{4}{255} \times \left[\frac{4^4}{4}-\frac{2^4}{4}\right] \nn \\
@@ -55,6 +62,7 @@ From Note ~\ref{mod2:note:ContinuousRV:Note1}, we can get that,
 	                                 & = \frac{240}{255} = \frac{16}{17} \,.
 \end{align}
 	
+\footnote{Hello}
 %------------------------------------------------------------------------------
 
 \subsubquestion
