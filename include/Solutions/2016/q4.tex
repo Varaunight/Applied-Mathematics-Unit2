@@ -53,7 +53,7 @@ We get,
 		D & 18 & 20 & 0.2 \\ 
 		F & 16 & 20 & 0.8 \\
 		\hline
-		Sum $\left( \frac{(O-E)^2}{E} \right) $ & & & 8 \\
+		Total, $\chi^2_\text{calc.}$ & & & 8 \\
 		\hline
 	\end{tabular}
 	\caption{\label{2016:q4:ChiTable} $\chi^2$ Observed and Expected Values.}
@@ -102,7 +102,8 @@ We are given the probability density function, $f$, of the continuous random var
 
 From \rdef{mod2:prop:ContinuousRV:1}, we see that,
 \begin{align}
-	\int_{-\infty}^{\infty} f(x).dx. = \int_{0}^{3} (k(4-x))\, \mathrm{d}x & = 1 \nn \\
+	\int_{-\infty}^{\infty} f(x)\mathrm{d}x = \int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{3} f(x)\mathrm{d}x + \int_{3}^{\infty} f(x)\mathrm{d}x & = 1 \nn \\
+	0+ \int_{0}^{3} (k(4-x))\, \mathrm{d}x +0 & = 1 \nn \\
 	\left[ 4kx- \frac{kx^2}{2} \right]^3_0 & = 1 \nn \\
 	\left[ 4k(3)- \frac{k(3)^2}{2} \right] - \left[ 4k(0)- \frac{k(0)^2}{2} \right] & = 1 \nn \\
 	12k - \frac{9k}{2} & = 1 \nn \\
@@ -118,9 +119,9 @@ From \rdef{mod2:prop:ContinuousRV:1}, we see that,
 
 Using Note ~\ref{mod2:note:ContinuousRV:Note1}, we can see that,
 \begin{align}
-	P(1<X) = P(1 \leq X \leq 3) & = \int_1^3 f(x).dx. \nn \\
-	& = \int_1^3 \left(\frac{2}{15}(4-x)\right).dx. \nn \\
-	& = \frac{2}{15} \times \int_1^3 \left(4-x\right).dx. \nn \\
+	P(1<X)  & = \int_1^3 f(x)\mathrm{d}x + \int_3^\infty f(x)\mathrm{d}x\nn \\
+	& = \int_1^3 \left(\frac{2}{15}(4-x)\right)\mathrm{d}x + 0 \nn \\
+	& = \frac{2}{15} \times \int_1^3 \left(4-x\right)\mathrm{d}x \nn \\
 	& = \frac{2}{15} \times \left[ 4x- \frac{x^2}{2}\right]^3_1 \nn \\
 	& = \frac{2}{15} \times \left( \left[ 4(3)- \frac{(3)^2}{2}\right] -\left[ 4(1)- \frac{(1)^2}{2}\right] \right) \nn \\
 	& = \frac{2}{15} \times \left( \left[\frac{(15}{2}\right] -\left[ \frac{7}{2}\right] \right) \nn \\
@@ -134,8 +135,8 @@ Using Note ~\ref{mod2:note:ContinuousRV:Note1}, we can see that,
 
 From, \rdef{mod2:defn:ContinuousRV:Expectation}, we get that,
 \begin{align}
-	E(X) = \int_{-\infty}^{\infty}x f(x).dx & = \int_{0}^{3} \Big(x \times \left( \frac{2}{15}(4-x)\right) \Big).dx \nn \\
-	                                        & = \frac{2}{15} \times \int_0^3 \left(4x-x^2 \right).dx. \nn \\
+	E(X) = \int_{-\infty}^{\infty}x f(x)\mathrm{d}x & = \int_{0}^{3} \Big(x \times \left( \frac{2}{15}(4-x)\right) \Big)\mathrm{d}x \nn \\
+	                                        & = \frac{2}{15} \times \int_0^3 \left(4x-x^2 \right)\mathrm{d}x. \nn \\
 	                                        & = \frac{2}{15} \times \left[ 2x^2 - \frac{x^3}{3} \right]_0^3 \nn \\
 	                                        & = \frac{2}{15} \times \left( \left[ 2(3)^2 - \frac{(3)^3}{3} \right] - \left[ 2(0)^2 - \frac{(0)^3}{3} \right] \right) \nn \\
 	                                        & = \frac{2}{15} \times 9 \nn \\
@@ -148,9 +149,9 @@ From, \rdef{mod2:defn:ContinuousRV:Expectation}, we get that,
 
 From Note ~\ref{mod2:note:ContinuousRV:Note1}, we can find that,
 \begin{align}
-	F(x) = \int_{-\infty}^{x} f(x).dx & = F(x) = \int_{0}^{x}\left( \frac{2}{15}(4-x)\right).dx \nn \\
-	                                  & = \frac{2}{15} \times \left[4x - \frac{x^2}{2} \right]^x_0 \nn \\
-	                                  & = \frac{8x}{15} - \frac{x^2}{15} \,.
+	F(a) = \int_{-\infty}^{a} f(x)\mathrm{d}x & = \int_{0}^{a}\left( \frac{2}{15}(4-x)\right)\mathrm{d}x \nn \\
+	                                  & = \frac{2}{15} \times \left[4x - \frac{x^2}{2} \right]^a_0 \nn \\
+	                                  & = \frac{8a}{15} - \frac{a^2}{15} \,.
 \end{align}
 
 We should note that,
