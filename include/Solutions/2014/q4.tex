@@ -23,18 +23,18 @@
 	
 \subsubquestion
 
-Let the random variable, $X$ be "the number of faults which occur in 15 meters of cloth". We can then say that $X$ follows a Poisson distribution with parameter, $\lambda = 3$. \\
-Thus, we define the distribution of $X$ as
+Let the discrete random variable, $X$ be "the number of faults which occur in 15 meters of cloth". We can then say that $X$ follows a Poisson distribution with parameter, $\lambda = 3$. \\
+We define the distribution of $X$ as
 \begin{equation}
 	X \sim \text{Pois}(3) \,.
 \end{equation}
 	
-From Section ~\ref{mod2:section:Poisson}, we know that the probability of $X=x$ as follows,
+From Section ~\ref{mod2:section:Poisson}, we know that,
 \begin{equation}
 	P(X=x) = \frac{3^{x} \times e^{-3}}{x!} \,. \label{2014:q4:PoisEqn}
 \end{equation}
 	
-Using \req{2014:q4:PoisEqn}, the probability that $X=4$ is,
+Using \req{2014:q4:PoisEqn}, we can find,
 \begin{align}
 	P(X=4) & = \frac{3^{4} \times e^{-3}}{4!} \nn \\
 	       & = \frac{81 \times e^{-3}}{24} \nn \\
@@ -46,23 +46,23 @@ Using \req{2014:q4:PoisEqn}, the probability that $X=4$ is,
 \subsubquestion
 
 Since we know that the rate of faults in 15 meters of cloth is equal to 3, the rate of faults in 60 meters of cloth is $\frac{60}{15} \times 3 = 12$. \\
-Let the random variable, $Y$, be "the number of faults which occur in 60 meters of cloth". Thus, we can define the distribution of $Y$ as
+Let the discrete random variable, $Y$, be "the number of faults which occur in 60 meters of cloth". We can define the distribution of $Y$ as
 \begin{equation}
 	Y \sim \text{Pois}(12) \,.
 \end{equation}
 
-From Section ~\ref{mod2:section:Poisson}, the probability of $Y=y$ as follows,
+From Section ~\ref{mod2:section:Poisson},
 \begin{equation}
 	P(Y=y) = \frac{12^{y} \times e^{-12}}{y!} \,. \label{2014:q4:PoisEqn2}
 \end{equation}
 
-The probability of $Y \geq 2$ can be given as,
+Since $Y$ is discrete, we know that,
 \begin{align}
 	P(Y \geq 2) & = 1 - P(Y<2) \nn \\
 	            & = 1 - (P(Y=0) + P(Y=1)) \,.
 \end{align}
 
-Finally, using \req{2014:q4:PoisEqn2}, we can calculate  $P(Y \geq 2)$ as follows,
+Thus, using \req{2014:q4:PoisEqn2}, we can calculate,
 \begin{align}
 	P(Y \geq 2) & = 1 - (P(Y=0) + P(Y=1)) \nn \\
 	            & = 1 - \left(\frac{12^{0} \times e^{-12}}{0!} + \frac{12^{1} \times e^{-12}}{1!} \right) \nn \\
@@ -105,7 +105,7 @@ In order to find the probability that $X<60$, we must first standardize the rand
 
 \subsubquestion
 
-Similar to \textbf{(b)(i)}, we can calculate $P(61<X<64)$ by standardizing as follows,
+Similar to \textbf{(b)(i)}, we standardize as follows,
 \begin{align}
 	P(61<X<64) & = P\left(\frac{61- \mu}{\sigma} < \frac{X - \mu}{\sigma} < \frac{64 - \mu}{\sigma} \right) \nn \\
 	           & = P\left(\frac{61- 62.2}{3.6} < Z < \frac{64 - 62.2}{3.6} \right) \nn \\
@@ -125,7 +125,7 @@ Similar to \textbf{(b)(i)}, we can calculate $P(61<X<64)$ by standardizing as fo
 
 \subquestion
 
-We are given the relevant probabilities of 2 independent random variables, $X$ and $Y$. See \rtab{2014:q4:Tab1}.
+We are given the relevant probabilities of 2 independent random variables, $X$ and $Y$ (see \rtab{2014:q4:Tab1}).
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -153,11 +153,14 @@ $(X+Y=3)$ can happen in exactly 3 ways:
 	\item $X = 2$ and $Y = 1$
 \end{itemize}
 
-Since $X$ and $Y$ are independent, $P(X=x ~\text{and}~ Y=y) = P(X=x) \times P(Y=y)$.
+Since $X$ and $Y$ are independent, we know that
+\begin{equation}
+	P(X=x \land Y=y) = P(X=x) \times P(Y=y)
+\end{equation}
 
-Thus, we can calculate $P(X+Y=3)$ as follows,
+We can therefore calculate $P(X+Y=3)$ as follows,
 \begin{align}
-	P(X+Y=3) & = (X=0 ~\text{and}~ Y=3) + (X=1 ~\text{and}~ Y=2) + (X=2 ~\text{and}~ Y=1) \nn \\
+	P(X+Y=3) & = P(X=0 ~\land~ Y=3) + P(X=1 ~\land~ Y=2) + P(X=2 ~\land~ Y=1) \nn \\
 	         & = [P(X=0) \times P(Y=3)] + [P(X=1) \times P(Y=2)] + [P(X=2) \times P(Y=1)] \nn \\
 	         & = [0.2 \times 0.25] + [0.3 \times 0.3] + [0.5 \times 0.1] \nn \\ 
 	         & = 0.05 + 0.075+0.05 \nn \\
@@ -182,18 +185,28 @@ We can use \rdef{mod2:defn:Discrete:Expectation} as follows,
 	
 \subsubsubquestion
 
-We can use \rdef{mod2:defn:Discrete:Variance} as follows,
+From \rdef{mod2:defn:Discrete:Variance}, we know,
+\begin{equation}
+	\var(X) = E(X^2) - (E(X))^2 \,.
+\end{equation}
+
+Using \rdef{mod2:defn:Discrete:SecondMoment}, we get that,
 \begin{align}
-	Var(X) & = E(X^2) - (E(X))^2 \nn \\
-	       & =  \sum_{\forall k} \left(x^2_k \times P(X=x_k) \right) - (E(X))^2 \nn \\
-	       & = \left((0^2 \times 0.2) + (1^2 \times 0.3) + (2^2 \times 0.5) \right) - (1.3)^2 \nn \\
-	       & = \left((0 \times 0.2) + (1 \times 0.3) + (4 \times 0.5) \right) - (1.3)^2 \nn \\
-	       & = \left(0 + 0.3 + 2 \right) - (1.3)^2 \nn \\
-	       & = 2.3 - 1.3^2 \nn \\
-	       & = 2.3 - 1.69 \nn \\
-	       & = 0.61.
+	E(X^2) & = \sum_{\forall k} \left(x^2_k \times P(X=x_k) \right)  \nn \\
+	       & = (0^2 \times 0.2) + (1^2 \times 0.3) + (2^2 \times 0.5)  \nn \\
+	       & = (0 \times 0.2) + (1 \times 0.3) + (4 \times 0.5)  \nn \\
+	       & = 0 + 0.3 + 2  \nn \\
+	       & = 2.3 \,.
 \end{align}
-	
+
+Thus, we can proceed by calculating,
+	\begin{align}
+		\var(X) & = E(X^2) - (E(X))^2 \nn \\
+		& = 2.3 - 1.3^2 \nn \\
+		& = 2.3 - 1.69 \nn \\
+		& = 0.61.
+	\end{align}
+		
 \subsubsubquestion
 
 We can use \rdef{mod2:defn:Discrete:Expectation} as follows,
@@ -206,13 +219,23 @@ We can use \rdef{mod2:defn:Discrete:Expectation} as follows,
 
 \subsubsubquestion
 
-Similarly, we can use \rdef{mod2:defn:Discrete:Variance} as follows
+From \rdef{mod2:defn:Discrete:Variance}, we know,
+\begin{equation}
+	\var(Y) = E(Y^2) - (E(Y))^2 \,.
+\end{equation}
+
+Using \rdef{mod2:defn:Discrete:SecondMoment}, we get that,
 \begin{align}
-	Var(Y) & = E(Y^2) - (E(Y))^2 \nn \\
-	& =  \sum_{\forall k} \left(y^2_k \times P(Y=y_k) \right) - (E(Y))^2 \nn \\
-	& = \left((0^2 \times 0.2) + (1^2 \times 0.1) + (2^2 \times 0.3) + (3^2 \times 0.25) + (4^2 \times 0.15)\right) - (2.05)^2 \nn \\
-	& = \left((0 \times 0.2) + (1 \times 0.1) + (4 \times 0.3) + (9 \times 0.25) + (16 \times 0.15) \right) - (2.05)^2 \nn \\
-	& = \left(0 + 0.1 + 1.2 + 2.25 + 2.4 \right) - (2.05)^2 \nn \\
+	E(Y^2) & =  \sum_{\forall k} \left(y^2_k \times P(Y=y_k) \right) \nn \\
+	       & = (0^2 \times 0.2) + (1^2 \times 0.1) + (2^2 \times 0.3) + (3^2 \times 0.25) + (4^2 \times 0.15) \nn \\
+	       & = (0 \times 0.2) + (1 \times 0.1) + (4 \times 0.3) + (9 \times 0.25) + (16 \times 0.15) \nn \\
+	       & = 0 + 0.1 + 1.2 + 2.25 + 2.4 \nn \\
+	       & = 5.95 \,.
+\end{align}
+
+Thus, we can proceed by calculating,
+\begin{align}
+	\var(Y) & = E(Y^2) - (E(Y))^2 \nn \\
 	& = 5.95 - 2.05^2 \nn \\
 	& = 5.95 - 4.2025 \nn \\
 	& = 1.7475.
@@ -240,7 +263,7 @@ Using Section ~\ref{mod2:section:ExpectationVariance}, we can calculate the foll
 \subsubsubquestion
 
 \begin{align}
-	Var(3X-2Y) & = 3^2 \times Var(X) + 2^2 \times Var(Y) \nn \\
+	\var(3X-2Y) & = 3^2 \times \var(X) + 2^2 \times \var(Y) \nn \\
 	           & = 9 \times 0.61 + 4 \times 1.7475 \nn \\
 	           & = 5.49 + 6.99 \nn \\
 	           & = 12.48.
