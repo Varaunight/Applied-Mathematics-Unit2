@@ -1,8 +1,8 @@
 %------------------------------------------------------------------------------
 % Author(s):
-% Varaun Ramgoolie
+% \varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, \varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -21,7 +21,7 @@
 
 \subquestion
 
-\TODO{Fix reproduction of question} We are given that $E[X]=5, E[Y]=7, \var[X]=3 ~\text{and}~ \var[Y]=4$. From Section~\ref{mod2:section:ExpectationVariance},
+Using Section~\ref{mod2:section:ExpectationVariance}, we can find the following:
 
 \begin{subsubquestions}
 	
@@ -49,7 +49,7 @@
 \subsubquestion
 
 \begin{align}
-	\var[2X-3Y] & = 2^2 \times Var[X] + 3^2 \times Var[Y] \nn \\
+	\var[2X-3Y] & = 2^2 \times \var[X] + 3^2 \times \var[Y] \nn \\
 	           & = 4 \times 3 + 9 \times 4 \nn \\
 	           & = 12 + 36 \nn \\
 	           & = 48 \,.	
@@ -68,14 +68,13 @@ It is given that,
 	X \sim \text{Geo}\left(\frac{1}{3}\right).
 \end{equation}
 
-Therefore, $p=\frac{1}{3}$ and $q=\frac{2}{3}$. From Section ~\ref{mod2:section:Geometric},
-
 \begin{subsubquestions}
 
 \subsubquestion
-We can use Note ~\ref{mod2:eq:Geometric:Prop} as follows,
+Using Note ~\ref{mod2:eq:Geometric:Prop}, we can find,
 \begin{align}
 	P(X \geq 3) & = P(X > 2) \nn \\
+				& = (1-p)^2 \nn \\
 	            & = \left(\frac{2}{3} \right)^2 \nn \\
 	            & = \frac{4}{9} \,.
 \end{align}
@@ -85,7 +84,7 @@ We can use Note ~\ref{mod2:eq:Geometric:Prop} as follows,
 \subsubquestion
 Using \req{mod2:eq:Geometric:Mean},
 \begin{align}
-	E[X] & = \frac{1}{p} \nn \\
+	E(X) & = \frac{1}{p} \nn \\
 	     & = \frac{1}{\frac{1}{3}} \nn \\
 	     & = 3 \,.
 \end{align}
@@ -109,17 +108,12 @@ Using \req{mod2:eq:Geometric:Mean},
 
 \subquestion
 
-It is given that $X$ is normally distributed with parameters $\mu = 60$ and $\sigma = 10$, or
-\begin{equation}
-	X \sim N(60, 10^2) \,.
-\end{equation}
-
-From Section ~\ref{mod2:section:Normal},
-
+It is given that $X$ is normally distributed with parameters $\mu = 60$ and $\sigma = 10$.
 \begin{subsubquestions}
 	
 \subsubquestion
 
+In order to find $P(X \geq x)$, we must first standardize the random variable $X$ to the normal random variable $Z$. Thus, we get that,
 \begin{align}
 	P(X \geq 65) & = P\left( \frac{X-\mu}{\sigma} \geq \frac{65-\mu}{\sigma} \right) \nn \\
 	             & = P\left(Z \geq \frac{65-60}{10} \right) \nn \\
@@ -134,6 +128,7 @@ From Section ~\ref{mod2:section:Normal},
 
 \subsubquestion
 
+Similar to \textbf{(3)(c)(i)}, we get that,
 \begin{align}
 	P(40 \leq X \leq 80) & = P \left( \frac{40-\mu}{\sigma} \leq \frac{X-\mu}{\sigma} \leq \frac{80-\mu}{\sigma} \right) \nn \\
 	                     & = P \left( \frac{40-60}{10} \leq Z \leq \frac{80-60}{10} \right) \nn \\
