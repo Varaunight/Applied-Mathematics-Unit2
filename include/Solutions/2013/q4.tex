@@ -21,7 +21,10 @@
 
 \subquestion
 
-Let $X$ be the discrete random variable representing the number of accidents which occur on that highway per week. We can express this as $X \sim $ Pois$(1)$.
+Let $X$ be the discrete random variable representing the number of accidents which occur on that highway per week. From the given information, we can express this as,
+\begin{equation}
+	X \sim \text{Pois}(1) \,.
+\end{equation}
 
 \begin{subsubquestions}
 	
@@ -29,14 +32,14 @@ Let $X$ be the discrete random variable representing the number of accidents whi
 
 Using \rdef{mod2:defn:Poisson}, we know that,
 \begin{equation}
-	P(X=k)= \frac{1^k \times e^{-1}}{k!} \,.
+	P(X=x)= \frac{1^x \times e^{-1}}{x!} \,.
 \end{equation}
 	
-Therefore, we can find $P(X=2)$ as follows,
+Therefore, we can find,
 \begin{align}
 	P(X=2) & = \frac{1^2 \times e^{-1}}{2!} \nn \\
 	       & = \frac{1 \times e^{-1}}{2} \nn \\
-	       & = \frac{1}{2 \times e} \nn \\
+	       & = \frac{1}{2e} \nn \\
 	       & = 0.184 \,.
 \end{align}
 	
@@ -44,42 +47,50 @@ Therefore, we can find $P(X=2)$ as follows,
 
 \subsubquestion
 
-Let $Y$ be the discrete random variable representing the number of accidents which occur on that highway during a 4-week period. We can express this as $Y \sim $ Pois$(4)$.
-
-Using \req{mod2:eq:PoissonDist}, we know that,
+Let $Y$ be the discrete random variable representing the number of accidents which occur on that highway during a 4-week period. We can express this as 
 \begin{equation}
-	P(Y=k)= \frac{4^k \times e^{-4}}{k!} \,. \label{2013:q4:eq:Pois1}
+	Y \sim \text{Pois}(4) \,.
 \end{equation}
 
-Because $Y$ is discrete, we notice that,
+Using \rdef{mod2:defn:Poisson}, we know that,
+\begin{equation}
+	P(Y=y)= \frac{4^y \times e^{-4}}{y!} \,. \label{2013:q4:eq:Pois1}
+\end{equation}
+
+Since $Y$ is discrete, we notice that,
 \begin{align}
 	P(Y \geq 4) & = 1 - P(Y \leq 3) \nn \\
 	            & = 1 - \left[P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3) \right] \,.
 \end{align}
 
-Using \req{2013:q4:eq:Pois1}, we can calculate $P(Y \leq 3)$ as follows,
+Using \req{2013:q4:eq:Pois1}, we proceed by finding,
 \begin{align}
-	P(Y=0) & = \frac{4^0 \times e^{-4}}{0!} 
-	         = \frac{1 \times e^{-4}}{1} \nn \\
-	       & = \frac{1}{e^4} \,. \\	\nn \\
-	P(Y=1) & = \frac{4^1 \times e^{-4}}{1!} 
-	         = \frac{4 \times e^{-4}}{1} \nn \\
-	       & = \frac{4}{e^4} \,. \\	\nn \\       
-	P(Y=2) & = \frac{4^2 \times e^{-4}}{2!} 
-		     = \frac{16 \times e^{-4}}{2} \nn \\
-           & = \frac{8}{e^4} \,. \\ \nn \\            
-	P(Y=3) & = \frac{4^3 \times e^{-4}}{3!} 
-             = \frac{64 \times e^{-4}}{6} \nn \\
-           & = \frac{64}{6 \times e^4} \,. \\ \nn \\         
+	P(Y=0) & = \frac{4^0 \times e^{-4}}{0!} \nn \\
+	& = \frac{1 \times e^{-4}}{1} \nn \\
+	& = \frac{1}{e^4} \,. \\	\nn \\
+	P(Y=1) & = \frac{4^1 \times e^{-4}}{1!} \nn \\
+	& = \frac{4 \times e^{-4}}{1} \nn \\
+	& = \frac{4}{e^4} \,. \\	\nn \\       
+	P(Y=2) & = \frac{4^2 \times e^{-4}}{2!} \nn \\
+	& = \frac{16 \times e^{-4}}{2} \nn \\
+	& = \frac{8}{e^4} \,. \\ \nn \\            
+	P(Y=3) & = \frac{4^3 \times e^{-4}}{3!} \nn \\
+	& = \frac{64 \times e^{-4}}{6} \nn \\
+	& = \frac{64}{6e^4} \,. \\ \nn \\
+\end{align}
+
+
+We can therefore calculate $P(Y \leq 3)$ as follows,
+\begin{align}         
     P(Y \leq 3) & = P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3) \nn \\
-                & = \frac{1}{e^4} + \frac{4}{e^4} + \frac{8}{e^4} + \frac{64}{6 \times e^4} \nn \\
+                & = \frac{1}{e^4} + \frac{4}{e^4} + \frac{8}{e^4} + \frac{64}{6e^4} \nn \\
                 & = \frac{1}{e^4} \times \left(1+4+8+\frac{64}{6} \right) \nn \\
                 & = \frac{1}{e^4} \times \left(\frac{142}{6} \right) \nn \\
-                & = \frac{142}{6 \times e^4} \nn \\
+                & = \frac{142}{6e^4} \nn \\
                 & = 0.433 \,.
 \end{align}
 
-Thus,
+Thus, we get that,
 \begin{align}
 	P(Y \geq 4) & = 1 - P(Y \leq 3) \nn \\
 	            & = 1 - 0.433 \nn \\
@@ -90,14 +101,14 @@ Thus,
 
 \subsubquestion
 
-Let $Z$ be the number of 4-week periods in which at least 4 accidents occurred. From \textbf{(4)(a)(ii)}, we know that the probability that at least 4 accidents occur in a 4-week period is 0.567.
+Let the discrete random variable $Z$ be the number of 4-week periods in which at least 4 accidents occurred. From \textbf{(4)(a)(ii)}, we know that the probability that at least 4 accidents occur in a 4-week period is 0.567.
 
-From this information and \rdef{mod2:defn:Binomial}, the probability mass function, $P(Z=z)$, can be expressed as,
+From this information and \rdef{mod2:defn:Binomial}, the probability mass function of $Z$, $P(Z=z)$, can be expressed as,
 \begin{equation}
 		P(Z = z) = { 13 \choose z} (0.567)^z  (1-0.567)^{13-z} \,.
 \end{equation}
 
-Thus, to find the probability that exactly 11 4-week periods have at least 4 accidents, we set $z=11$ and calculate it as follows,
+Thus, we can find,
 \begin{align}
 	P(Z = 11) & = { 13 \choose 11} (0.567)^{11}  (1-0.567)^{13-11} \nn \\
 	          & = { 13 \choose 11} (0.567)^{11}  (0.433)^{2} \nn \\
@@ -113,9 +124,14 @@ Thus, to find the probability that exactly 11 4-week periods have at least 4 acc
 
 \subquestion
 
-Let $X$ be the number of defective nails in a box.
+Let the discrete random variable $X$ be the number of defective nails in a box.
 
-From the information given, we know that $n=100$ and $p=0.02$. From Section ~\ref{mod2:section:PoissonApproxBinomial}, we can notice that $n=100 \geq 15$ and $np= 100 \times 0.02=2<15.$ Thus, we can approximate the probability using a Poisson Distribution as follows,
+From the information given, we know that $n=100$ and $p=0.02$. From Section ~\ref{mod2:section:PoissonApproxBinomial}, we can notice that,
+\begin{equation}
+	n=100 \geq 15 ~\text{and} ~np= 100 \times 0.02=2<15.
+\end{equation}  
+
+From this, we know that $X$ can be approximated using a Poisson Distribution as follows,
 \begin{align}
 	& X \sim \text{Pois}(np) \nn \\
 	\Longrightarrow & X \sim \text{Pois}(2) \,.
@@ -126,7 +142,7 @@ Using \rdef{mod2:defn:Poisson}, the probability mass function of $X$ is,
 	P(X=x)= \frac{2^x \times e^{-2}}{x!} \,.
 \end{equation}
 
-We know that, since $X$ is discrete,
+Since $X$ is discrete, we know that,
 \begin{equation}
 	P(X \leq 2) = P(X=0)+P(X=1)+P(X=2) \,.
 \end{equation}
@@ -162,19 +178,20 @@ It is given that the continuous random variable, $X$, has a uniform distribution
 
 From \rprop{mod2:prop:ContinuousRV:1}, we know that,
 \begin{equation}
-	\int_{-\infty}^{\infty} f(x).dx = 1
+	\int_{-\infty}^{\infty} f(x)\mathrm{d}x = 1
 \end{equation}
 
 Thus, we get that,
 \begin{align}
-	\int_{0}^{3} k.dx & = 1 \,, \nn \\
+	\int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{3} f(x)\mathrm{d}x + \int_{3}^{\infty} f(x)\mathrm{d}x & = 1 \nn \\
+	0 + ~\int_{0}^{3} k\mathrm{d}x ~+ 0 & = 1 \,, \nn \\
 	\left[\frac{kx}{1} \right]_0^3 & = 1 \,, \nn \\
 	[k(3)]-[k(0)] & = 1 \,, \nn \\
 	3k & = 1 \,, \nn \\
 	\implies k & = \frac{1}{3} \,.
 \end{align}
 
-Thus,
+Thus, we express $f(x)$ as,
 \[
 f(x) =
 \begin{cases}
@@ -188,18 +205,19 @@ f(x) =
 
 We are given that $P(X>t) = \frac{1}{4}$. Since $f(x)$ is continuous between 0 and 3, we can then notice that $P(X<t)=1-\frac{1}{4}=\frac{3}{4}$.
 
-From \rdef{mod2:defn:ContinuousRV:CDF}, we know that the cumulative distribution function, $F(x)$ is defined as $P(X<x)$. Thus, to solve for $t$, we must first find $F(x)$.
+From \rdef{mod2:defn:ContinuousRV:CDF}, we know that the cumulative distribution function, $F(a)$ is defined as $P(X<a)$. Thus, to solve for $t$, we must first find $F(a)$.
 
-Using \rdef{mod2:defn:ContinuousRV:CDF},
+Using \rdef{mod2:defn:ContinuousRV:CDF}, we can find that,
 \begin{align}
-	F(x) & = \int_{-\infty}^{x} f(x).dx \nn \\
-	     & = \int_{0}^{x} \frac{1}{3}.dx \nn \\
-	     & = \left[\frac{x}{3} \right]_0^x \nn \\
-	     & = \left[\frac{x}{3} \right] - \left[\frac{0}{3} \right] \nn \\
-	     & = \frac{x}{3} \,.
+	F(a) & = \int_{-\infty}^{a} f(x)\mathrm{d}x \nn \\
+		 & = \int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{a} f(x)\mathrm{d}x \nn \\
+	     & = 0 + \int_{0}^{a} \frac{1}{3}\mathrm{d}x \nn \\
+	     & = \left[\frac{x}{3} \right]_0^a \nn \\
+	     & = \left[\frac{a}{3} \right] - \left[\frac{0}{3} \right] \nn \\
+	     & = \frac{a}{3} \,. \label{2013:q4:CDF1}
 \end{align}
 
-Hence, $F(x)=P(X<x)=\frac{x}{3}$. Therefore, we can now input $x=t$ and solve for $t$ as follows,
+Using \req{2013:q4:CDF1}, we can input $a=t$ and solve for $t$ as follows,
 \begin{align}
 	P(X<t)=  F(t) & =\frac{3}{4}\,, \nn \\
 	        \frac{t}{3} & = \frac{3}{4} \,. \nn \\
