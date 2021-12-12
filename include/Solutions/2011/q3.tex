@@ -21,7 +21,7 @@
 	
 \subquestion
 
-We should make some observations about the word MAXIMUM. There are 5 letters which make up the word, \{A, I , M, U, X\}, and all of the letters occur exactly once, except for M which is present 3 times in the word. The number of letters in the word, $n=7$.
+We should make some observations about the word MAXIMUM. There are 5 letters which make up the word, \{A, I , M, U, X\}, and all of the letters occur exactly once, except for M which is present 3 times in the word. The number of letters in the word, $n$, is equal to 7.
 	
 \begin{subsubquestions}
 	
@@ -44,6 +44,7 @@ We should note that the $3!$ comes about because there are 3 identical M's in MA
 Let us first remove 1 arbitrary vowel from the letters.
 We now have a group of 6 letters (3 M's, 1 X, and 2 vowels) and 1 single vowel that we have removed. From \rdef{mod2:defn:MultiplicationRule},
 \begin{align}
+	\hspace{-50pt}
 	\text{$\#$ of arrangements ending in a vowel} = \text{$\#$ of 6 letter arrangements} \times \text{$\#$ of ways to remove 1 vowel}. \label{2011:q3:NoVowel}
 \end{align}
 
@@ -159,7 +160,7 @@ Since $X$ is discrete, we know that,
 	P(X < 4) = 1 - P(X > 3) \,.
 \end{equation}
 
-From \rdef{mod2:eq:Geometric:Prop},
+Using \rdef{mod2:eq:Geometric:Prop},
 \begin{align}
 	P(X > 3) & = (1-p)^3 \nn \\
 		   	 & = \left(\frac{2}{3}\right)^3 \nn \\
