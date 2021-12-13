@@ -61,7 +61,7 @@ If the team contains 2 girls, it must also contain 2 boys. Therefore, we must ch
 
 \subsubquestion
 
-In order for the team to have more girls than boys, there must either be 4 girls chosen or 3 girls chosen and 1 boy. This can be given as,
+In order for the team to have more girls than boys, there must either be 4 girls chosen or 3 girls chosen and 1 boy. Using \rdef{mod2:defn:AdditionRule} and \rdef{mod2:defn:MultiplicationRule}, we see that this can be given as,
 \begin{align}
 	\text{Number of teams with more girls} & = \text{Teams with 4 girls} + \text{Teams with 3 girls and 1 boy} \nn \\
 	                                       & = ~^6C_4 + \left(^6C_3 \times ~^7C_1 \right) \nn \\
@@ -116,7 +116,7 @@ We should note that,
 	P(A') = 1 - P(A) \,.
 \end{equation}
 
-Thus, we can get that,
+Using this, we can get that,
 \begin{align}
 	P(A' \land B') & = P(A') \times P(B') \nn \\
 	               & = (1-P(A)) \times (1-P(B)) \nn \\
