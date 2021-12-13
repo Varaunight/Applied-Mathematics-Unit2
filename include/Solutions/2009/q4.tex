@@ -39,7 +39,7 @@ From, \rdef{mod2:defn:Binomial}, we know that,
 	P(X = x) = { 12 \choose x} (0.65)^x (1-0.65)^{12-x} \,. \label{2009:q4:BinEqn1}
 \end{equation}
 	
-Thus, we get that,
+Using this, we can find,
 \begin{align}
 	P(X=8) & = { 12 \choose 8} (0.65)^8 \times (1-0.65)^{12-8} \nn \\
 		   & = { 12 \choose 8} (0.65)^8 \times (0.35)^{4} \nn \\
@@ -53,7 +53,7 @@ Thus, we get that,
 
 Since $X$ is discrete, we notice that,
 \begin{equation}
-	P(8\leq X \leq 10) = P(8)+P(9)+P(10) \,.
+	P(8\leq X \leq 10) = P(8)+P(9)+P(10) \,. \label{2009:q4:Bin2}
 \end{equation}
 
 Therefore, using \req{2009:q4:BinEqn1}, we find that,
@@ -65,7 +65,11 @@ Therefore, using \req{2009:q4:BinEqn1}, we find that,
 	P(10) & = { 12 \choose 10} (0.65)^8 \times (1-0.65)^{12-10} \nn \\
          & = { 12 \choose 10} (0.65)^8 \times (0.35)^{2} \nn \\
 	     & = 66 \times (0.65)^{10} \times (0.35)^{2} \nn \\
-	     & = 0.109 \,. \\ \nn \\
+	     & = 0.109 \,.
+\end{align}
+
+Substituting these values into \req{2009:q4:Bin2}, we get that,
+\begin{align}
 	P(8\leq X \leq 10) & = P(8)+P(9)+P(10) \nn \\
 	                   & = 0.237+0.195+0.109 \nn \\
 	                   & = 0.541 \,.   
@@ -134,14 +138,18 @@ From \rdef{mod2:defn:Poisson}, we know that,
 
 Since $X$ is discrete, we know that,
 \begin{equation}
-	P(X \geq 1) = 1 - P(X=0) \,.
+	P(X \geq 1) = 1 - P(X=0) \,. \label{2009:q4:PoisEqn2}
 \end{equation}
 
 Using \req{2009:q4:PoisEqn1} we can find that,
 \begin{align}
 	P(X=0) & = \frac{2^0 \times e^{-2}}{0!} \nn \\
 	     & = \frac{1 \times e^{-2}}{1} \nn \\
-	     & = e^{-2} \,. \\ \nn \\ 
+	     & = e^{-2} \,. 
+\end{align}
+
+Thus, substituting this into \req{2009:q4:PoisEqn1}, we get that,
+\begin{align}
 	 P(X \geq 1) & = 1 - P(X=0) \nn \\
 	             & = 1 - e^{-2} \nn \\
 	             & = 0.865 \,.  
@@ -164,17 +172,17 @@ Thus, we can see that $X$ can be approximated by a Poisson distribution with par
 	X \sim \text{Pois}(4) \,.
 \end{equation}
 
-From \rdef{mod2:defn:Poisson}, we get that,
+From \rdef{mod2:defn:Poisson}, we see that,
 \begin{equation}
-	P(X = x) =\frac{4^x \times e^{-4}}{x!} \,. \label{2009:q4:PoisEqn2}
+	P(X = x) =\frac{4^x \times e^{-4}}{x!} \,. \label{2009:q4:PoisEqn3}
 \end{equation}
 
-Since $X$ is discrete, we get that,
+Since $X$ is discrete, we can notice that,
 \begin{equation}
-	P(X \leq 3) = P(X=0)+P(X=1)+P(X=2)+P(X=3) \,.
+	P(X \leq 3) = P(X=0)+P(X=1)+P(X=2)+P(X=3) \,. \label{2009:q4:Pois4}
 \end{equation}
 
-Therefore, using \req{2009:q4:PoisEqn2}, we get that,
+Using \req{2009:q4:PoisEqn3}, we can find the following,
 \begin{align}
 	P(X=0) & = \frac{4^0 \times e^{-4}}{0!} \nn \\
 	       & = \frac{1 \times e^{-4}}{1} \nn \\
@@ -187,7 +195,11 @@ Therefore, using \req{2009:q4:PoisEqn2}, we get that,
 	       & = 8e^{-4} \\ \nn \\
 	P(X=3) & = \frac{4^3 \times e^{-4}}{3!} \nn \\
 	       & = \frac{64 \times e^{-4}}{6} \nn \\
-	       & = \frac{32e^{-4}}{3} \\ \nn \\
+	       & = \frac{32e^{-4}}{3}\,.
+\end{align}
+
+Substituting these values into \req{2009:q4:Pois4}, we find that,
+\begin{align}
 	P(X \leq 3) & = P(X=0)+P(X=1)+P(X=2)+P(X=3) \nn \\
 	            & = e^{-4} \times \left(1+4+8+\frac{32}{3}\right) \nn \\
 	            & = \frac{71e^{-4}}{3} \nn \\
