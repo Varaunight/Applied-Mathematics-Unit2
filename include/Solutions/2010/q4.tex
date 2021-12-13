@@ -31,12 +31,12 @@ where $\sigma$ is the standard deviation of $X$.
 	
 \subsubquestion
 
-We should note that we have,
+We should note that we are given,
 \begin{equation}
 	P(X<2.75) = 0.15 \,.
 \end{equation}
 	
-To make sense of this, we need to standardize the random variable $X$ to the normal random variable $Z$ as follows,
+To make sense of this, we must first standardize the random variable $X$ to the normal random variable $Z$ as follows,
 \begin{align}
 	P(X<2.75) = P\left(\frac{X - \mu}{\sigma}<\frac{2.75-\mu}{\sigma}\right) & = 0.15 \nn \\
 	            P\left(Z <\frac{2.75-3}{\sigma}\right) & = 0.15 \nn \\
@@ -97,8 +97,12 @@ We should note that, if there is no association between the number of employees 
 %------------------------------------------------------------------------------
 
 \subsubquestion
+We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance level. From Section(placeholder for CHI Squared notes), we know that,
+\begin{equation}
+	\chi^2_{\text{calc.}} = \sum_{\forall k} \left( \frac{(O_k-E_k)^2}{E_k}\right) \,.
+\end{equation}
 
-See \rtab{2010:q4:ChiTab}.
+ See \rtab{2010:q4:ChiTab}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -122,7 +126,7 @@ See \rtab{2010:q4:ChiTab}.
 	\nu = 5-1 = 4\,.
 \end{equation}
 
-At the 5\% significance level, we know that we will reject $H_0$ if,
+At the 5\% significance level, we know that we will reject $H_0$ iff,
 \begin{align}
 	&\chi^2_{\text{calc.}} > \chi^2_{0.05}(\nu) \nn \\
 	\implies & \chi^2_{\text{calc.}} > \chi^2_{0.05}(4) \nn \\
