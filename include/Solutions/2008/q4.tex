@@ -77,15 +77,14 @@ Therefore, summing the probabilities in \rtab{2008J:q4:Ytab}, we get that,
 \begin{align}
 	P(Y=4) & = P(x_1=1,x_2=3)+P(x_1=2,x_2=2)+P(x_1=3,x_2=1) \nn \\
 	       & = \frac{3}{100}+\frac{4}{100}+\frac{3}{100} \nn \\
-	       & = \frac{10}{100} = \frac{1}{10} \,.
+	       & = \frac{10}{100} = \frac{1}{10} \,. \label{2008J:q4:Yeqn}
 \end{align} 
 	
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-See table \rtab{2008J:q4:Ytab2}.
-
+Using the same procedure as in \req{2008J:q4:Yeqn}, we can construct \rtab{2008J:q4:Ytab2}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -117,13 +116,22 @@ Using \rdef{mod2:defn:Discrete:Expectation} and \rtab{2008J:q4:Ytab}, we get tha
 \end{align}
 
 Using \rdef{mod2:defn:Discrete:Variance}, we can see that,
+\begin{equation}
+	var(X) = E(Y^2) - (E(Y))^2 \,. \label{2008J:q4:Var}
+\end{equation}
+
+From \rdef{mod2:defn:Discrete:SecondMoment}, we can calculate,
 \begin{align}
 	E(Y^2) & = \sum_{\forall i}(x_i^2 \times P(Y=y_i)) \nn \\
 		   & = \left(2^2 \times \frac{1}{100}\right) + \left(3^2 \times \frac{4}{100}\right) + ... +  \left(7^2 \times \frac{24}{100}\right) + \left(8^2 \times \frac{16}{100}\right) \nn \\
 		   & = \left(4 \times \frac{1}{100}\right) + \left(9 \times \frac{4}{100}\right) + ... +  \left(49 \times \frac{24}{100}\right) + \left(64 \times \frac{16}{100}\right) \nn \\
 		   &= \frac{4}{100}+\frac{36}{100}+\frac{160}{100}+\frac{500}{100}+\frac{900}{100}+\frac{1176}{100}+\frac{1024}{100} \nn \\
-		   & = 38 \, \\ \nn \\
-	\text{Variance} & = E(X^2) - (E(X))^2  \nn \\
+		   & = 38 \,.
+\end{align}
+
+Thus, substituting these into \req{2008J:q4:Var}, we can find that,
+\begin{align}
+	\var(Y) & = E(Y^2) - (E(Y))^2  \nn \\
 	           & = 38 - 6^2 \nn \\
 	           & = 2 \,.
 \end{align}
@@ -148,29 +156,33 @@ Using Section ~\ref{mod2:section:ExpectationVariance}, we can get that,
 
 \subquestion
 
-We are given that a random variable $X$ follows a Poisson Distribution. From \rdef{mod2:defn:Poisson}, we get that,
+We are given that a discrete random variable $X$ follows a Poisson Distribution. From \rdef{mod2:defn:Poisson}, we get that,
 \begin{equation}
 	X \sim \text{Pois}(1.5) \,.
 \end{equation}
 and 
 \begin{equation}
-	P(X = x) =\frac{ 1.5^x \times e^{-1.5}}{x!} \,.
+	P(X = x) =\frac{ 1.5^x \times e^{-1.5}}{x!} \,. \label{2008J:q4:Pois1}
 \end{equation}
 
-Since $X$ is discrete, we get that,
+Since $X$ is discrete, we notice that,
 \begin{equation}
-	P(X \geq 2) = 1 - (P(0)+P(1)) \,.
+	P(X \geq 2) = 1 - (P(0)+P(1)) \,. \label{2008J:q4:Pois2}
 \end{equation}
 
-Thus. we get that,
+Using \req{2008J:q4:Pois1}, we can calculate,
 \begin{align}
 	P(0) & = \frac{ 1.5^0 \times e^{-1.5}}{0!} \nn \\
 	     & = \frac{ 1 \times e^{-1.5}}{1} \nn \\
 	     & = e^{-1.5} \\ \nn \\
 	P(1) & = \frac{ 1.5^1 \times e^{-1.5}}{1!} \nn \\
 	     & = \frac{1.5 \times e^{-1.5}}{1} \nn \\
-	     & = 1.5e^{-1.5} \\ \nn \\
-	P(X \geq 2) & = 1 - (P(0)+P(1)) \nn \\
+	     & = 1.5e^{-1.5} 	
+\end{align}
+
+Thus, substituting these values into \req{2008J:q4:Pois2}, we can find,
+\begin{align}	     
+	    P(X \geq 2) & = 1 - (P(0)+P(1)) \nn \\
 	            & = 1 - (e^{-1.5} + 1.5e^{-1.5}) \nn \\
 	            & = 1-2.5e^{-1.5} \nn \\
 	            & = 0.442 \,.
