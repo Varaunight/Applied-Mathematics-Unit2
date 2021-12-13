@@ -27,7 +27,7 @@ We are given 7 distinct letters.
 
 \subsubquestion
 
-From \rdef{mod2:defn:PermutationEqn}, we can find that the number of total arrangements using the 7 letters is,
+From \rdef{mod2:defn:PermutationEqn}, we can find that the number of total arrangements using all 7 letters is,
 \begin{align}
 	^7P_7 & = \frac{7!}{(7-7)!} \nn \\
 	      & = \frac{7!}{(0)!} \nn \\
@@ -113,7 +113,9 @@ The probability density function, $f$, of a continuous random variable is given.
 
 From Note ~\ref{mod2:note:ContinuousRV:Note1}, we get that,
 \begin{align}
-	P(1<X) = P(1<X<2) & = \int_1^2 \left(\frac{3}{8}(4-4x+x^2) \right).dx \nn \\
+	P(1<X) = P(1<X<\infty) & = \int_{1}^{\infty}f(x)\mathrm{d}x \nn \\
+	                       & = \int_{1}^{2}f(x)\mathrm{d}x+\int_{2}^{\infty}f(x)\mathrm{d}x \nn \\
+							& = \int_1^2 \left(\frac{3}{8}(4-4x+x^2) \right)\mathrm{d}x + 0\nn \\
 	                  & = \frac{3}{8} \times \left[4x-2x^2+\frac{x^3}{3} \right]_1^2 \nn \\
 	                  & = \frac{3}{8} \times \left(\left[4(2)-2(2)^2+\frac{(2)^3}{3} \right]-\left[4(1)-2(1)^2+\frac{(1)^3}{3} \right] \right) \nn \\
 	                  & = \frac{3}{8} \times \left( \frac{8}{3} - \frac{7}{3}\right) \nn \\
@@ -125,21 +127,35 @@ From Note ~\ref{mod2:note:ContinuousRV:Note1}, we get that,
 
 Using \rdef{mod2:defn:ContinuousRV:Expectation}, we can find,
 \begin{align}
-	E(X) & = \int_{-\infty}^{\infty}x f(x).dx \nn \\
-	     & = \int_{0}^{2} \left(x \times \frac{3}{8}(4-4x+x^2)\right).dx \nn \\
-	     & = \frac{3}{8} \times \int_{0}^{2} \left(4x-4x^2+x^3\right).dx \nn \\
+	E(X) & = \int_{-\infty}^{\infty}x f(x)\mathrm{d}x \nn \\
+	     & = \int_{-\infty}^{0}x f(x)\mathrm{d}x + \int_{0}^{2}x f(x)\mathrm{d}x + \int_{2}^{\infty}x f(x)\mathrm{d}x \nn \\
+	     & = 0 + \int_{0}^{2}x f(x)\mathrm{d}x + 0 \nn \\
+	     & = \int_{0}^{2} \left(x \times \frac{3}{8}(4-4x+x^2)\right)\mathrm{d}x \nn \\
+	     & = \frac{3}{8} \times \int_{0}^{2} \left(4x-4x^2+x^3\right)\mathrm{d}x \nn \\
 	     & = \frac{3}{8} \times \left[ 2x^2 - \frac{4x^3}{3} + \frac{x^4}{4}\right]_0^2 \nn \\
 	     & = \frac{3}{8} \times \frac{4}{3} \nn \\
 	     & = \frac{1}{2} \,. \\
 \end{align}
 
-Similarly, using \rdef{mod2:defn:ContinuousRV:Variance}, we can find,
+Similarly, using \rdef{mod2:defn:ContinuousRV:Variance}, we know that,
+\begin{equation}
+  \var(X) = E(X^2)- E(X)^2 \,.
+\end{equation}
+
+We proceed by finding $E(X^2)$ as,
 \begin{align}
-  Var(X) & = \int_{-\infty}^{\infty}x^2 f(x).dx - E(X)^2 \nn \\
-         & = \int_{0}^{2} \left(x^2 \times \frac{3}{8}(4-4x+x^2)\right).dx - E(X)^2 \nn \\
-         & = \frac{3}{8} \times \int_{0}^{2} \left(4x^2-4x^3+x^4\right).dx - E(X)^2 \nn \\
-         & = \frac{3}{8} \times \left[ \frac{4x^3}{3} - x^4 + \frac{x^5}{5}\right]_0^2 - E(X)^2 \nn \\
-         & = \frac{3}{8} \times \frac{16}{15} - E(X)^2 \nn \\
+  E(X^2) & = \int_{-\infty}^{\infty}x^2 f(x)\mathrm{d}x \nn \\
+         & = \int_{-\infty}^{0}x^2 f(x)\mathrm{d}x+\int_{0}^{2}x^2 f(x)\mathrm{d}x+\int_{2}^{\infty}x^2 f(x)\mathrm{d}x \nn \\
+         & = 0 + \int_{0}^{2} \left(x^2 \times \frac{3}{8}(4-4x+x^2)\right)\mathrm{d}x + 0 \nn \\
+  		 & = \frac{3}{8} \times \int_{0}^{2} \left(4x^2-4x^3+x^4\right)\mathrm{d}x  \nn \\
+  		 & = \frac{3}{8} \times \left[ \frac{4x^3}{3} - x^4 + \frac{x^5}{5}\right]_0^2  \nn \\
+  		 & = \frac{3}{8} \times \frac{16}{15}\nn \\
+  		 & = \frac{2}{5}\,.
+\end{align}
+  
+ Thus, we substitute the values found as follows,
+\begin{align}
+  		\var(X) & = E(X^2)- E(X)^2 \nn \\
          & = \frac{2}{5} - \left(\frac{1}{2}\right)^2 \nn \\
          & = \frac{2}{5} - \frac{1}{4} \nn \\
          & = \frac{3}{20} \,.
@@ -149,20 +165,22 @@ Similarly, using \rdef{mod2:defn:ContinuousRV:Variance}, we can find,
 
 \subsubquestion
 
-From \rdef{mod2:defn:ContinuousRV:CDF}, we can find $F(x)$, which is defined as $P(X<x)$, as follows,
+From \rdef{mod2:defn:ContinuousRV:CDF}, we can find $F(a)$, which is defined as $P(X<a)$, as follows,
 \begin{align}
-	F(x) & = \int_{-\infty}^{x} f(x).dx \nn \\
-	     & = \frac{3}{8} \times \int_{0}^{x} (2-x)^2.dx \nn \\
-	     & = \frac{3}{8} \times \left[\left(\frac{(2-x)^3}{3} \times -1 \right) \right]_0^x \nn \\
-	     & = \frac{3}{8} \times \left(\frac{-(2-(x))^3}{3} - \frac{-(2-(0))^3}{3}\right) \nn \\
-	     & = \frac{3}{8} \times \left(\frac{-(2-x)^3}{3} - \frac{-8}{3}\right) \nn \\
-	     & = \frac{-(2-x)^3 + 8}{8} \nn \\
-	     & = 1 - \frac{(2-x)^3}{8}
+	F(a) & = \int_{-\infty}^{a} f(x)\mathrm{d}x \nn \\
+	     & = \int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{a} f(x)\mathrm{d}x \nn \\
+	     & = 0 + \int_{0}^{a} f(x)\mathrm{d}x \nn \\
+	     & = \frac{3}{8} \times \int_{0}^{a} (2-x)^2\mathrm{d}x \nn \\
+	     & = \frac{3}{8} \times \left[\left(\frac{(2-x)^3}{3} \times -1 \right) \right]_0^a \nn \\
+	     & = \frac{3}{8} \times \left(\frac{-(2-(a))^3}{3} - \frac{-(2-(0))^3}{3}\right) \nn \\
+	     & = \frac{3}{8} \times \left(\frac{-(2-a)^3}{3} - \frac{-8}{3}\right) \nn \\
+	     & = \frac{-(2-a)^3 + 8}{8} \nn \\
+	     & = 1 - \frac{(2-a)^3}{8}
 \end{align}
 
 Thus, we get that,
 \begin{align}
-	F(x) = P(X<q) = 1 - \frac{(2-q)^3}{8} & = \frac{1}{4} \nn \\
+	F(q) = P(X<q) = 1 - \frac{(2-q)^3}{8} & = \frac{1}{4} \nn \\
 	                \text{Multiplying by 8} \implies 8 - (2-q)^3 & = 2 \nn \\
 	                (2-q)^3 & = 6 \nn \\
 	                2-q & = \sqrt[3]{6} \nn \\
