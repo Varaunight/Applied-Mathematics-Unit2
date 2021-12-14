@@ -29,17 +29,17 @@
 	
 \subsubsubquestion
 
-We will let $X$ be the discrete random variable which represents ``the number of adults dissatisfied with their health coverage.'' From the question,  we get that,
+We will let $X$ be the discrete random variable which represents ``the number of adults dissatisfied with their health coverage from a group of 15.'' From the question,  we get that,
 \begin{equation}
-	X \sim \text{Bin}(n, 0.05) \,.
+	X \sim \text{Bin}(15, 0.05) \,.
 \end{equation}
 	
-Since $n=15$, from \rdef{mod2:defn:Binomial}, we get that,
+From \rdef{mod2:defn:Binomial}, we get that,
 \begin{equation}
 	P(X = x) = { 15 \choose x} (0.05)^x (1-0.05)^{15-x} \,. \label{2005:q4:Bin1}
 \end{equation}
 
-Thus, we can find that,
+Using \req{2005:q4:Bin1}, we can find that,
 \begin{align}
 	P(X=2) & = { 15 \choose 2} \times (0.05)^2 \times (1-0.05)^{15-2} \nn \\
 	       & = 105 \times (0.05)^2 \times (0.95)^{13} \nn \\
@@ -52,7 +52,7 @@ Thus, we can find that,
 
 Since $X$ is discrete, we know that,
 \begin{equation}
-	P(X>2) = 1 - (P(X=0)+P(X=1)+P(X=2)) \,.
+	P(X>2) = 1 - (P(X=0)+P(X=1)+P(X=2)) \,. \label{2005:q4:DisBin}
 \end{equation}
 
 Using \req{2005:q4:Bin1}, we can calculate,
@@ -65,7 +65,7 @@ Using \req{2005:q4:Bin1}, we can calculate,
 	       & = 0.366 \,. 
 \end{align}
 
-Substituting \reqs{...}, we can find that,       
+Substituting these values into \req{2005:q4:DisBin}, we can find that,       
 \begin{align}
 	P(X>2) & = 1 - (P(X=0)+P(X=1)+P(X=2)) \nn \\
 	       & = 1 - (0.463+0.366+0.135) \nn \\
@@ -79,8 +79,9 @@ Substituting \reqs{...}, we can find that,
 
 \subsubquestion
 
-\note{Fix random variable Y}
-From the information given, we can see that $n=60$ and $p=0.05$. We therefore know that,
+We will let the discrete random variable $X$ represent `` the number of adults dissatisfied with their health coverage from a group of 60''.
+ 
+We are given that $n=60$ and $p=0.05$. We can then notice that,
 \begin{align}
 	n=60 & >30, \text{and} \nn \\
 	np = 60 & \times 0.05 = 3 < 5 \,.
@@ -93,10 +94,15 @@ Therefore, from \rdef{mod2:defn:PoissonApproxBinomial}, we know that $X$ can be 
 
 Using \rdef{mod2:defn:Poisson}, we know that,
 \begin{equation}
-	P(X = x) =\frac{ 3 ^ x \times e^{-3}}{x!} \,.
+	P(X = x) =\frac{ 3 ^ x \times e^{-3}}{x!} \,. \label{2005:q4:Pois1}
 \end{equation}
 
-Since $X$ is discrete, we can find that,
+Since $X$ is discrete, we can notice that,
+\begin{equation}
+	P(X \leq 3) = P(X=0)+P(X=1)+P(X=2)+P(X=3) \,. \label{2005:q4:DisPois}
+\end{equation}
+
+Using \req{2005:q4:Pois1}, we can calculate the following,
 \begin{align}
 	P(X = 0) & = \frac{ 3 ^ 0 \times e^{-3}}{0!} \nn \\
 	         & = \frac{ 1 \times e^{-3}}{1} \nn \\
@@ -109,7 +115,11 @@ Since $X$ is discrete, we can find that,
 			 & = \frac{9e^{-3}}{2} \,. \\ \nn \\
 	P(X = 3) & = \frac{ 3 ^ 3 \times e^{-3}}{3!} \nn \\
 		  	 & = \frac{ 27 \times e^{-3}}{6} \nn \\
-			 & = \frac{9e^{-3}}{2} \,. \\ \nn \\
+			 & = \frac{9e^{-3}}{2} \,. 
+\end{align}
+
+We can then substitute these values into \req{2005:q4:DisPois} to find,
+\begin{align}
 	P(X \leq 3) & = P(X=0)+P(X=1)+P(X=2)+P(X=3) \nn \\
 				& = e^{-3} \times \left(1+3+\frac{9}{2}+\frac{9}{2}\right) \nn \\
 	            & = e^{-3} \times 13 \nn \\
