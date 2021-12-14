@@ -26,7 +26,8 @@ We are given the probability density function, $f(x)$, of a continuous random va
 From \rprop{mod2:prop:ContinuousRV:1}, we know that,
 \begin{align}
 	\int_{-\infty}^{\infty} f(x)\mathrm{d}x & = 1 \nn \\
-	\int_{1}^{4} kx^3\mathrm{d}x & = 1 \nn \\
+	\int_{-\infty}^{1} f(x)\mathrm{d}x + \int_{1}^{4} f(x)\mathrm{d}x + \int_{4}^{\infty} f(x)\mathrm{d}x & = 1 \nn \\
+	0 + \int_{1}^{4} kx^3\mathrm{d}x + 0  & = 1 \nn \\
 	k \times \left[\frac{x^4}{4}\right]^4_1 & = 1 \nn \\
 	k \times \left[\frac{4^4}{4} - \frac{1^4}{4} \right] & = 1 \nn \\
 	k \times \left[\frac{256}{4} - \frac{1}{4} \right] & = 1 \nn \\
@@ -47,14 +48,10 @@ From \rprop{mod2:prop:ContinuousRV:1}, we know that,
 From Note ~\ref{mod2:note:ContinuousRV:Note1}, we can get that,
 \begin{align}
 	P(2 \leq X) &= P(2\leq X \leq \infty) \nn \\
-	 &= P(2 \leq X \leq 4) + P(4 < X \leq \infty)\nn\\
-	&= \int_2^4 f(x)~\mathrm{d}x + 0
-\end{align}
-
-
-\begin{align}
-	P(2 \leq X) = P(2 \leq X \leq 4) + P(X>4) & = \int_2^4 f(x)~\mathrm{d}x \nn \\
-	                                 & = \frac{4}{255} \times \int_2^4 x^3{d}x \nn \\
+	                                 & = \int_2^{\infty} f(x)~\mathrm{d}x \nn \\
+	                                 & = \int_2^{4} f(x)~\mathrm{d}x+\int_2^{\infty} f(x)~\mathrm{d}x \nn \\
+	                                 & = \int_{2}^{4} \frac{4x^3}{255} \mathrm{d}x + 0 \nn \\
+	                                 & = \frac{4}{255} \times \int_2^4 x^3\mathrm{d}x \nn \\
 	                                 & = \frac{4}{255} \times \left[\frac{x^4}{4}\right]^4_2 \nn \\
 	                                 & = \frac{4}{255} \times \left[\frac{4^4}{4}-\frac{2^4}{4}\right] \nn \\
 	                                 & = \frac{4}{255} \times \left[\frac{256}{4}-\frac{16}{4}\right] \nn \\
@@ -70,6 +67,8 @@ From Note ~\ref{mod2:note:ContinuousRV:Note1}, we can get that,
 From \rdef{mod2:defn:ContinuousRV:Expectation}, we get that,
 \begin{align}
 	E(X) & = \int_{-\infty}^{\infty} x f(x)\mathrm{d}x \nn \\
+		 & = \int_{-\infty}^{1}xf(x)\mathrm{d}x + \int_{1}^{4} xf(x)\mathrm{d}x + \int_{4}^{\infty} xf(x)\mathrm{d}x \nn \\
+		 & = 0 + \int_{1}^{4} \frac{4x^4}{255} \mathrm{d}x + 0 \nn \\
 	     & = \frac{4}{255} \times \int_{1}^{4} x^4 \mathrm{d}x \nn \\
 	     & = \frac{4}{255} \times \left[\frac{x^5}{5}\right]^4_1 \nn \\
 	     & = \frac{4}{255} \times \left[\frac{4^5}{5} - \frac{1^5}{5}\right] \nn \\
@@ -78,18 +77,29 @@ From \rdef{mod2:defn:ContinuousRV:Expectation}, we get that,
 	     & = \frac{4092}{1275} \approx 3.21 \,. 
 \end{align}
 
-Using \rdef{mod2:defn:ContinuousRV:Variance}, we can also find that,
+From \rdef{mod2:defn:ContinuousRV:Variance}, we know that,
+\begin{equation}
+	\text{Var}(X) = E(X^2) - {E(X)}^2 \,. \label{2005:q3:CRVar}
+\end{equation}
+
+By using \req{mod2:eq:ContinuousRV:Variance}, we can calculate,
 \begin{align}
 	E(X^2) & = \int_{-\infty}^{\infty} x^2 f(x)\mathrm{d}x \nn \\
+	& = \int_{-\infty}^{1} x^2 f(x)\mathrm{d}x+\int_{1}^{4} x^2 f(x)\mathrm{d}x+\int_{4}^{\infty} x^2 f(x)\mathrm{d}x \nn \\
+	& = 0 + \int_{1}^{4} \frac{4x^5}{255} \mathrm{d}x + 0 \nn \\
 	& = \frac{4}{255} \times \int_{1}^{4} x^5 \mathrm{d}x \nn \\
 	& = \frac{4}{255} \times \left[\frac{x^6}{6}\right]^4_1 \nn \\
 	& = \frac{4}{255} \times \left[\frac{4^6}{6} - \frac{1^6}{6}\right] \nn \\
 	& = \frac{4}{255} \times \left[\frac{4096}{6} - \frac{1}{6}\right] \nn \\
 	& = \frac{4}{255} \times \frac{4095}{6} \nn \\
-	& = \frac{16380}{1530} \approx 10.71 \,. \\ \nn \\
-	\text{Var}(X) & = E(X^2) - {E(X)}^2 \nn \\
-	              & = 10.71 - 3.21^2 \nn \\
-	              & = 0.406 \,.	
+	& = \frac{16380}{1530} \approx 10.71 \,.
+\end{align}	
+
+Thus, substituting these values into \req{2005:q3:CRVar}, we can find that,
+\begin{align}
+\text{Var}(X) & = E(X^2) - {E(X)}^2 \nn \\
+	& = 10.71 - 3.21^2 \nn \\
+	& = 0.406 \,.	
 \end{align}
 
 \end{subsubquestions}
@@ -113,7 +123,7 @@ Using \rdef{mod2:defn:ContinuousRV:CDF}, we are able to get that,
 	     & = \frac{1}{255}\left(a^4 - 1 \right) \,.
 \end{align}
 	
-We get that,
+We will define,
 \[ F(x) = \begin{cases} 
 	0 , & x\leq 1 \\
 	\frac{1}{255}\left(x^4 - 1 \right), & 1 \leq x \leq 4 \\
