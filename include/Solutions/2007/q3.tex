@@ -21,16 +21,17 @@
 	
 \subquestion
 
-We are asked to calculate the corresponding expected frequencies using a Binomial Distribution. Let $X$ be the discrete random variable that represents ``the number of 3's thrown when a dice is rolled 4 times.'' From \rdef{mod2:defn:Binomial}, we get,
+We are asked to calculate the corresponding expected frequencies using a Binomial Distribution. Let $X$ be the discrete random variable that represents ``the number of 3's thrown when a dice is rolled 4 times.'' This can be given as,
 \begin{equation}
 	X \sim \text{Bin}\left(4, \frac{1}{6}\right) \,.
 \end{equation}
-and 
+
+From \rdef{mod2:defn:Binomial}, we get,
 \begin{equation}
-	P(X = x) = { 4 \choose x} \times \left(\frac{1}{6} \right)^x \times \left(1-\frac{1}{6} \right)^{4-x} \,.
+	P(X = x) = { 4 \choose x} \times \left(\frac{1}{6} \right)^x \times \left(1-\frac{1}{6} \right)^{4-x} \,. \label{2008M:q3:BinEqn1}
 \end{equation}
 	
-Thus, we get that,
+Using \req{2008M:q3:BinEqn1}, we can calculate,
 \begin{align}
 	P(X=0) & = { 4 \choose 0} \times \left(\frac{1}{6} \right)^0 \times \left(1-\frac{1}{6} \right)^{4-0} \nn \\
 	       & = 1 \times 1 \times \left(\frac{5}{6} \right)^{4} \nn \\
@@ -73,6 +74,11 @@ Thus, we can give our expected frequencies in \rtab{2008M:q3:Bin1}.
 
 \subquestion
 
+We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance level. From Section(CHI Squared notes), we know that,
+\begin{equation}
+	\chi^2_\text{calc.} = \sum_{\forall k} \left(\frac{(O_k-E_k)^2}{E_k}  \right) \,.
+\end{equation}
+
 Our hypotheses are,
 \begin{itemize}
 	\item $H_0$: The data follows a binomial distribution with parameters $n=4$ and $p=\frac{1}{6}$. 
@@ -101,9 +107,9 @@ From \rtab{2008M:q3:ChiTab}, we can see that our number of degrees of freedom, $
 	\nu = 3 - 1 = 2 \,.
 \end{equation}
 
-Thus, we will reject $H_0$ if,
+We know that we will reject $H_0$ iff,
 \begin{align}
-	\chi^2_\text{calc.} & > \chi^2_{0.05}(\nu) \nn \\
+	\chi^2_\text{calc.} & > \chi^2_{\alpha}(\nu) \nn \\
 	\implies \chi^2_\text{calc.} & > \chi^2_{0.05}(2) \nn \\
 	\implies \chi^2_\text{calc.} & > 5.991 \,.
 \end{align}
