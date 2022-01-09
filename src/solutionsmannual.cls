@@ -155,6 +155,7 @@
 % Shorcuts in mathmode (general)
 \newcommand{\nn}{\nonumber} % use to remove number in align env.
 \newcommand{\lbl}[1]{\label{#1}} % use to label equations or anything.
+\newcommand{\dd}{\mathfm{d}} % used for differential d
 % Shortcuts for enviroments
 \newcommand{\beq}{\begin{equation}}
 \newcommand{\eeq}{\end{equation}}
