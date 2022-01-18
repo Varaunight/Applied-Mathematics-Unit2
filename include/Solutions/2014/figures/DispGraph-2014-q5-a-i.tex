@@ -1,0 +1,64 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Varaun Ramgoolie
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 2014 drawing of graph for q5 (a)(i)
+%     Module: 3
+%     Question: 5
+%------------------------------------------------------------------------------
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\usepackage{../../../../src/tikzappmath}
+\usetikzlibrary{patterns}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.25]
+	
+	\begin{axis}
+		[
+		xmin=0,xmax=8,
+		ymin=-6,ymax=14,
+		grid=both,
+		grid style={line width=0pt, draw=darkgray!10},
+		major grid style={line width=0pt,draw=darkgray!30},
+		axis lines=left,
+		minor tick num=0,
+		enlargelimits={abs=0},
+		axis line style={-latex},
+		axis x line shift=-6,
+		samples=1,
+		domain = -2:2,
+		ytick={-6,-4,...,14},
+		xtick={1,...,8},
+		xlabel={$t$},
+		ylabel={$s$},
+		x label style={at={(axis description cs:1,0.44)},anchor=north west},
+		y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
+		]
+	
+	
+		\addplot [domain=0:8, samples=100, color=red,]{x^2 -8*x + 12};
+		
+		\node [pin=30:{$s(t)=(t-2)(t-6)$}] at (axis cs:(1, 5) {};
+		
+		\addplot[mark=*] coordinates {(5,-3)};
+		
+		\addplot[mark=*] coordinates {(4,-4)};
+		
+		\node [pin=-170:{$(4, -4)$}] at (axis cs:(4,-4) {};
+		
+		\node [pin=-15:{$(5, -3)$}] at (axis cs:(5,-3) {};
+		 	
+	\end{axis}	
+
+\end{tikzpicture}
+
+\end{document}
