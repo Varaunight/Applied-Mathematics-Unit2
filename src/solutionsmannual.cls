@@ -181,10 +181,10 @@
 %------------------------------------------------------------------------------
 % Vectors 
 %------------------------------------------------------------------------------
-\newcommand{\ihat}{\mathrm{i}}
-\newcommand{\jhat}{\mathrm{j}}
-\newcommand{\khat}{\mathrm{k}}
-\newcommand{\xhat}{\mathrm{x}}
-\newcommand{\yhat}{\mathrm{y}}
-\newcommand{\zhat}{\mathrm{z}}
+\newcommand{\ihat}{\,\mathbf{i}}
+\newcommand{\jhat}{\,\mathbf{j}}
+\newcommand{\khat}{\,\mathbf{k}}
+\newcommand{\xhat}{\,\mathbf{x}}
+\newcommand{\yhat}{\,\mathbf{y}}
+\newcommand{\zhat}{\,\mathbf{z}}
 \renewcommand{\v}[1]{\vec{#1}}
