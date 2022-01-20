@@ -155,7 +155,7 @@
 % Shorcuts in mathmode (general)
 \newcommand{\nn}{\nonumber} % use to remove number in align env.
 \newcommand{\lbl}[1]{\label{#1}} % use to label equations or anything.
-\newcommand{\dd}{\mathfm{d}} % used for differential d
+\newcommand{\dd}{\mathrm{d}} % used for differential d
 % Shortcuts for enviroments
 \newcommand{\beq}{\begin{equation}}
 \newcommand{\eeq}{\end{equation}}
@@ -181,10 +181,10 @@
 %------------------------------------------------------------------------------
 % Vectors 
 %------------------------------------------------------------------------------
-\newcommand{\ihat}{\boldrm{i}}
-\newcommand{\jhat}{\boldrm{j}}
-\newcommand{\khat}{\boldrm{k}}
-\newcommand{\xhat}{\boldrm{x}}
-\newcommand{\yhat}{\boldrm{y}}
-\newcommand{\zhat}{\boldrm{z}}
+\newcommand{\ihat}{\mathrm{i}}
+\newcommand{\jhat}{\mathrm{j}}
+\newcommand{\khat}{\mathrm{k}}
+\newcommand{\xhat}{\mathrm{x}}
+\newcommand{\yhat}{\mathrm{y}}
+\newcommand{\zhat}{\mathrm{z}}
 \renewcommand{\v}[1]{\vec{#1}}
