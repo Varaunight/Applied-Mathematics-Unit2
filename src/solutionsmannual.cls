@@ -156,6 +156,7 @@
 \newcommand{\nn}{\nonumber} % use to remove number in align env.
 \newcommand{\lbl}[1]{\label{#1}} % use to label equations or anything.
 \newcommand{\dd}{\mathrm{d}} % used for differential d
+\newcommand{\ddd}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}} % used for differential d/d#
 % Shortcuts for enviroments
 \newcommand{\beq}{\begin{equation}}
 \newcommand{\eeq}{\end{equation}}
