@@ -48,8 +48,6 @@
 		
 		\subsubquestion
 		
-		\TODO{Include The integral of velocity}
-		
 		\begin{subsubsubquestions}
 			
 			\subsubsubquestion
@@ -65,54 +63,43 @@
 			
 			We want to find the distance traveled from $t=0$ to $t=5$ (green line in \rfig{2014:q5*:SGraph2}). From \rfig{2014:q5*:SGraph1}, we know that the graph changes direction at $t_m=4$. This means that, in order to find the total distance traveled, we have to consider two pieces of the graph separately and sum their results. We do this because, in the period of time given, the particle moves in opposite directions (which increases the change in distance but decreases the change in displacement). We will consider $0 \leq t < 4$ and $4 < t < 5$ separately.
 			
+			By definition, if we integrate the velocity of the particle, we will get the displacement of the particle between the bound of integration. If we instead integrate the \textbf{modulus} of the velocity, we will get the distance traveled by the particle.\footnote{By integrating the modulus of the velocity, we consider the particle's movement as solely 'positive'. Therefore, the integral of this modulus function will sum only 'positive' displacements. The sum of these 'positive displacements will therefore give us our total distance traveled.}
+			
 			
 			
 			\textbf{\textit{Represent Mathematically:}} \\ \\
-			We will first represent the distance between $t=0$ and $t=4$ as,
+			To obtain our distance traveled, we will integrate our velocity function. By definition, we get that,
 			\begin{align}
-				\text{Distance}_{t=0 \rightarrow 4} & = \text{Final Displacement - Initial Displacement} \nn \\
-				& = |s(4)-s(0)| \,.  \label{2014:q5*:Seqn1}
+				v(t) & = \ddd{}{t}s(t) \nn \\ 
+				     & = \ddd{}{t}(t^2-8t+12) \nn \\
+				     & = 2t-8 \,.
 			\end{align}
 			
-			We will then represent the distance between $t=4$ and $t=5$ as,
+			It is helpful to examine this function (and its modulus) graphically. See \rfig{2014:q5*:VGraph1}.\footnote{If we only integrate $v(t)$, we will get a negative sum for the integral between $t=0$ and $t=4$. The modulus sign ensures that all of our integration results in positive values.}
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics{../2014/figures/VeloctyGraph-2014-q55}
+					\caption{\label{2014:q5*:VGraph1} Velocity-time graph of the particle}
+				\end{center}
+			\end{figure}
+		
+			To find the distance from $t=0$ and $t=5$, we can integrate $|v|=|2t-8|$ between these bounds as follows,
 			\begin{align}
-				\text{Distance}_{t=4 \rightarrow 5} & = \text{Final Displacement - Initial Displacement} \nn \\
-				& = |s(5)-s(4)| \,.  \label{2014:q5*:Seqn2}
-			\end{align}
-			
-			As we have split the distance that we want to find into 2 sections, we must represent this as,
-			\begin{equation}
-				\text{Distance}_{t=0 \rightarrow 5} = \text{Distance}_{t=0 \rightarrow 4} + \text{Distance}_{t=4 \rightarrow 5} \,. \label{2014:q5*:Seqn3}
-			\end{equation}
-			
-			The modulus signs in the expressions are used to ensure that our answer is positive. Negative distance does not make sense (but negative displacement does).
-			
-			
-			
+				\text{Distance} & = \int_{0}^{5} (|v|)\dd t \nn \\
+				                & = \int_{0}^{5} (|2t-8|)\dd t \nn \\
+				                & = \int_{0}^{4} (|2t-8|)\dd t  + \int_{4}^{5} (|2t-8|)\dd t \nn \\
+				                & = -\int_{0}^{4} (2t-8)\dd t  + \int_{4}^{5} (2t-8)\dd t \,. 
+			\end{align}\footnote{The negative sign in the first integral reverses the sign of the result so that it is a positive value.}
+						
 			\textbf{\textit{Solve and Evaluate:}} \\ \\
-			Substituting our values into \req{2014:q5*:Seqn1}, we get,
+			Evaluating our integral, we get that,
 			\begin{align}
-				\text{Distance}_{t=0 \rightarrow 4} & = |s(4)-s(0)| \nn \\
-				& = |-4-12| \nn \\
-				& = |-16| \nn \\
-				& = 16 \text{m} \,.
-			\end{align}
-			
-			For our second section, we will use $t_2=5$ and $t_m=4$ and \req{2014:q5*:Seqn2} as,
-			\begin{align}
-				\text{Distance}_{t=4 \rightarrow 5} & = |s(5)-s(4)| \nn \\
-				& = |((5-2)(5-6)) -(-4)| \nn \\
-				& = |(3)(-1)-(-4)| \nn \\
-				& = |-3+4| \nn \\
-				& = |1| \nn \\
-				& = 1 \text{m} \,.
-			\end{align}
-			
-			Finally, using \req{2014:q5*:Seqn3}, we get that,
-			\begin{align}
-				\text{Distance}_{t=0 \rightarrow 5} & = \text{Distance}_{t=0 \rightarrow 4} + \text{Distance}_{t=4 \rightarrow 5} \nn \\
-				& = 16 + 1 \nn \\
-				& = 17 \text{m} \,.
+				\text{Distance} & = -\int_{0}^{4} (2t-8)\dd t  + \int_{4}^{5} (2t-8)\dd t \nn \\
+				                & = -\left[t^2-8t \right]_0^4 + \left[t^2-8t \right]_4^5 \nn \\
+				                & = -\left[(4^2-32)-(0^2-0)\right] + \left[(5^2-40)-(4^2-32)\right] \nn \\
+				                & = -(-16-0) + (-15 - (-16)) \nn \\
+				                & = 16+1 \nn \\
+				                & = 17 \text{m} \,. 
 			\end{align}
 			
 			%------------------------------------------------------------------------------
@@ -163,17 +150,22 @@
 			
 			
 			
-			\textbf{\textit{Represent Mathematically:}} \\ \\ \TODO{dont actually do differentiation.}
-			By differentiating $s(t)$, we get,
-			\begin{align}
-				v(t) & = \frac{d}{dt}(s(t)) \nn \\
-				     & = \frac{d}{dt}(t^2-8t+12) \nn \\
-				     & = 2t - 8 \,.
-			\end{align}
+			\textbf{\textit{Represent Mathematically:}} \\ \\
+			By definition, we get that,
+			\begin{equation}
+				v(t) = \ddd{}{t}(s(t)) \,. 
+			\end{equation}
 		
 		
 		
 			\textbf{\textit{Solve and Evaluate:}} \\ \\
+			By differentiating $s(t)$, we get that,
+			\begin{align}
+				v(t) & = \ddd{}{t}(s(t)) \nn \\
+				     & = \ddd{}{t}(t^2-8t+12) \nn \\
+				     & = 2t-8 \,.
+			\end{align}
+			
 			We can now set $v(t)$ equal to 0 and find the corresponding value of $t$.
 			\begin{align}
 				v(t) = 2t-8 & = 0 \nn \\
@@ -191,97 +183,57 @@
 %------------------------------------------------------------------------------
 % 5 b
 %------------------------------------------------------------------------------
+ 
+\subquestion
 
 \begin{subsubquestions}
 	
 	\subsubquestion
 	
 	\textbf{\textit{Sketch and Translate:}} \\ \\
-	We are given a series of forces which act on a particle, we will call $O$, with mass, $m$. \rfig{2014:q55:Force1} shows the forces acting on the particle.
+	We are given a series of forces which act on a particle with mass, $m$. \rfig{2014:q5:Force1} shows all the forces acting on the particle.
 	\begin{figure} [H]
 		\begin{center} 
-			\includegraphics[scale=0.25]{../2014/figures/2014q55Sketch}
-			\caption{\label{2014:q55:Force1} Diagram of forces on particle.}
+			\includegraphics[scale=0.25]{../2014/figures/2014-q5-b-1}
+			\caption{\label{2014:q5:Force1} Diagram of forces on particle.}
 		\end{center}
 	\end{figure}
 	
-	Note that we have taken the positive $x$ direction to be towards the right. Therefore we've drawn the frictional force to the left. Given that the particle is just about to move, it is in (translational) equilibrium.
 	%------------------------------------------------------------------------------
 	
 	\subsubquestion
 	
 	\textbf{\textit{Simplify and Diagram:}} \\ \\
-	\rfig{2014:q55:Force2} shows all the forces acting on the particle.
+	\rfig{2014:q5:Force2} shows all the forces acting on the particle.
 	\begin{figure} [H]
 		\begin{center} 
-			\includegraphics[scale=0.25]{../2014/figures/2014q55Diagram}
-			\caption{\label{2014:q55:Force2} Diagram of forces and angles on particle.}
+			\includegraphics[scale=0.25]{../2014/figures/2014-q5-b-2}
+			\caption{\label{2014:q5:Force2} Diagram of forces and angles on particle.}
 		\end{center}
 	\end{figure}
 	
-	Let,  \TODO{Check subscripts}
-	\begin{itemize}
-		\item $\vec{F}_{fO}$ be the force of friction on $O$.
-		\item $\vec{F}_{EO}$ be the gravitational force of the Earth on $O$.
-		\item $\vec{F}_{E \text{on} \; O}$ be the gravitational force of the Earth on $O$.
-		\item $\vec{F}_{E \; \text{on} \; O}$ be the gravitational force of the Earth on $O$.
-		\item $\vec{F}_{E \text{ on }O}$ be the gravitational force of the Earth on $O$.
-		\item $\vec{F}_{E_O}$ be the gravitational force of the Earth on $O$.
-		\item $\vec{F}_{E \text{on} ~O}$ be the gravitational force of the Earth on $O$.
-		\item $\vec{N}_{r}$ be the reaction force of the plane on $O$.
-		\item $\vec{P}_{A}$ be the applied force on $O$.
-		\item $\vec{S}_{R}$ be the resultant force of friction and the normal reaction force (as given in question) on $O$.
-	\end{itemize}
-
-	We have illustrated this in \rfig{2014:q55:Force2}.
-	
-	
+	We are given that the size of $P$ is such that the particle is just about to move. To find the least value of $P$, we need to find a closed form expression of $P$ and minimize it. As the particle has 3 forces acting on it, we can use Lami's theorem to isolate an expression for $P$.
 	
 	\textbf{\textit{Represent Mathematically:}} \\ \\
-	To find the least value of P (which occurs when $O$ is in equilibrium,), we can represent our forces in terms of their vector components and use Newton's 2nd Law.
+	Using Lami's theorem on the particle, we get,
+	\begin{equation}
+		\frac{mg}{\sin(90-\alpha+\lambda)} = \frac{P}{\sin(180-\lambda)} = \frac{S}{\sin(\alpha+90)} \,.
+	\end{equation}
 	
-	We can consider 3 important forces,
+	We can consider the $mg$ and $P$ terms and make $P$ the subject of the formula. Doing this, we get,
 	\begin{align}
-		\vec{F}_{E} & = -mg\jhat \\ \nn \\
-		\vec{S}_{R} & = -|\vec{S}_{R}|\sin{\lambda}\ihat +|\vec{S}_{R}|\cos{\lambda}\jhat ,\\ \nn \\
-		\vec{P}_{A} & = |\vec{P}_{A}|\cos{\alpha}\ihat + |\vec{P}_{A}|\sin{\alpha}\jhat  \,.
+		\frac{P}{\sin(180-\lambda)} & = \frac{mg}{\sin(90-\alpha+\lambda)}\nn \\
+		P & = \frac{mg\sin(180-\lambda)}{\sin(90-(\alpha-\lambda))}\,.
 	\end{align}
-
-	By Newton's 2nd Law,
+	
+	Since we know that $\sin(90-k)=\cos(k)$, we can express $P$ as,
 	\begin{align}
-		m\vec{a} & = \sum{\vec{F}} \nn \\
-		         & = \vec{F}_{E} + \vec{S}_{R} + \vec{P}_{A} \,.
+		P & = \frac{mg\sin(180-\lambda)}{\sin(90-(\alpha-\lambda))} \nn \\
+		& = \frac{mg\sin(180-\lambda)}{\cos(\alpha-\lambda)} \,.
 	\end{align}
-
-	As we know that the acceleration, $\vec{a}$, of $O$ is $\vec{0}$ at equilibrium, we get that,
-	\begin{align}
-		0\ihat + 0\jhat & = \vec{F}_{E} + \vec{S}_{R} + \vec{P}_{A} \nn \\
-                        & = (|\vec{P}_{A}|\cos{\alpha} - |\vec{S}_{R}|\sin{\lambda})\ihat + (|\vec{P}_{A}|\sin{\alpha} + |\vec{S}_{R}|\cos{\lambda} - mg)\jhat \,.		
-	\end{align}
-
-
-
+	
 	\textbf{\textit{Solve and Evaluate:}} \\ \\
-	Solving the $\ihat$ component, we get,
-	\begin{align}
-		0 & = |\vec{P}_{A}|\cos{\alpha} - |\vec{S}_{R}|\sin{\lambda} \nn \\
-		|\vec{S}_{R}|\sin{\lambda} & = |\vec{P}_{A}|\cos{\alpha} \nn \\
-		|\vec{S}_{R}| & = |\vec{P}_{A}| \left(\frac{\cos{\alpha}}{\sin{\lambda}}\right) \,.
-	\end{align}
-	
-	Solving the $\jhat$ component, we get,
-	\begin{align}
-		0 & = |\vec{P}_{A}|\sin{\alpha} + |\vec{S}_{R}|\cos{\lambda} - mg \nn \\
-		mg & = |\vec{P}_{A}|\sin{\alpha} + |\vec{S}_{R}|\cos{\lambda} \nn \\
-		 & = |\vec{P}_{A}|\sin{\alpha} + |\vec{P}_{A}|\left(\frac{\cos{\alpha}}{\sin{\lambda}}\right)\cos{\lambda} \nn \\
-		 & = |\vec{P}_{A}|\left(\sin{\alpha} + \left(\frac{\cos{\alpha}}{\sin{\lambda}}\right)\cos{\lambda}\right) \nn \\
-		 & = |\vec{P}_{A}|\left(\sin{\alpha} + \cos{\alpha}\left(\frac{\cos{\lambda}}{\sin{\lambda}}\right)\right) \nn \\
-		 & = |\vec{P}_{A}|\left(\frac{\sin{\alpha}\sin{\lambda}+\cos{\alpha}\cos{\lambda}}{\sin{\lambda}}\right) \nn \\
-		 & = |\vec{P}_{A}|\left(\frac{\cos(\alpha - \lambda)}{\sin{\lambda}}\right) \nn \\
-		\implies |\vec{P}_{A}| & = \frac{mg \sin{\lambda}}{\cos(\alpha-\lambda)} \,.
-	\end{align} \footnote{We use the fact that $\cos(A-B)=\cos{A}\cos{B} + \sin{A}\sin{B}$ to simplify our expression.}
-
-	As we now have a closed form for $|\vec{P}_{A}|$ (and by extension $P$), we can work to minimize this expression. We should notice that $|\vec{P}_{A}|$ has a denominator of $\cos(\alpha - \lambda)$. This means that, in order to minimize $P$, we have to maximize this denominator. The Cosine function has a maximum value of 1 and this occurs when the argument of the function is equal to 0. This implies that the argument of $\cos(\alpha - \lambda)$ must be equal to 0. This means,
+	As we have a closed form for $P$, we can work to minimize this expression. We should notice that $P$ has a denominator of $\cos(\alpha - \lambda)$. This means that, in order to minimize $P$, we have to maximize this denominator. The Cosine function has a maximum value of 1 and this occurs when the argument of the function is equal to 0. This implies that the argument of $\cos(\alpha - \lambda)$ must be equal to 0. This means,
 	\begin{align}
 		\cos(\alpha - \lambda) & = \cos(0) \nn \\
 		\implies \alpha - \lambda & = 1 \nn \\
@@ -290,22 +242,22 @@
 	
 	Using this new information, we get that the minimum value of $P$ occurs when $\alpha=\lambda$ and thus,
 	\begin{align}
-	|\vec{P}|_{\text{min.}} = |\vec{P}_{A}|_{\text{min.}} & = \frac{mg\sin(180-\lambda)}{\cos(\alpha-\lambda)} \nn \\
+		P_{\text{min.}} & = \frac{mg\sin(180-\lambda)}{\cos(\alpha-\lambda)} \nn \\
 		& = \frac{mg\sin(180-\lambda)}{\cos(0)} \nn \\
 		& = mg\sin(180-\lambda) \nn \\
-		& = mg\sin(\lambda) \,. \label{2014:q55:MinP}
+		& = mg\sin(\lambda) \,. \label{2014:q5:MinP}
 	\end{align}
-
+	
 	%------------------------------------------------------------------------------
 	
 	\subsubquestion
 	
 	\textbf{\textit{Solve and Evaluate:}} \\ \\
-	From 5(b)(ii), we get that the minimum value of $|\vec{P}_{AO}|$ occurs when $\alpha=\lambda$. Since we are given that $\alpha=30^\circ$, we can substitute this value into \req{2014:q55:MinP} and solve for P.
+	From 5(b)(ii), we get that the minimum value of $P$ occurs when $\alpha=\lambda$. Since we are given that $\alpha=30^\circ$, we can substitute this value into \req{2014:q5:MinP} and solve for P.
 	
 	Using $\alpha=\lambda=30^\circ$, we get that,
 	\begin{align}
-		|\vec{P}_{A}|_{\text{min.}} & = mg\sin(\lambda) \nn \\
+		P_{\text{min.}} & = mg\sin(\lambda) \nn \\
 		& = mg\sin(30) \nn \\
 		& = \frac{mg}{2} \,.
 	\end{align}
