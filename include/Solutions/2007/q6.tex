@@ -26,9 +26,9 @@
 	
 \subsubquestion
 
-Newton's Second Law states that, the rate of change of momentum of an object is directly proportional to the Resultant Force which acts on the object. We can represent this mathematically as,
-\begin{align}
-	\sum \vec{F} & \propto \ddd{p}{t} \nn \\
+Newton's Second Law states that, the rate of change of linear momentum of an object is directly proportional to the Resultant Force which acts on the object. We can represent this mathematically as,\TODO{P vector}
+\begin{align} 
+	\sum \vec{F} & \propto \ddd{\vec{p}}{t} \nn \\
 	             & \propto \frac{\Delta p}{\Delta t} \nn \\
 	             & \propto \frac{m\vec{v}-m\vec{u}}{\Delta t} \nn \\
 	             & \propto m\frac{\vec{v}-\vec{u}}{\Delta t} \nn \\
@@ -68,7 +68,7 @@ We want to find an expression for the greatest height reached by the particle. F
 
 We should notice that, at the greatest height $y_{\text{max}}$, $v=0$.
 We will represent the movement of the particle in the $y$ direction as $s_y$.
-We should also assume that no other forces act on the particle except for those in \rfig{2008M:q6:Diagram1}.
+We should also assume that no other forces act on the particle except for those in \rfig{2008M:q6:Diagram1}. \TODO{We should put v=o in words in simplify and diagram; then represent mathematically.}
 
 
 
@@ -97,7 +97,7 @@ Separating these variables, we get,
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
-From our given information, we know that when $s_y=0$, $y=u$, and when $s_y=y_{\text{max}}$, $y=0$. Using these as our bounds of integration, we get that,
+From our given information, we know that when $s_y=0$, $v=u$, and when $s_y=y_{\text{max}}$, $v=0$. Using these as our bounds of integration, we get that,
 \begin{align}
 	\int_{0}^{y_{\text{max}}} \dd s_y & = \int_{u}^{0} \frac{-v}{g+kv^2}\dd v \nn \\
 	\int_{0}^{y_{\text{max}}} \dd s_y & = \frac{-1}{2k}\int_{u}^{0} \frac{2kv}{g+kv^2}\dd v \nn \\
@@ -126,7 +126,7 @@ We are given a series of forces, which act along the sides of a trapezium ABCD, 
 
 
 
-\textbf{\textit{Simplify and Diagram:}} \\ \\
+\textbf{\textit{Simplify and Diagram:}} \\ \\ \TODO{simplifying assumption as point particle:}
 \rfig{2008M:q6:Diagram2} shows all of the forces and angle measures on ABCD.
 \begin{figure}[H]
 	\begin{center}
@@ -177,9 +177,9 @@ Resolving $\vec{DA}$, we get,
 
 As the system is in equilibrium, by Newton's 2nd Law, we get that,
 \begin{align}
-	\sum\vec{F}\xhat & = 0\xhat \nn \\
+	\sum F_x\xhat & = 0\xhat \nn \\
 	\text{and} \nn \\
-	\sum\vec{F}\yhat & = 0\yhat \,.
+	\sum F_y\yhat & = 0\yhat \,.
 \end{align}
 
 
