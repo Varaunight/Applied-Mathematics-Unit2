@@ -47,17 +47,15 @@ As we are to assume that the water does not bounce off the wall, we can consider
 	
 	
 \textbf{\textit{Represent Mathematically:}} \\ \\
-From Newton's Second Law, we know that, \TODO{Define in terms of momentum}
-\begin{equation}
-	F=ma \,.
-\end{equation}
-	
-If we expand this, we get that,
+From Newton's Second Law, we know that, 
 \begin{align}
-	F & = ma \nn \\
-	  & = m\frac{(v-u)}{t} \nn \\
-	  & = \frac{m}{t}(v-u) \,.
+	F & = \frac{\Delta p}{\Delta t} \nn \\
+	  & = \frac{\Delta mv}{\Delta t} \nn \\
+	  & = \frac{mv-mu}{t} \nn \\
+	  & = m\frac{v-u}{t} \nn \\
+	  \implies \frac{m}{t}(v-u) \,.
 \end{align}
+
 	
 	
 	
@@ -70,7 +68,7 @@ Considering the moment as the water is about to hit the wall, we get that $u=30$
 	  & = -300N \,.
 \end{align}	
 	
-As force is a vector, we must be mindful that this value considers the direction from $v$ to $u$. Therefore, the true average force exerted in the direction of $u$ to $v$ is -(-300N) which is 300N. \TODO{Exaplin this as the Force ON THE WATER and the negative of the FIORCE OF THE WATER ON THE WALL}
+We should notice that the focre that we have calculated is the force of the wall on the water (which causes its speed to go from 30ms$^{-1}$ to 0). As force is a vector, we get that the force of the water on the wall is -(300N) = 300N.
 	
 %------------------------------------------------------------------------------
 % 6 b
@@ -161,24 +159,44 @@ Using the Principle of Conservation of Mechanical Energy, we know that throughou
 	KE_I + PE_I & = KE_F + PE_F \,. \label{2015:q6:energy1}
 \end{align}
 
-From the system, we know that B will lose PE as it is falling downwards. We can consider the initial PE as 0. We must notice that the maximum height that B can fall (while A is still on the horizontal plane) is 0.9m. Therefore, we get that the Total Final PE of the system\footnote{We can consider this as the total potential energy of the system as A does not move in the vertical plane at all. The potential energy of the system is solely dependent on B.} is,
+From the system, we know that B will lose PE as it is falling downwards. We can consider the initial PE as 0. We get that the Total Final PE of the system\footnote{We can consider this as the total potential energy of the system as A does not move in the vertical plane at all. The potential energy of the system is solely dependent on B.} is,
 \begin{align}
-	PE_F &  = m_Bg\Delta h - 0 \nn \\
-	          & = 1.5Mg(-0.9) \nn \\
-	          & = -1.35Mg
+	PE_F &  = m_2g\Delta h - 0 \,.
 \end{align}
 
-As the string is inextensible, the speed of both particles must be the same. Therefore, we get that the Total Final KE of the system is \TODO{0.5mv squared in formula, aslo separate into v1 and v2; also cut down in Rep Math.},
+We will denote the distance traveled by the 3M mass as $x$ and the 5M as $y$. As the string is inextensible, we get that,
+\begin{align}
+	x & = y \nn \\
+	\ddd{x}{t} & = \ddd{y}{t} \nn \\
+	v_x & = v_y = v \,.
+\end{align}
+
+The Total Final KE of the system is,
 \begin{align}
 	KE_F & = KE_A + KE_B \nn \\
-	     & = \frac{1}{2}(3M)(v^2) + \frac{1}{2}(1.5M)(v^2) \nn \\
-	     & = \frac{4.5M}{2}v^2 \,.
+	     & = \frac{1}{2}(m_1)(v_x^2) + \frac{1}{2}(m_2)(v_y^2) \,.
 \end{align}
 
 
 
 
-\textbf{\textit{Solve and Evaluate:}} \\ \\ \TODO{fix the solve and evaluate}
+\textbf{\textit{Solve and Evaluate:}} \\ \\
+By substituting our values, we get that, the Total Final KE of the system is,
+\begin{align}
+	KE_F & = KE_A + KE_B \nn \\
+	& = \frac{1}{2}(3M)(v^2) + \frac{1}{2}(1.5M)(v^2) \nn \\
+	& = \frac{4.5M}{2}v^2 \,.
+\end{align}
+
+
+We must notice that the maximum height that B can fall (while A is still on the horizontal plane) is 0.9m. Therefore, we get that the Total Final PE of the system is,
+\begin{align}
+	PE_F &  = m_Bg\Delta h - 0 \nn \\
+	& = 1.5Mg(-0.9) \nn \\
+	& = -1.35Mg
+\end{align}
+
+
 From the constraints given, we know that $KE_I=0$ and we can consider $PE_I$ to be 0. Substituting these into \req{2015:q6:energy1}, 
 \begin{align}
 	KE_I + PE_I & = KE_F + PE_F \nn \\
@@ -218,35 +236,60 @@ We are asked to find the acceleration of the system given. This problem is a cla
 		\caption{\label{2015:q6:fig:Diagram4} All forces on Pulley System.}
 	\end{center}
 \end{figure}
-We will assume that both bodies move in only 1 dimension. We will also assume that the mass of the string is 0 and inextensible. Thus, we know that the speed (and acceleration) of both particles must be the same. Since the pulley is smooth, no energy is lost to friction. We should consider how the forces act on the different weights and motivate our solution from there.
+We will assume that both bodies move in only 1 dimension. We will also assume that the mass of the string is 0 and inextensible. Thus, we know that the speed (and the magnitude of the acceleration) of both particles must be the same. Since the pulley is smooth, no energy is lost to friction. We should consider how the forces act on the different weights and motivate our solution from there.
 
 
 
 
-\textbf{\textit{Represent Mathematically:}} \\ \\ \TODO{See goodnotes:}
+\textbf{\textit{Represent Mathematically:}} \\ \\ 
+Let us denote the displacements of the 3kg and 5kg masses so be $y_1$ and $y_2$. As the string is inextensible, we know that,
+\begin{align}
+	y_1 & = -y_2 \nn \\
+	\implies \ddd{y_1}{t} & = -\ddd{y_2}{t} \nn \\
+	\implies \ddd{^2y_1}{t^2} & = -\ddd{^2y_2}{t^2} \nn \\
+	a_1 & = -a_2 \,.
+\end{align}
+
+
+
 Let us first consider the forces on the 5kg mass. From Newton's 2nd Law, we get that,
 \begin{align}
-	\sum F & = ma \nn \\
-	mg - T & = ma \nn \\
-	\implies 5g-T & = 5a \,. \label{2015:q6:PulleyEq1}
+	\sum F & = ma_1 \nn \\
+	mg - T & = ma_1 \,.
 \end{align}
 
 Let us then consider the forces on the 3kg mass. From Newton's 2nd Law, we get that,
 \begin{align}
-	\sum F & = ma \nn \\
-	 T-mg & = ma \nn \\
-	\implies T-3g & = 3a \,. \label{2015:q6:PulleyEq2}
+	\sum F & = ma_2 \nn \\
+	 mg-T & = ma_2 \,.
 \end{align}
 
 
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
+On the 5kg mass, we see that,
+\begin{align}
+	mg - T & = ma_1 \nn \\
+	\implies 5g-T & = 5a_1 \,. \label{2015:q6:PulleyEq1}
+\end{align}
+
+On the 5kg mass, we see that,
+\begin{align}
+	mg - T & = ma_2 \nn \\
+	\implies 3g-T & = 3a_2 \nn \\
+	\implies 3g-T & = -3a_1 \nn \\
+	T-3g & = 3a_1 \,. \label{2015:q6:PulleyEq2}
+\end{align}
+
+
+
+
 By solving \req{2015:q6:PulleyEq1} and \req{2015:q6:PulleyEq2} simultaneously, we get,
 \begin{align}
-	\text{(\req{2015:q6:PulleyEq1}+\req{2015:q6:PulleyEq2}):} (5g-T)+[T-3g] & = (5a)+[3a] \nn \\
-																	2g & = 8a \nn \\
-																	\implies a & = \frac{1}{4}g = 2.5\text{ms}^{-2} \,.
+	\text{(\req{2015:q6:PulleyEq1}+\req{2015:q6:PulleyEq2}):} (5g-T)+[T-3g] & = (5a_1)+[3a_1] \nn \\
+																	2g & = 8a_1 \nn \\
+																	\implies a_1 & = a = \frac{1}{4}g = 2.5\text{ms}^{-2} \,.
 \end{align}
 
 

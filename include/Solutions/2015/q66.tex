@@ -220,36 +220,62 @@
 			\caption{\label{2015:q66:fig:Diagram4} All forces on Pulley System.}
 		\end{center}
 	\end{figure}
-	We will assume that both bodies move in only 1 dimension. We will also assume that the mass of the string is 0 and inextensible. Thus, we know that the speed (and acceleration) of both particles must be the same. Since the pulley is smooth, no energy is lost to friction. We should consider how the forces act on the different weights and motivate our solution from there.
+	We will assume that both bodies move in only 1 dimension. We will also assume that the mass of the string is 0 and inextensible. Thus, we know that the speed (and the magnitude of the acceleration) of both particles must be the same. Since the pulley is smooth, no energy is lost to friction. We should consider how the forces act on the different weights and motivate our solution from there.
 	
 	
 	
 	
-	\textbf{\textit{Represent Mathematically:}} \\ \\
+	\textbf{\textit{Represent Mathematically:}} \\ \\ 
+	Let us denote the displacements of the 3kg and 5kg masses so be $y_1$ and $y_2$. As the string is inextensible, we know that,
+	\begin{align}
+		y_1 & = -y_2 \nn \\
+		\implies \ddd{y_1}{t} & = -\ddd{y_2}{t} \nn \\
+		\implies \ddd{^2y_1}{t^2} & = -\ddd{^2y_2}{t^2} \nn \\
+		a_1 & = -a_2 \,.
+	\end{align}
+	
+	
+	
 	Let us first consider the forces on the 5kg mass. From Newton's 2nd Law, we get that,
 	\begin{align}
-		\sum F & = ma \nn \\
-		mg - T & = ma \nn \\
-		\implies 5g-T & = 5a \,. \label{2015:q66:PulleyEq1}
+		\sum F & = ma_1 \nn \\
+		mg - T & = ma_1 \,.
 	\end{align}
 	
 	Let us then consider the forces on the 3kg mass. From Newton's 2nd Law, we get that,
 	\begin{align}
-		\sum F & = ma \nn \\
-		T-mg & = ma \nn \\
-		\implies T-3g & = 3a \,. \label{2015:q66:PulleyEq2}
+		\sum F & = ma_2 \nn \\
+		mg-T & = ma_2 \,.
 	\end{align}
 	
 	
 	
 	
 	\textbf{\textit{Solve and Evaluate:}} \\ \\
+	On the 5kg mass, we see that,
+	\begin{align}
+		mg - T & = ma_1 \nn \\
+		\implies 5g-T & = 5a_1 \,. \label{2015:q66:PulleyEq1}
+	\end{align}
+	
+	On the 5kg mass, we see that,
+	\begin{align}
+		mg - T & = ma_2 \nn \\
+		\implies 3g-T & = 3a_2 \nn \\
+		\implies 3g-T & = -3a_1 \nn \\
+		T-3g & = 3a_1 \,. \label{2015:q66:PulleyEq2}
+	\end{align}
+	
+	
+	
+	
 	By solving \req{2015:q66:PulleyEq1} and \req{2015:q66:PulleyEq2} simultaneously, we get,
 	\begin{align}
-		\text{(\req{2015:q66:PulleyEq1}+\req{2015:q66:PulleyEq2}):} (5g-T)+[T-3g] & = (5a)+[3a] \nn \\
-		2g & = 8a \nn \\
-		\implies a & = \frac{1}{4}g = 2.5\text{ms}^{-2} \,.
+		\text{(\req{2015:q66:PulleyEq1}+\req{2015:q66:PulleyEq2}):} (5g-T)+[T-3g] & = (5a_1)+[3a_1] \nn \\
+		2g & = 8a_1 \nn \\
+		\implies a_1 & = a = \frac{1}{4}g = 2.5\text{ms}^{-2} \,.
 	\end{align}
+	
 	
 	
 	
