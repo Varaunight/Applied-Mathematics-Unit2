@@ -1,0 +1,64 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Varaun Ramgoolie
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 2011 v-t graph
+%     Module: 3
+%     Question: 5
+%------------------------------------------------------------------------------
+\documentclass[crop,tikz]{standalone}
+\usepackage{pgfplots}
+\usepackage{../../../../src/tikzappmath}
+\usetikzlibrary{patterns}
+
+\begin{document}
+	
+	\begin{tikzpicture}[scale=1.5]
+		
+		\begin{axis}
+			[
+			xmin=0,xmax=8,
+			ymin=0,ymax=6,
+			grid=both,
+			grid style={line width=0pt, draw=darkgray!10},
+			major grid style={line width=0pt,draw=darkgray!30},
+			axis lines=left,
+			minor tick num=0,
+			enlargelimits={abs=0},
+			axis line style={-latex},
+			axis x line shift=0,
+			samples=1,
+			domain = -2:2,
+			ytick={5},
+			yticklabels={$V_{max}$},
+			xtick={0,2,4.5,6},
+			xticklabels={0,$t_1$,$t_2$,6},
+			xlabel={$t$},
+			ylabel={$v$},
+			x label style={at={(axis description cs:1,0.15)},anchor=north west},
+			y label style={at={(axis description cs:0.15,1)},anchor=south west, rotate=-90}
+			]
+			
+			
+			\addplot [domain=0:2, samples=100, color=blue]{(2.5)*x};
+			
+			\addplot [domain=2:4.5, samples=100, color=red,]{5};		
+			
+			\addplot [domain=4.5:6, samples=100, color=blue,]{(-5/1.5)*x+20};
+			
+		%	\node [pin=15:{$|v|=|2t-8|$}] at (axis cs:(2,4) {};
+			
+		%	\node [pin=-15:{$v=2t-8$}] at (axis cs:(2,-4) {};
+			
+		\end{axis}	
+		
+	\end{tikzpicture}
+	
+\end{document}
