@@ -33,7 +33,7 @@
 		\caption{\label{2009:q6:Sketch1} Movement of particle.}
 	\end{center}
 \end{figure}
-We are given the acceleration as a function of time. At $t=0$, we know that the initial velocity is 3ms$^{-1}$.
+We are given the acceleration as a function of time. At $t=0$, we know that the velocity, $v(t=0)$, is $3ms^{-1}$.
 	
 	
 	
@@ -54,10 +54,11 @@ As we are given the acceleration function, we can find the velocity function of 
 By definition, we know that,
 \begin{align}
 	a(t) & = \ddd{}{t}v(t) \nn \\
+	\int_{t=0}^{t=t^\prime} a(t) dt &= v(t=t^\prime) - v(t=0) \\
 	\implies \int_{t=0}^{t}a(t)\dd t & = \int_{v=3}^{v} \dd v(t) \nn \\
 	\int_{t=0}^{t}a(t)\dd t & = v(t)-3 \label{2009:q6:VEqn1}
 \end{align}
-
+\TODO{Review integrals.}
 
 
 
@@ -183,11 +184,11 @@ We have already found functions for velocity and acceleration. To find the time 
 
 
 \textbf{\textit{Represent Mathematically:}} \\ \\
-If v(t) and a(t) are perpendicular, we know that,
+If $v(t)$ and $a(t)$ are perpendicular, we know that,
 \begin{align}
 	v(t) \cdot a(t) = 0 \label{2009:q6:DotEqn} \,.
 \end{align}
-
+\TODO{use full expression for dot product.}
 
 
 
@@ -204,6 +205,8 @@ Using \req{2009:q6:DotEqn}, we find that the velocity and acceleration are perpe
 	\implies 4t^3-32 & = 0 \nn \\
 	t & = \sqrt[3]{8} = 2 \,.
 \end{align}
+
+\TODO{word the t=0 solution well.}
 
 We should note, however, that the acceleration of the particle acts only along $Oy$ (from (c)(i)). Therefore, we could have also approached this problem by considering when the velocity of the particle acts \textbf{only} in along $Ox$ (as $Ox$ and $Oy$ are perpendicular).
 
