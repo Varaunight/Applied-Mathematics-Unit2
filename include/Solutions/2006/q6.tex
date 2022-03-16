@@ -1,0 +1,92 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Varaun Ramgoolie
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 2006 C
+%     Module: 3
+%     Question: 6
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% 6 a
+%------------------------------------------------------------------------------
+
+\begin{subquestions}
+	
+\subquestion
+
+\textbf{\textit{Diagram:}} \\ \\
+\{Nice Diagram\}
+
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\textbf{\textit{Sketch and Translate:}} \\ \\
+As we are given that the resistive force, $F_R$, is directly proportional to the square of the speed, $v^2$, we can express it as $F_R=kv^2$.
+
+
+
+
+\textbf{\textit{Simplify and Diagram:}} \\ \\
+We will first define the following forces:
+\begin{itemize}
+	\item $F_T$ is the forward thrust of the bike, $F_T=180N$,
+	\item $F_R$ is the resistive force, $F_R=kv^2$,
+	\item $F$ is the resultant force on the bike, $F=ma$.
+\end{itemize}
+We will use Newton's Second Law to find an expression for $F$ and work towards our goal.
+
+
+
+
+\textbf{\textit{Represent Mathematically:}} \\ \\
+By Newton's Second Law, know that,
+\begin{equation}
+	F = ma = F_T - F_R \label{2006:q6:FEqn1} \,.
+\end{equation}
+
+We can express our acceleration as,
+\begin{equation}
+	a = v\ddd{v}{s} \label{2006:q6:AEqn1} \,.
+\end{equation}
+
+We are also given that,
+\begin{align}
+	m=70kg \,, \nn \\
+	v(t=0) & = 0 \,, \nn \\
+	a(v=6) & = 0 \label{2006:q6:AEqn2} \,.
+\end{align}
+
+
+
+
+
+\textbf{\textit{Solve and Evaluate:}} \\ \\
+Considering \reqs{2006:q6:FEqn1}{2006:q6:AEqn1}, we get that,
+\begin{align}
+	70v\ddd{v}{s} & = 180-kv^2 \nn \\
+	\implies \ddd{s}{v} & = \frac{70v}{180-kv^2} \label{2006:q6:DEqn1} \,.
+\end{align}
+
+Considering \reqs{2006:q6:AEqn1}{2006:q6:AEqn2}, we get that,
+\begin{align}
+	70(0) & = 180 - k(6)^2 \nn \\
+	\implies k & = 5  \,.
+\end{align}
+
+Substituting this value of $k$ into \req{2006:q6:DEqn1}, we get,
+\begin{align}
+	\ddd{s}{v} & = \frac{70v}{180-5v^2} \nn \\
+	           & = \frac{5(14v)}{5(36-v^2)} \nn \\
+	           & = \frac{14v}{36-v^2} \,.
+\end{align} 
+
+\end{subquestions}
