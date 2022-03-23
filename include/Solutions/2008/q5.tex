@@ -63,8 +63,15 @@ We are asked to find the kinetic energy after the impact.
 		\caption{\label{2008J:q5:Diagram1} Bodies colliding with each other.}
 	\end{center}
 \end{figure}	
-\TODO{Another assumption about point particle behaviour.}We will assume that the collision occurs in a closed system (no external forces acting on the system). We will take movement to the right as positive and we will assume that the bodies only move in 1 dimension. We can use the Law of Conservation of Momentum to solve this problem.
-
+We assume that the bodies act as point particles. We will also assume that the collision occurs in a closed system (no external forces acting on the system). We will take movement to the right as positive and we will assume that the bodies only move in 1 dimension. We can use the Law of Conservation of Momentum to solve this problem.
+We will define the following:
+\begin{itemize}
+	\item $m_1$ is the mass of the 6000kg sphere, $m_1=6000$,
+	\item $m_2$ is the mass of the 2000kg sphere, $m_2=2000$,
+	\item $v_1$ is the velocity of the 6000kg sphere before collision, $v_1=2.5$,
+	\item $v_2$ is the velocity of the 2000kg sphere before collision, $v_1=1.3$,
+	\item $v_3$ is the velocity of the coupled body after collision.	
+\end{itemize}
 
 
 
@@ -72,9 +79,8 @@ We are asked to find the kinetic energy after the impact.
 From the Law of Conservation of Momentum, we get that,
 \begin{align}
 	\text{Total Momentum Before collision} & = \text{Total Momentum After collision} \nn \\
-	m_1v_1 + m_2v_2 & = (m_1+m_2)v_3 \,.
+	m_1v_1 + m_2v_2 & = (m_1+m_2)v_3 \,. \label{2008J:q5:VEqn1}
 \end{align}
-where $m_1$ and $v_1$ are the mass and velocity of the 6000kg vehicle, $m_2$ and $v_2$ are the mass and velocity of the 2000kg vehicle, and $v_3$ is the velocity of the coupled body after the collision.
 
 The kinetic energy of the coupled body after the collision can be given as,
 \begin{align}
@@ -83,7 +89,7 @@ The kinetic energy of the coupled body after the collision can be given as,
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
-Substituting the values of $m_1=6000$kg, $m_2=2000$kg, $v_1=2.5$ms$^{-1}$ and $v_2=1.3$ms$^{-1}$, we get, \TODO{Add the numbers when defined in simpliofy and diagram.}
+From \req{2008J:q5:VEqn1}, we get,
 \begin{align}
 	m_1v_1 + m_2v_2 & = (m_1+m_2)v_3 \nn \\
 	6000\times2.5 + 2000\times1.3 & = (6000+2000)v_3 \nn \\
@@ -109,49 +115,56 @@ We can approach this question using Newton's Second Law. We will consider the 10
 
 
 \textbf{\textit{Simplify and Diagram:}} \\ \\
-We will assume that the coupled body moves only in 1 dimension. We will calculate the deceleration of the body by using Newton's Second Law, and then we can use our equations of motion to solve for the distance and time it takes to bring the body to rest.
+We will assume that the coupled body moves only in 1 dimension. We will calculate the deceleration of the body by using Newton's Second Law, and then we can use our equations of motion to solve for the distance and time it takes to bring the body to rest. We will define the following as:
+\begin{itemize}
+	\item $m$ is the mass of the coupled body, $m-8000$,
+	\item $u$ is the initial velocity of the coupled body, $u=v_3=2.2$,
+	\item $v$ is the final velocity of the coupled body, $v=0$,
+	\item $F$ is the braking force, $F=-1000N$,\footnote{This force has a negative sign as it is directed in the opposite direction to the coupled body's motion.}
+	\item $a$ is the acceleration of the body,
+	\item $s$ is the distance traveled by the body,
+	\item $t$ is the time variable.
+\end{itemize}
 
 
 
-
-\textbf{\textit{Represent Mathematically:}} \\ \\ \TODO{Justify why we use certain euqtaions and remove the manipulation of the equations. Leave that for sole and evaluate.}
+\textbf{\textit{Represent Mathematically:}} \\ \\ 
 Using Newton's Second Law, we get that,
 \begin{align}
 	F & = ma \nn \\
 	\implies a & = \frac{F}{m} \label{2008J:q5:AEqn1} \,.
 \end{align}
-where $F$ is the braking force.
 
 To find the distance, we can use,
-\begin{align}
-	v^2 & = u^2 + 2as \nn \\
-	\implies s & = \frac{v^2-u^2}{2a} \label{2008J:q5:SEqn1} \,.
-\end{align}
+\begin{equation}
+	v^2 = u^2 + 2as \label{2008J:q5:SEqn1} \,.
+\end{equation}
 
 To find the time, we can use,
-\begin{align}
-	v & = u+at \nn \\
-	\implies t & = \frac{v-u}{a} \label{2008J:q5:TEqn1} \,.
-\end{align}
+\begin{equation}
+	v = u+at \label{2008J:q5:TEqn1} \,.
+\end{equation}
 
 
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
-Using \req{2008J:q5:AEqn1} and substituting $F=-1000N$\footnote{This force has a negative sign as it is directed in the opposite direction to the coupled body's motion.} and $m=m_1+m_2=8000$kg, we get that,
+Using \req{2008J:q5:AEqn1}, we get that,
 \begin{align}
 	a & = \frac{-1000}{8000} \nn \\
 	  & = -0.125ms^{-2} \,. 
 \end{align}
 
-Using \req{2008J:q5:SEqn1} and substituting $v=0$, $u=v_3=2.2ms^{-1}$ and $a=-0.125ms^{-2}$, we get that,
+Using \req{2008J:q5:SEqn1}, we get that,
 \begin{align}
-	s & = \frac{0^2-2.2^2}{2(-0.125)} \nn \\
+	2.2^2 & = 0^2 + 2(-0.125)(s) \nn \\
+	\implies s & = \frac{0^2-2.2^2}{2(-0.125)} \nn \\
 	  & = 19.36m \,.
 \end{align}
 
-Using \req{2008J:q5:TEqn1} and substituting $v=0$, $u=v_3=2.2ms^{-1}$ and $a=-0.125ms^{-2}$, we get that,
+Using \req{2008J:q5:TEqn1}, we get that,
 \begin{align}
+	0 & = 2.2 - 0.125t \nn \\
 	t & = \frac{0-2.2}{-0.125} \nn \\
 	  & = 17.6s \,.
 \end{align}
