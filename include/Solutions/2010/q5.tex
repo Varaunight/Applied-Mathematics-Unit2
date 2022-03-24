@@ -49,7 +49,15 @@ We are given that a particle moves with a constant acceleration in a straight li
 	\end{center}
 \end{figure}
 We are given that the particle takes 3 seconds cover $OA$ and $AB$. We are given time, distance, and a constant acceleration. Therefore, using our equations of motion (constant acceleration), we can formulate 2 equations and solve them simultaneously.
-
+We will define:
+\begin{itemize}
+	\item $s$ is the displacement of the particle,
+	\item $v$ is the final velocity of the particle,
+	\item $u$ is the initial velocity of the particle,
+	\item $a$ is the acceleration of the particle,
+	\item $t$ is the time variable,
+	\item $t(k)$ is the time taken to travel distance $k$.
+\end{itemize}
 
 
 
@@ -59,25 +67,25 @@ Due to the quantities that we are given, we will use,
 	s = ut + \frac{1}{2}at^2 \,.
 \end{equation}
 
-Considering the distance $OA$, we get,
-\begin{align}
-	17 & = ut_1 + \frac{1}{2}at_1^2 \nn \\
-	   & = 3u + \frac{9}{2}a \,. \label{2010:q5:MoveEqn1}
-\end{align}
-	
-We know that the distance $OB$ is the sum of the distances $OA$+$AB$. We also know that the time it takes for the particle to cover $OB$ is $t(OA)+t(AB)=6$. Therefore, we get that,
-\begin{align}
-	17+35 & = ut_2 + \frac{1}{2}at_2^2 \nn \\
-	   52 & = 6u + \frac{36}{2}a \,. \label{2010:q5:MoveEqn2}
-\end{align}
-
 
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
+Considering the distance $OA$, we get,
+\begin{align}
+	17 & = ut_1 + \frac{1}{2}at_1^2 \nn \\
+	& = 3u + \frac{9}{2}a \,. \label{2010:q5:MoveEqn1}
+\end{align}
+
+We know that the distance $OB$ is the sum of the distances $OA$+$AB$. We also know that the time it takes for the particle to cover $OB$ is $t(OA)+t(AB)=6$. Therefore, we get that,
+\begin{align}
+	17+35 & = ut_2 + \frac{1}{2}at_2^2 \nn \\
+	52 & = 6u + \frac{36}{2}a \,. \label{2010:q5:MoveEqn2}
+\end{align}
+
 We can solve \req{2010:q5:MoveEqn1} and \req{2010:q5:MoveEqn2} simultaneously by,
 \begin{align}
-	\text{(\req{2010:q5:MoveEqn2} - 2 $\times$ \req{2010:q5:MoveEqn1})}:(52) - 2[17] & = \left(6u + \frac{36}{2}a\right) - 2\left[3u + \frac{9}{2}a\right] \nn \\
+	\text{(\req{2010:q5:MoveEqn2} - (2 $\times$ \req{2010:q5:MoveEqn1}))}:(52) - 2[17] & = \left(6u + \frac{36}{2}a\right) - 2\left[3u + \frac{9}{2}a\right] \nn \\
 	                                                              52 - 34 & = \left(6u + 18a\right) - \left[6u + 9a\right] \nn \\
 	                                                                   18 & = 9a \nn \\
 	                                                                   \implies a & = 2\text{ms}^{-2} \,.
@@ -130,7 +138,7 @@ Next, we can solve our quadratic in $t$ to obtain,
 	\implies t & = 9 ~\text{and}~\frac{-35}{3} \,.
 \end{align}
 
-Therefore, the time taken to travel 105m from $O$ is 9s.\footnote{We can make sense of the negative value by looking at the $s-t$ graph of the particle. We have arbitrarily labeled the $s=0$ point as $O$. If we consider the motion of the particle before $t=0$, we can see that there is a point where the distance of the body from $O$ was 105m, just in the negative direction}
+Therefore, the time taken to travel 105m from $O$ is 9s.\footnote{We can make sense of the negative value by looking at the $s-t$ graph of the particle. We have arbitrarily labeled the $s=0$ point as $O$. If we consider the motion of the particle before $t=0$, we can see that there is a point where the distance of the body from $O$ was 105m. However, it was in the negative direction.}
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale=1]{../2010/figures/2010q5-s-t-graph}
@@ -183,6 +191,10 @@ Due to the quantities that we are given, we will use,
 	s = ut + \frac{1}{2}at^2 \,.
 \end{equation}
 
+
+
+
+\textbf{\textit{Solve and Evaluate:}} \\ \\
 Considering the distance $PQ$, we get,
 \begin{align}
 	15 & = ut_1 + \frac{1}{2}at_1^2 \nn \\
@@ -195,10 +207,6 @@ We know that the distance $PR$ is the sum of the distances $PQ$+$QR$. We also kn
 	30 & = 10u + \frac{100}{2}a \,. \label{2010:q5:MoveEqn4}
 \end{align}
 
-
-
-
-\textbf{\textit{Solve and Evaluate:}} \\ \\
 We can solve for the acceleration of the particle as follows,
 \begin{align}
 	(\text{3$\times$\req{2010:q5:MoveEqn4} - 5$\times$\req{2010:q5:MoveEqn3}}): (3 \times 30) - [5 \times 15] & = 3(10u+50a) - 5[6u+18a] \nn \\
@@ -225,8 +233,7 @@ We want to find the velocity of the particle at a distance of 50m away from $P$.
 \textbf{\textit{Represent Mathematically:}} \\ \\
 After solving for $u$, we can use the equation,
 \begin{align}
-	v^2 & = u^2 + 2as \nn \\
-	\implies v & = \sqrt{u^2+2as} \,. \label{2010:q5:MoveEqn5}
+	v^2 & = u^2 + 2as \label{2010:q5:MoveEqn5} \,. 
 \end{align}
 
 
@@ -243,7 +250,8 @@ Firstly, using the value of $a$ that we found previously, we can substitute it i
 
 Substituting our values into \req{2010:q5:MoveEqn5}, we get that,
 \begin{align}
-	v & = \sqrt{u^2+2as} \nn \\
+	v^2 & = u^2 + 2as \nn \\
+	\implies v & = \sqrt{u^2+2as} \nn \\
 	  & = \sqrt{1.75^2+2(0.25)(50)} \nn \\
 	  & = \sqrt{28.0625} \nn \\
 	  & =  5.297 \text{ms}^{-1} \,.
