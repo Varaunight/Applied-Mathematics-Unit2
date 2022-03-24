@@ -46,7 +46,13 @@ We are given the acceleration as a function of time. At $t=0$, we know that the 
 	\end{center}
 \end{figure}
 As we are given the acceleration function, we can find the velocity function of the particle by integrating the given function between the appropriate bounds.
-
+We will define the following: 
+\begin{itemize}
+	\item $a(t)$ is the acceleration function,
+	\item $v(t)$ is the velocity function,
+	\item $s(t)$ is the displacement function,
+	\item $t$ is the time variable.
+\end{itemize}
 
 
 
@@ -54,24 +60,24 @@ As we are given the acceleration function, we can find the velocity function of 
 By definition, we know that,
 \begin{align}
 	a(t) & = \ddd{}{t}v(t) \nn \\
-	\int_{t=0}^{t=t^\prime} a(t) dt &= v(t=t^\prime) - v(t=0) \\
+	\int_{t=0}^{t=T} a(t) dt &= v(t=T) - v(t=0) \\
 	\implies \int_{t=0}^{t}a(t)\dd t & = \int_{v=3}^{v} \dd v(t) \nn \\
 	\int_{t=0}^{t}a(t)\dd t & = v(t)-3 \label{2009:q6:VEqn1}
 \end{align}
-\TODO{Review integrals.}
+
 
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
 Solving \req{2009:q6:VEqn1}, we get that,
 \begin{align}
-	v(t')-3 & = \int_{t=0}^{t=t'}a(t)\dd t \nn \\
-	     & = \int_{t=0}^{t=t'} 3t-9 \dd t \nn \\
-	     & = \frac{3t'^2}{2}-9t' \nn \\
-\implies v(t') & = \frac{3t'^2}{2}-9t' +3 \,.
+	v(T)-3 & = \int_{t=0}^{t=T}a(t)\dd t \nn \\
+	     & = \int_{t=0}^{t=T} 3t-9 \dd t \nn \\
+	     & = \frac{3T^2}{2}-9T \nn \\
+\implies v(T) & = \frac{3T^2}{2}-9T +3 \,.
 \end{align}
 
-Thus, substituting $t'=4$, we get that,
+Thus, substituting $T=4$, we get that,
 \begin{align}
 	v(4) & = \frac{3(4)^2}{2}-9(4) +3 \nn \\
 	     & = -9ms^{-1} \,.
@@ -102,12 +108,12 @@ By definition, we know that,
 \textbf{\textit{Solve and Evaluate:}} \\ \\
 Solving \req{2009:q6:SEqn1}, we get that,
 \begin{align}
-	s(t') & = \int_{t=0}^{t=t'} v(t)\dd t \nn \\
-	      & = \int_{t=0}^{t=t'} \frac{3t'^2}{2}-9t' +3 \dd t \nn \\
-	      & = \frac{t'^3}{2} - \frac{9t'^2}{2} + 3t' \,.
+	s(T) & = \int_{t=0}^{t=T} v(t)\dd t \nn \\
+	      & = \int_{t=0}^{t=T} \frac{3T^2}{2}-9T +3 \dd t \nn \\
+	      & = \frac{T^3}{2} - \frac{9T^2}{2} + 3T \,.
 \end{align}
 
-Substituting $t'=4$, we get that,
+Substituting $T=4$, we get that,
 \begin{align}
 	s(4) & = \frac{4^3}{2} - \frac{9(4)^2}{2} + 3(4) \nn \\
 	     & = -28m\,.
@@ -134,7 +140,7 @@ Let us first define our positive direction as to the right of $O$. In (a)(i), ou
 \subsubquestion
 
 \textbf{\textit{Sketch and Translate:}} \\ \\
-\TODO{What diagram here?} We are given the position of a particle which is defined using time $t$. We can consider this as the displacement function of the particle with respect to time.
+\{vector diagram\}. We are given the position of a particle which is defined using time $t$. We can consider this as the displacement function of the particle with respect to time.
 
 
 
@@ -186,9 +192,9 @@ We have already found functions for velocity and acceleration. To find the time 
 \textbf{\textit{Represent Mathematically:}} \\ \\
 If $v(t)$ and $a(t)$ are perpendicular, we know that,
 \begin{align}
-	v(t) \cdot a(t) = 0 \label{2009:q6:DotEqn} \,.
+	v(t) \cdot a(t) = |v(t)||a(t)|\cos(90) = 0 \label{2009:q6:DotEqn} \,.
 \end{align}
-\TODO{use full expression for dot product.}
+
 
 
 
@@ -206,8 +212,7 @@ Using \req{2009:q6:DotEqn}, we find that the velocity and acceleration are perpe
 	t & = \sqrt[3]{8} = 2 \,.
 \end{align}
 
-\TODO{word the t=0 solution well.}
-
+\{How to explain the t=0 solution? \}
 We should note, however, that the acceleration of the particle acts only along $Oy$ (from (c)(i)). Therefore, we could have also approached this problem by considering when the velocity of the particle acts \textbf{only} in along $Ox$ (as $Ox$ and $Oy$ are perpendicular).
 
 %------------------------------------------------------------------------------
