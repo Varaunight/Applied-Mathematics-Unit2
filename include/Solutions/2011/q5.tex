@@ -41,26 +41,31 @@ We ae given a car which accelerates uniformly up an inclined plane.
 
 \textbf{\textit{Simplify and Diagram:}} \\ \\
 We can consider \rfig{2011:q5:Diagram1}. We are given the initial and final velocities of the car, together with the displacement of the car. By using our equations of motion, we can solve for the acceleration.
+We will define the following,
+\begin{itemize}
+	\item $u$ is the initial velocity of the car, $u=15ms^{-1}$,
+	\item $v$ is the final velocity of the car, $v=20ms^{-1}$,
+	\item $a$ is the acceleration of the car,
+	\item $s$ is the displacement of the car, $s=175m$.
+\end{itemize}
 
 
 
 
 \textbf{\textit{Represent Mathematically:}} \\ \\
 We will use the equation,
-\begin{align}
-	v^2 & = u^2 + 2as \nn \\
-	\implies a & = \frac{v^2-u^2}{2s} \,.	
-\end{align}
+\begin{equation}
+	v^2 = u^2 + 2as \,. \label{2011:q5:AEqn1} \\	
+\end{equation}
 
 
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
-By substituting our values, we get,
+By substituting our values into \req{2011:q4:AEqn1}, we get,
 \begin{align}
-	a & = \frac{(72kmh^{-1})^2-(54kmh^{-1})^2}{2(175m)} \nn \\
-	  & = \frac{\left(\frac{72\times 1000}{3600}\right)^2-\left(\frac{54\times 1000}{3600}\right)^2}{2(175)} \nn \\
-	  & = \frac{400-225}{350} \nn \\
+	20 & = 15^2 + 2(a)(175) \nn \\
+	\implies a & = \frac{400-225}{350} \nn \\
 	  & = 0.5ms^{-2} 
 \end{align}
 
@@ -93,10 +98,14 @@ We will first resolve the forces into their components as,
 
 By Newton's Second Law, the resultant force in the $x$ direction, $F$, is,
 \begin{equation}
-	F = \sum F_x = ma_x \,, \label{2011:q5:Newt1}
+	F = \sum F_x = ma_x \,. \label{2011:q5:Newt1}
 \end{equation}
 where $F_x$ represents the components acting in the $x$ direction and $a_x$ is the acceleration in the $x$ direction.
 
+We are also given that,
+\begin{equation}
+	m = 1100 \,.
+\end{equation}
 
 
 
@@ -107,7 +116,7 @@ By substituting our values into \req{2011:q5:Newt1}, we get,
 	-\frac{1}{4.4}mg-200+|\vec{F_T}| & = ma_x \nn \\
 	|\vec{F_T}| & = ma_x +\frac{1}{4.4}mg+200 \nn \\
 	            & = (1100)(0.5)+\frac{1}{4.4}(1100)(10)+200 \nn \\
-	            & = 3250 \,.
+	            & = 3250N \,.
 \end{align}
 
 %------------------------------------------------------------------------------
@@ -116,24 +125,29 @@ By substituting our values into \req{2011:q5:Newt1}, we get,
 
 \textbf{\textit{Simplify and Diagram:}} \\ \\
 We can consider \rfig{2011:q5:Diagram1}. We can use our relationship between tractive force and power to find the maximum power generated.
+We will use the following:
+\begin{itemize}
+	\item $F_T$ is the tractive force, $F_T=3250$N,
+	\item $v_\text{max}$ is the maximum speed of the car, $v_{\text{max}}=20$ms$^{-1}$.
+\end{itemize}
 
 
 
 
 \textbf{\textit{Represent Mathematically:}} \\ \\
 We know that,
-\begin{align}
-	F_T & = \frac{\text{Power, P}}{\text{Velocity, v}} \nn \\
-	\implies P_{\text{max}} & = F_T \times v_{\text{max}} \,.
-\end{align}
+\begin{equation}
+	F_T  = \frac{\text{Power, P}}{\text{Velocity, v}} \,. \label{2011:q5:PEqn1} 
+\end{equation}
 
 
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
-By substituting $F_T=3250$N and $v_{\text{max}}=20$ms$^{-1}$, we get,
+By substituting our values into \req{2011:q5:PEqn1}, we get,
 \begin{align}
-	P_{\text{max}} & = 3250 \times 20 \nn \\
+	3250 & = \frac{P_{\text{max}}}{20} \nn \\
+	\implies P_{\text{max}} & = 3250 \times 20 \nn \\
 	               & = 65000W = 65kW \,.
 \end{align}
 	
@@ -170,7 +184,14 @@ We are given two masses which are connected by a string over a smooth, weightles
 		\end{center}
 	\end{figure}
 	We will assume that both bodies move in only 1 dimension and that they behave as point particles. We will also assume that the mass of the string is 0 and inextensible. Thus, we know that the speed (and the magnitude of the acceleration) of both particles must be the same. Since the pulley is smooth, no energy is lost to friction. We should consider how the forces act on the different weights and motivate our solution from there.
-	
+	We will define the following:
+	\begin{itemize}
+		\item $a_1$ is the acceleration of the 5kg mass,
+		\item $a_2$ is the acceleration of the 4kg mass,
+		\item $m_1$ is the mass of the 5kg mass, $m_1=5$,
+		\item $m_2$ is the mass of the 4kg mass, $m_2=4$,
+		\item $T$ is the tension of the string.
+	\end{itemize}
 	
 	
 	
@@ -183,16 +204,16 @@ We are given two masses which are connected by a string over a smooth, weightles
 		a_1 & = -a_2 \,.
 	\end{align}
 	
-	Let us first consider the forces on the 4kg mass. From Newton's 2nd Law, we get that,
+	Let us first consider the forces on the 5kg mass. From Newton's 2nd Law, we get that,
 	\begin{align}
-		\sum F & = ma_1 \nn \\
-		mg - T & = ma_1 \,.
+		\sum F & = m_1a_1 \nn \\
+		m_1g - T & = m_1a_1 \,.
 	\end{align}
 	
-	Let us then consider the forces on the 5kg mass. From Newton's 2nd Law, we get that,
+	Let us then consider the forces on the 4kg mass. From Newton's 2nd Law, we get that,
 	\begin{align}
-		\sum F & = ma_2 \nn \\
-		mg-T & = ma_2 \,.
+		\sum F & = m_2a_2 \nn \\
+		m_2g-T & = m_2a_2 \,.
 	\end{align}
 	
 	
