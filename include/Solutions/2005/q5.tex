@@ -52,7 +52,7 @@ By definition, we know that,
 \textbf{\textit{Solve and Evaluate:}} \\ \\
 By using \req{2005:q5:AEqn1}, we get that,
 \begin{align}
-	a(t) & = \ddd{}{t} 4t^3 +4t +5 \nn \\
+	a(t) & = \ddd{}{t} \left(4t^3 +4t +5\right) \nn \\
 	     & = 12t^2 + 4 \,.
 \end{align}
 
@@ -67,7 +67,7 @@ Thus, at $t=5$, we get that,
 \subsubquestion
 
 \textbf{\textit{Sketch and Translate:}} \\ \\
-As the particle passes the origin at $t=0$, we know that the initial displacement of the particle is 0.
+\TODO{We take the origin to be the reference point, and therefore (s(t=0))=0}As the particle passes the origin at $t=0$, we know that $s(t=0) = 0m$.
 
 
 
@@ -80,7 +80,7 @@ By definition, we know that the integral of the velocity of the particle will yi
 
 
 \textbf{\textit{Represent Mathematically:}} \\ \\
-By the Fundamental Theorem of Calculus, we get that,
+By \TODO{mention that v=ds/dt} the Fundamental Theorem of Calculus, we get that,
 \begin{equation}
 	\int_{0}^{5} v(t) \dd t = s(t=5)-s(t=0) \label{2005:q5:FTC1} \,.
 \end{equation}
@@ -114,28 +114,29 @@ Using \req{2005:q5:FTC1}, we get that,
 \subsubquestion
 
 \textbf{\textit{Sketch and Translate:}} \\ \\
-As we are given that the resisitive force, $F_R$, experienced by the body is directly proportional to the velocity, $v$, we can express this force in terms of a constant of proportionality $k$ in the form of $F_R=kv.$ We also get that the initial velocity, $v(t=0)=0$.
+As we are given that the resisitive force, $F_R$, experienced by the body is directly proportional to the velocity, $v$, we can express this force in terms of a constant of proportionality $k$ in the form of $F_R=-kv.$\TODO{Justify the minus sign} We also get that the initial velocity, $v(t=0)=0$.
 
 
 
 
 \textbf{\textit{Simplify and Diagram:}} \\ \\
-We will define the following forces:
-\begin{itemize}
-	\item $F_R$ is the resistive force on the body, $F_R=kv$,
-	\item $W$ is the weight, $W=mg$,
-	\item $F$ is the resultant force on the body, $F=ma$.
-\end{itemize}
 We will assume that the body moves only in the vertical ($y$) direction. We will use Newton's Second Law on the body and find an expression for the velocity of the particle in terms of $t$.
 We will take the vertical downwards direction to be positive.
+
+We will define the following forces: \TODO{Use vector notation, Remove F}
+\begin{itemize}
+	\item $F_R$ is the resistive force on the body, $F_R=-kv$,
+	\item $W$ is the weight, $\vec{W}=+mg$,
+	\item $F$ is the resultant force on the body, $F=ma$.
+\end{itemize}
 
 
 
 
 \textbf{\textit{Represent Mathematically:}} \\ \\
-From Newton's Second Law, we get that,
+From Newton's Second Law, we get that, \TODO{Minus sign of F-R}
 \begin{equation}
-	F = ma = W - F_R \label{2005:q5:FEqn1} \,.
+	\sum F = ma = W - F_R \label{2005:q5:FEqn1} \,.
 \end{equation}
 
 By definition, we also know that,
@@ -174,7 +175,7 @@ Separating variables and integrating between the bounds $v(t=0)=0$ and $v(t=t')=
 	\implies v' & = \frac{mg}{k}\left(1-e^{\frac{-kt'}{m}}\right) \,.
 \end{align}
 
-Switching variables, we get that,
+Switching variables, we get that, \TODO{Talk about v' amnd t' being arbitrary and so, we can swith.}
 \begin{equation}
 	v = \frac{mg}{k}\left(1-e^{\frac{-kt}{m}}\right) \,.
 \end{equation}
