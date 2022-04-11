@@ -1,17 +1,191 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2008 June
+%     Module: 2
+%     Question: 4 
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 4 a
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+\subquestion
 
+The probability density function, $P(X=x)$, of a discrete random variable $X$ is given.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rprop{mod2:prop:Discrete:Properties}, we get that,
+\begin{align}
+	\sum_{\forall x}P(X=x) & = 1 \nn \\
+	P(X=1)+P(X=2)+P(X=3)+P(X=4) & = 1 \nn \\
+	k+2k+3k+4k & = 1 \nn \\
+	10k & = 1 \nn \\
+	\implies k & = \frac{1}{10} \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Using \rdef{mod2:defn:Discrete:Expectation}, we get that,
+\begin{align}
+	E(X) & = \sum_{\forall i} x_i P(X=x_i) \nn \\
+	     & = \left(1 \times \frac{1}{10}\right) + \left(2 \times \frac{2}{10}\right) + \left(3 \times \frac{3}{10}\right) + \left(4 \times \frac{4}{10}\right) \nn \\
+	     & = \frac{1}{10} + \frac{2}{5} + \frac{9}{10} + \frac{8}{5} \nn \\
+	     & = 3 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+See table \rtab{2008J:q4:Ytab}.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		 Sum (Probability) & $x_1=1$ & $x_1=2$ & $x_1=3$ & $x_1=4$ \\
+		\hline 
+		& & & &\\
+		$x_2=1$ & 2 $\left(\frac{1}{10} \times \frac{1}{10}=\frac{1}{100}\right)$ & 3 $\left(\frac{1}{10} \times \frac{2}{10}=\frac{2}{100}\right)$ & 4 $\left(\frac{1}{10} \times \frac{3}{10}=\frac{3}{100}\right)$ & 5 $\left(\frac{1}{10} \times \frac{4}{10}=\frac{4}{100}\right)$ \\ & & & & \\
+		
+		$x_2=2$ & 3 $\left(\frac{2}{10} \times \frac{1}{10}=\frac{2}{100}\right)$ & 4 $\left(\frac{2}{10} \times \frac{2}{10}=\frac{4}{100}\right)$ & 5 $\left(\frac{2}{10} \times \frac{3}{10}=\frac{6}{100}\right)$ & 6 $\left(\frac{2}{10} \times \frac{4}{10}=\frac{8}{100}\right)$ \\ & & & & \\
+		
+		$x_2=3$ & 4 $\left(\frac{3}{10} \times \frac{1}{10}=\frac{3}{100}\right)$ & 5 $\left(\frac{3}{10} \times \frac{2}{10}=\frac{6}{100}\right)$ & 6 $\left(\frac{3}{10} \times \frac{3}{10}=\frac{9}{100}\right)$ & 7 $\left(\frac{3}{10} \times \frac{4}{10}=\frac{12}{100}\right)$ \\ & & & & \\
+		
+		$x_2=4$ & 5 $\left(\frac{4}{10} \times \frac{1}{10}=\frac{4}{100}\right)$ & 6 $\left(\frac{4}{10} \times \frac{2}{10}=\frac{8}{100}\right)$ & 7 $\left(\frac{4}{10} \times \frac{3}{10}=\frac{12}{100}\right)$ & 8 $\left(\frac{4}{10} \times \frac{4}{10}=\frac{16}{100}\right)$ \\
+		\hline
+	\end{tabular}
+	\caption{\label{2008J:q4:Ytab} Sum and Probabilities of 2 observations of $X$}	
+\end{table}
+
+Therefore, summing the probabilities in \rtab{2008J:q4:Ytab}, we get that,
+\begin{align}
+	P(Y=4) & = P(x_1=1,x_2=3)+P(x_1=2,x_2=2)+P(x_1=3,x_2=1) \nn \\
+	       & = \frac{3}{100}+\frac{4}{100}+\frac{3}{100} \nn \\
+	       & = \frac{10}{100} = \frac{1}{10} \,. \label{2008J:q4:Yeqn}
+\end{align} 
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Using the same procedure as in \req{2008J:q4:Yeqn}, we can construct \rtab{2008J:q4:Ytab2}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		P(Y=y) & P(Y=2) &P(Y=3) &P(Y=4) &P(Y=5) &P(Y=6) &P(Y=7) &P(Y=8) \\
+		\hline 
+		 & $\frac{1}{100}$  &
+		 $\frac{4}{100}$  &
+		 $\frac{10}{100}$ & 
+		 $\frac{20}{100}$  &
+		 $\frac{25}{100}$   &
+		 $\frac{24}{100}$  &
+		$\frac{16}{100}$  \\
+		\hline
+	\end{tabular}
+	\caption{\label{2008J:q4:Ytab2} Sum and Probabilities of 2 observations of $X$}	
+\end{table}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Using \rdef{mod2:defn:Discrete:Expectation} and \rtab{2008J:q4:Ytab}, we get that,
+\begin{align} \hspace{-70pt}
+	E(Y)  & = \sum_{\forall i} (y_i \times P(Y=y_i)) \nn \\
+	      & = \left(2 \times \frac{1}{100}\right) + \left(3 \times \frac{4}{100}\right) + ... +  \left(7 \times \frac{24}{100}\right) + \left(8 \times \frac{16}{100}\right) \nn \\
+	      & = \frac{2}{100}+ \frac{12}{100}+ \frac{40}{100}+ \frac{100}{100}+ \frac{150}{100}+ \frac{168}{100}+ \frac{128}{100} \nn \\
+	      & = 6 \,.
+\end{align}
+
+Using \rdef{mod2:defn:Discrete:Variance}, we can see that,
+\begin{equation}
+	var(X) = E(Y^2) - (E(Y))^2 \,. \label{2008J:q4:Var}
+\end{equation}
+
+From \rdef{mod2:defn:Discrete:SecondMoment}, we can calculate,
+\begin{align}
+	E(Y^2) & = \sum_{\forall i}(x_i^2 \times P(Y=y_i)) \nn \\
+		   & = \left(2^2 \times \frac{1}{100}\right) + \left(3^2 \times \frac{4}{100}\right) + ... +  \left(7^2 \times \frac{24}{100}\right) + \left(8^2 \times \frac{16}{100}\right) \nn \\
+		   & = \left(4 \times \frac{1}{100}\right) + \left(9 \times \frac{4}{100}\right) + ... +  \left(49 \times \frac{24}{100}\right) + \left(64 \times \frac{16}{100}\right) \nn \\
+		   &= \frac{4}{100}+\frac{36}{100}+\frac{160}{100}+\frac{500}{100}+\frac{900}{100}+\frac{1176}{100}+\frac{1024}{100} \nn \\
+		   & = 38 \,.
+\end{align}
+
+Thus, substituting these into \req{2008J:q4:Var}, we can find that,
+\begin{align}
+	\var(Y) & = E(Y^2) - (E(Y))^2  \nn \\
+	           & = 38 - 6^2 \nn \\
+	           & = 2 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Using Section ~\ref{mod2:section:ExpectationVariance}, we can get that,
+\begin{align}
+	E(3X+2Y) & = 3\times E(X) + 2\times E(Y) \nn \\
+	         & = 3 \times 3 + 2 \times 2 \nn \\
+	         & = 9+4 \nn \\
+	         & = 13 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+We are given that a discrete random variable $X$ follows a Poisson Distribution. From \rdef{mod2:defn:Poisson}, we get that,
+\begin{equation}
+	X \sim \text{Pois}(1.5) \,.
+\end{equation}
+and 
+\begin{equation}
+	P(X = x) =\frac{ 1.5^x \times e^{-1.5}}{x!} \,. \label{2008J:q4:Pois1}
+\end{equation}
+
+Since $X$ is discrete, we notice that,
+\begin{equation}
+	P(X \geq 2) = 1 - (P(0)+P(1)) \,. \label{2008J:q4:Pois2}
+\end{equation}
+
+Using \req{2008J:q4:Pois1}, we can calculate,
+\begin{align}
+	P(0) & = \frac{ 1.5^0 \times e^{-1.5}}{0!} \nn \\
+	     & = \frac{ 1 \times e^{-1.5}}{1} \nn \\
+	     & = e^{-1.5} \\ \nn \\
+	P(1) & = \frac{ 1.5^1 \times e^{-1.5}}{1!} \nn \\
+	     & = \frac{1.5 \times e^{-1.5}}{1} \nn \\
+	     & = 1.5e^{-1.5} 	
+\end{align}
+
+Thus, substituting these values into \req{2008J:q4:Pois2}, we can find,
+\begin{align}	     
+	    P(X \geq 2) & = 1 - (P(0)+P(1)) \nn \\
+	            & = 1 - (e^{-1.5} + 1.5e^{-1.5}) \nn \\
+	            & = 1-2.5e^{-1.5} \nn \\
+	            & = 0.442 \,.
+\end{align}
+
+\end{subquestions}
