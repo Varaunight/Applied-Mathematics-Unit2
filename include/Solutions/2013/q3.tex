@@ -1,6 +1,6 @@
 %------------------------------------------------------------------------------
 % Author(s):
-% Varaun Ramgoolie
+% \varaun Ramgoolie
 % Copyright:
 %  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
@@ -21,7 +21,7 @@
 
 \subquestion
 
-We are given that $E[X]=5, E[Y]=7, Var[X]=3 ~\text{and}~ Var[Y]=4$. From Section ~\ref{mod2:section:ExpectationVariance},
+Using Section~\ref{mod2:section:ExpectationVariance}, we can find the following:
 
 \begin{subsubquestions}
 	
@@ -49,7 +49,7 @@ We are given that $E[X]=5, E[Y]=7, Var[X]=3 ~\text{and}~ Var[Y]=4$. From Section
 \subsubquestion
 
 \begin{align}
-	Var[2X-3Y] & = 2^2 \times Var[X] + 3^2 \times Var[Y] \nn \\
+	\var[2X-3Y] & = 2^2 \times \var[X] + 3^2 \times \var[Y] \nn \\
 	           & = 4 \times 3 + 9 \times 4 \nn \\
 	           & = 12 + 36 \nn \\
 	           & = 48 \,.	
@@ -65,27 +65,26 @@ We are given that $E[X]=5, E[Y]=7, Var[X]=3 ~\text{and}~ Var[Y]=4$. From Section
 
 It is given that,
 \begin{equation}
-	X \sim \text{Geo}(\frac{1}{3}).
+	X \sim \text{Geo}\left(\frac{1}{3}\right).
 \end{equation}
-
-Therefore, $p=\frac{1}{3}$ and $q=\frac{2}{3}$. From Section ~\ref{mod2:section:Geometric},
 
 \begin{subsubquestions}
 
 \subsubquestion
-
+Using Note ~\ref{mod2:eq:Geometric:Prop}, we can find,
 \begin{align}
 	P(X \geq 3) & = P(X > 2) \nn \\
-	            & = (\frac{2}{3})^2 \nn \\
+				& = (1-p)^2 \nn \\
+	            & = \left(\frac{2}{3} \right)^2 \nn \\
 	            & = \frac{4}{9} \,.
 \end{align}
 
 %------------------------------------------------------------------------------
 
 \subsubquestion
-
+Using \req{mod2:eq:Geometric:Mean},
 \begin{align}
-	E[X] & = \frac{1}{p} \nn \\
+	E(X) & = \frac{1}{p} \nn \\
 	     & = \frac{1}{\frac{1}{3}} \nn \\
 	     & = 3 \,.
 \end{align}
@@ -96,8 +95,8 @@ Therefore, $p=\frac{1}{3}$ and $q=\frac{2}{3}$. From Section ~\ref{mod2:section:
 
 \begin{align}
 	P(X=5) & = p \times q^4 \nn \\
-	       & = (\frac{1}{3})(\frac{2}{3})^4 \nn \\
-	       & = (\frac{1}{3})(\frac{16}{81}) \nn \\
+	       & = \left(\frac{1}{3} \right) \left(\frac{2}{3} \right)^4 \nn \\
+	       & = \left(\frac{1}{3} \right) \left(\frac{16}{81} \right) \nn \\
            & = \frac{16}{243} \,. 
 \end{align}
 
@@ -109,22 +108,18 @@ Therefore, $p=\frac{1}{3}$ and $q=\frac{2}{3}$. From Section ~\ref{mod2:section:
 
 \subquestion
 
-It is given that,
-\begin{equation}
-	X \sim N(60, 10^2) \,.
-\end{equation}
-
-From Section ~\ref{mod2:section:Normal},
-
+It is given that $X$ is normally distributed with parameters $\mu = 60$ and $\sigma = 10$.
 \begin{subsubquestions}
 	
 \subsubquestion
 
+In order to find $P(X \geq x)$, we must first standardize the random variable $X$ to the normal random variable $Z$. Thus, we get that,
 \begin{align}
-	P(X \geq 65) & = P(Z \geq \frac{65-60}{10}) \nn \\
-	             & = P(Z \geq \frac{5}{10}) \nn \\
-	             & = P(Z \geq \frac{1}{2}) \nn \\
-	             & = 1 - \phi(\frac{1}{2}) \nn \\
+	P(X \geq 65) & = P\left( \frac{X-\mu}{\sigma} \geq \frac{65-\mu}{\sigma} \right) \nn \\
+	             & = P\left(Z \geq \frac{65-60}{10} \right) \nn \\
+	             & = P\left(Z \geq \frac{5}{10} \right) \nn \\
+	             & = P\left(Z \geq \frac{1}{2} \right) \nn \\
+	             & = 1 - \Phi\left(\frac{1}{2} \right) \nn \\
 	             & = 1 - 0.691 \nn \\
 	             & = 0.309 \,.	
 \end{align}
@@ -133,12 +128,15 @@ From Section ~\ref{mod2:section:Normal},
 
 \subsubquestion
 
+Similar to \textbf{(3)(c)(i)}, we get that,
 \begin{align}
-	P(40 \leq X \leq 80) & = P(\frac{40-60}{10} \leq Z \leq \frac{80-60}{10}) \nn \\
+	P(40 \leq X \leq 80) & = P \left( \frac{40-\mu}{\sigma} \leq \frac{X-\mu}{\sigma} \leq \frac{80-\mu}{\sigma} \right) \nn \\
+	                     & = P \left( \frac{40-60}{10} \leq Z \leq \frac{80-60}{10} \right) \nn \\
+	                     & = P \left( \frac{-20}{10} \leq Z \leq \frac{20}{10} \right) \nn \\
 						 & = P(-2 \leq Z \leq 2) \nn \\
-						 & = \phi(2) - \phi(-2) \nn \\
-						 & = \phi(2) - (1 - \phi(2)) \nn \\
-						 & = 2 \times \phi(2) - 1 \nn \\
+						 & = \Phi(2) - \Phi(-2) \nn \\
+						 & = \Phi(2) - (1 - \Phi(2)) \nn \\
+						 & = 2 \times \Phi(2) - 1 \nn \\
 						 & = 2 \times (0.977) - 1 \nn \\
 						 & = 0.954 \,.
 \end{align}
