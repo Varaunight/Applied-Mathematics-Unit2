@@ -1,8 +1,8 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun  Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
@@ -13,5 +13,187 @@
 %     Question: 4
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% q4 a
+%------------------------------------------------------------------------------
+\subquestion
 
+\begin{subsubquestions}
+	
+\subsubquestion
+The probability distribution function of a continuous random variable $X$ is given, as well as $F(0.5)=0.8.$ \\
+
+From \rprop{mod2:prop:ContinuousRV:1}, we know that,
+\begin{equation}
+	 \int_{-\infty}^{\infty} f(x)\mathrm{d}x = 1
+\end{equation}
+
+
+Thus, we can formulate the equation,
+\begin{align}
+	\int_{-\infty}^{0} f(x)\mathrm{d}x+ \int_{0}^{1} f(x)\mathrm{d}x + \int_{1}^{\infty} f(x)\mathrm{d}x = 1, \nn \\
+	\int_{-\infty}^{0} 0\mathrm{d}x+ \int_{0}^{1} (a+bx)\mathrm{d}x + \int_{1}^{\infty} 0\mathrm{d}x = 1, \nn \\
+	0+ \int_{0}^{1} (a+bx)\mathrm{d}x ~+ 0 = 1, \nn \\
+	\left[ax + \frac{bx^2}{2}\right]_0^1 = 1, \nn \\
+	\left[a(1) + \frac{b(1)^2}{2}\right] - \left[a(0) + \frac{b(0)^2}{2}\right]= 1, \nn \\
+	a + \frac{b}{2} = 1. \label{2015:q4:eqn:crv1}
+\end{align}
+
+In order to solve for $a$ and $b$, we must formulate another equation using the cumulative distribution function of $X$ given as $F(z)$. From \rdef{mod2:defn:ContinuousRV:CDF}, 
+\begin{align}
+	F(z) & = \int_{-\infty}^{z} f(x)\mathrm{d}x \nn \\
+	     & = \int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{z} f(x)\mathrm{d}x \nn \\
+	     & = 0 + \int_{0}^{z} (a+bx)dx \nn \\
+	     & = \left[ax + \frac{bx^2}{2}\right]_0^z \nn \\
+	     & = \left[a(z) + \frac{b(z)^2}{2}\right] - \left[a(0) + \frac{b(0)^2}{2}\right] \nn \\
+	     & = az + \frac{bz^2}{2} \,.
+\end{align}
+
+Since we are given that $F(0.5)=0.8$, our second equation becomes,
+\begin{align}
+	F(0.5) & = a(0.5) + \frac{b(0.5)^2}{2} = 0.8, \nn \\
+  \implies &  0.5 \times a + 0.25 \times \frac{b}{2} = 0.8, \nn \\
+  \implies & \frac{a}{2} + \frac{b}{8} = \frac{4}{5}. \label{2015:q4:eqn:crv2}
+\end{align}
+
+We will manipulate \req{2015:q4:eqn:crv2} by multiplying by 4 to obtain,
+\begin{equation}
+	2a + \frac{b}{2} = \frac{16}{5}. \label{2015:q4:eqn:crv3}
+\end{equation}
+
+We can now solve for $a$ by subtracting \req{2015:q4:eqn:crv3} from \req{2015:q4:eqn:crv1}.
+\begin{align}
+	\left[2a + \frac{b}{2} \right] - \left[a + \frac{b}{2} \right] & = \left[\frac{16}{5} \right] - [1] \nn \\
+	a & = \frac{11}{5} \nn \\
+	  & = 2.2.
+\end{align}
+
+Finally, substituting $a=2.2$ into \req{2015:q4:eqn:crv1}, we can solve for $b$ as follows,
+\begin{align}
+	2.2 + \frac{b}{2} & = 1 \nn \\
+	\frac{b}{2} & = 1 - 2.2 \nn \\
+	            & = -1.2 \nn \\
+	\implies  b & = -1.2 \times 2 \nn \\
+	            & = -2.4
+\end{align}
+
+Thus, $a=2.2$ and $b=-2.4$.
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From \rdef{mod2:note:ContinuousRV:CDF2}, we can solve for $P(X>0.5)$ as follows,
+\begin{align}
+	P(X>0.5) & = 1 - F(0.5) \nn \\
+	         & = 1 - 0.8 \nn \\
+	         & = 0.2.
+\end{align}
+
+Thus, $P(X>0.5)=0.2$.
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% q4 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+It is given that $X$ is normally distributed as $X \sim N(9,1^2)$. The values of $m$ and $n$ can be given as,
+\begin{align}
+	m & = \text{Total} \times P(8 \leq X < 9) \nn \\
+	  & = 400 \times P(8 \leq X < 9). \\
+    n & = \text{Total} \times P(X \geq 10) \nn \\
+      & = 400 \times P(X \geq 10). \label{2015:q4:MNeqn}
+\end{align}
+	
+To calculate $P(8 \leq X < 9)$, we must first standardize the random variable $X$, to the normal random variable $Z$. From Section ~\ref{mod2:section:Normal}, we standardize and calculate as follows,
+\begin{align}
+	P(8 \leq X < 9) & = P\left(\frac{8- \mu}{\sigma} \leq \frac{X-\mu}{\sigma} < \frac{9-\mu}{\sigma} \right) \nn \\
+	                & = P\left(\frac{8- 9}{1} \leq Z < \frac{9-9}{1} \right) \nn \\
+	                & = P\left(-1 \leq Z < 0 \right) \nn \\
+	                & = \Phi(0) - \Phi(-1) \nn \\
+	                & = \Phi(0) - (1 - \Phi(1)) \nn \\
+	                & = \Phi(0) + \Phi(1) - 1 \nn \\
+	                & = 0.5 + 0.841 - 1 \nn \\
+	                & = 0.341 \,. \label{2015:q4:Normal1}
+\end{align}
+
+Similarly, in order to calculate $P(X \geq 10)$, we have to standardize in a similar manner as \req{2015:q4:Normal1}. This result follows as,
+\begin{align}
+	P(X \geq 10) & = P\left(\frac{X-\mu}{\sigma} \geq \frac{10 - \mu}{\sigma} \right) \nn \\
+	             & = P\left(Z \geq \frac{10-9}{1}\right) \nn \\
+	             & = P\left(Z \geq \frac{1}{1}\right) \nn \\
+	             & = P\left(Z \geq 1\right) \nn \\
+	             & = 1 - \Phi(1) \nn \\
+	             & = 1 - 0.841 \nn \\
+	             & = 0.159 \,. \label{2015:q4:Normal2}
+\end{align}
+
+Using \req{2015:q4:Normal1} and \req{2015:q4:Normal2}, we can calculate the values of $m$ and $n$ from \req{2015:q4:MNeqn} as follows,
+\begin{align}
+	m & = 400 \times P(8 \leq X < 9) \nn \\
+	  & = 400 \times 0.341 \nn \\
+	  & = 136.5 \,. \\
+    n & = 400 \times P(X \geq 10) \nn \\
+      & = 400 \times 0.159 \nn \\
+      & = 63.5 \,.
+\end{align}
+
+Therefore, $m=136.5$ and $n=63.5$. \\
+
+However, we can also notice that $X$ is assumed to have a normal distribution. This means that the cumulative probabilities are symmetric about the mean of the distribution (which in this case is 9). Therefore, $P(8 \leq X < 9) = P(9 \leq X < 10)$ and $P(X < 8) = P(X \geq 10)$. This method spares us from the calculation above and provides the answer quickly.
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We can state 2 hypotheses:
+\begin{itemize}
+	\item $H_0$ : The data can be modeled by a normal distribution with mean 9 and standard deviation 1.
+	\item $H_1$ : The data cannot be modeled by a normal distribution with mean 9 and standard deviation 1.
+\end{itemize}
+
+We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance level. From Section(placeholder for CHI Squared notes), we know that,
+\begin{equation}
+	\chi^2_{\text{calc.}} = \sum_{\forall k} \left( \frac{(O_k-E_k)^2}{E_k}\right) \,.
+\end{equation}
+
+We will formulate a table and obtain the relevant values. See \rtab{2015:q4:tab:Chi}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline 
+		X & Observed, O & Expected, E & (O-E) & (O-E)$^2$ & $\frac{(O-E)^2}{E}$ \\
+		\hline
+		$x<8$ & 80 & 63.5 & 16.5 & 272.25 & 4.29 \\
+		$8 \leq x < 9$ & 180 & 136.5 & 43.5 & 1892.25 & 13.86 \\
+		$9 \leq x < 10$ & 50 & 136.5 & -86.5 & 7482.25 & 54.82 \\
+		$x \geq 10$ & 90 & 63.5 & 26.5 & 702.25 & 11.06 \\
+		\hline
+		$\chi^2_{\text{calc.}}$ & & & & & 84.03 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2015:q4:tab:Chi} Observed and Expected Values.}
+\end{table}
+
+We will reject the null hypothesis, $H_0$, iff 
+\begin{align}
+	\chi^2_{calc.} > \chi^2_{\alpha} (\nu) \,, \nn 
+\end{align}
+where $\alpha$ is the significance level, and $\upsilon$ is the number of degrees of freedom. \\
+
+We know $\alpha= 0.05$ and $\nu = 4-1=3$. Therefore, the value of the test statistic, $\chi^2_{0.05}(3)=7.815$. \\
+
+Since we have found that ~$\chi^2_{\text{calc.}} = 84.03$, which is definitely greater than ~$\chi^2_{0.05}(3)=7.815$, we reject $H_0$. Thus, there is not sufficient evidence at the 5\% significance level to suggest that the data can be modeled by a normal distribution with mean 9 and standard deviation 1.
+
+\end{subsubquestions}
+
+\end{subquestions}
 
