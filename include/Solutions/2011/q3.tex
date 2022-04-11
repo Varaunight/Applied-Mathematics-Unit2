@@ -1,17 +1,195 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2011
+%     Module: 2
+%     Question: 3 
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 3 a
+%------------------------------------------------------------------------------
+
+\begin{subquestions}
+	
+\subquestion
+
+We should make some observations about the word MAXIMUM. There are 5 letters which make up the word, \{A, I , M, U, X\}, and all of the letters occur exactly once, except for M which is present 3 times in the word. The number of letters in the word, $n$, is equal to 7.
+	
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rdef{mod2:defn:PermutationEqn2}, we can see that,
+\begin{align}
+	\text{Number of Arrangements} & = \frac{n!}{3!} \nn \\
+	                              & = \frac{7!}{3!} \nn \\
+	                              & = 7 \times 6 \times 5 \times 4 \nn \\
+	                              & = 840 \,.
+\end{align}	
+	
+We should note that the $3!$ comes about because there are 3 identical M's in MAXIMUM.
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Let us first remove 1 arbitrary vowel from the letters.
+We now have a group of 6 letters (3 M's, 1 X, and 2 vowels) and 1 single vowel that we have removed. From \rdef{mod2:defn:MultiplicationRule},
+\begin{align}
+	\hspace{-50pt}
+	\text{$\#$ of arrangements ending in a vowel} = \text{$\#$ of 6 letter arrangements} \times \text{$\#$ of ways to remove 1 vowel}. \label{2011:q3:NoVowel}
+\end{align}
+
+Since there are 3 vowels, there are only 3 ways to remove 1 vowel from MAXIMUM. Moving forward,
+\begin{align}
+	\text{Number of Arrangements of \{3 M's, 1 X and 2 vowels\}} & = \frac{n!}{3!} \nn \\
+																 & = \frac{6!}{3!} \nn \\
+																 & = 4 \times 5 \times 6 \nn \\
+																 & = 120 \,.
+\end{align}
+ 
+Thus, from \req{2011:q3:NoVowel},
+\begin{align}
+	\text{$\#$ of arrangements ending in a vowel} & = 120 \times 3 \nn \\
+	                                            & = 360 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+It should be noted that the three M's should be treated as a single item. Now, there are only 5 items to sort \{A, I, U, X, and 1 set of 3 M's\}. Thus, from \rdef{mod2:defn:PermutationEqn},
+\begin{align}
+	^{5}P_5 & = \frac{5!}{(5-5)!} \nn \\
+	        & = \frac{5!}{0!} \nn \\
+	        & = 5! \nn \\
+	        & = 120 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 3 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+We should notice that a committee can only have more that 3 women in it if ALL 4 women are chosen. Therefore, there is only 1 possible committee with all 4 women. 
+
+Thus, we can find the total number of committees that can be formed among all the persons, and minus the 1 committee with 4 women, in order to find the number of committees with AT MOST 3 women. Thus,
+\begin{equation}
+  	\text{Number of committees with AT MOST 3 Women} = \text{Total number of committees} - 1 \,.
+\end{equation}
+
+Since every possible person out of the 10 is distinct, we can use \rdef{mod2:defn:CombinationEqn} as follows,
+\begin{align}
+	\text{Number of Committees} & = ~ ^{10}C_5 \nn \\
+	                            & = \frac{10!}{5!\times (10-5)!} \nn \\
+	                            & = \frac{10!}{5! \times 5!} \nn \\
+	                            & = 252 \,.
+\end{align}
+
+Thus,
+\begin{equation}
+	\text{Number of committees with at most 3 Women} = 252 - 1 = 251 \,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 3 c
+%------------------------------------------------------------------------------
+
+\subquestion
+
+We define $X$ as the discrete random variable which represents the number attempts needed to draw a green ball.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From Section ~\ref{mod2:section:Geometric}, we can see that
+\begin{equation}
+	X \sim \text{Geo} \left(\frac{3}{9}\right) \text{or} ~ X \sim \text{Geo} \left(\frac{1}{3}\right) \,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+\begin{subsubsubquestions}
+	
+\subsubsubquestion
+
+From \rdef{mod2:defn:Geomtric}, we know that,
+\begin{align}
+	P(X = x) & = \frac{1}{3} \times \left(1-\frac{1}{3} \right)^{x-1} \nn \\
+	         & = \frac{1}{3} \times \left(\frac{2}{3} \right)^{x-1} \,.
+\end{align}	
+	
+Thus, we can find $P(X=2)$ as follows,
+\begin{align}
+	P(X=2) & = \frac{1}{3} \times \left(\frac{2}{3} \right)^{2-1} \nn \\
+	       & = \frac{1}{3} \times \frac{2}{3}  \nn \\
+	       & = \frac{2}{9} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubsubquestion
+
+From \rdef{mod2:eq:Geometric:Prop},
+\begin{align}
+	P(X > 2) & = (1-p)^2 \nn \\
+	            & = \left(\frac{2}{3}\right)^2 \nn \\
+	            & = \frac{4}{9} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubsubquestion
+
+Since $X$ is discrete, we know that,
+\begin{equation}
+	P(X < 4) = 1 - P(X > 3) \,.
+\end{equation}
+
+Using \rdef{mod2:eq:Geometric:Prop},
+\begin{align}
+	P(X > 3) & = (1-p)^3 \nn \\
+		   	 & = \left(\frac{2}{3}\right)^3 \nn \\
+			 & = \frac{8}{27} \,.
+\end{align}
+
+Thus, $P(X<4)$ can be calculated as follows,
+\begin{align}
+	P(X < 4) & = 1 - P(X > 3) \nn \\
+	         & = 1 - \frac{8}{27} \nn \\
+	         & = \frac{19}{27} \,.
+\end{align}
+
+\end{subsubsubquestions}
+
+%------------------------------------------------------------------------------
+% 3 d
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From \req{mod2:eq:Geometric:Mean},
+\begin{align}
+	E(X) & = \frac{1}{p} \nn \\
+	     & = \frac{1}{\frac{1}{3}} \nn \\
+	     & = 3 \,.
+\end{align}
 
 
+\end{subsubquestions}
+
+\end{subquestions}
