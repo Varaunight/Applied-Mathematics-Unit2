@@ -1,17 +1,205 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2011
+%     Module: 2
+%     Question: 4 
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 4 a
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+\subquestion
 
+We will let the discrete random variable $X$ represent the amount of accidents which occur in one week. We can see that $X$ follows a Poisson distribution, given as,
+\begin{equation}
+	X \sim \text{Pois}(3) \,.
+\end{equation}
+	
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rdef{mod2:defn:Poisson}, we know that,
+\begin{equation}
+	P(X = x) =\frac{ 3 ^ x \times e^{-3}}{x!} \,. \label{2011:q4:Poisson1}
+\end{equation}
+	
+Using this, we get that,
+\begin{align}
+	P(X=0) & = \frac{ 3 ^0 \times e^{-3}}{0!} \nn \\
+	       & = \frac{ 1 \times e^{-3}}{1} \nn \\
+	       & = \frac{1}{e^3} \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Since $X$ is discrete, we know that,
+\begin{align}
+	P(X>3) & =1-P(X \leq 3) \nn \\
+	       & = 1 - [P(X=0)+P(X=1)+P(X=2)+P(X=3)] \,. \label{2011:q4:Poisson2}
+\end{align}
+
+We can use \req{2011:q4:Poisson1} to find, 
+\begin{align}
+	P(X=0) & = \frac{1}{e^3} \,. \\ \nn \\
+	P(X=1) & = \frac{ 3^1 \times e^{-3}}{1!} \nn \\
+	       & = \frac{3 \times e^{-3}}{1} \nn \\
+	       & = \frac{3}{e^3} \,. \\ \nn \\
+	P(X=2) & = \frac{ 3^2 \times e^{-3}}{2!} \nn \\
+	       & = \frac{9 \times e^{-3}}{2} \nn \\
+	       & = \frac{9}{2e^3} \,. \\ \nn \\
+	P(X=3) & = \frac{ 3^3 \times e^{-3}}{3!} \nn \\
+	       & = \frac{27 \times e^{-3}}{6} \nn \\
+	       & = \frac{27}{6e^3} \,. 
+\end{align}
+
+Substituting these into \req{2011:q4:Poisson2}, we get that,
+\begin{align}
+	P(X>3) & =1-P(X \leq 3) \nn \\
+	& = 1 - [P(X=0)+P(X=1)+P(X=2)+P(X=3)] \nn \\
+	& = 1 - \left(\frac{1}{e^3} + \frac{3}{e^3} + \frac{9}{2e^3} + \frac{27}{6e^3} \right) \nn \\
+	& = 1 - \frac{13}{e^3} \nn \\
+	& = 0.353 \,.
+\end{align}
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+If there are 3 accidents in 1 week, there will be an average of 6 accidents during a fortnight (2 week period). We will let the discrete random variable $Y$ represent the number of accidents in a 2 week period. We denote this as,
+\begin{equation}
+	Y \sim \text{Pois}(6) \,.
+\end{equation} 
+
+From \rdef{mod2:defn:Poisson}, we know that,
+\begin{equation}
+	P(Y = y) =\frac{ 6 ^ y \times e^{-6}}{y!} \,.
+\end{equation}
+
+Thus, we can find that
+\begin{align}
+	P(Y = 6) & = \frac{ 6 ^ 6 \times e^{-6}}{6!} \nn \\	
+	         & = \frac{46656 \times e^{-6}}{720} \nn \\
+	         & = \frac{324}{5 \times e^6} \nn \\
+	         & = 0.161 \,.
+\end{align}
+
+\end{subsubquestions}
+	
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------
+	
+\subquestion
+
+We are given that the probability of success, $p=0.84$. If we let the discrete random variable $X$ be the number of students that pass an examination, we can see that $X$ follows a Binomial distribution denoted as,
+\begin{equation}
+	X \sim \text{Bin}(0.84) \,.
+\end{equation} 
+
+From \rdef{mod2:defn:Binomial}, we know that,
+\begin{equation}
+	P(X = x) = { n \choose x} (0.84)^x (1-0.84)^{n-x} \,. \label{2011:q4:Bin1}
+\end{equation}
+
+We should then notice that two-thirds of 12 is 8. Since X is discrete, we know that,
+\begin{equation}
+	P(X > 8) = P(X=9)+P(X=10)+P(X=11)+P(X=12) \,. \label{2011:q4:Bin2}
+\end{equation}
+
+Using \req{2011:q4:Bin1}, we can find,
+\begin{align}
+	P(X=9) & = { 12 \choose 9} \times (0.84)^9 \times (1-0.84)^{12-9} \nn \\
+	       & = 220 \times (0.84^9) \times (0.16)^3 \nn \\
+	       & = 0.188 \,. \\ \nn \\
+	P(X=10) & = { 12 \choose 10} \times (0.84)^{10} \times (1-0.84)^{12-10} \nn \\
+	        & = 66 \times (0.84)^{10} \times (0.16)^2 \nn \\
+	        & = 0.296 \,. \\ \nn \\
+	P(X=11) & = { 12 \choose 11} \times (0.84)^{11} \times (1-0.84)^{12-11} \nn \\
+	        & = 12 \times (0.84)^{11} \times 0.16 \nn \\
+	        & = 0.282 \,. \\ \nn \\
+	P(X=12) & = { 12 \choose 12} \times (0.84)^{12} \times (1-0.84)^{12-12} \nn \\
+	        & = 1 \times (0.84)^{12} \times 1 \nn \\
+	        & = 0.123 \,. 
+\end{align}
+
+Hence, substituting these into \req{2011:q4:Bin2}, we get that,
+\begin{align}
+P(X > 8) & = P(X=9)+P(X=10)+P(X=11)+P(X=12) \nn \\
+& = 0.188+0.296+0.282+0.123 \nn \\
+& = 0.889 \,.      
+\end{align}
+
+%------------------------------------------------------------------------------
+% 4 c
+%------------------------------------------------------------------------------
+
+\subquestion
+ 
+\begin{subsubquestions}
+	
+\subsubquestion
+
+The probability that the first marble drawn is white is $\frac{4}{9}$. The probability that the second marble drawn is black is $\frac{3}{8}$. The probability that the third marble drawn is red is $\frac{2}{7}$. Thus, from \rdef{mod2:defn:MultiplicationRule}, 
+\begin{align}
+	P(white \rightarrow black \rightarrow red) & = \frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} \nn \\
+	                                           & = \frac{1}{21} \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We should notice that the probability obtained in \textbf{(c)(i)} is the same probability as any other arrangement of the \textbf{same set} of colors. For example, due to the commutative property of multiplication, the probability of [white $\rightarrow$ black $\rightarrow$ red] would be the same probability of [red $\rightarrow$ white $\rightarrow$ black]. 
+
+From \req{mod2:defn:PermutationEqn}, the number of permutations of the \textbf{set of 3} colors is,
+\begin{align}
+	^3P_3 & = \frac{3!}{(3-3)!} \nn \\
+	      & = \frac{3!}{1} \nn \\
+	      & = 6 \,.
+\end{align}
+
+Thus, we can find that,
+\begin{align}
+	P(\text{one of each color}) & = P(white \rightarrow black \rightarrow red) \times \text{Number or permutations of (W, B, R)} \nn \\
+	& = P(white \rightarrow black \rightarrow red) \times 6 \nn \\
+	                     & = \frac{1}{21} \times 6 \nn \\
+	                     & = \frac{2}{7} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We will split the marbles into 2 groups: White marbles (W) and not-White marbles (W'). In the setup, there are 4 W marbles and 5 W' marbles. The different combinations of the 3 marbles chosen, if a white is the last marble, are (W,W,W), (W'W,W), (W,W',W) and (W', W',W). 
+
+Using \req{mod2:defn:MultiplicationRule} and \req{mod2:defn:AdditionRule}, we can find that,
+\begin{align}
+	P(W,W,W) & = \frac{4}{9} \times \frac{3}{8} \times \frac{2}{7} \nn \\
+	         & = \frac{1}{21} \,. \\ \nn \\
+	P(W',W,W) & = \frac{5}{9} \times \frac{4}{8} \times \frac{3}{7} \nn \\
+              & = \frac{5}{42} \,. \\ \nn \\
+	P(W,W',W) & = \frac{4}{9} \times \frac{5}{8} \times \frac{3}{7} \nn \\
+			  & = \frac{5}{42} \,. \\ \nn \\
+	P(W',W',W)& = \frac{5}{9} \times \frac{4}{8} \times \frac{4}{7} \nn \\
+			  & = \frac{10}{63} \,. \\ \nn \\
+	P(\text{last marble is white}) & = P(W,W,W)+(W',W,W)+P(W,W',W)+P(W',W',W) \nn \\
+	& = \frac{1}{21} + \frac{5}{42} + \frac{5}{42} + \frac{10}{63} \nn \\
+	                               & = \frac{4}{9} \,.
+\end{align}
+
+\end{subsubquestions}
+
+\end{subquestions}
