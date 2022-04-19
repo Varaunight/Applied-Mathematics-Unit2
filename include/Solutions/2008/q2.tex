@@ -21,7 +21,7 @@
 	
 \subquestion
 	
-In words, $(\sim p ~\land \sim q)$, is equivalent to "He is not tall and he is not happy."
+The proposition $\boldsymbol{(\sim p ~\land \sim q)}$ can be expressed in words as "He is not tall and he is not happy."
 	
 %------------------------------------------------------------------------------
 % 2 b -------------------------------------------------------------------------
@@ -29,16 +29,16 @@ In words, $(\sim p ~\land \sim q)$, is equivalent to "He is not tall and he is n
 	
 \subquestion
 	
-Let $p$ = "London is in England," and let $q$ = "2 $\times$ 3 = 5". 
+Let $\boldsymbol{p}$ = "London is in England," and let $\boldsymbol{q}$ = "2 $\times$ 3 = 5". 
 
-The statement in the question is equivalent to $(p \lor q)$. 
+"London is in England or 2 x 3 = 5" can be expressed as the proposition $\boldsymbol{p \lor q}$. 
 	
-We know that $p$ has a truth value of 1 and $q$ has a truth value of 0. 
+We know that $\boldsymbol{p}$ has a truth value of 1 and $\boldsymbol{q}$ has a truth value of 0. 
 	
-Thus, we get that the truth value of the statement is equal to,
+Thus, by referring to \rdef{mod1:tab:Conjunction} we get that the truth value of the statement is equal to,
 \begin{align}
-		p \lor q &= 1 \lor 0 \nn \\
-		&= 1\,.
+		\boldsymbol{p \lor q} &= \boldsymbol{1 \lor 0} \nn \\
+		&= \boldsymbol{1} \,.
 \end{align}
 	
 %------------------------------------------------------------------------------
@@ -47,12 +47,12 @@ Thus, we get that the truth value of the statement is equal to,
 	
 \subquestion
 	
-From \rtab{2008:q2:tab:TruthTab1} and \rdef{mod1:defn:Tautology}, wee see that $(p \land q) \implies (p \lor q)$ is a tautology.
+We can construct the following truth table for the proposition $\boldsymbol{(p \land q) \implies (p \lor q)}$
 \begin{table}[ht]
 		\centering
 		\begin{tabular}{|c|c|c|c|c|}
 			\hline
-			p & q & p $\land$ q & p $\lor$ q & (p $\land$ q) $\implies$ (p $\lor$ q) \\
+			$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \land q}$ & $\boldsymbol{p \lor q}$ & $\boldsymbol{(p \land q) \implies (p \lor q)}$ \\
 			\hline
 			0 & 0 & 0 & 0 & 1 \\
 			0 & 1 & 0 & 1 & 1 \\
@@ -60,9 +60,10 @@ From \rtab{2008:q2:tab:TruthTab1} and \rdef{mod1:defn:Tautology}, wee see that $
 			1 & 1 & 1 & 1 & 1 \\
 			\hline
 		\end{tabular}
-		\caption{\label{2008:q2:tab:TruthTab1} Showing the truth values of $(p \land q) \implies (p \lor q)$.}
+		\caption{\label{2008:q2:tab:TruthTab1} Showing the truth values of $\boldsymbol{(p \land q) \implies (p \lor q)}$.}
 \end{table}
-	
+
+We can see that the proposition $\boldsymbol{(p \land q) \implies (p \lor q)}$ is a tautology (\rdef{mod1:defn:Tautology}) since it always has a truth value of 1.
 %------------------------------------------------------------------------------
 % 2 d -------------------------------------------------------------------------
 %------------------------------------------------------------------------------	
@@ -73,7 +74,7 @@ From \rtab{2008:q2:tab:TruthTab1} and \rdef{mod1:defn:Tautology}, wee see that $
 		
 \subsubquestion
 		
-See the switching circuit below.
+We can represent the boolean expression $\boldsymbol{(A \ \land \sim B) \lor ((\sim A \lor C) \land B)}$ as the following switching circuit.
 \begin{center}
 \begin{circuitikz}
 			\draw [color=black, thin] (0,0) -- (2,0);
@@ -113,11 +114,11 @@ See the switching circuit below.
 
 \subsubquestion
 		
-See \rfig{2008:q2:fig:LogicGate}.
-\begin{figure}
+We can represent the Boolean expression $\boldsymbol{\sim a \land ( a \lor b)}$ as the following logic circuit.
+\begin{figure}[H]
 		\begin{center}
 				\includegraphics{../2008/figures/2008q2LogicGate}
-				\caption{\label{2008:q2:fig:LogicGate} Showing the logic circuit of $\sim a \land (a \lor b)$.}
+				\caption{\label{2008:q2:fig:LogicGate} Showing the logic circuit of $\boldsymbol{\sim a \land (a \lor b)}$.}
 		\end{center}
 \end{figure}
 	
@@ -129,65 +130,36 @@ See \rfig{2008:q2:fig:LogicGate}.
 
 \subquestion
 
-Let $Q$="$(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B)$". \\
+Let $\boldsymbol{Q} = \boldsymbol{(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B)}$. \\
 
-Let $R$="$(A \land B) \lor (A ~\land \sim B)$". \\
+Let $\boldsymbol{R} = \boldsymbol{(A \land B) \lor (A ~\land \sim B)}$ \\ 
 
-From this, we see that,
+By using the Distributive Law (\rdef{mod1:law:Distributive}) in reverse and the Complement Law (\rdef{mod1:law:Complement}), $\boldsymbol{R}$ becomes
+\begin{align}
+	\boldsymbol{R} & \equiv \boldsymbol{A \land (B \ \lor \sim B)} \nn \\ 
+					& \equiv \boldsymbol{A \land T} \,.
+\end{align}
+
+Therefore, we can rewrite $\boldsymbol{Q}$ 
 \begin{equation}
-	Q = R \lor (\sim A ~\land \sim B). \label{2008:q2:BooleanMainEqn}
+	\boldsymbol{Q} \equiv \boldsymbol{(A \land T) \lor (\sim A \ \land \sim B)} \,.
 \end{equation}
 
-Using \rdef{mod1:law:Distributive} and \rdef{mod1:law:Absorptive} on $R$, it becomes
+By using the Identity Law (\rdef{mod1:law:Identity}) and Distributive Law (\rdef{mod1:law:Distributive}), $\boldsymbol{Q}$ becomes 
 \begin{align}
-	R & = (A \land B) \lor (A ~\land \sim B) \nn \\
-	  & = ((A \land B) \lor A) \land ((A \land B) ~\lor \sim B) \nn \\
-	  & = A \land ((A \land B) ~\lor \sim B) \,.
+	\boldsymbol{Q} & \equiv \boldsymbol{A \lor (\sim A \ \land \sim B)} \nn \\
+					& \equiv \boldsymbol{(A \ \lor \sim A) \land (A \ \lor \sim B)} \,.
 \end{align}
 
-Let $S$="$(A \land B) \lor \sim B$". \\
-
-We can notice that,
-\begin{equation}
-	R = A \land S \,.
-\end{equation}
-
-Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity} on $S$, we can see that,
+Finally by using the Complement (\rdef{mod1:law:Complement}) and Identity (\rdef{mod1:law:Identity}) Laws,
 \begin{align}
-	S & = (A \land B) ~\lor \sim B \nn \\
-	  & = (\sim B \lor A) \land (\sim B \lor B) \nn \\
-	  & = (\sim B \lor A) \land T \nn \\
-	  & = (\sim B \lor A) \,.
-\end{align}
-
-Therefore, $R$ now becomes,
-\begin{align}
-	R & = A \land S \nn \\
-	  & = A \land (\sim B \lor A) \,.
-\end{align}
-
-Using \rdef{mod1:law:Absorptive}, $R$ becomes,
-\begin{align}
-	R & = A \land (\sim B \lor A) \nn \\
-	  & = A \,.
-\end{align}
-
-\req{2008:q2:BooleanMainEqn} now becomes,
-\begin{equation}
-	Q = A \lor (\sim A ~\land \sim B).
-\end{equation}
-
-Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity}, $Q$ becomes,
-\begin{align}
-	Q & = A \lor (\sim A ~\land \sim B) \nn \\
-	  & = (A ~\lor \sim A) \land (A ~\lor \sim B) \nn \\
-	  & = T \land (A ~\lor \sim B) \nn \\
-	  & = (A ~\lor \sim B) \,. 
+	\boldsymbol{Q} & \equiv \boldsymbol{T \land (A \ \lor \sim B)} \nn \\
+					&  \equiv \boldsymbol{A \ \lor \sim B} \,.
 \end{align}
 
 Thus,
 \begin{equation}
-	(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B) \equiv (A ~\lor \sim B) \,.
+	\boldsymbol{(A \land B) \lor (A ~\land \sim B) \lor (\sim A ~\land \sim B) \equiv (A ~\lor \sim B)} \,.
 \end{equation}
 
 \end{subquestions}
