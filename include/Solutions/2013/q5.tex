@@ -42,19 +42,20 @@ We are given a uniform rod hinged at a point, which is suspended in a horizontal
 \textbf{\textit{Simplify and Diagram:}} \\ \\
 We can consider \rfig{2013:q5:Diagram1}. We want to find the tension on the string. Let us define,
 \begin{itemize}
-	\item $\vec{W}$ as the weight of the rod acting at the centre of gravity of the rod,
+	\item $\vec{W}$ as the weight of the rod acting at the centre of gravity of the rod, $|\vec{W}|=40N$
 	\item $\vec{T}$ as that tension on the string acting from Q to R,
-	\item $\vec{F_H}$ as the force acting from P to the hinge.  
+	\item $\vec{F_H}$ as the force acting from P to the hinge,
+	\item $d$ is the length of the rod.
 \end{itemize}
-Let us define the length of the rod as $d$. As we are given that the rod is in rotational equilibrium, we will consider moments about the point P.
+As we are given that the rod is in rotational equilibrium, we will consider moments about the point P.
 
 
 
 
-\textbf{\textit{Represent Mathematically:}} \\ \\ \TODO{add sum of moments, line of action definition}
+\textbf{\textit{Represent Mathematically:}} \\ \\
 We know that the moment of a force is,
 \begin{equation}
-	\text{Moment} = \text{Force} \times \text{$\perp$ distance from pivot} \,.
+	\text{Moment} = \text{(Force, F)} \times \text{($\perp$ Distance from the point of contact to the line of action of F, x)} \,.
 \end{equation}
 
 We must first resolve the tension in the string as,
@@ -62,18 +63,21 @@ We must first resolve the tension in the string as,
 	\vec{T} = -|T|\cos(45)\xhat + |T|\sin(45)\yhat \,.
 \end{equation}
 
-As the body is in equilibrium, we know that the sum of the moments at any point on the rod is 0.
+As the body is in equilibrium, we know that the sum of the moments at any point on the rod is 0 as,
+\begin{align}
+	\sum \text{(Moments)} = 0 \,.
+\end{align}
 
 
 
 
 \textbf{\textit{Solve and Evaluate:}}
-Taking moments about the point P\footnote{We must only consider the $y$ component of the tension as the $x$ component will not produce a turning force (as it acts in in the direction of PQ).}, we get that,
+Taking moments about the point P\footnote{We will only consider the $y$ component of the tension as the $x$ component does not produce a turning force (as it acts in in the direction of PQ).}, we get that,
 \begin{align}
-	\sum \text{Moments} = (\vec{F_H}\times 0) + (\vec{W} \times \frac{d}{2}) + (|T|\sin(45) \times d) & = 0 \nn \\
-	                                             (-|W| \times \frac{d}{2}) + (|T|\sin(45) \times d) & = 0 \nn \\
-	                                                                |T|\sin(45) \times d & = |W| \times \frac{d}{2} \nn \\
-	                                                                \implies |T| & = \frac{|W|\sqrt{2}}{2} \nn \\
+	\sum \text{Moments} = (\vec{F_H}\times 0) + (\vec{W} \times \frac{d}{2}) + (|\vec{T}|\sin(45) \times d) & = 0 \nn \\
+	                                             (-|\vec{W}| \times \frac{d}{2}) + (|\vec{T}|\sin(45) \times d) & = 0 \nn \\
+	                                                                |\vec{T}|\sin(45) \times d & = |\vec{W}| \times \frac{d}{2} \nn \\
+	                                                                \implies |\vec{T}| & = \frac{|\vec{W}|\sqrt{2}}{2} \nn \\
 	                                                                             & = \frac{40}{\sqrt{2}}N \,. 
 \end{align}
 
@@ -106,9 +110,13 @@ We are given a carriage which ascends a plane and loses speed on its ascent. As 
 \end{figure}
 We will first assume that the carriage behaves as a point particle. Let us define,
 \begin{itemize}
-	\item $\vec{F_f}$ as the frictional force opposing motion,
-	\item $\vec{W}$ as the weight of the carriage,
-	\item $\vec{R}$ as the normal reaction force on the plane.
+	\item $\vec{F_f}$ as the frictional force opposing motion, $|\vec{F_f}|=F_f$,
+	\item $\vec{W}$ as the weight of the carriage, $|\vec{W}|=mg=7000N$,
+	\item $\vec{R}$ as the normal reaction force on the plane,
+	\item $a_x$ as the acceleration of the carriage in the $x$ direction,
+	\item $u_x$ as the initial velocity of the carriage in the $x$ direction, $u_x=18ms^{-1}$,
+	\item $v_x$ as the final velocity of the carriage in the $x$ direction, $v_x=10ms^{-1}$,
+	\item $s_x$ as the displacement of the carriage in the $x$ direction, $s_x=30m$.
 \end{itemize}
 Using the velocities that we  are given, we can find the deceleration of the body. Using Newton's Second Law, we can find the relationship between the acceleration and the resultant force on the body and then we can solve for our frictional force.
 
@@ -117,26 +125,25 @@ Using the velocities that we  are given, we can find the deceleration of the bod
 
 \textbf{\textit{Represent Mathematically:}} \\ \\
 From the information that we are given, we can find the acceleration of the body using,
-\begin{align}
-	v^2 & = u^2 + 2as \nn \\
-	\implies a & = \frac{v^2-u^2}{2s} \,. \label{2013:q5:AEqn1}
-\end{align}
+\begin{equation}
+	v_x^2 = u_x^2 + 2a_xs_x \,. \label{2013:q5:AEqn1} 
+\end{equation}
 
 Let us resolve the weight of the carriage as,
 \begin{equation}
 	\vec{W} = -|W|\sin(18)\xhat-|W|\cos(18)\yhat \,.
 \end{equation}
 
-Let us resolve the frictional force as,\footnote{We have used the magnitude of $\vec{F_f}$ and $F_f$.}
+Let us resolve the frictional force as,
 \begin{equation}
-	\vec{F_f} = -F_f \xhat
+	\vec{F_f} = -F_f \xhat \,.
 \end{equation}
 
 From Newton's Second law, we get that the resultant force, $F_R$, in the $x$ direction is,
 \begin{equation}
 	F_R = \sum F_x  = ma_x \,.	\label{2013:q5:Newton1}
 \end{equation}
-where $F_x$ \TODO{finish typing here}
+where $F_x$ and $a_x$ represent the forces and acceleration acting in the $x$ direction respectively.
 
 
 
@@ -144,7 +151,8 @@ where $F_x$ \TODO{finish typing here}
 \textbf{\textit{Solve and Evaluate:}} \\ \\
 Using \req{2013:q5:AEqn1}, we get that,
 \begin{align}
-	a & = \frac{v^2-u^2}{2s} \nn \\
+	v_x^2 & = u_x^2 + 2a_xs_x \nn \\
+	\implies a_x & = \frac{v_x^2-u_x^2}{2s_x} \nn \\
 	  & = \frac{10^2-18^2}{2(30)} \nn \\
 	  & = \frac{-224}{60} = \frac{-56}{15} \,. 
 \end{align}
@@ -179,14 +187,15 @@ We are given a scenario where a cyclist gradually climbs a hill. Their velocity 
 		\caption{\label{2013:q5:Sketch3} Cyclist climbing hill.}
 	\end{center}
 \end{figure}
-As we are given the approach velocity of the cyclist (before they begin the ascent), we can think about how this might be helpful (if at all) to solve out differential equation. \TODO{}
+As we are given the approach velocity of the cyclist (before they begin the ascent), we can think about how this might be helpful (if at all) to solve out differential equation.
+We are also given the following pieces of information that we will use: 
 \begin{align}
-	x(0) &= 0 \\
-	x(t) &= x\\
-	v(0) &= 10 \\
-	v(t) &= v \\
+	x(0) &= 0 \,,\nn \\
+	x(t) &= x \,,\nn \\
+	v(0) &= 10 \,,\nn \\
+	v(t) &= v \,.
 \end{align}
-	
+where $x(a)$ and $v(b)$ represent our functions of displacement and velocity respectively.
 	
 	
 	
@@ -223,6 +232,10 @@ By using the bounds $(x_1,t_1)=(0,0)$ and $(x_2,t_2)=(x',t')$, we get that,
 	\implies \frac{1}{k} \ln\left(\frac{10}{10-kx'}\right) & = t' \,.
 \end{align}
 
+Replacing our variables with $x$ and $t$, we get,
+\begin{equation}
+	\frac{1}{k} \ln\left(\frac{10}{10-kx}\right) = t \,.
+\end{equation}
 %------------------------------------------------------------------------------
 
 \subsubquestion
@@ -236,7 +249,7 @@ We can use \rfig{2013:q5:Diagram3}. As we are given $\frac{\dd x}{\dd t}$, by de
 \textbf{\textit{Represent Mathematically:}} \\ \\
 By definition, we have,
 \begin{equation}
-	v = 10-kx \,.
+	\ddd{x}{t}=v = 10-kx \,.
 \end{equation}
 
 
