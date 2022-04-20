@@ -22,11 +22,20 @@
 \subquestion
 
 The probability density function, $f(x)$, of a continuous random variable $X$ is given.
-From \rprop{mod2:prop:ContinuousRV:1}, we can find that,
+
+We can use the property that probabilities must sum to one, \rprop{mod2:prop:ContinuousRV:1} for continuous random variables,
 \begin{align}
-	\int_{-\infty}^{\infty} f(x)\mathrm{d}x  & = 1 \nn \\
-	\int_{-\infty}^{1} f(x)\mathrm{d}x+\int_{1}^{5} f(x)\mathrm{d}x+\int_{5}^{\infty} f(x)\mathrm{d}x & = 1 \nn \\
-	0 + \int_{1}^{5} (ax)\mathrm{d}x + 0 & = 1 \nn \\
+	\int_{-\infty}^{\infty} f(x)\,\dd x  & = 1 \,.
+\end{align}
+
+Since $f(x)$ is only defined for $1 \leq x \leq 5$, the integral reduces to
+\begin{align}
+	\int_{-\infty}^{\infty} f(x)\,\dd x &= \int_{-\infty}^{1} f(x)\,\dd x+\int_{1}^{5} f(x)\,\dd x+\int_{5}^{\infty} f(x)\,\dd x \nn \\
+	&= 0 + \int_{1}^{5} (ax)\,\dd x + 0 \,.
+\end{align}
+
+Evaluating and equating to $1$, we can solve for $a$,
+\begin{align}
 	a \times \left[\frac{x^2}{2}\right]^5_1 & = 1 \nn \\
 	a \times \left(\frac{5^2}{2}- \frac{1^2}{2}\right) & = 1 \nn \\
 	a \times \frac{25-1}{2} & = 1 \nn \\
@@ -40,12 +49,20 @@ From \rprop{mod2:prop:ContinuousRV:1}, we can find that,
 
 \subquestion
 
-Using Note ~\ref{mod2:note:ContinuousRV:Note1}, we get that,
+
+From Note ~\ref{mod2:note:ContinuousRV:Note1}, we know that we must integrate the p.d.f over the appropriate region,
 \begin{align}
 	P(X<3) & = P(-\infty<X<3) \nn \\
-	       & = \int_{-\infty}^{3} f(x)\mathrm{d}x \nn \\
-	       & = \int_{-\infty}^{1} f(x)\mathrm{d}x + \int_{1}^{3} f(x)\mathrm{d}x \nn \\
-	       & = 0 + \int_{1}^{3}\frac{x}{12} \mathrm{d}x \nn \\
+	       & = \int_{-\infty}^{3} f(x)\, \dd x \,.
+\end{align}
+
+Again, splitting up the integral in the appropriate intervals,
+\begin{align}
+	P(X<3) & = \int_{-\infty}^{1} f(x)\,\dd x + \int_{1}^{3} f(x)\, \dd x \,,
+\end{align}
+allows us to substitute and evaluate as,
+\begin{align}
+	P(X<3) & = 0 + \int_{1}^{3}\frac{x}{12} \, \dd x \nn \\
 	       & = \frac{1}{12} \times \left[\frac{x^2}{2}\right]^3_1 \nn \\
 	       & = \frac{1}{12} \times \left(\frac{3^2}{2} - \frac{1^2}{2}\right) \nn \\
 	       & = \frac{1}{12} \times \left(\frac{9}{2} - \frac{1}{2}\right) \nn \\
@@ -59,28 +76,42 @@ Using Note ~\ref{mod2:note:ContinuousRV:Note1}, we get that,
 
 \subquestion
 
-Using \rdef{mod2:defn:ContinuousRV:Expectation}, we are able to find that,
+Using \rdef{mod2:defn:ContinuousRV:Expectation}, we know that $E(X)$ is given by,
 \begin{align}
-	E(X) & = \int_{-\infty}^{\infty} xf(x)\mathrm{d}x \nn \\
-		 & = \int_{-\infty}^{1} xf(x)\mathrm{d}x + \int_{1}^{5} xf(x)\mathrm{d}x + \int_{5}^{\infty} xf(x)\mathrm{d}x \nn \\
-		 & = 0 + \int_{1}^{5} x\left( \frac{x}{12}\right)\mathrm{d}x + 0\nn \\
-		 & = \frac{1}{12} \times \int_{1}^{5} x^2\mathrm{d}x \nn \\ 
+	E(X) & = \int_{-\infty}^{\infty} xf(x)\, \dd x \,.
+\end{align}
+
+Splitting up the integral over the appropriate intervals,
+\begin{align}
+	E(X) & = \int_{-\infty}^{1} xf(x)\,\dd x + \int_{1}^{5} xf(x)\,\dd x + \int_{5}^{\infty} xf(x)\,\dd x \,,
+\end{align}
+allows us to substitute and evaluate,
+\begin{align}
+	E(X)& = 0 + \int_{1}^{5} x\left( \frac{x}{12}\right)\,\dd x + 0\nn \\
+		 & = \frac{1}{12} \times \int_{1}^{5} x^2\,\dd x \nn \\ 
 		 & = \frac{1}{12} \times \left[\frac{x^3}{3}\right]^5_1 \nn \\
 		 & = \frac{1}{12} \times \left(\frac{5^3}{3}-\frac{1^3}{3}\right) \nn \\
 		 & = \frac{1}{12} \times \frac{124}{3} \nn \\
 		 & = \frac{124}{36} \,.
 \end{align}
 
-From \rdef{mod2:defn:ContinuousRV:Variance}, we get that,
+To compute $\var(X)$, we use \rdef{mod2:defn:ContinuousRV:Variance},
 \begin{equation}
 	\var(X) = E(X^2) - E(X)^2 \,.\label{2008M:q4:CRVar}
 \end{equation}
 
-Using \req{mod2:eq:ContinuousRV:Variance}, we can calculate,
+Using \req{mod2:eq:ContinuousRV:Variance}, we can calculate $E(X^2)$,
 \begin{align}
-	E(X^2) & = \int_{-\infty}^{\infty} x^2f(x)\mathrm{d}x \nn \\
-	 & = \int_{-\infty}^{1} x^2f(x)\mathrm{d}x+\int_{1}^{5} x^2f(x)\mathrm{d}x+\int_{5}^{\infty} x^2f(x)\mathrm{d}x \nn \\
-	& = 0 + \int_{1}^{5} x^2\left( \frac{x}{12}\right)\mathrm{d}x + 0 \nn \\
+	E(X^2) & = \int_{-\infty}^{\infty} x^2f(x)\,\dd x \,.
+\end{align}
+
+As before, we split up the integral,
+\begin{align}
+	E(X^2)& = \int_{-\infty}^{1} x^2f(x)\,\dd x+\int_{1}^{5} x^2f(x)\,\dd x+\int_{5}^{\infty} x^2f(x)\,\dd x \,,
+\end{align}
+substitute, and evaluate,
+\begin{align}
+	E(X^2) & = 0 + \int_{1}^{5} x^2\left( \frac{x}{12}\right)\mathrm{d}x + 0 \nn \\
 	& = \frac{1}{12} \times \int_{1}^{5} x^3\mathrm{d}x \nn \\ 
 	& = \frac{1}{12} \times \left[\frac{x^4}{4}\right]^5_1 \nn \\
 	& = \frac{1}{12} \times \left(\frac{5^4}{4}-\frac{1^4}{4}\right) \nn \\
@@ -88,7 +119,7 @@ Using \req{mod2:eq:ContinuousRV:Variance}, we can calculate,
 	& = \frac{624}{48} \,. 
 \end{align}
 
-Thus, substituting these values into \req{2008M:q4:CRVar}, we can find that,
+Then, substituting these values into \req{2008M:q4:CRVar}, we find,
 \begin{align}
 	\var(X) & = E(X^2) - E(X)^2 \nn \\
 	& = \frac{624}{48} - \left(\frac{124}{36}\right)^2 \nn \\
@@ -102,23 +133,44 @@ Thus, substituting these values into \req{2008M:q4:CRVar}, we can find that,
 
 \subquestion
 
-From \rdef{mod2:defn:ContinuousRV:CDF}, we can get that,
+From \rdef{mod2:defn:ContinuousRV:CDF}, the cumulative distribution function is given by,
 \begin{align}
-	F(a) & = \int_{-\infty}^{a} f(x)\mathrm{d}x \nn \\
-		 & = \int_{-\infty}^{1} f(x)\mathrm{d}x+\int_{1}^{a} f(x)\mathrm{d}x \nn \\
-	     & = 0 + \int_{1}^{a} \left(\frac{x}{12} \right)\mathrm{d}x \nn \\
-	     & = \frac{1}{12} \times \left[ \frac{x^2}{2} \right]^a_1 \nn \\
-	     & = \frac{1}{12} \times \left(\frac{a^2}{2} - \frac{1}{2}\right) \nn \\
-	     & = \frac{a^2}{24} - \frac{1}{24} \,.
+	F(x) & = \int_{-\infty}^{x} f(t)\, \dd t\,.
 \end{align}
 
-Therefore, we can define,
-\[  F(x) = \begin{cases}
-	 0, & x \leq 1 \\
-	\frac{x^2}{24}-\frac{1}{24}, & 1\leq x\leq 5 \\
+We can consider this for three possible values of $x$.\footnote{Technically the domain was already restricted to $1\leq x \leq 5$, so there is only one region. We decided to stick with $x\in \mathrm{R}$ for consistency. But the answer does not change with the way we have presented it.} 
+
+For $x < 1$,
+\begin{align}
+	F(x) &= \int_{-\infty}^x f(t)\,\dd t \nn \\
+			&= 0 \,.
+\end{align}
+
+For $1\leq x < 5$,
+\begin{align}
+	F(x) &= \int_{-\infty}^x f(t)\,\dd t \nn \\
+		  &= \int_{-\infty}^1 f(t)\,\dd t + \int_{1}^x f(t)\,\dd t \nn \\
+		  &= 0 + \int_{1}^{x} \left(\frac{t}{12} \right)\,\dd t \nn \\
+	     & = \frac{1}{12} \times \left[ \frac{t^2}{2} \right]^a_1 \nn \\
+	     & = \frac{1}{12} \times \left(\frac{x^2}{2} - \frac{1}{2}\right) \nn \\
+	     & = \frac{x^2}{24} - \frac{1}{24} \,.
+\end{align}
+
+For $x>5$,
+\begin{align}
+	F(x) &= \int_{-\infty}^x f(t)\,\dd t \nn \\
+		  &= \int_{-\infty}^1 f(t)\,\dd t + \int_{1}^5 f(t)\,\dd t+ \int_{5}^x f(t)\,\dd t \nn \\
+		  &= 0 + 1 + 0 \,.
+\end{align}
+
+Therefore, the cumulative distribution function is given as,
+\begin{equation}
+F(x) = \begin{cases}
+	 0, & x < 1 \\
+	\frac{x^2}{24}-\frac{1}{24}, & 1\leq x < 5 \\
 	1, & x\geq 5 \\ 
 \end{cases}
-\]
+\end{equation}
 
 %------------------------------------------------------------------------------
 % 4 e
@@ -126,11 +178,15 @@ Therefore, we can define,
 
 \subquestion
 
-Using \rprop{mod2:prop:ContinuousRV:CDF}, we see that,
+Recall from \rprop{mod2:prop:ContinuousRV:CDF}, that the median $M$, is the value of $x = M$ such that
 \begin{align}
-	F(M) & = \frac{1}{2} \nn \\
+	F(M) & = \frac{1}{2} \,.
+\end{align}
+
+Since $0 \leq F(M) \leq 1$, by inspecting our definition of $F$ above, we know $1 \leq M < 5$. Thus, we can equate and solve as follows,
+\begin{align}
 	\frac{M^2}{24}-\frac{1}{24} & = \frac{1}{2} \nn \\
-	\text{(Multiplying by 24)} \implies M^2 - 1 & = 12 \nn \\
+	M^2 - 1 & = 12 \nn \\
 	M^2 & = 13 \nn \\
 	\implies M & = \sqrt{13} \,.
 \end{align}
@@ -141,15 +197,26 @@ Using \rprop{mod2:prop:ContinuousRV:CDF}, we see that,
 
 \subquestion
 
-Using Section ~\ref{mod2:section:ExpectationVariance}, we can find that,
+From Section ~\ref{mod2:section:ExpectationVariance}, we know that,
 \begin{align}
-	E(3X+2)	& = 3\times E(X) +2 \nn \\
-	        & = 3 \times \frac{124}{36} + 2 \nn \\
-	        & = \frac{37}{3} \,. \\ \nn \\
-	 \text{Var}(3X+2) & = 3^2 \times \text{Var}(X) \nn \\
-	                  & = 9  \times \frac{92}{81} \nn \\
-	                  & = \frac{92}{9} \,.
+	E(3X+2) & = 3\, E(X) +2\,.
 \end{align}
 
+Substituting for $E(X)$, we have
+\begin{align}
+	E(3X+2)  & = 3 \times \frac{124}{36} + 2 \nn \\
+	         & = \frac{37}{3} \,. 
+\end{align}
+
+Similarly, we also know that
+\begin{align}
+	\var(3X+2) & = 3^2 \, \var(X) \,.
+\end{align}
+
+Substituting for $\var(X)$, we have
+\begin{align}
+	\var(3X+2) & = 9  \times \frac{92}{81} \nn \\
+	           & = \frac{92}{9} \,.
+\end{align}
 
 \end{subquestions}
