@@ -27,7 +27,7 @@ We are given the cumulative distribution function, $F(x)$, of a continuous rando
 	
 \subsubquestion
 
-From \rprop{mod2:prop:ContinuousRV:2}, we know that,
+From \rprop{mod2:prop:ContinuousRV:2}, we know that $P(X=a)$ for any real $a$ is $0$. So,
 \begin{equation}
 	P\left(X= \frac{1}{2}\right) = 0 \,.
 \end{equation}
@@ -36,10 +36,14 @@ From \rprop{mod2:prop:ContinuousRV:2}, we know that,
 
 \subsubquestion
 
-Using Note ~\ref{mod2:note:ContinuousRV:CDF}, we can calculate,
+We can compute probabilities via the c.d.f using Note ~\ref{mod2:note:ContinuousRV:CDF}, 
 \begin{align}
-	P\left(\frac{1}{2} < X \leq \frac{3}{4}\right) & = F\left(\frac{3}{4}\right) - F\left(\frac{1}{2}\right) \nn \\
-	                                    & = \frac{\left(\frac{3}{4}\right)^2+\frac{3}{4}}{2} -   \frac{\left(\frac{1}{2}\right)^2+\frac{1}{2}}{2} \nn \\
+	P\left(\frac{1}{2} < X \leq \frac{3}{4}\right) & = F\left(\frac{3}{4}\right) - F\left(\frac{1}{2}\right) \,.
+\end{align}
+
+Substituting the given c.d.f yields,
+\begin{align}
+P\left(\frac{1}{2} < X \leq \frac{3}{4}\right)	                                    & = \frac{\left(\frac{3}{4}\right)^2+\frac{3}{4}}{2} -   \frac{\left(\frac{1}{2}\right)^2+\frac{1}{2}}{2} \nn \\
 	                                    & = \frac{\frac{9}{16}+\frac{3}{4}}{2} - \frac{\frac{1}{4}+\frac{1}{2}}{2} \nn \\
 	                                    & = \frac{\frac{21}{16}}{2} - \frac{\frac{3}{4}}{2} \nn \\
 	                                    & = \frac{\frac{21}{16} - \frac{3}{4}}{2} \nn \\
@@ -51,21 +55,26 @@ Using Note ~\ref{mod2:note:ContinuousRV:CDF}, we can calculate,
 
 \subsubquestion
 
-From \rdef{mod2:defn:ContinuousRV:CDF}, we get that,
+We know that the c.d.f, $F$, and p.d.f, $f$, are related in \rdef{mod2:defn:ContinuousRV:CDF}, via
 \begin{align}
-	f(x) & = \ddd{}{x} F(x) \nn \\
-	     & = \ddd{}{x}\left(\frac{x^2+x}{2} \right) \nn \\
-	     & = x + \frac{1}{2} \,.
+	f(x) & = \ddd{}{x} F(x)
+\end{align}
+
+Now, we must compute the p.d.f in the three regions over which $F$ is defined. The only non-trivial calculation is when $0 \leq x < 1$,
+\begin{align}
+f(x)  & = \ddd{}{x}\left(\frac{x^2+x}{2} \right) \nn \\
+	   & = x + \frac{1}{2} \,.
 \end{align}
 
 Thus, $f(x)$ is defined as,
-\[ f(x) = 
+\begin{equation}
+f(x) = 
 \begin{cases}
 	0, & x<0 \\
-	x + \frac{1}{2}, & 0 \leq  x \leq 1 \\
-	0, & x>1 \\
+	x + \frac{1}{2}, & 0 \leq  x < 1 \\
+	0, & x \geq 1 \\
 \end{cases}
-\]
+\end{equation}
 
 \end{subsubquestions}	
 	
@@ -81,11 +90,19 @@ The probability density function, $f(y)$, of the continuous random variable, $Y$
 	
 \subsubquestion
 
-From \rprop{mod2:prop:ContinuousRV:1}, we know that,
+We can use the property that probabilities must sum to one, \rprop{mod2:prop:ContinuousRV:1} for continuous random variables,
 \begin{align}
-	\int_{-\infty}^{\infty} f(y)\mathrm{d}y & = 1 \nn \\
-	\int_{-\infty}^{1} f(y)\mathrm{d}y + \int_{1}^{2} f(y)\mathrm{d}y + \int_{2}^{\infty} f(y)\mathrm{d}y & = 1 \nn \\
-	0 + \int_{1}^{2} \left(ky^3\right)\mathrm{d}y + 0 & = 1 \nn \\
+	\int_{-\infty}^{\infty} f(y)\, \dd y & = 1 \,.
+\end{align}
+
+Performing this integral requires us to split the integral into three regions over which $f$ is defined,
+\begin{align}
+\int_{-\infty}^{\infty} f(y)\, \dd y & = \int_{-\infty}^{1} f(y)\, \dd y + \int_{1}^{2} f(y)\, \dd y + \int_{2}^{\infty} f(y)\, \dd y
+\end{align}
+
+Since we know how the functions are defined in each region, we can solve for $k$,
+\begin{align}
+	0 + \int_{1}^{2} \left(ky^3\right)\, \dd y + 0 & = 1 \nn \\
 	k \times \int_{1}^{2} \left(y^3\right)\mathrm{d}y & = 1 \nn \\
 	k \times \left[\frac{y^4}{4} \right]^2_1 & = 1 \nn \\
 	k \times \left[\frac{2^4}{4} - \frac{1^4}{4}\right] & = 1 \nn \\
@@ -98,29 +115,54 @@ From \rprop{mod2:prop:ContinuousRV:1}, we know that,
 
 \subquestion
 
-Using \rdef{mod2:defn:ContinuousRV:Expectation}, we get that,
+From \rdef{mod2:defn:ContinuousRV:Expectation}, we know that the expectation of a continuous random variable $Y$ is given by,
 \begin{align}
-	E(Y) & = \int_{-\infty}^{\infty}y f(y)\mathrm{d}y \nn \\
-	     & = \int_{-\infty}^{1}y f(y)\mathrm{d}y + \int_{1}^{2}y f(y)\mathrm{d}y + \int_{2}^{\infty}y f(y)\mathrm{d}y \nn \\
-	     & = 0 + \int_{1}^{2} \left( \frac{4y^4}{15}\right)\mathrm{d}y + 0 \nn \\
-	     & = \frac{4}{15} \times \left[\frac{y^5}{5} \right]^2_1 \nn \\
-	     & = \frac{4}{15} \times \left[\frac{2^5}{5} -\frac{1^5}{5} \right] \nn \\
-	     & = \frac{4}{15} \times \left[\frac{32}{5} -\frac{1}{5} \right] \nn \\
-	     & = \frac{124}{75} \,. 
+	E(Y) & = \int_{-\infty}^{\infty}y f(y)\mathrm{d}y 
+\end{align}
+
+Splitting up the integral as before,
+\begin{align}
+E(Y)	& = \int_{-\infty}^{1}y f(y)\, \dd y + \int_{1}^{2}y f(y)\, \dd y + \int_{2}^{\infty}y f(y)\, \dd y \,,
+\end{align}
+allows us to evaluate
+\begin{align}
+E(Y) 	& = 0 + \int_{1}^{2} \left( \frac{4y^4}{15}\right)\mathrm{d}y + 0 \nn \\
+		& = \frac{4}{15} \times \left[\frac{y^5}{5} \right]^2_1 \nn \\
+	   & = \frac{4}{15} \times \left[\frac{2^5}{5} -\frac{1^5}{5} \right] \nn \\
+	   & = \frac{4}{15} \times \left[\frac{32}{5} -\frac{1}{5} \right] \nn \\
+	   & = \frac{124}{75} \,. 
 \end{align}
 
 %------------------------------------------------------------------------------
 
 \subquestion
-
-Using the given definition and Note ~\ref{mod2:note:ContinuousRV:Note1}, we get that,
+We want to find the value of $y_{30}$ such that,
 \begin{align}
-	P(Y \leq y_{30}) = P(1 \leq Y \leq y_{30}) & = \frac{30}{100} \nn \\
-	                   \int_{1}^{y_{30}} f(y)\mathrm{d}y & = 0.3 \nn \\
-	                   \frac{4}{15} \times \left[\frac{y^4}{4}\right]^{{y_{30}}}_1 & = 0.3 \nn \\
-	                   \frac{4}{15} \times \left[\frac{{y_{30}}^4}{4} - \frac{1^4}{4}\right] & = 0.3 \nn \\
-	                   \frac{1}{15} \times \left[{y_{30}}^4 - 1\right] & = 0.3 \nn \\                   
-	     \text{(Multiplying by 15)} \implies {y_{30}}^4 -1 & = 4.5 \nn \\
+	P(Y \leq y_{30}) &= \frac{30}{100}
+\end{align}
+
+From Note ~\ref{mod2:note:ContinuousRV:Note1}, we know that given the p.d.f., we can find the probability by integrating $f(y)$ in the appropriate region,
+\begin{align}
+	P(Y \leq y_{30}) &= \int_{-\infty}^{y_{30}} f(y) \,\dd y \,.
+\end{align}
+
+Since $f(y)$ is defined piecewise, we must split the integral up accordingly,
+\begin{align}
+P(Y \leq y_{30}) &= \int_{-\infty}^1 f(y) \, \dd y + \int_{1}^{y_{30}} f(y) \,\dd y
+\end{align}
+
+Evaluating the integral over the different regions yields,
+\begin{align}
+	P(Y \leq y_{30}) & = 0 +  \int_{1}^{y_{30}} f(y)\mathrm{d}y  \nn \\
+	                   &=\frac{4}{15} \times \left[\frac{y^4}{4}\right]^{{y_{30}}}_1 \nn \\
+	                   &= \frac{4}{15} \times \left[\frac{{y_{30}}^4}{4} - \frac{1^4}{4}\right]  \nn \\
+	                   &= \frac{1}{15} \times \left[{y_{30}}^4 - 1\right]   
+\end{align}
+
+Now, we can solve for $y_{30}$ by recalling that $P(Y \leq y_{30}) = 0.3$,
+\begin{align}                 
+	\frac{1}{15} \times \left[{y_{30}}^4 - 1\right] &= 0.03 \nn \\
+	                                  {y_{30}}^4 -1 & = 4.5 \nn \\
 	                   \implies {y_{30}} & = \sqrt[4]{5.5} \nn \\
 	                                     & \approx 1.531 \,.             
 \end{align}
