@@ -38,16 +38,16 @@
 		% Connect all gates internally
 		\draw (x1.output) -| ([xshift = -\shift]x3.input 1) --++(\shift,0);
 		\draw (x2.output) -| ([xshift = -\shift]x3.input 2) --++(\shift,0);
-
+		
 		% draw end piece
 		\draw (x3.output) --++ (4*\shift,0);
 		
 		% inputs 1
-		\draw (x1.input 1) -|++ (-\shift,\shift) --++(-\shift,0) node[left,]{$a$};
-		\draw (x1.input 2) -|++ (-\shift,-\shift) --++(-\shift,0) node[left]{$b$};
+		\draw (x1.input 1) -|++ (-\shift,\shift) --++(-\shift,0) node[left,]{$b$};
+		\draw (x1.input 2) -|++ (-\shift,-2*\shift) --++(-\shift,0) node[left]{$a$};
 		
 		% inputs 2
-		\draw (x2.input) -|++ (-2.2*\shift,0) --++(0,0) node[left]{$a$};
+		\draw (x2.input) -|++ (-1.29*\shift,1.38) --++(0,0) node[left]{};
 	
 		% Insert labels
 		\node[above] at ($(x3.output) + (2*\shift,0)$) (l1) {\gatetext$\sim a \land (a \lor b)$};
