@@ -48,7 +48,15 @@ We are asked to find the acceleration of the system given. This problem is a cla
 	\end{center}
 \end{figure}
 We will assume that both bodies move in only 1 dimension and that they behave as point particles. We will also assume that the mass of the string is 0 and inextensible. Thus, we know that the speed (and the magnitude of the acceleration) of both particles must be the same. Since the pulley is smooth, no energy is lost to friction. We should consider how the forces act on the different weights and motivate our solution from there.
-
+We will define the following:
+\begin{itemize}
+	\item $\vec{W_1}$ is the weight of the 9kg mass,
+	\item $\vec{W_2}$ is the weight of the 5kg mass,
+	\item $\vec{T_1}$ is the tension on the string from the 9kg mass to the pulley,
+	\item $\vec{T_2}$ is the tension on the string from the 5kg mass to the pulley,
+	\item $m_1$ is the mass of the 9kg mass, $m_1=9$,
+	\item $m_2$ is the mass of the 5kg mass, $m_2=5$.
+\end{itemize}
 
 
 
@@ -61,16 +69,21 @@ Let us denote the displacements of the 9kg and 5kg masses so be $y_1$ and $y_2$.
 	a_1 & = -a_2 \,.
 \end{align}
 
-Let us first consider the forces on the 9kg mass. From Newton's 2nd Law, we get that,
+From the assumption that the string is massless, we also get that,
+\begin{equation}
+	|\vec{T_1}| = |\vec{T_2}| = T \,.
+\end{equation}
+
+Let us now consider the forces on the 9kg mass. From Newton's 2nd Law, we get that,
 \begin{align}
-	\sum F & = ma_1 \nn \\
-	mg - T & = ma_1 \,.
+	\sum F & = m_1a_1 \nn \\
+	|\vec{W_1}| - T & = m_1a_1 \,.
 \end{align}
 
 Let us then consider the forces on the 5kg mass. From Newton's 2nd Law, we get that,
 \begin{align}
-	\sum F & = ma_2 \nn \\
-	mg-T & = ma_2 \,.
+	\sum F & = m_2a_2 \nn \\
+	|\vec{W_2}|-T & = m_2a_2 \,.
 \end{align}
 
 
@@ -79,13 +92,13 @@ Let us then consider the forces on the 5kg mass. From Newton's 2nd Law, we get t
 \textbf{\textit{Solve and Evaluate:}} \\ \\
 On the 9kg mass, we see that,
 \begin{align}
-	mg - T & = ma_1 \nn \\
+	m_1g - T & = m_1a_1 \nn \\
 	\implies 9g-T & = 9a_1 \,. \label{2013:q6:PulleyEq1}
 \end{align}
 
 On the 5kg mass, we see that,
 \begin{align}
-	mg - T & = ma_2 \nn \\
+	m_2g - T & = m_2a_2 \nn \\
 	\implies 5g-T & = 5a_2 \nn \\
 	\implies 5g-T & = -5a_1 \nn \\
 	T-5g & = 5a_1 \,. \label{2013:q6:PulleyEq2}
@@ -166,6 +179,12 @@ We are given a ball which strikes a wall and bounces back. We should think about
 	\end{center}
 \end{figure}	
 We will assume that the body only moves in one plane (horizontal). We will take the direction of the rebound of the ball as positive. We can use our equation for impulse and solve this question.
+We will define the following:
+\begin{itemize}
+	\item $m$ is the mass of the ball, $m=1.5kg$,
+	\item $u$ is the initial velocity, $u=-7\text{ms}^{-1}$,
+	\item $v$ is the final velocity, $v=5\text{ms}^{-1}$.
+\end{itemize}
 
 
 
@@ -181,7 +200,7 @@ By definition, we know that,
 
 
 \textbf{\textit{Solve and Evaluate:}} \\ \\
-By substituting $m=1.5$kg, $u=-7\text{ms}^{-1}$ and $v=5\text{ms}^{-1}$, we get that,
+By substituting our values, we get,
 \begin{align}
 	\text{Impulse} & = mv-mu \nn \\
 	               & = 1.5(5-(-7)) \nn \\
