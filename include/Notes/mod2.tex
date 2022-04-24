@@ -505,7 +505,48 @@ Var[X + Y] &= Var[X]+ Var[Y].
 
 
 
+\section{$\chi^2$ goodness-of-fit test} \label{Section:ChiSquareTest}
+This test is used to determine whether a random variable can be modeled with a given distribution. One can conduct a $\chi^2$ test following the simple procedure:
+\begin{enumerate}[label = \arabic*)]
+	\item Define the null hypothesis, $H_0$, and alternative hypothesis, $H_1$:
+	\begin{eqnarray}
+		H_0&:& \text{ The data follows the given distribution.} \\
+		H_1&:& \text{ The data does not follow the given distribution.} \
+	\end{eqnarray}
+	\item Pick a level of significance $\alpha$
+	\item Identify critical region: Reject $H_0$ if $\chi^2_\text{calc} > \chi^2_\alpha (\nu)$ \
+	
+	\item $\chi^2_\text{calc} =\sum \frac{(O - E)^2}{E} $
+	where $O$ is the observed data, and $E$ is the expected frequency. We can compute the expected frequency using $E_{ij} = \frac{n_i \times n_j}{N}$, where $E_{ij}$ represents the expected frequency of the value in the $i^{th}$ row and $j^{th}$ column, $n_i$ represents the sum of values in the $i^{th}$ row, $n_{j}$ represents the sum of values in the $j^{th}$ column, and $N$ represents the total sample size. 
+	\item Decision
+\end{enumerate}
 
+\begin{note}
+	$\chi^2_\text{calc}$ is not valid if $E < 5$. When this occurs we combine classes to make all values of $E>5$.
+\end{note}
+
+\begin{note}
+	$\nu$ is the number of degrees of freedom in the test. It is calculated as follows,
+	\begin{equation}
+		\nu = \text{Number of classes - Number of restrictions} \,.
+	\end{equation}
+
+The number of restrictions in a test depends on the distribution that the test is considering. The number of restrictions is as follows:
+\begin{itemize}
+	\item Uniform Distribution has 1 restriction (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\item A Distribution in a Given Ratio has 1 restriction(Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\item Binomial Distribution has 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\item Binomial Distribution has 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{\bar{x}}{n}$)
+	\item Poisson Distribution has 1 restriction if average rate, $\lambda$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\item Poisson Distribution has 2 restrictions if average rate, $\lambda$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\lambda=\bar{x}$)
+	\item Geometric Distribution has 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\item Geometric Distribution has 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{1}{\bar{x}}$)
+	\item Normal Distribution has 1 restriction if both mean, $\mu$, and variance, $\sigma^2$ are known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\item Normal Distribution has 2 restrictions if either mean, $\mu$, or variance, $\sigma^2$ is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ OR $\sigma^2=\hat{\sigma}^2$)
+	\item Normal Distribution has 3 restrictions if both mean, $\mu$, and variance, $\sigma^2$ are unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ AND $\sigma^2=\hat{\sigma}^2$)
+\end{itemize} 
+
+\end{note}
 
 
 
