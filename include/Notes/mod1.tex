@@ -25,9 +25,28 @@
 
 \section{Assignment Models} \label{Module1:AsgnmtModels}
 
-\begin{defn} \label{mod1:defn:HungAlgStep4}
-	\textbf{Step 4}: This is the step of the Hungarian algorithm that subtracts the matrix minimum from all unshaded elements and adds double the matrix minimum to all elements that are shaded twice. Using this as the reference until the structured Hungarian notes are placed.
+\begin{defn} \label{mod1:defn:HungAlg}
+	The \textbf{Hungarian Algorithm} is a process that can be used to assign workers of a project to tasks in order minimize a parameter of the project (time, cost, etc).
 \end{defn}
+
+
+\begin{defn} \label{mod1:defn:HungAlgStep4}
+	The algorithm follows a series of steps as follows:
+	\begin{itemize}
+		\item \textbf{Step 1, Squaring the Matrix}: Ensure that the matrix under question is square (of the form $n\times n$). If the matrix is not square, add the necessary rows or columns such that the new elements are equal to each other and are greater than or equal to the maximum element of the original matrix.
+		\item \textbf{Step 2, Reducing Rows}: From each row, find the minimum element and subtract it from all other elements in that row.
+		\item \textbf{Step 3, Reducing Columns}: From each column, find the minimum element and subtract it from all other elements in that column.
+		\item \textbf{Step 4, Shading the Zeroes}: With the minimum number of horizontal and vertical lines, cover all the zeroes in the matrix. If the total number of lines used is equal to $n$, there exists a minimum solution among the zeroes in the matrix. If the number of lines is less than $n$, proceed to Step 5.
+		\item \textbf{Step 5, Making New Zeroes}: From all the unshaded elements (those not covered by a line), identify the minimum element, $k$. Subtract this value from all the unshaded elements and add twice this value ($2k$) to all of the values that are shaded twice. With this new matrix, Return to Step 4. Repeat as necessary.
+	\end{itemize}
+When a solution exists, go through the zeroes of the matrix by hand to find the optimal solution.
+\end{defn}
+
+\begin{note}
+	The Hungarian Algorithm can also be used to maximize a project parameter. The steps are exactly the same, however, the signs of all the matrix elements must be flipped.	
+\end{note}
+
+
 
 \section{Graph Theory and Critical Analysis} \label{Module1:GraphTheoryCriticalAnalysis}
 
