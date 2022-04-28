@@ -61,7 +61,7 @@
 \section{Logic and Boolean Algebra}
 
 \begin{defn}\label{mod1:defn:Proposition}
-   \textbf{Propsition}: A proposition is a declarative statment which is either true or false.
+   \textbf{Propsition}: A proposition is a declarative statment which is either True (denoted by T or 1) or False (denoted by F or 0).
 \end{defn}
 
 \begin{defn}\label{mod1:defn:LogicSymbols}
@@ -73,11 +73,11 @@
          \hline
             Symbol & Name & Read as\\
          \hline
-         $\land$ & Conjunction & And \\
-         $\lor$ &   Disjunction & Or \\
-         $\lnot$ & Negation & Not\\
-         $\Rightarrow$ & Conditional & If ... then ...\\
-         $\Leftrightarrow$ & Bi-conditional & If and only if; iff\\
+         $\boldsymbol{\land}$ & Conjunction & And \\
+         $\boldsymbol{\lor}$ &   Disjunction & Or \\
+         $\boldsymbol{\sim}$ & Negation & Not\\
+         $\boldsymbol{\Rightarrow}$ & Conditional & If ... then ...\\
+         $\boldsymbol{\Leftrightarrow}$ & Bi-conditional & If and only if; iff\\
          \hline
       \end{tabular}
       \label{mod1:tab:LogicSymbols}
@@ -90,9 +90,9 @@
    \centering
    \begin{minipage}{0.2\textwidth}
    \centering
-      \begin{tabular}{|c |c|}
+      \begin{tabular}{|c|c|}
          \hline
-         p &  $\lnot$p\\
+         $\boldsymbol{p}$ &  $\boldsymbol{\sim p}$\\
          \hline
          T & F\\
          F & T\\
@@ -102,9 +102,9 @@
    \end{minipage}
    \begin{minipage}{0.38\textwidth}
       \centering
-      \begin{tabular}{|c c|c|}
+      \begin{tabular}{|c|c|c|}
             \hline
-            p & q & p $\land$ q\\
+            $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \land q}$\\
             \hline
             T & T & T\\
             T & F & F\\
@@ -117,9 +117,9 @@
    \vspace{1cm}
    \begin{minipage}{0.38\textwidth}
    \centering
-            \begin{tabular}{|c c|c|}
+            \begin{tabular}{|c|c|c|}
          \hline
-         p & q & p $\lor$ q\\
+         $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \lor q}$\\
          \hline
          T & T & T\\
          T & F & T\\
@@ -132,9 +132,9 @@
    \hspace{6cm}
    \begin{minipage}{0.38\textwidth}
       \centering
-      \begin{tabular}{|c c|c|}
+      \begin{tabular}{|c|c|c|}
          \hline
-         p & q & p $\Rightarrow$ q\\
+         $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \implies q}$\\
          \hline
          T & T & T\\
          T & F & F\\
@@ -147,9 +147,9 @@
    % \hspace{1cm}
    \begin{minipage}{0.38\textwidth}
       \centering
-      \begin{tabular}{|c c|c|}
+      \begin{tabular}{|c|c|c|}
          \hline
-         p & q & p $\Leftrightarrow$ q\\
+         $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \Leftrightarrow q}$\\
          \hline
          T & T & T\\
          T & F & F\\
@@ -163,17 +163,17 @@
 \end{defn}
 
 
-\noindent Suppose we have the proposition $p \Rightarrow q$, we make the following three definitions:
+\noindent Suppose we have the proposition $\boldsymbol{p \Rightarrow q}$, we make the following three definitions:
 \begin{defn}\label{mod1:defn:Inverse}
-   \textbf{Inverse}: $\lnot p \Rightarrow \lnot q$ 
+   \textbf{Inverse}: $\boldsymbol{\sim p \Rightarrow \sim q}$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Converse}
-   \textbf{Converse}: $q \Rightarrow p$ 
+   \textbf{Converse}: $\boldsymbol{q \Rightarrow p}$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Contrapositive}
-   \textbf{Contrapositive}: $\lnot q \Rightarrow \lnot p$ 
+   \textbf{Contrapositive}: $\boldsymbol{\sim q \Rightarrow \sim p}$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Tautology}
@@ -192,14 +192,14 @@
 
 
 
-\noindent Consider the propsitional variables $p$, $q$ and $r$
+\noindent Consider the propositional variables $\boldsymbol{p}$, $\boldsymbol{q}$ and $\boldsymbol{r}$
 
 
 \begin{law}\label{mod1:law:Annulment}
    \textbf{Annulment}
    \begin{align}
-   p \land F &= F  \\
-   p \lor T &= T 
+      \boldsymbol{p \land F} &= \boldsymbol{F}  \\
+      \boldsymbol{p \lor T} &= \boldsymbol{T}
    \end{align}
 \end{law}
 
@@ -207,71 +207,71 @@
 \begin{law}\label{mod1:law:Identity}
    \textbf{Identity}
    \begin{align}
-   p \land T &= p  \\
-   p \lor F &= p
+      \boldsymbol{p \land T} &= \boldsymbol{p}  \\
+      \boldsymbol{p \lor F} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Idempotent}
    \textbf{Idempotent}
    \begin{align}
-   p \lor p &= p\\
-   p \land p &= p
+      \boldsymbol{p \lor p} &= \boldsymbol{p}\\
+      \boldsymbol{p \land p} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Complement}
    \textbf{Complement}
    \begin{align}
-   p \lor \lnot p &= T\\
-   p \land \lnot p &= F
+      \boldsymbol{p \lor \sim p} &= \boldsymbol{T}\\
+      \boldsymbol{p \land \sim p} &= \boldsymbol{F}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:DoubleNegation}
    \textbf{Double Negation}
    \begin{align}
-   \lnot(\lnot p) &= p
+      \boldsymbol{\sim(\sim p)} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:DeMorgan}
    \textbf{De Morgan's}
    \begin{align}
-   \lnot (p \land q) &= \lnot p \lor \lnot q \\
-   \lnot (p \lor q) &= \lnot p \land \lnot q 
+      \boldsymbol{\sim (p \land q)} &= \boldsymbol{\sim p \lor \sim q} \\
+      \boldsymbol{\sim (p \lor q)} &= \boldsymbol{\sim p \land \sim q}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Associative}
    \textbf{Associative}
    \begin{align}
-   (p \lor q) \lor r &= p \lor (q \lor r) \\
-   (p \land q) \land r &= p \land (q \land r) 
+      \boldsymbol{(p \lor q) \lor r} &= \boldsymbol{p \lor (q \lor r)} \\
+      \boldsymbol{(p \land q) \land r} &= \boldsymbol{p \land (q \land r)}
    \end{align}
 \end{law}
 
  \begin{law}\label{mod1:law:Commutative}
    \textbf{Commutative}
    \begin{align}
-   p \land q &= q \land p \\
-   p \lor q &= q \lor p
+      \boldsymbol{p \land q} &= \boldsymbol{q \land p} \\
+      \boldsymbol{p \lor q} &= \boldsymbol{q \lor p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Distributive}
    \textbf{Distributive}
    \begin{align}
-   p \land (q \lor r) &= (p \land q) \lor (p \land r) \\
-   p \lor (q \land r) &= (p \lor q) \land (p \lor r) 
+      \boldsymbol{p \land (q \lor r)} &= \boldsymbol{(p \land q) \lor (p \land r)} \\
+      \boldsymbol{p \lor (q \land r)} &= \boldsymbol{(p \lor q) \land (p \lor r) }
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Absorptive}
    \textbf{Absorptive}
    \begin{align}
-   p \land (p \lor q) &= p\\
-   p \lor (p \land q) &= p
+      \boldsymbol{p \land (p \lor q)} &= \boldsymbol{p}\\
+      \boldsymbol{p \lor (p \land q)} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
