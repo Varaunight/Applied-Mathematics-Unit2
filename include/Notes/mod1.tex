@@ -297,9 +297,59 @@ When a solution exists, go through the zeroes of the matrix by hand to find the 
 
 \subsection{Logic Circuits}\label{mod1:section:LogicCircuits}
 
-\textcolor{red}{DIAGRAMS OF LOGIC CIRCUITS}
+\begin{defn}
+	Logic Circuits can be used to represent Boolean Expressions with switches and wires. Switches are usually defined with logic propositions where a truth value of 1 will indicate a closed switch whereas a truth value of 0 represents an open switch.
+\end{defn}
 
+\begin{defn}
+	Switching Circuits:
+	\begin{figure}[H]
+		\centering
+		\begin{circuitikz}
+			\draw [color=black, thick] (1,0) -- (2,0);
+			\draw [color=black, thick] (5,0) -- (4,0);
+			\draw (2,0) to[normal open switch, *-*](4,0);	
+			\path (2,0) -- (4,0) node[pos=0.5,below]{\textbf{A}};
+		\end{circuitikz}
+	\caption{Preposition \textbf{A}}
+	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\begin{circuitikz}
+			\draw [color=black, thick] (1,0) -- (2,0);
+			\draw [color=black, thick] (5,0) -- (4,0);
+			\draw [color=black, thick] (7,0) -- (8,0);
+			
+			\draw (2,0) to[normal open switch, *-*](4,0);	
+			\path (2,0) -- (4,0) node[pos=0.5,below]{\textbf{X}};
+			
+			\draw (5,0) to[normal open switch, *-*](7,0);	
+			\path (5,0) -- (7,0) node[pos=0.5,below]{\textbf{Y}};
+		\end{circuitikz}
+		\caption{Preposition (\textbf{X} $\land$ \textbf{Y})}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering 
+		\begin{circuitikz}
+			\draw [color=black, thick] (6,0) -- (7,0);
+			\draw [color=black, thick] (7,0) -- (7,1);
+			\draw [color=black, thick] (7,0) -- (7,-1);
+			\draw [color=black, thick] (9,0) -- (10,0);
+			\draw [color=black, thick] (9,0) -- (9,1);
+			\draw [color=black, thick] (9,0) -- (9,-1);
+			
+			
+			\draw (7,1) to[normal open switch, *-*](9,1);	
+			\path (7,1) -- (9,1) node[pos=0.5,below]{$\sim$\textbf{P}};
+			
+			\draw (7,-1) to[normal open switch, *-*](9,-1);	
+			\path (7,-1) -- (9,-1) node[pos=0.5,below]{\textbf{Q}};
+		\end{circuitikz}
+		\caption{Preposition ($\sim$\textbf{P} $\lor$ \textbf{Q})}
+	\end{figure}
+\end{defn}
 
 
 
