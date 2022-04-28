@@ -21,7 +21,7 @@
 	
 \subquestion
 
-We first need to observe that the first digit must be greater than or equal to 5 in order for our number to be greater than 500,000. Thus, the first digit must be in the set \{5, 6, 7, 8, 9\}. Similarly, for our number to be odd, the final digit must be odd (from the set \{5,7,9\}). Since repetition is allowed when choosing our digits, we find that we have 5 choices for the first digit, 6 choices for the second, third, fourth and fifth digit and, 3 choices for our last digit. Thus, by \rdef{mod2:defn:MultiplicationRule}, we get that,
+We being by observing that the first digit must be greater than or equal to 5 in order for our number to be greater than 500,000. Thus, the first digit must be in the set \{5, 6, 7, 8, 9\}. Similarly, for our number to be odd, the final digit must be odd (from the set \{5,7,9\}). Since repetition is allowed when choosing our digits, we find that we have 5 choices for the first digit, 6 choices for the second, third, fourth and fifth digit and, 3 choices for our last digit. Thus, by \rdef{mod2:defn:MultiplicationRule}, we get that,
 \begin{align}
 	\text{Number of odd numbers greater than 500,000} & = 5 \times 6 \times 6 \times 6 \times 6 \times 3 \nn \\
 	                                                  & = 19440 \,.
@@ -83,26 +83,41 @@ In order for the team to have more girls than boys, there must either be 4 girls
 	
 \subsubquestion
 	
-We are given that $A$ and $B$ are independent. From \rdef{mod2:defn:Independent}, we get that,
+We are given that $A$ and $B$ are independent. From \rdef{mod2:defn:Independent}, we know,
 \begin{equation}
 	P(A \land B) = P (A) \times P(B) \,.
 \end{equation}
 
 Using \rdef{mod2:defn:Conditional}, we can express $P(A|B)$ as,
+\begin{equation}
+P(A|B) = \frac{P(A \land B)}{P(B)} \,.
+\end{equation}
+
+Combining this with the definition of independence, we see that,
 \begin{align}
-	P(A|B) = \frac{P(A \land B)}{P(B)} & = \frac{2}{3} \nn \\
-	         \frac{P(A) \times P(B)}{P(B)} & = \frac{2}{3} \nn \\
-	         \implies P(A) & = \frac{2}{3} \,.
+	P(A|B) &=  \frac{P(A \land B)}{P(B)} \nn\\
+	&= \frac{P(A) \times P(B)}{P(B)} \nn\\
+	&= P(A) \,.
+\end{align}
+
+Thus, 
+\begin{align}
+	P(A) &= P(A|B) \nn\\
+		  &= \frac{2}{3}\,.
 \end{align}
 	
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-Using $P(A)=\frac{2}{3}$, we can find that,
+Using $P(A)=\frac{2}{3}$, we can find $P(B)$ by using the independence,
 \begin{align}
-	P(A \land B) = P (A) \times P(B) & = \frac{1}{3} \nn \\
-	                \frac{2}{3} \times P(B) & = \frac{1}{3} \nn \\
+	P(A \land B) = P (A) \times P(B)  \,.
+\end{align}
+
+Substituting the values
+\begin{align}
+\frac{1}{3} &= \frac{2}{3} \times P(B) \nn \\
 	                \implies P(B) & = \frac{1}{3} \times \frac{3}{2} \nn \\
 	                              & = \frac{1}{2} \,.
 \end{align}
@@ -133,7 +148,7 @@ Using this, we can get that,
 
 \subquestion
 
-From \rdef{mod2:defn:MutuallyExclusive}, we know that $A$ and $B$ are mutually exclusive iff,
+From \rdef{mod2:defn:MutuallyExclusive}, we know that $A$ and $B$ are mutually exclusive if and only if,
 \begin{equation}
 	P(A \land B) = 0 \,.
 \end{equation}
