@@ -533,17 +533,35 @@ This test is used to determine whether a random variable can be modeled with a g
 
 The number of restrictions in a test depends on the distribution that the test is considering. The number of restrictions is as follows:
 \begin{itemize}
-	\item Uniform Distribution has 1 restriction (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\item A Distribution in a Given Ratio has 1 restriction(Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\item Binomial Distribution has 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\item Binomial Distribution has 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{\bar{x}}{n}$)
-	\item Poisson Distribution has 1 restriction if average rate, $\lambda$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\item Poisson Distribution has 2 restrictions if average rate, $\lambda$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\lambda=\bar{x}$)
-	\item Geometric Distribution has 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\item Geometric Distribution has 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{1}{\bar{x}}$)
-	\item Normal Distribution has 1 restriction if both mean, $\mu$, and variance, $\sigma^2$ are known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\item Normal Distribution has 2 restrictions if either mean, $\mu$, or variance, $\sigma^2$ is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ OR $\sigma^2=\hat{\sigma}^2$)
-	\item Normal Distribution has 3 restrictions if both mean, $\mu$, and variance, $\sigma^2$ are unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ AND $\sigma^2=\hat{\sigma}^2$)
+	\item Uniform Distribution:
+	\begin{itemize}
+		\item 1 restriction (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\end{itemize} 
+	\item Distribution in a Given Ratio: 
+	\begin{itemize} 
+		\item 1 restriction (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+	\end{itemize}
+	\item Binomial Distribution:
+	\begin{itemize}
+		\item 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+		\item 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{\bar{x}}{n}$)
+	\end{itemize}
+	\item Poisson Distribution:
+	\begin{itemize}
+		\item 1 restriction if average rate, $\lambda$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+		\item 2 restrictions if average rate, $\lambda$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\lambda=\bar{x}$)
+	\end{itemize}
+	\item Geometric Distribution:
+	\begin{itemize}
+		\item 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+		\item 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{1}{\bar{x}}$)
+	\end{itemize} 
+	\item Normal Distribution:
+	\begin{itemize}
+		\item 1 restriction if both mean, $\mu$, and variance, $\sigma^2$ are known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
+		\item 2 restrictions if either mean, $\mu$, or variance, $\sigma^2$ is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ OR $\sigma^2=\hat{\sigma}^2$)
+		\item 3 restrictions if both mean, $\mu$, and variance, $\sigma^2$ are unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ AND $\sigma^2=\hat{\sigma}^2$)
+	\end{itemize} 
 \end{itemize} 
 
 \end{note}
