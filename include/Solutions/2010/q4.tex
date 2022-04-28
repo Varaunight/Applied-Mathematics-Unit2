@@ -21,22 +21,22 @@
 
 \subquestion
 
-We will define $X$ as the continuous random variable representing the lengths of wood produced. We can therefore express $X$ as,
+Let $X$ be the continuous random variable representing the lengths of wood produced,
 \begin{equation}
-	X \sim N(3, \sigma^2) \,,
+	X \sim N(3, \sigma^2) \,.
 \end{equation}	
-where $\sigma$ is the standard deviation of $X$.
+
+We are also given that,
+\begin{equation}
+	P(X<2.75) = 0.15 \,.
+\end{equation}
 	
 \begin{subsubquestions}
 	
 \subsubquestion
 
-We should note that we are given,
-\begin{equation}
-	P(X<2.75) = 0.15 \,.
-\end{equation}
-	
-To make sense of this, we must first standardize the random variable $X$ to the normal random variable $Z$ as follows,
+We can use the information given to determine $\sigma$.	
+We begin with standardizing the random variable $X$ to the normal random variable $Z$ as follows,
 \begin{align}
 	P(X<2.75) = P\left(\frac{X - \mu}{\sigma}<\frac{2.75-\mu}{\sigma}\right) & = 0.15 \nn \\
 	            P\left(Z <\frac{2.75-3}{\sigma}\right) & = 0.15 \nn \\
@@ -44,7 +44,7 @@ To make sense of this, we must first standardize the random variable $X$ to the 
 	            \implies \Phi\left(\frac{-0.25}{\sigma}\right) & = 0.15 \,.
 \end{align}
 
-From our Z-tables, we see that $\Phi(-1.04)=0.15$. Thus, we get that,
+From our Z-tables, we see that $\Phi(-1.04)=0.15$. Thus, 
 \begin{align}
 	\frac{-0.25}{\sigma} & = -1.04 \nn \\
 	\implies \sigma & = \frac{-0.25}{-1.04} \nn \\
@@ -55,12 +55,12 @@ From our Z-tables, we see that $\Phi(-1.04)=0.15$. Thus, we get that,
 
 \subsubquestion
 
-We have found that,
+We can update our distritbuion with the new information,
 \begin{equation}
 	X \sim N(3,0.24^2) \,.
 \end{equation}
 
-By standardizing from $X$ to $Z$, we get that,
+To determine $P(X>3.2)$, we can proceed by standardizing standardizing $X$ to $Z$ as follows,
 \begin{align}
 	P(X>3.2) & = P\left(\frac{X-\mu}{\sigma}>\frac{3.2-\mu}{\sigma} \right) \nn \\
 	         & = P\left(Z>\frac{3.2-3}{0.24} \right) \nn \\
@@ -97,12 +97,12 @@ We should note that, if there is no association between the number of employees 
 %------------------------------------------------------------------------------
 
 \subsubquestion
-We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance level. From Section(placeholder for CHI Squared notes), we know that,
+We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance level. From Section(placeholder for CHI Squared notes)\TODO{Insert chi square notes}, we know that,
 \begin{equation}
 	\chi^2_{\text{calc.}} = \sum_{\forall k} \left( \frac{(O_k-E_k)^2}{E_k}\right) \,.
 \end{equation}
 
- See \rtab{2010:q4:ChiTab}.
+We summarize the details of this calculation in \rtab{2010:q4:ChiTab}.
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -121,19 +121,19 @@ We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance 
 	\caption{\label{2010:q4:ChiTab} $\chi^2$ Table.}
 \end{table}	
 
-We know that the number of degrees of freedom, $\nu$, is,
+The number of degrees of freedom, $\nu$, is,
 \begin{equation}
 	\nu = \text{Number of classes}-1 = 5-1 = 4\,.
 \end{equation}
 
-At the 5\% significance level, we know that we will reject $H_0$ iff,
+At the 5\% significance level, we that we can reject $H_0$ if and only if,
 \begin{align}
 	&\chi^2_{\text{calc.}} > \chi^2_{\alpha}(\nu) \nn \\
 	\implies & \chi^2_{\text{calc.}} > \chi^2_{0.05}(4) \nn \\
 	\implies & \chi^2_{\text{calc.}} > 9.488 \,.
 \end{align} 
 
-Therefore, from \rtab{2010:q4:ChiTab}, since $11.3>9.488$, we will reject $H_0$.
+Therefore, from \rtab{2010:q4:ChiTab}, since $11.3>9.488$, we reject $H_0$.
 \end{subsubquestions}
 
 \end{subquestions}

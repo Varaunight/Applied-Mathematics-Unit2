@@ -20,11 +20,19 @@
 \begin{subquestions}
 	
 \subquestion
-
-We should notice that, since A and B are independent,
+First, note that,
 \begin{align}
-	P(A' \land B') & = 1 - (P(A)+P(B)-P(A \land B)) \nn \\
-	               & = 1 - (P(A)+P(B)-P(A)\times P(B)) \nn \\
+	P(A' \land B') & = 1 - (P(A)+P(B)-P(A \land B)) \,.
+\end{align}
+
+From \ref{mod2:eq:Independent}, we know that since $A$ and $B$ are independent,
+\begin{equation}
+	P(A \land B) = P(A) \times P(B) \,.
+\end{equation}
+
+Substituting this in the above, we find,
+\begin{align}
+	P(A' \land B') & = 1 - (P(A)+P(B)-P(A)\times P(B)) \nn \\
 	               & = 1 - (0.6+0.15-(0.6\times0.15)) \nn \\
 	               & = 1 - (0.11) \nn \\
 	               & = 0.89 \,.
@@ -46,14 +54,14 @@ We are given that 3 members of the choir are chosen for a special occasion.
 	
 \subsubsubquestion
 
-From the information in the question, we should first notice that the total number of combinations that can be chosen is,
+First, note that the total number of combinations that can be chosen is,
 \begin{equation}
 	^{30}C_3 = \frac{30!}{27! \times 3!} = 4060 \,.
 \end{equation}
 	
 To find the probability that two sopranos and one tenor is chosen, we must find the number of ways that this can happen. From \rdef{mod2:defn:MultiplicationRule}, we know that the number of ways to chose two sopranos and one tenor is,
 \begin{align}
-	\text{2 Sopranos and 1 Tenor} & = \text{Choosing 2 Sopranos} \times \text{Choosing 1 Tenor} \nn \\
+	\#(\text{2 Sopranos and 1 Tenor}) & = \#(\text{2 Sopranos}) \times \#(\text{1 Tenor}) \nn \\
 	                              & = ~ ^{12}C_2 \times  ~^{6}C_1 \nn \\
 	                              & = \frac{12!}{10! \times 2!} \times \frac{6!}{6! \times 0!} \nn \\
 	                              & = 66 \times 6 \nn \\
@@ -73,7 +81,7 @@ Thus, the probability that two sopranos and one tenor is chosen, $P(2S + 1T)$, i
 The number of ways to chose 1 soprano, 1 tenor and 1 bass is,
 \begin{align}
 	\hspace{-50pt}
-	\text{1 Soprano, 1 Tenor and 1 Bass} & =  \text{Choosing 1 Soprano} \times \text{Choosing 1 Tenor} \times \text{Choosing 1 Bass} \nn \\
+	\#(\text{1 Soprano, 1 Tenor and 1 Bass}) & =  \#(\text{1 Soprano}) \times \#(\text{1 Tenor}) \times \#(\text{1 Bass}) \nn \\
 	                                     & = ~^{12}C_1 \times ~^{6}C_1 \times ~^{5}C_1 \nn \\
 	                                     & = 12 \times 6 \times 5 \nn \\
 	                                     & = 360 \,.
@@ -91,7 +99,7 @@ Thus, the probability that one soprano, one bass and one tenor is chosen, $P(1S+
 
 From \rdef{mod2:defn:Conditional}, the probability that 3 tenors are chosen, given that all three parts are the same, is given as,
 \begin{equation}
-	P(\text{3 Tenors|3 parts are the same}) = \frac{\text{Probability that 3 tenors are chosen}}{\text{Porbability that all 3 parts are the same}} \,.
+ 	P(\text{3 Tenors|3 parts are the same}) = \frac{\text{Probability that 3 tenors are chosen}}{\text{Probability that all 3 parts are the same}} \,.
 \end{equation}
 
 The probability that 3 tenors are chosen is given as,
@@ -103,7 +111,7 @@ The probability that 3 tenors are chosen is given as,
 
 Similarly, the probability that all 3 parts are the same is,
 \begin{align}
-	\text{Probability that 3 parts are the same} & = \frac{P(3S) + P(3A) + P(3T) + P(3B)}{4060} \nn \\
+	\text{Probability that 3 parts are the same} & = P(3S) + P(3A) + P(3T) + P(3B)\nn \\
 												& = \frac{^{12}C_3 + ~^{7}C_3 + ~^{6}C_3 + ~^{5}C_3}{4060} \nn \\
 												& = \frac{220+35+20+10}{203} \nn \\
 												& = \frac{285}{4060} \nn \\
@@ -154,6 +162,8 @@ This line can then be wrapped around the circular table with any starting positi
 	                       & = 2 \times 15 \times 5\times 4\times 4\times 3\times 3\times 2\times 2\times 1\times 1 \nn \\
 	                       & = 86400 \,.
 \end{align}
+
+\TODO{Don't we have to divide by 5 now since we need to convert it to a circle?}
 
 \end{subsubquestions}
 	

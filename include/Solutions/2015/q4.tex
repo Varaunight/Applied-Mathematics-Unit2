@@ -25,27 +25,45 @@
 \subsubquestion
 The probability distribution function of a continuous random variable $X$ is given, as well as $F(0.5)=0.8.$ \\
 
-From \rprop{mod2:prop:ContinuousRV:1}, we know that,
+We want to determine the two unknowns $a$ and $b$. We can use two constraints, that from \rprop{mod2:prop:ContinuousRV:1}, 
 \begin{equation}
-	 \int_{-\infty}^{\infty} f(x)\mathrm{d}x = 1
+	 \int_{-\infty}^{\infty} f(x)\,\dd x = 1
+\end{equation}
+and,
+\begin{equation}
+	F(0.5) = 0.08\,.
 \end{equation}
 
-
-Thus, we can formulate the equation,
+For the first constraint, we must split up the integral over the different regions,
 \begin{align}
-	\int_{-\infty}^{0} f(x)\mathrm{d}x+ \int_{0}^{1} f(x)\mathrm{d}x + \int_{1}^{\infty} f(x)\mathrm{d}x = 1, \nn \\
-	\int_{-\infty}^{0} 0\mathrm{d}x+ \int_{0}^{1} (a+bx)\mathrm{d}x + \int_{1}^{\infty} 0\mathrm{d}x = 1, \nn \\
-	0+ \int_{0}^{1} (a+bx)\mathrm{d}x ~+ 0 = 1, \nn \\
-	\left[ax + \frac{bx^2}{2}\right]_0^1 = 1, \nn \\
-	\left[a(1) + \frac{b(1)^2}{2}\right] - \left[a(0) + \frac{b(0)^2}{2}\right]= 1, \nn \\
-	a + \frac{b}{2} = 1. \label{2015:q4:eqn:crv1}
+\int_{-\infty}^{\infty} f(x)\,\dd x&=\int_{-\infty}^{0} f(x)\,\dd x+ \int_{0}^{1} f(x)\,\dd x + \int_{1}^{\infty} f(x)\,\dd x 
 \end{align}
+
+Substituting, 
+\begin{align}
+\int_{-\infty}^{\infty} f(x)\,\dd x&=\ \int_{-\infty}^{0} 0\,\dd x+ \int_{0}^{1} (a+bx)\,\dd x + \int_{1}^{\infty} 0\,\dd x  \nn \\
+	&=0+ \int_{0}^{1} (a+bx)\,\dd x ~+ 0  \nn \\
+	&=\left[ax + \frac{bx^2}{2}\right]_0^1  \nn \\
+	&=\left[a(1) + \frac{b(1)^2}{2}\right] - \left[a(0) + \frac{b(0)^2}{2}\right]\nn \\
+	&= a + \frac{b}{2}  \,.
+\end{align}
+and so
+\begin{equation}
+	a + \frac{b}{2}  = 1 \label{2015:q4:eqn:crv1}
+\end{equation}
 
 In order to solve for $a$ and $b$, we must formulate another equation using the cumulative distribution function of $X$ given as $F(z)$. From \rdef{mod2:defn:ContinuousRV:CDF}, 
 \begin{align}
-	F(z) & = \int_{-\infty}^{z} f(x)\mathrm{d}x \nn \\
-	     & = \int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{z} f(x)\mathrm{d}x \nn \\
-	     & = 0 + \int_{0}^{z} (a+bx)dx \nn \\
+	F(z) & = \int_{-\infty}^{z} f(x)\,\dd x
+\end{align}
+
+Since we will use $z = 0.5$, we must split up the integral as
+\begin{align}
+	F(z) & = \int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{z} f(x)\,\dd x \,,
+\end{align}
+before we can substitute and evaluate,
+\begin{align}
+	F(z) & = 0 + \int_{0}^{z} (a+bx)dx \nn \\
 	     & = \left[ax + \frac{bx^2}{2}\right]_0^z \nn \\
 	     & = \left[a(z) + \frac{b(z)^2}{2}\right] - \left[a(0) + \frac{b(0)^2}{2}\right] \nn \\
 	     & = az + \frac{bz^2}{2} \,.
@@ -85,14 +103,13 @@ Thus, $a=2.2$ and $b=-2.4$.
 
 \subsubquestion
 
-From \rdef{mod2:note:ContinuousRV:CDF2}, we can solve for $P(X>0.5)$ as follows,
+From \rdef{mod2:note:ContinuousRV:CDF2}, \TODO{fix this reference} we can solve for $P(X>0.5)$ as follows,
 \begin{align}
 	P(X>0.5) & = 1 - F(0.5) \nn \\
 	         & = 1 - 0.8 \nn \\
 	         & = 0.2.
 \end{align}
 
-Thus, $P(X>0.5)=0.2$.
 \end{subsubquestions}
 
 %------------------------------------------------------------------------------
@@ -160,7 +177,7 @@ We can state 2 hypotheses:
 	\item $H_1$ : The data cannot be modeled by a normal distribution with mean 9 and standard deviation 1.
 \end{itemize}
 
-We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance level. From Section(placeholder for CHI Squared notes), we know that,
+We are asked to perform a $\chi^2$ goodness-of-fit test at the 5\% significance level. From Section(placeholder for CHI Squared notes)\TODO{Insert ref}, we know that,
 \begin{equation}
 	\chi^2_{\text{calc.}} = \sum_{\forall k} \left( \frac{(O_k-E_k)^2}{E_k}\right) \,.
 \end{equation}
