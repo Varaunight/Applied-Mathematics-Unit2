@@ -165,7 +165,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 	\end{equation}
 	and from Axiom~[\ref{mod2:axiom:ProbabilityAxiom:2}] and Axiom~[\ref{mod2:axiom:ProbabilityAxiom:3}] that
 	\begin{equation}
-	\sum_{\forall x}P(X=x) = 1 .
+	\sum_{\forall i}P(X=x_i) = 1 .
 	\end{equation}
 \end{prop}
 
@@ -377,7 +377,7 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 	If $X$ is a continuous random variable, the \textbf{variance} of $X$ is given by,
 	\begin{align}
 	Var[X] &= E[X^2] - {E[X]}^2, \\
-	 &= \int_{-\infty}^{\infty}x^2 f(x).dx - {(\int_{-\infty}^{\infty}x f(x).dx)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
+	 &= \int_{-\infty}^{\infty}x^2 f(x)\,\dd x - {\left(\int_{-\infty}^{\infty}x f(x)\,\dd x \right)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
 	\end{align}
 \end{defn}
 
@@ -396,19 +396,19 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 
 
 \begin{defn} \label{mod2:defn:ContinuousRV:CDF}
-	For a continuous random variable $X$ with p.d.f $f$,  the \textbf{cumulative distribution function, F,} is defined as follows,
+	For a continuous random variable $X$ with p.d.f $f$,  the \textbf{cumulative distribution function}, $F$, is defined as,
 	\begin{equation}
 		F(x) = P(X \leq x), \
 	\end{equation}
 	
 	Using Eq~[\ref{mod2:note:ContinuousRV:Note1}], where $B = (-\infty, x]$,
 	\begin{equation}
-		F(x) = \int_{-\infty}^{x} f(x).dx, \
+		F(x) = \int_{-\infty}^{x} f(t)\,\dd t, \
 	\end{equation}
 	
 	Using the \textbf{Fundamental Law of Calculus}, then
 	\begin{equation}
-	f(x) = \frac{d}{dx}F(x)
+	f(x) = \ddd{}{x}F(x)
 .	\end{equation}
 	
 	
@@ -417,7 +417,7 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 \begin{note} \label{mod2:note:ContinuousRV:CDF}
 	This implies
 	\begin{equation}
-		P( a \leq X \leq b) = F(b) - F(a).
+		P( a < X \leq b) = F(b) - F(a).
 	\end{equation}
 \end{note}
 
