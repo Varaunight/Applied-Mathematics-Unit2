@@ -84,37 +84,40 @@ and
 	P(L|X=T) &= 0.10
 \end{align}
 
-We know that, \TODO{Check if there is anything in the appendix for this},
+As a taxi must be called, the probability that a taxi arrives late is,
+\begin{equation}
+	P(L) = P({(X=F) \land L}) + P((X=G) \land L) + P({(X=T) \land L}) \,.
+\end{equation}
+	
+Thus, we can find $P({L})$ as follows,
+\begin{align}
+	P({(X=F) \land L}) & = 0.3 \times 0.03 \nn \\
+	                       & = 0.009 \,. \\ \nn 
+\end{align}
+\begin{align}
+	P({(X=G) \land L}) & = 0.25 \times 0.05 \nn \\
+	 					   & = 0.0125 \, \\ \nn 
+\end{align}
+\begin{align}
+	P({(X=T) \land L}) & = 0.45 \times 0.1 \nn \\
+	 					   & = 0.045 \,.  \\ \nn    
+\end{align}
+\begin{align}	 					   
+	P(L) & = P({(X=F) \land L}) + P({(X=G) \land L}) + P({(X=T) \land L}) \nn \\
+	                    & = 0.009+0.0125+0.045 \nn \\
+	                    & = 0.0665 = 6.65\% \,.					              
+\end{align}
+
+Alternatively, we know that,
 \begin{align}
 	P(L)&= \sum_{X} P(L|X) P(X)\,.
 \end{align}
 
-Thus, we can compte $P(L)$ as,
+Thus, we can compute $P(L)$ as,
 \begin{align}
 	P(L)&= P(L|X=F) P(X=F) + P(L|X=G) P(X=G)+ P(L|X=T) P(X=T) \nn\\
 	&=0.3 \times 0.03 +  0.25 \times 0.05 + 0.45 \times 0.1 \nn\\
 	&=  0.0665 = 6.65\% \,.		
-\end{align}
-
-\TODO{Ask Varaun to look at this and see if it makes sense to students. If it is maybe delete his part? Or add an alternative thought process.}
-
-
-The probability that a taxi arrives late is,
-\begin{equation}
-	P(\text{Late Taxi}) = P(\text{F $\land$ Late}) + P(\text{G $\land$ Late}) + P(\text{T $\land$ Late}) \,.
-\end{equation}
-	
-Thus, we can find $P(\text{Late Taxi})$ as follows,
-\begin{align}
-	P(\text{F $\land$ Late}) & = 0.3 \times 0.03 \nn \\
-	                       & = 0.009 \,. \\ \nn \\
-	P(\text{G $\land$ Late}) & = 0.25 \times 0.05 \nn \\
-	 					   & = 0.0125 \, \\ \nn \\
-	P(\text{T $\land$ Late}) & = 0.45 \times 0.1 \nn \\
-	 					   & = 0.045 \,.  \\ \nn \\       
-	P(\text{Late Taxi}) & = P(\text{F $\land$ Late}) + P(\text{G $\land$ Late}) + P(\text{T $\land$ Late}) \nn \\
-	                    & = 0.009+0.0125+0.045 \nn \\
-	                    & = 0.0665 = 6.65\% \,.					              
 \end{align}
 
 %------------------------------------------------------------------------------
