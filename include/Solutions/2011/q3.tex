@@ -82,7 +82,6 @@ The strategy now is to treat the three M's as a single item. Now, there are only
 %------------------------------------------------------------------------------
 
 \subquestion
-\TODO{I think this might be wrong but I can come back to it. Why did he use 5 with its a committe of 4?}
 We should notice that a committee can only have more that 3 women in it if ALL 4 women are chosen. Therefore, there is only 1 possible committee with all 4 women. 
 
 Thus, we can find the total number of committees that can be formed among all the persons, and minus the 1 committee with 4 women, in order to find the number of committees with AT MOST 3 women. Thus,
@@ -92,15 +91,15 @@ Thus, we can find the total number of committees that can be formed among all th
 
 Since every possible person out of the 10 is distinct, we can use \rdef{mod2:defn:CombinationEqn} as follows,
 \begin{align}
-	\text{Number of Committees} & = ~ ^{10}C_5 \nn \\
-	                            & = \frac{10!}{5!\times (10-5)!} \nn \\
-	                            & = \frac{10!}{5! \times 5!} \nn \\
-	                            & = 252 \,.
+	\text{Number of Committees} & = ~ ^{10}C_4 \nn \\
+	                            & = \frac{10!}{4!\times (10-4)!} \nn \\
+	                            & = \frac{10!}{4! \times 6!} \nn \\
+	                            & = 210 \,.
 \end{align}
 
 Thus,
 \begin{equation}
-	\text{Number of committees with at most 3 Women} = 252 - 1 = 251 \,.
+	\text{Number of committees with at most 3 Women} = 210 - 1 = 209 \,.
 \end{equation}
 
 %------------------------------------------------------------------------------
