@@ -186,7 +186,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 \begin{defn}\label{mod2:defn:Discrete:Variance}
 	If $X$ is a random variable with mean $\mu$, then the \textbf{variance}, $Var[X]$, is defined by
 	\begin{align}
-	Var[X] &= E[(X-\mu)^2],  \label{mod2:eq:Discrete:Variance:1}  \\
+	\var[X] &= E[(X-\mu)^2],  \label{mod2:eq:Discrete:Variance:1}  \\
 	&= E[X^2] - (E[X])^2  = E[X^2] - \mu^2 . \label{mod2:eq:Discrete:Variance:2} \
 	\end{align}
 \end{defn}
@@ -203,7 +203,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 \end{defn}
 
 \begin{note}\label{mod2:note:DiscreteUniform}
-	In the discrete case, the notation $X \sim \text{Unif}(a, b)$ or $X \sim \text{U}(a, b)$ implies that $X$ can take \textbf{integer} values $x$ such that $a \leq x \leq b$. Here, the total numer of values $X$ can take is given by
+	In the discrete case, the notation $X \sim \text{Unif}(a, b)$ or $X \sim \text{U}(a, b)$ implies that $X$ can take \textbf{integer} values $x$ such that $a \leq x \leq b$. Here, the total number of values $X$ can take is given by
 	\begin{equation}
 		n = b - a + 1,
 	\end{equation}
@@ -214,7 +214,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 		The \textit{expected value (mean)} and \textit{variance} of $X \sim \text{U}(a,b)$ are given by:
 	\begin{align}
 	E[X] &= \frac{a+b}{2}, \label{mod2:eq:DiscreteUniform:Mean} \\
-	Var[X] &= \frac{(b-a+1)^2 - 1}{12}. \label{mod2:eq:DiscreteUniform:Variance} 
+	\var[X] &= \frac{(b-a+1)^2 - 1}{12}. \label{mod2:eq:DiscreteUniform:Variance} 
 	\end{align}
 \end{note}
 
@@ -233,7 +233,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
 	\begin{align}
 	E[X] &= np,  \label{mod2:eq:Binomial:Mean} \\ 
-	Var[X] &= np(1-p), \label{mod2:eq:Binomial:Variance} \\
+	\var[X] &= np(1-p), \label{mod2:eq:Binomial:Variance} \\
 	&= npq  \: \text{ where } q = (1-p).\ 
 	\end{align}
 \end{note}
@@ -252,7 +252,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 
 \section{Geometric Distribution} \label{mod2:section:Geometric}
 \begin{defn}\label{mod2:defn:Geomtric}
-	A discrete random variable $X$ is said to follow a \textbf{geomteric distribution} with parameter $p$, $X \sim \text{Geo}(p)$, if its probability mass function, $P$, is given by
+	A discrete random variable $X$ is said to follow a \textbf{geometric distribution} with parameter $p$, $X \sim \text{Geo}(p)$, if its probability mass function, $P$, is given by
 \begin{equation}
 P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \ 
 \end{equation} 
@@ -262,7 +262,7 @@ P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \
 	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
 	\begin{align}
 	E[X] &= \frac{1}{p},  \label{mod2:eq:Geometric:Mean} \\ 
-	Var[X] &= \frac{1-p}{p^2}, \label{mod2:eq:Geomtric:Variance} \\
+	\var[X] &= \frac{1-p}{p^2}, \label{mod2:eq:Geomtric:Variance} \\
 	&= \frac{q}{p^2}  \: \text{ where } q = (1-p).\ 
 	\end{align}
 \end{note}
@@ -297,7 +297,7 @@ P(X = x) =\frac{ \lambda ^ x e^{-\lambda}}{x!} \quad x \in (0, 1, 2, ...). \labe
 	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
 	\begin{align}
 	E[X] &= \lambda,  \label{mod2:eq:Poisson:Mean} \\ 
-	Var[X] &= \lambda. \label{mod2:eq:Poisson:Variance} 
+	\var[X] &= \lambda. \label{mod2:eq:Poisson:Variance} 
 	\end{align}
 \end{note}
 
@@ -326,7 +326,7 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 	
 
 
-\section{Continuous Random Varibales} \label{mod2:section:ContinuousRandomVar}
+\section{Continuous Random Variables} \label{mod2:section:ContinuousRandomVar}
 
 \begin{defn} \label{mod2:defn:ContinuousRandomVar}
 	We say that $X$ is a \textbf{continuous random variable}, if there exists a non-negative function $f$, defined for all real $x \in (-\infty,\infty)$, having the property that, for any set of real numbers $B$,
@@ -376,13 +376,13 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 \begin{defn} \label{mod2:defn:ContinuousRV:Variance}
 	If $X$ is a continuous random variable, the \textbf{variance} of $X$ is given by,
 	\begin{align}
-	Var[X] &= E[X^2] - {E[X]}^2, \\
+	\var[X] &= E[X^2] - {E[X]}^2, \\
 	 &= \int_{-\infty}^{\infty}x^2 f(x)\,\dd x - {\left(\int_{-\infty}^{\infty}x f(x)\,\dd x \right)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
 	\end{align}
 \end{defn}
 
 \begin{law} \label{mod2:law:UnconsciousStat}
-	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statiscian (LOTUS)} is used. This law states that if $X$ is a continuous randon varibale with probability density function $f$, then for any function g,
+	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statistician (LOTUS)} is used. This law states that if $X$ is a continuous random variable with probability density function $f$, then for any function g,
 	\begin{equation}
 		E[g(X)] = \int_{-\infty}^{\infty}g(x) f(x).dx. \label{mod2:eq:LOTUS:ContinuousRV}
 	\end{equation}
@@ -488,26 +488,26 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 
 \begin{prop}
 
-Define  functions $g$ and $f$ with $a, b, c \in \mathbb{R}$. For \textbf{ANY} random variables (discrete or cotinuous) $X$ and $Y$, the following properties hold
+Define  functions $g$ and $f$ with $a, b, c \in \mathbb{R}$. For \textbf{ANY} random variables (discrete or continuous) $X$ and $Y$, the following properties hold
 \begin{align}
 E[aX + b] &= aE[X] + b, \\
 E[X + Y] &= E[X] + E[Y], \\
 E[ag(X) + bf(Y)  + c] &= aE[g(X) ]+ bE[f(Y)] + c, \\
-Var[ag(X) + b] &= a^2Var[g(X)].
+\var[ag(X) + b] &= a^2\var[g(X)].
 \end{align}
 
 If $X$ and $Y$ are \textbf{independent} random variables, then the following properties also hold
 \begin{align}
 E[XY] &= E[X] \ E[Y], \\
 E[g(X)f(Y)] &= E[g(X)] \ E[f(Y)], \\
-Var[X + Y] &= Var[X]+ Var[Y].
+\var[X + Y] &= \var[X]+ \var[Y].
 \end{align}
 
 \end{prop}
 
 \begin{note} \label{mod2:note:Independence:Non-implication}
 	
-	If $E[XY] = E[X] \ E[Y]$ or $Var[X + Y] = Var[X]+ Var[Y]$, this does not imply $X$ and $Y$ are independent.
+	If $E[XY] = E[X] \ E[Y]$ or $\var[X + Y] = \var[X]+ \var[Y]$, this does not imply $X$ and $Y$ are independent.
 	
 \end{note}
 
