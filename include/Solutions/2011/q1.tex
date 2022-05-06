@@ -21,7 +21,7 @@
 
 \subquestion
 
-We can construct the following truth table to evaluate the proposition $\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}$
+We can construct the following truth table to evaluate $\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}$
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|}
@@ -34,10 +34,10 @@ We can construct the following truth table to evaluate the proposition $\boldsym
 		1 & 1 & 0 & 0 & 0 & 0 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2011:q2:tab:TruthTab1} Truth Table of $\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}$.}
+	\caption{\label{2011:q1:tab:TruthTab1} Truth Table of $\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}$.}
 \end{table}
 
-We can see from rtab{2011:q2:tab:TruthTab1} the proposition always takes the value of $\boldsymbol{p}$.
+We can see from \rtab{2011:q1:tab:TruthTab1} the proposition always takes the value of $\boldsymbol{p}$.
 %-----------------------------------------------------------------------------
 % 1 b
 %-----------------------------------------------------------------------------
@@ -55,10 +55,10 @@ We can write the following Boolean expression for the given logic circuit.
 
 \subquestion
 
-We can draw the following switching circuit to represent the expression $\boldsymbol{(a \land b) \lor (a \land (\sim b \lor c))}$ below.
+We can draw the following switching circuit to represent $\boldsymbol{(a \land b) \lor (a \land (\sim b \lor c))}$ below.
 \begin{center}
 	
-\begin{circuitikz}
+\begin{circuitikz}[scale=0.75]
 	\draw [color=black, thin] (0,0) -- (2,0);
 	\draw [color=black, thin] (2,0) -- (2,2);
 	\draw [color=black, thin] (2,0) -- (2,-2);

@@ -63,7 +63,7 @@ If the team contains 2 girls, it must also contain 2 boys. Therefore, we must ch
 
 In order for the team to have more girls than boys, there must either be 4 girls chosen or 3 girls chosen and 1 boy. Using \rdef{mod2:defn:AdditionRule} and \rdef{mod2:defn:MultiplicationRule}, we see that this can be given as,
 \begin{align}
-	\text{Number of teams with more girls} & = \text{Teams with 4 girls} + \text{Teams with 3 girls and 1 boy} \nn \\
+	\text{Teams with more girls} & = \text{Teams with 4 girls} + \text{Teams with 3 girls, 1 boy} \nn \\
 	                                       & = ~^6C_4 + \left(^6C_3 \times ~^7C_1 \right) \nn \\
 	                                       & = \frac{6!}{4! \times (6-4)!} + \left(\frac{6!}{3! \times (6-3)!} \times \frac{7!}{1! \times (7-1)!} \right) \nn \\
 	                                       & = \frac{6!}{4! \times 2!} + \left(\frac{6!}{3! \times 3!} \times \frac{7!}{1! \times 6!} \right) \nn \\

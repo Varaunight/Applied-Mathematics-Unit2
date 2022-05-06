@@ -84,10 +84,14 @@ Thus, the equivalent statement of 	$\boldsymbol{(\sim p \, \lor \sim q)}$ is "It
 	 
 \subsubquestion
 
-We can draw the switching circuit given by the Boolean expression $\boldsymbol{p \land q \land (p \lor r) \land (q \lor (r \land p) \lor s}$ as follows.
+We can draw the switching circuit given by the Boolean expression 
+\begin{equation}
+	\boldsymbol{p \land q \land (p \lor r) \land (q \lor (r \land p) \lor s}
+\end{equation} as follows.
+
 \begin{center}
 
-\begin{circuitikz}
+\begin{circuitikz}[scale=0.75]
 		
 	\draw (0,0) to[normal open switch, *-*](3,0);
 	\path (0,0) -- (3,0) node[pos=0.5,below]{p};
