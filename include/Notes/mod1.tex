@@ -44,22 +44,31 @@ When a solution exists, go through the zeroes of the matrix by hand to find the 
 
 \section{Graph Theory and Critical Analysis} \label{Module1:GraphTheoryCriticalAnalysis}
 
-\textcolor{red} {DIAGRAMS FOR GRAPH DEFINITIONS  AND CRITICAL ANALYSIS ALGORITHMS}\\
-\textcolor{red}{HUNGARIAN ALGO}
 \begin{defn}\label{mod1:defn:Vertex}
-   \textbf{Vertex}: The Vertex is the fundamental unit from which graphs are formed.
+   \textbf{Vertex}: The Vertex is the fundamental unit from which graphs are formed. It may also be referred to as a node. $P$, $S$ and $R$ are examples of vertices in \rfig{mod1:ActNetDiag}
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Edge}
-   \textbf{Edge}: In an undirected graph, an unordered pair of nodes that signify  a line joining  two nodes are said to form an edge. For a directed graph, the edge is an ordered pair of nodes. An edge may also connect a node to itself.
+   \textbf{Edge}: In an undirected graph, an unordered pair of nodes that signify  a line joining  two nodes are said to form an edge. For a directed graph, the edge is an ordered pair of nodes. An edge may also connect a node to itself. The line connecting $Q$ to $S$ in \rfig{mod1:ActNetDiag} is an example of an edge.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Path}
-    \textbf{Path}: A path in a graph is a sequence of edges which joins multiple vertices, in which all vertices (and edges) are distinct.
+    \textbf{Path}: A path in a graph is a sequence of edges which joins multiple vertices, in which all vertices (and edges) are distinct. The sequence $P \rightarrow R \rightarrow T$ in \rfig{mod1:ActNetDiag} is an example of a path.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Degree}
-   \textbf{Degree}: The degree of a vertex  in a graph is the number of edges that are incident to the vertex. A loop is counted as two incident edges.
+   \textbf{Degree}: The degree of a vertex  in a graph is the number of edges that are incident to the vertex. A loop is counted as two incident edges. For example, the degree of $T$ in \rfig{mod1:ActNetDiag}, $\deg(T)$, is 3. 
+\end{defn}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics{../../Notes/figures/GraphAnalysisMod1}
+		\caption{\label{mod1:ActNetDiag} Example of an Activity Network.}
+	\end{center}
+\end{figure}
+
+\begin{defn}\label{mod1:defn:ActNet}
+	\textbf{Activity Network}: An Activity Network is a diagram which shows the order in which activities must be completed throughout a project. If we consider the vertices of \rfig{mod1:ActNetDiag} to be activities of an arbitrary project, we can see that certain activities must be completed for another to begin. For example, $Q$ can only begin if $P$ is completed and similarly, $T$ can begin if and only if both $R$ and $S$ are complete. 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:FloatTime}
@@ -67,12 +76,32 @@ When a solution exists, go through the zeroes of the matrix by hand to find the 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:CritPath}
-	\textbf{Critical Path}: A critical path is a path which joins activities in an Activity Network whose Float Time is $0$. It is the path which determines the minimum time for some set of operations to be completed. 
+	\textbf{Critical Path}: A critical path is a path which joins activities in an Activity Network whose Float Time is $0$. It is the path which determines the minimum time for some set of operations to be completed. To find the critical path in an activity network, it is useful to construct a table with the activities and their Earliest and Latest Start times. From \rtab{mod1:ActNetTab}, we can see that the critical path of \rfig{mod1:ActNetDiag} is $\text{Start} \rightarrow P \rightarrow R \rightarrow T \rightarrow \text{End}$.
 \end{defn}
 	
-\begin{defn}\label{mod1:defn:TourOfVertices}
-	\textbf{Tour of Vertices}: In a 2-dimensional graph, the set of vertices of the feasible region must contain the optimal solution. The Tour of Vertices method checks each vertex of the feasible region to find the optimum solution for the problem.
+\begin{defn}\label{mod1:defn:EarliestStart}
+	\textbf{Earliest Start Time}: To find the earliest start times, you work from the start of the activity network to the end. To find the earliest start time of some activity $K_n$, you add the weight of the preceding activity to the earliest start time of the preceding activity itself. If $K_n$ has more than one predecessor (for example, $T$ in \rfig{mod1:ActNetDiag} is preceded by both $S$ and $R$), you take the largest value obtained. This process if repeated until the end of the Activity Network. 
 \end{defn}
+
+\begin{defn}\label{mod1:defn:LatestStart}
+	\textbf{Latest Start Time}: To find the latest start times, you work from the end of the activity network to the start. The latest start time of the final activity in an activity network is equal to the earliest start time of that activity. To find the latest start time of some activity $K_j$, you subtract the weight of activity $K_j$ from the latest start time of its succeeding activity. If $K_j$ has more than one succeeding activity (for example, $P$ in \rfig{mod1:ActNetDiag} is succeeded by both $Q$ and $R$), you take the smallest value obtained. This process is repeated until the start of the Activity Network.
+\end{defn}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		Activity & Earliest Start Time & Latest Start Time & Float Time \\
+		\hline 
+		P & 0 & 0 & 0 \\
+		Q & 1 & 3 & 2 \\
+		S & 3 & 5 & 2 \\
+		R & 1 & 1 & 0 \\
+		T & 8 & 8 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{\label{mod1:ActNetTab}Start Times of \rfig{mod1:ActNetDiag}.}
+\end{table}
 
 \section{Logic and Boolean Algebra}
 
@@ -83,7 +112,7 @@ When a solution exists, go through the zeroes of the matrix by hand to find the 
 \begin{defn}\label{mod1:defn:LogicSymbols}
    Propositional Logical Symbols
       
-   \begin{table}[ht]
+   \begin{table}[H]
       \centering
       \begin{tabular}{|c|c|c|}
          \hline
