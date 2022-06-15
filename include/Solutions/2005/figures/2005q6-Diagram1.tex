@@ -1,0 +1,83 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Varaun Ramgoolie
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 2005 C
+%     Module: 3
+%     Question: 6 Sketch 1
+%------------------------------------------------------------------------------
+
+\documentclass[crop,tikz]{standalone}
+\usetikzlibrary{scopes,calc,patterns,angles,quotes}
+
+\begin{document}
+	
+\begin{tikzpicture}
+		
+	\matrix[column sep=1cm]{ %\draw[step = 0.5cm, very thin, gray] (0,0) grid (4,4);
+	
+	
+	%two circles as point particles	
+	\draw [draw=black,fill=black] (0.5,0.5) circle [radius=0.05];
+	\draw [draw=black,fill=black] (4,2) circle [radius=0.05];
+	
+	
+	
+	% path
+	\draw  [->, domain=0.55:3.95, densely dashed,gray!50,font=\small] plot (\x, {-0.55451 *\x*\x +  2.93287*\x - 0.823308});
+	
+	
+	
+	% adding axes
+	\draw[->, dashed, gray] (0.5,0.57) -- (0.5,2.5) node[left, gray]{ $y+$};
+	\draw[->, dashed, gray] (0.57,0.5) -- (2.5,0.5) node[below, gray]{ $x+$};
+	
+	
+	
+	%adding components of motion
+	\draw[->, dashed, blue, thick] (0.5,0.57) -- (0.5,1.5) node[midway, left=-3, black]{ $u_y$};
+	\draw[->, dashed, blue, thick] (0.57,0.5) -- (1.5,0.5) node[midway, below=-2, black]{ $u_x$};
+	\draw[->>, dashed, red, thick] (0.5,0.43) -- (0.5,-0.25) node[midway, left=-3, black]{ $a_y$}; 
+	 
+	\draw[->, dashed, blue,thick] (4.07,2) -- (5,2) node[midway, above=-2, black]{ $v_x$};
+	\draw[->, dashed, blue,thick] (4,1.93) -- (4,1) node[midway, left=-2, black]{ $v_y$};
+	
+	
+&
+	\hspace{-10pt}
+	
+	%\draw[step = 0.5cm, very thin, gray] (0,0) grid (4,4);
+	
+	%two circles as point particles	
+	\draw [draw=black,fill=black] (0.5,0.5) circle [radius=0.05];
+	\draw [draw=black,fill=black] (4,2) circle [radius=0.05];
+	
+	
+	
+	% path
+	\draw  [->, domain=0.55:3.95, densely dashed,gray!50,font=\small] plot (\x, {-0.55451 *\x*\x +  2.93287*\x - 0.823308});
+	
+	
+	
+	% adding measurements
+	\draw[<->, blue, densely dashed,thick] (0.57,0.5)--(3.97,0.5) node[midway,below,black]{ $s_x$};
+	\draw[<->,blue, densely dashed,thick] (4,0.53)--(4,1.93) node[midway,right,black]{ $s_y$};
+	
+%&
+	%\draw[step = 0.5cm, very thin, gray] (0,0) grid (4,4);
+	%\draw[->, thick] (0,0.5)--(0,1.5) node[left]{$+y$};
+	%\draw[->, thick] (0,0.5)--(1,0.5) node[right]{$+x$};
+\\		
+};
+
+
+\end{tikzpicture}
+	
+\end{document}
