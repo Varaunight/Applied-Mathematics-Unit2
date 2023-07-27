@@ -22,17 +22,11 @@
 
 \subquestion
 
-To maximize the objective function, $P = x+2y$, we are given the following inequalities:
+To maximize, $P = x+2y$, we are given the following inequalities:
 \begin{align}
-	3x + 17y & \leq 170 \,, 
-	\end{align}
-\begin{align}
-	7x + 8y & \leq 175 \,, 
-	\end{align}
-\begin{align}
-	y & \leq 9 \,, 
-	\end{align}
-\begin{align}
+	3x + 17y & \leq 170 \,, \nn \\
+	7x + 8y & \leq 175 \,, \nn \\
+	y & \leq 9 \,, \nn \\
 	x & \leq 2 \,.
 \end{align}
 
@@ -45,9 +39,9 @@ To maximize the objective function, $P = x+2y$, we are given the following inequ
 \subsubquestion
 
 The feasible region is shaded in the \rfig{2010:q1:fig:LinGraph}.
-\begin{figure}[H]
+\begin{figure}
 	\begin{center}
-		\includegraphics[scale=0.75]{../2010/figures/LinGraph}
+		\includegraphics{../2010/figures/LinGraph}
 		\caption{\label{2010:q1:fig:LinGraph} Linear Programming Graph.}
 	\end{center}
 \end{figure}
@@ -58,25 +52,27 @@ The feasible region is shaded in the \rfig{2010:q1:fig:LinGraph}.
 
 \subsubquestion
 
-We can solve the linear programming problem by performing a tour of the vertices (\rdef{mod1:defn:TourOfVertices}).
+From ~\ref{mod1:defn:TourOfVertices}, we can calculate $P$ by,
+\begin{align}
+	\text{Using (0,9)} \,, \nn \\
+	P & = x + 2y  \nn \\
+      & = (1 \times 0) + (2 \times 9)  \nn \\
+	  & = 18 \,. \\
+	\text{Using ($\frac{17}{3}$, 9)} \,, \nn \\
+	P & = x + 2y  \nn \\
+	  & = (1 \times \frac{17}{3}) + (2 \times 9)  \nn \\
+	  & = \frac{71}{3} \approx 23.67 \,.    \\		  
+	\text{Using (17,7)} \,, \nn \\
+	P & = x + 2y  \nn \\
+	  & = (1 \times 17) + (2 \times 7)  \nn \\
+	  & = 31 \,. \label{2010:q1:eqn:Profit} \\
+	\text{Using (25,0)} \,, \nn \\
+	P & = x + 2y  \nn \\
+	  & = (1 \times 25) + (2 \times 0)  \nn \\
+	  & = 25 \,. 
+\end{align}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		Vertice & $P = x + 2y$ \\
-		\hline
-		(0, 0) & 0 \\
-		(0, 9) & 18 \\
-		($\frac{17}{3}$, 9) & 23.67 \\
-		(17, 7) & 31 \\
-		(25, 0) & 25 \\
-		\hline
-	\end{tabular}
-	\caption{\label{2010:q1:tab:P} Tour of Vertices}
-\end{table}
-
-Thus, from \rtab{2010:q1:tab:P}, the maximum value of $P$ is $31$, when $x=17$ and $y=7$.
+Thus, from \req{2010:q1:eqn:Profit}, the maximum value of $P$ is $31$.
 
 \end{subsubquestions}
 
@@ -94,8 +90,8 @@ Thus, from \rtab{2010:q1:tab:P}, the maximum value of $P$ is $31$, when $x=17$ a
 
 \subsubquestion
 
-We can determine which task should be assigned to each of five persons by applying the Hungarian algorithm as follows.
-\begin{table}[H]
+The Hungarian algorithm is shown in \rtab{2010:q1:tab:HungAlgo}.
+\begin{table}[!h]
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\begin{tabular}{ccccc}
@@ -103,7 +99,7 @@ We can determine which task should be assigned to each of five persons by applyi
 		    55 & 53 & 50 & 50 & 52 \\
 			49 & 51 & 48 & 53 & 50 \\
 			50 & 50 & 52 & 50 & 51 \\
-			52 & 54 & 49 & 52 & 54 \\
+			52 & 54 & 49 & 52 & 24 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
 		\caption*{Matrix From question}
@@ -120,7 +116,7 @@ We can determine which task should be assigned to each of five persons by applyi
 			3 & 5 & 0 & 3 & 5 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Reducing Rows}
+		\caption*{Matrix after Reducing Rows}
 	\end{minipage}
 %-------------------------------------------------------------------------------
 	\hspace{20pt}
@@ -134,7 +130,7 @@ We can determine which task should be assigned to each of five persons by applyi
 			3 & 5 & 0 & 3 & 4 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Reducing Columns} 
+		\caption*{Matrix after Reducing Columns} 
 	\end{minipage}
 %-------------------------------------------------------------------------------
 	\vspace{20pt} 
@@ -150,7 +146,7 @@ We can determine which task should be assigned to each of five persons by applyi
 			&   &   & \hspace{-3.25mm} \hve[blue]{v1}  &   &   &                \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
 	\end{minipage}
 %-------------------------------------------------------------------------------
 	\hspace{20pt}
@@ -166,7 +162,7 @@ We can determine which task should be assigned to each of five persons by applyi
 			  &   &   &   &   \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Applying Step 5, ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
+		\caption*{Applying Step ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
 	\end{minipage}
 %-------------------------------------------------------------------------------
 	\hspace{20pt}
@@ -182,7 +178,7 @@ We can determine which task should be assigned to each of five persons by applyi
 				&	  &   &   &   &    & 			   \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
 	\end{minipage}
 
 	\caption{\label{2010:q1:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
@@ -209,7 +205,6 @@ Therefore, the optimum pairings are as follows:
 %------------------------------------------------------------------------------
 % 1 b ii--------------------------------------------------------------------------
 %------------------------------------------------------------------------------
-\subsubquestion
 
 The minimum total time for the project is,
 \begin{equation}
@@ -224,43 +219,11 @@ The minimum total time for the project is,
 
 \subquestion
 
-Any of the following paths will start and finish at A, while visiting each node (apart from A) once. We recommend the simpler paths for a 3 mark question like this.
-
-Visiting 1 vertex and returning to A:
+Three paths which start and finish at A are:
 \begin{align}
-& A \rightarrow B \rightarrow A \,, \nn \\
-& A \rightarrow E  \rightarrow A \,, \nn \\
-& A \rightarrow D  \rightarrow A \,, \nn
-\end{align}
-
-Visiting 2 vertices and returning to A:
-\begin{align}
-& A \rightarrow B \rightarrow E \rightarrow A \,, \nn \\
-& A \rightarrow E \rightarrow B \rightarrow A \,, \nn \\
-& A \rightarrow E \rightarrow D \rightarrow A \,, \nn \\
-& A \rightarrow D \rightarrow E \rightarrow A \,, \nn
-\end{align}
-
-Visiting 3 vertices and returning to A:
-\begin{align}
-& A \rightarrow B \rightarrow C \rightarrow E \rightarrow A \,, \nn \\
-& A \rightarrow B \rightarrow C \rightarrow D \rightarrow A \,, \nn \\
-& A \rightarrow E \rightarrow C \rightarrow B \rightarrow A \,, \nn \\
-& A \rightarrow E \rightarrow C \rightarrow D \rightarrow A \,, \nn \\
-& A \rightarrow D \rightarrow C \rightarrow E \rightarrow A \,, \nn \\
-& A \rightarrow D \rightarrow C \rightarrow B \rightarrow A \,, \nn
-\end{align}
-
-Visiting 4 vertices and returning to A:
-\begin{align}
-& A \rightarrow B \rightarrow C \rightarrow D \rightarrow E \rightarrow A\,, \nn \\
-& A \rightarrow B \rightarrow C \rightarrow E \rightarrow D \rightarrow A \,, \nn \\
-& A \rightarrow B \rightarrow E \rightarrow C \rightarrow D \rightarrow A \,, \nn \\
-& A \rightarrow E \rightarrow B \rightarrow C \rightarrow D \rightarrow A \,, \nn \\
-& A \rightarrow E \rightarrow D \rightarrow C \rightarrow B \rightarrow A \,, \nn \\
-& A \rightarrow D \rightarrow C \rightarrow E \rightarrow B \rightarrow A \,, \nn \\ 
-& A \rightarrow D \rightarrow C \rightarrow B \rightarrow E \rightarrow A \,, \nn \\
-& A \rightarrow D \rightarrow E \rightarrow C \rightarrow B \rightarrow A \,, \nn .
+	& A \rightarrow B \rightarrow A \,, \nn \\
+	& A \rightarrow D \rightarrow E \rightarrow A \,, \nn \\
+	& A \rightarrow E \rightarrow C \rightarrow D \rightarrow A \,.
 \end{align}
 
 \end{subquestions}

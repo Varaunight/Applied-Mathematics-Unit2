@@ -20,7 +20,6 @@
 %------------------------------------------------------------------------------
  
 \subquestion
-Given the proposition $\boldsymbol{x \implies y}$,
 
 \begin{subsubquestions}
 
@@ -28,19 +27,19 @@ Given the proposition $\boldsymbol{x \implies y}$,
 
 \subsubquestion
 
-$\boldsymbol{(\sim x \implies \sim y)}$ is the Inverse.
+Inverse.
 
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-$\boldsymbol{(y \implies x)}$ is the Converse.
+Converse.
 
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-$\boldsymbol{(\sim y \implies \sim x)}$ is the Contrapositive.
+Contrapositive.
 
 \end{subsubquestions}
 	
@@ -56,13 +55,13 @@ $\boldsymbol{(\sim y \implies \sim x)}$ is the Contrapositive.
 
 \subsubquestion
 
-We can complete the truth table as follows
+See \rtab{2006:q1:tab:TruthTab1}.
 
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		$\boldsymbol{x}$ & $\boldsymbol{y}$ & $\boldsymbol{\sim x}$ & $\boldsymbol{\sim y}$ & $\boldsymbol{x \implies y}$ & $\boldsymbol{\sim y \implies \sim x}$ \\
+		x & y & $\sim$ x & $\sim$ y & x $\implies$ y & $\sim$ y $\implies$ $\sim$ x \\
 		\hline
 		0 & 0 & 1 & 1 & 1 & 1 \\
 		0 & 1 & 1 & 0 & 1 & 1 \\
@@ -70,14 +69,14 @@ We can complete the truth table as follows
 		1 & 1 & 0 & 0 & 1 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2006:q1:tab:TruthTab1} Truth Table of $\boldsymbol{x \implies y}$ and $\boldsymbol{\sim y \implies \sim x}$.}
+	\caption{\label{2006:q1:tab:TruthTab1} Truth Table of $x \implies y$ and $\sim y \implies \sim x$.}
 \end{table}
 
 %-----------------------------------------------------------------------------
 	
 \subsubquestion
 
-From \rtab{2006:q1:tab:TruthTab1}, we can see that the truth values of $\boldsymbol{x \implies y}$ and $\boldsymbol{\sim y \implies \sim x}$ are the same. Therefore, both expressions are logically equivalent.
+From \rtab{2006:q1:tab:TruthTab1}, we can see that the truth values of $x \implies y$ and $\sim y \implies \sim x$ are the same. Therefore, both expressions are logically equivalent.
 
 \end{subsubquestions}
 
@@ -93,31 +92,29 @@ From \rtab{2006:q1:tab:TruthTab1}, we can see that the truth values of $\boldsym
 
 \subsubquestion
 
-If $\boldsymbol{p}$ is the proposition "You have your cake" which is equivalent to "You do not eat your cake", then "You have your cake and eat it" can be expressed as,
+"You have your cake and eat it" can be expressed as,
 \begin{equation}
-	\boldsymbol{p ~\land \sim p} \,.
+	p ~\land \sim p \,.
 \end{equation}
 
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-The following truth can be constructed for the proposition $\boldsymbol{p \land \sim p}$,
+From \rtab{2006:q1:tab:TruthTab2} and \rdef{mod1:defn:Contradiction}, we can see that $p ~\land \sim p$ is a contradiction.
 
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
-		$\boldsymbol{p}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{p ~\land \sim p}$ \\
+		p & $\sim$ p & p $\land$ $\sim$ p \\
 		\hline
 		0 & 1 & 0 \\
 		1 & 0 & 0 \\ 
 		\hline
 	\end{tabular}
-	\caption{\label{2006:q1:tab:TruthTab2} Truth Table of $\boldsymbol{p ~\land \sim p}$.}
+	\caption{\label{2006:q1:tab:TruthTab2} Truth Table of $x \implies y$ and $\sim y \implies \sim x$.}
 \end{table}
-
-From \rtab{2006:q1:tab:TruthTab2} and \rdef{mod1:defn:Contradiction}, we can see that $\boldsymbol{p ~\land \sim p}$ is a contradiction because the truth table is alwaays 0.
 
 \end{subsubquestions}
 
@@ -127,8 +124,8 @@ From \rtab{2006:q1:tab:TruthTab2} and \rdef{mod1:defn:Contradiction}, we can see
 
 \subquestion
 
-We can construct the following activity network from the information given,
-\begin{figure}[H]
+See \rfig{2006:q1:fig:ActNet}.
+\begin{figure}
 	\begin{center}
 		\includegraphics{../2006/figures/2006q1ActNet}
 		\caption{\label{2006:q1:fig:ActNet} Activity Network of the project.}

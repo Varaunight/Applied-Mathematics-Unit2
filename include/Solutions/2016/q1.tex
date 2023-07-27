@@ -24,53 +24,58 @@
 \begin{subsubquestions}
 	
 \subsubquestion
-We wish to show that the the proposition $\boldsymbol{(p ~\land \sim q) \lor (\sim p \land q)}$ is equivalent to proposition $\boldsymbol{(p \lor q) \land (\sim p ~\lor \sim q)}$. We can construct the following truth tables to determine whether these propositions are equivalent.
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|c|c|c|c|c|c|}
-		\hline
-		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{\sim q}$ & $\boldsymbol{(p \land \sim q)}$ & $\boldsymbol{(\sim p \land q)}$ & $\boldsymbol{(p \ \land \sim q) \lor (\sim p \ \land q)}$ \\
-		\hline
-		0 & 0 & 1 & 1 & 0 & 0 & 0 \\
-		0 & 1 & 1 & 0 & 0 & 1 & 1  \\ 
-		1 & 0 & 0 & 1 & 1 & 0 & 1  \\
-		1 & 1 & 0 & 0 & 0 & 0 & 0  \\
-		\hline
-	\end{tabular}
-	\caption{\label{2016:q1:tab:TruthTab1} Truth Table of $\boldsymbol{(p ~\land \sim q) \lor (\sim p \ \land q)}$.}
-\end{table}
 
-\begin{table}[H]
+From \rtab{2016:q1:tab:TruthTab1}, we can see that the truth values for $(p ~\land \sim q) \lor (\sim p \land q)$ and $(p \lor q) \land (\sim p ~\lor \sim q)$ are the same.
+\begin{table}[ht]
 	\centering
-	\begin{tabular}{|c|c|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 		\hline
-		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{\sim q}$ & $\boldsymbol{(p \lor q)}$ & $\boldsymbol{(\sim p \ \lor \sim q)}$ & $\boldsymbol{(p \lor q) \land (\sim p \ \lor \sim q)}$ \\
+		p & q & $\sim$ p & $\sim$ q & (p $\land$ $\sim$ q) & ($\sim$ p $\land$ q) & (p $\land$ $\sim$ q) $\lor$ ($\sim$ p $\land$ q) & (p $\lor$ q) & ($\sim$ p $\lor$ $\sim$ q) & (p $\lor$ q) $\land$ ($\sim$ p $\lor$ $\sim$ q) \\
 		\hline
-		0 & 0 & 1 & 1 & 0 & 1 & 0  \\
-		0 & 1 & 1 & 0 & 1 & 1 & 1  \\ 
-		1 & 0 & 0 & 1 & 1 & 1 & 1  \\
-		1 & 1 & 0 & 0 & 1 & 0 & 0  \\
+		0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 0  \\
+		0 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1  \\ 
+		1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1  \\
+		1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0  \\
 		\hline
 	\end{tabular}
-	\caption{\label{2016:q1:tab:TruthTab1} Truth Table of $\boldsymbol{(p \lor q) \land (\sim p \ \lor \sim q)}$.}
+	\caption{\label{2016:q1:tab:TruthTab1} Truth Table.}
 \end{table}
 
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-Using the Distributive (\rdef{mod1:law:Distributive}) law three times, the Complement law (\rdef{mod1:law:Complement}) and the Identity law (\rdef{mod1:law:Identity}), we can see that,
+Using \rdef{mod1:law:Distributive}, we can see that,
 \begin{align}
-	\boldsymbol{(p \ \land \sim q) \lor (\sim p \land q)}
-	& \equiv \boldsymbol{(( p \ \land \sim q) ~\lor \sim p) \land ((p \ \land \sim q) \lor q)} \nn \\
-	& \equiv \boldsymbol{((p \ \lor \sim p) \land (\sim q \ \lor \sim p)) \land ((p \lor q) \land (\sim q \lor q))} \nn \\
-	& \equiv \boldsymbol{T \land (\sim q \ \lor \sim p) \land (q \lor p) \land T} \nn \\
-	& \equiv \boldsymbol{(q \ \lor \sim p) \land (q \lor p)} \, .
+	(p ~\land \sim q) \lor (\sim p \land q) 
+	& \equiv ((p ~\land \sim q) ~\lor \sim p) \land ((p ~\land \sim q) \lor q)\,. \label{2016:q1:Bool1}
+\end{align}
+\\
+Let "$A \equiv (p ~\land \sim q) ~\lor \sim p$" and "$B \equiv (p ~\land \sim q) \lor q$". Thus, 
+\begin{align}
+	(p ~\land \sim q) \lor (\sim p \land q) 
+	& \equiv A \land B \,.
 \end{align}
 
-Therefore,
+Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity}, we see that
 \begin{align}
-	\boldsymbol{(p ~\land \sim q) \lor (\sim p \land q) \equiv (\sim p ~\lor \sim q) \land (q \lor p)} \,.
+	A & \equiv (p ~\land \sim q) ~\lor \sim p \nn \\
+	  & \equiv (\sim p \lor p) \land (\sim p ~\lor \sim q) \nn \\
+	  & \equiv T \land (\sim p ~\lor \sim q) \nn \\
+	  & \equiv (\sim p ~\lor \sim q) \,.
+\end{align}
+
+Similarly, using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity},
+\begin{align}
+	B & \equiv (p ~\land \sim q) \lor q \nn \\
+	  & \equiv (q \lor p) \land (q \lor \sim q) \nn \\
+	  & \equiv (q \lor p) \land T \nn \\
+	  & \equiv (q \lor p) \,.  
+\end{align}
+
+Therefore, \req{2016:q1:Bool1} becomes,
+\begin{align}
+	(p ~\land \sim q) \lor (\sim p \land q) \equiv (\sim p ~\lor \sim q) \land (q \lor p) \,.
 \end{align}
 
 \end{subsubquestions}
@@ -85,9 +90,9 @@ Therefore,
 	
 \subsubquestion
 
-We can draw the switching circuit of $\boldsymbol{(p ~\land \sim q) \lor (\sim p ~\land q)}$ below.
+See the switching circuit for $(p ~\land \sim q) \lor (\sim p ~\land q)$ below.
 \begin{center}
-\begin{circuitikz}[scale=0.75]
+\begin{circuitikz}
 	\draw [color=black, thin] (0,0) -- (2,0);
 	\draw [color=black, thin] (2,0) -- (2,2);
 	\draw [color=black, thin] (2,0) -- (2,-2);
@@ -116,10 +121,10 @@ We can draw the switching circuit of $\boldsymbol{(p ~\land \sim q) \lor (\sim p
 
 \subsubquestion
 
-We can draw the switching circuit of  $\boldsymbol{(p \lor q) \land (\sim p \lor \sim q)}$ below.
+See the switching circuit for $(p \lor q) \land (\sim p \lor \sim q)$ below.
 
 \begin{center}
-\begin{circuitikz} [scale=0.75]
+\begin{circuitikz}
 	\draw [color=black, thin] (0,0) -- (2,0);
 	\draw [color=black, thin] (2,0) -- (2,2);
 	\draw [color=black, thin] (2,0) -- (2,-2);
@@ -159,9 +164,9 @@ We can draw the switching circuit of  $\boldsymbol{(p \lor q) \land (\sim p \lor
 
 \subquestion
 
-We can write the following Boolean expression to represent the output of the given switching circuit.
+The Boolean expression for $s$ is,
 \begin{equation}
-	\boldsymbol{(p ~\land \sim q) \lor (p ~\land \sim r)}\,.
+	(p ~\land \sim q) \lor (p ~\land \sim r)\,.
 \end{equation}
 
 %------------------------------------------------------------------------------
@@ -169,40 +174,35 @@ We can write the following Boolean expression to represent the output of the giv
 %------------------------------------------------------------------------------
 
 \subquestion
-Given the following propositions, \\
-$\boldsymbol{p}$: A person who eats red meat \\
-$\boldsymbol{q}$: A person who has a high cholesterol reading \\
-$\boldsymbol{r}$: A person with a normal cholesterol reading \\
-$\boldsymbol{s}$: A person who suffers a heart attack \\
 
 \begin{subsubquestions}
 	
 \subsubquestion
 
-The Boolean expression for "If a person eats red meat then that person may have a high cholesterol reading or suffer a heart attack." can be expressed as,
+The Boolean expression is,
 \begin{equation}
-	\boldsymbol{p \implies (q \lor s)}\,.
+	p \implies (q \lor s)\,.
 \end{equation}
 
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-The Boolean expression for "If a person does not suffer a heart attack then that person has a normal cholesterol reading and does not eat red meat." can be expressed as,
+The Boolean expression is,
 \begin{equation}
-	\boldsymbol{\sim s \implies (r ~\land \sim p)}\,.
+	\sim s \implies (r ~\land \sim p)\,.
 \end{equation}
 
 %------------------------------------------------------------------------------
 
 \subsubquestion
 
-We can create the truth table for the proposition $\boldsymbol{p \implies (q \lor s)}$.
+From \rtab{2016:q1:tab:TruthTab2} and using \rdef{mod1:defn:Tautology}, we can see that $p \implies (q \lor s)$ is not a tautology.
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{s}$ & $\boldsymbol{q \lor s}$ & $\boldsymbol{p \implies (q \lor s)}$ \\
+		p & q & s & q $\lor$ s & p $\implies$ (q $\lor$ s) \\
 		\hline
 		0 & 0 & 0 & 0 & 1 \\
 		0 & 0 & 1 & 1 & 1 \\
@@ -214,10 +214,8 @@ We can create the truth table for the proposition $\boldsymbol{p \implies (q \lo
 		1 & 1 & 1 & 1 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2016:q1:tab:TruthTab2} Truth Table of $\boldsymbol{p \implies (q \lor s)}$\,.}
+	\caption{\label{2016:q1:tab:TruthTab2} Truth Table of $p \implies (q \lor s)$\,.}
 \end{table}
-
-From \rtab{2016:q1:tab:TruthTab2} and \rdef{mod1:defn:Tautology}, the propsition $\boldsymbol{p \implies (q \lor s)}$ is not a tautology as its value is not always 1.
 
 \end{subsubquestions}
 

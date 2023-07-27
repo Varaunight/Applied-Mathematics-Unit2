@@ -21,7 +21,7 @@
 
 \subquestion
 
-The objective function can be given as,
+The objective function is,
 \begin{equation}
 	P = 300x + 550y \,.
 \end{equation}
@@ -34,13 +34,13 @@ The objective function can be given as,
 
 The 4 constraints to this problem are, 
 \begin{align}
-	\text{Constraint of number of pine cabinets:} & \ x \geq 0 \,, \nn \\
-	\text{Constraint of number of mahogany cabinets:} & \ y \geq 0 \,, \nn \\
-	\text{Constraint of time:} & \ 3x + 5y \leq 30 \,, \nn \\
-	\text{Constraint of cost:} & \ 100x + 250y \leq 1250 \,.
+	x & \geq 0 \,, \nn \\
+	y & \geq 0 \,, \nn \\
+	3x + 5y & \leq 30 \,, \nn \\
+	100x + 250y & \leq 1250 \,.
 \end{align}
 
-As it is required to give each constraint in simplest form, the Cost Constraint can be reduced to:
+It should also be noted that
 \begin{equation}
 	100x + 250y \leq 1250 \implies 2x + 5y \leq 25 \,.
 \end{equation}
@@ -52,7 +52,7 @@ As it is required to give each constraint in simplest form, the Cost Constraint 
 \subquestion
 
 The feasible region is shaded in \rfig{2005:q2:fig:LinGraph}.
-\begin{figure}[h]
+\begin{figure}
 	\begin{center}
 		\includegraphics{../2005/figures/2005q2LinGraph}
 		\caption{\label{2005:q2:fig:LinGraph} Linear Programming Graph.}
@@ -62,26 +62,26 @@ The feasible region is shaded in \rfig{2005:q2:fig:LinGraph}.
 %------------------------------------------------------------------------------
 % 2 d -------------------------------------------------------------------------
 %------------------------------------------------------------------------------
+
 \subquestion
 
-By performing a Tour of the Vertices (\rdef{mod1:defn:TourOfVertices}), we can evaluate the objective Profit function.
+From \rdef{mod1:defn:TourOfVertices}, we can calculate $P$ by,
+\begin{align}
+	\text{Using (0,5)}  \nn \\
+	P & = 300x + 550y  \nn \\
+	& = (300 \times 0) + (550 \times 5)  \nn \\
+	& = 2750 \,.  \\
+	\text{Using (5, 3)}  \nn \\
+	P & = 300x + 550y  \nn \\
+	& = (300 \times 5) + (550 \times 3)  \nn \\
+	& = 2550 \,.    \\		  
+	\text{Using (10,0)}  \nn \\
+	P & = 300x + 550y  \nn \\
+	& = (300 \times 10) + (550 \times 0)  \nn \\
+	& = 3000 \,. \label{2005:q2:eqn:Profit}
+\end{align}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		Vertice & $P = 300x + 550y$ \\
-		\hline
-		(0, 0) & 0 \\
-		(0, 5) & 2750 \\
-		(5, 3) & 2550 \\
-		(10, 0) & 3000 \\
-		\hline
-	\end{tabular}
-	\caption{\label{2005:q2:tab:Profit} Tour of Vertices}
-\end{table}
-
-From \rtab{2005:q2:tab:Profit}, we see that maximum profit $P$ is $ \$ 3000$ when $x = 10$ and $y = 0$.
+From \req{2005:q2:eqn:Profit}, we see that maximum profit $P$ is $ \$ 3000$.
 
 %------------------------------------------------------------------------------
 % 2 e -------------------------------------------------------------------------

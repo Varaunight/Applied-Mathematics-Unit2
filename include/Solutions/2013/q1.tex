@@ -21,12 +21,12 @@
 
 \subquestion
 
-We can construct the following truth table for the proposition $\boldsymbol{(p \land q) \land \sim (p \lor q)}$.
+See \rtab{2013:q1:tab:TruthTab1}.
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \land q}$ & $\boldsymbol{p \lor q}$ & $\boldsymbol{\sim (p \lor q)}$ & $\boldsymbol{(p \land q) \land \sim (p \lor q)}$\\
+		p & q & p $\land$ q & p $\lor$ q & $\sim$ (p $\lor$ q) & (p $\land$ q) $\land$ $\sim$ (p $\lor$ q) \\
 		\hline
 		0 & 0 & 0 & 0 & 1 & 0 \\
 		0 & 1 & 0 & 1 & 0 & 0 \\
@@ -34,7 +34,7 @@ We can construct the following truth table for the proposition $\boldsymbol{(p \
 		1 & 1 & 1 & 1 & 0 & 0 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2013:q1:tab:TruthTab1} Truth Table of $\boldsymbol{(p \land q) \land \sim (p \lor q)}$\,.}
+	\caption{\label{2013:q1:tab:TruthTab1} Truth Table of $(p \land q) \land \sim (p \lor q)$\,.}
 \end{table}
 
 %------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ We can construct the following truth table for the proposition $\boldsymbol{(p \
 
 \subquestion
 
-From \rdef{mod1:defn:Contradiction}, we see that $\boldsymbol{(p \land q)\, \land \sim (p \lor q)}$ is a contradiction since the truth value for the statement is always 0.
+From \rdef{mod1:defn:Contradiction}, we see that $(p \land q)\, \land \sim (p \lor q)$ is a contradiction.
 
 %------------------------------------------------------------------------------
 % 1 c
@@ -51,10 +51,9 @@ From \rdef{mod1:defn:Contradiction}, we see that $\boldsymbol{(p \land q)\, \lan
 
 \subquestion
 
-Using De Morgan's Law (\rdef{mod1:law:DeMorgan}),we can write a logically equivalent proposition as follows:
-
+Using \rdef{mod1:law:DeMorgan}, we can see that,
 \begin{equation}
-	\boldsymbol{\sim (p \lor q) \equiv \, \sim p \, \land \sim q} \,.
+	\sim (p \lor q) \equiv \, \sim p \, \land \sim q \,.
 \end{equation}
 
 %------------------------------------------------------------------------------
@@ -65,14 +64,14 @@ Using De Morgan's Law (\rdef{mod1:law:DeMorgan}),we can write a logically equiva
 
 Let $p$="It is sunny" and let $q$="It is hot". 
  
-Therefore, the statement "It is not true that it is hot and sunny" can be expressed as the Boolean proposition $\boldsymbol{\sim (p \land q)} \,.$ \\
+Therefore, "It is not true that it is hot and sunny" $\equiv$ $\sim (p \land q) \,.$ \\
 
-Using De Morgan's Law (\rdef{mod1:law:DeMorgan}) again,
+Using \rdef{mod1:law:DeMorgan},
 \begin{equation}
-	\boldsymbol{\sim (p \land q) \equiv \, \sim p \, \lor \sim q} \,.
+	\sim (p \land q) \equiv \, \sim p \, \lor \sim q \,.
 \end{equation}
 
-Thus, the equivalent statement of 	$\boldsymbol{(\sim p \, \lor \sim q)}$ is "It is not hot or it is not sunny."
+Thus, the equivalent statement of 	$(\sim p \, \lor \sim q)$ is "It is not hot or it is not sunny."
 
 %------------------------------------------------------------------------------
 % 1 e
@@ -84,14 +83,10 @@ Thus, the equivalent statement of 	$\boldsymbol{(\sim p \, \lor \sim q)}$ is "It
 	 
 \subsubquestion
 
-We can draw the switching circuit given by the Boolean expression 
-\begin{equation}
-	\boldsymbol{p \land q \land (p \lor r) \land (q \lor (r \land p) \lor s}
-\end{equation} as follows.
-
+The switching circuit is shown.
 \begin{center}
 
-\begin{circuitikz}[scale=0.75]
+\begin{circuitikz}
 		
 	\draw (0,0) to[normal open switch, *-*](3,0);
 	\path (0,0) -- (3,0) node[pos=0.5,below]{p};
@@ -140,30 +135,29 @@ We can draw the switching circuit given by the Boolean expression
 
 \subsubquestion
 
-Using the Commutative Law (\rdef{mod1:law:Commutative}), we can manipulate the expression as follows,
+Using \rdef{mod1:law:Associative}, we can manipulate the expression as follows,
 \begin{align}
-	\boldsymbol{p \land q \land (p \lor r) \land (q \lor (r \land p) \lor s)
-	  \equiv p \land (p \lor r) \land q \land (q \lor (r \land p) \lor s)} \,. \label{2013:q1:BooleanEquation}
+	p \land q \land (p \lor r) \land (q \lor (r \land p) \lor s)
+	  \equiv 	p \land (p \lor r) \land q \land (q \lor (r \land p) \lor s) \,. \label{2013:q1:BooleanEquation}
 \end{align}
 
-Let $\boldsymbol{A \equiv p \land (p \lor r)}$ and $\boldsymbol{B \equiv q \land (q \lor (r \land p) \lor s)}$. \\
+Let $A \equiv p \land (p \lor r)$ and $B \equiv q \land (q \lor (r \land p) \lor s)$. \\
 
-Using the Absorptive Law (\rdef{mod1:law:Absorptive}), we can simplify $\boldsymbol{A}$ as,
+Using \rdef{mod1:law:Absorptive}, we can simplify $A$ as,
 \begin{align}
-	\boldsymbol{A} & \boldsymbol{\equiv p \land (p \lor r)} \nn \\
-	  & \boldsymbol{\equiv p} \,.
+	A & \equiv p \land (p \lor r) \nn \\
+	  & \equiv p \,.
 \end{align}
 
-Similarly, using the Absorptive Law (\rdef{mod1:law:Absorptive}) twice, $B$ can be simplified as,
+Similarly, using \rdef{mod1:law:Absorptive}, $B$ can be simplified as,
 \begin{align}
-	\boldsymbol{B} & \boldsymbol{\equiv q \land (q \lor (r \land p) \lor s)} \nn \\
-	  & \boldsymbol{\equiv q \land (q \lor s)} \nn \\
-	  & \boldsymbol{\equiv q} \,.
+	B & \equiv q \land (q \lor (r \land p) \lor s) \nn \\
+	  & \equiv q \,.
 \end{align}
 
 Thus, \req{2013:q1:BooleanEquation} can be simplified to,
 \begin{align}
-	\boldsymbol{p \land (p \lor r) \land q \land (q \lor (r \land p) \lor s) \equiv p \land q} \,.
+	p \land (p \lor r) \land q \land (q \lor (r \land p) \lor s) \equiv p \land q \,.
 \end{align}
 
 \end{subsubquestions}
@@ -174,11 +168,11 @@ Thus, \req{2013:q1:BooleanEquation} can be simplified to,
 
 \subquestion
 
-We can draw the following logic gates circuit to represent $\boldsymbol{\sim((p \land q) \lor r)}$.
-\begin{figure}[H]
+See \rfig{2013:q1:fig:LogicGates}.
+\begin{figure}
 	\begin{center}
 		\includegraphics{../2013/figures/2013q1LogicGate}
-		\caption{\label{2013:q1:fig:LogicGates} Logic Gate representation of $\boldsymbol{\sim((p \land q) \lor r)}$\,.}
+		\caption{\label{2013:q1:fig:LogicGates} Logic Gate representation of $\sim((p \land q) \lor r)$\,.}
 	\end{center}
 \end{figure}
 

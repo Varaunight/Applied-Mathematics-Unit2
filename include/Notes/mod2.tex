@@ -165,7 +165,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 	\end{equation}
 	and from Axiom~[\ref{mod2:axiom:ProbabilityAxiom:2}] and Axiom~[\ref{mod2:axiom:ProbabilityAxiom:3}] that
 	\begin{equation}
-	\sum_{\forall i}P(X=x_i) = 1 .
+	\sum_{\forall x}P(X=x) = 1 .
 	\end{equation}
 \end{prop}
 
@@ -186,7 +186,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 \begin{defn}\label{mod2:defn:Discrete:Variance}
 	If $X$ is a random variable with mean $\mu$, then the \textbf{variance}, $Var[X]$, is defined by
 	\begin{align}
-	\var[X] &= E[(X-\mu)^2],  \label{mod2:eq:Discrete:Variance:1}  \\
+	Var[X] &= E[(X-\mu)^2],  \label{mod2:eq:Discrete:Variance:1}  \\
 	&= E[X^2] - (E[X])^2  = E[X^2] - \mu^2 . \label{mod2:eq:Discrete:Variance:2} \
 	\end{align}
 \end{defn}
@@ -203,7 +203,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 \end{defn}
 
 \begin{note}\label{mod2:note:DiscreteUniform}
-	In the discrete case, the notation $X \sim \text{Unif}(a, b)$ or $X \sim \text{U}(a, b)$ implies that $X$ can take \textbf{integer} values $x$ such that $a \leq x \leq b$. Here, the total number of values $X$ can take is given by
+	In the discrete case, the notation $X \sim \text{Unif}(a, b)$ or $X \sim \text{U}(a, b)$ implies that $X$ can take \textbf{integer} values $x$ such that $a \leq x \leq b$. Here, the total numer of values $X$ can take is given by
 	\begin{equation}
 		n = b - a + 1,
 	\end{equation}
@@ -214,7 +214,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 		The \textit{expected value (mean)} and \textit{variance} of $X \sim \text{U}(a,b)$ are given by:
 	\begin{align}
 	E[X] &= \frac{a+b}{2}, \label{mod2:eq:DiscreteUniform:Mean} \\
-	\var[X] &= \frac{(b-a+1)^2 - 1}{12}. \label{mod2:eq:DiscreteUniform:Variance} 
+	Var[X] &= \frac{(b-a+1)^2 - 1}{12}. \label{mod2:eq:DiscreteUniform:Variance} 
 	\end{align}
 \end{note}
 
@@ -233,7 +233,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
 	\begin{align}
 	E[X] &= np,  \label{mod2:eq:Binomial:Mean} \\ 
-	\var[X] &= np(1-p), \label{mod2:eq:Binomial:Variance} \\
+	Var[X] &= np(1-p), \label{mod2:eq:Binomial:Variance} \\
 	&= npq  \: \text{ where } q = (1-p).\ 
 	\end{align}
 \end{note}
@@ -252,7 +252,7 @@ P(A|B) = \frac{P(A\cap B)}{P(B)}. \label{mod2:eq:ConditionalProbability} \
 
 \section{Geometric Distribution} \label{mod2:section:Geometric}
 \begin{defn}\label{mod2:defn:Geomtric}
-	A discrete random variable $X$ is said to follow a \textbf{geometric distribution} with parameter $p$, $X \sim \text{Geo}(p)$, if its probability mass function, $P$, is given by
+	A discrete random variable $X$ is said to follow a \textbf{geomteric distribution} with parameter $p$, $X \sim \text{Geo}(p)$, if its probability mass function, $P$, is given by
 \begin{equation}
 P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \ 
 \end{equation} 
@@ -262,7 +262,7 @@ P(X = x) = p(1-p)^{x-1} \quad x \in (1, 2, ...). \label{mod2:eq:GeometricDist} \
 	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
 	\begin{align}
 	E[X] &= \frac{1}{p},  \label{mod2:eq:Geometric:Mean} \\ 
-	\var[X] &= \frac{1-p}{p^2}, \label{mod2:eq:Geomtric:Variance} \\
+	Var[X] &= \frac{1-p}{p^2}, \label{mod2:eq:Geomtric:Variance} \\
 	&= \frac{q}{p^2}  \: \text{ where } q = (1-p).\ 
 	\end{align}
 \end{note}
@@ -297,7 +297,7 @@ P(X = x) =\frac{ \lambda ^ x e^{-\lambda}}{x!} \quad x \in (0, 1, 2, ...). \labe
 	The \textit{expected value (mean)} and \textit{variance} of $X$ are given by:
 	\begin{align}
 	E[X] &= \lambda,  \label{mod2:eq:Poisson:Mean} \\ 
-	\var[X] &= \lambda. \label{mod2:eq:Poisson:Variance} 
+	Var[X] &= \lambda. \label{mod2:eq:Poisson:Variance} 
 	\end{align}
 \end{note}
 
@@ -326,7 +326,7 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 	
 
 
-\section{Continuous Random Variables} \label{mod2:section:ContinuousRandomVar}
+\section{Continuous Random Varibales} \label{mod2:section:ContinuousRandomVar}
 
 \begin{defn} \label{mod2:defn:ContinuousRandomVar}
 	We say that $X$ is a \textbf{continuous random variable}, if there exists a non-negative function $f$, defined for all real $x \in (-\infty,\infty)$, having the property that, for any set of real numbers $B$,
@@ -376,13 +376,13 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 \begin{defn} \label{mod2:defn:ContinuousRV:Variance}
 	If $X$ is a continuous random variable, the \textbf{variance} of $X$ is given by,
 	\begin{align}
-	\var[X] &= E[X^2] - {E[X]}^2, \\
-	 &= \int_{-\infty}^{\infty}x^2 f(x)\,\dd x - {\left(\int_{-\infty}^{\infty}x f(x)\,\dd x \right)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
+	Var[X] &= E[X^2] - {E[X]}^2, \\
+	 &= \int_{-\infty}^{\infty}x^2 f(x).dx - {(\int_{-\infty}^{\infty}x f(x).dx)} ^ 2. \label{mod2:eq:ContinuousRV:Variance} \
 	\end{align}
 \end{defn}
 
 \begin{law} \label{mod2:law:UnconsciousStat}
-	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statistician (LOTUS)} is used. This law states that if $X$ is a continuous random variable with probability density function $f$, then for any function g,
+	In the above formula for variance of a continuous random variable,  the \textbf{Law of the Unconscious Statiscian (LOTUS)} is used. This law states that if $X$ is a continuous randon varibale with probability density function $f$, then for any function g,
 	\begin{equation}
 		E[g(X)] = \int_{-\infty}^{\infty}g(x) f(x).dx. \label{mod2:eq:LOTUS:ContinuousRV}
 	\end{equation}
@@ -396,19 +396,19 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 
 
 \begin{defn} \label{mod2:defn:ContinuousRV:CDF}
-	For a continuous random variable $X$ with p.d.f $f$,  the \textbf{cumulative distribution function}, $F$, is defined as,
+	For a continuous random variable $X$ with p.d.f $f$,  the \textbf{cumulative distribution function, F,} is defined as follows,
 	\begin{equation}
 		F(x) = P(X \leq x), \
 	\end{equation}
 	
 	Using Eq~[\ref{mod2:note:ContinuousRV:Note1}], where $B = (-\infty, x]$,
 	\begin{equation}
-		F(x) = \int_{-\infty}^{x} f(t)\,\dd t, \
+		F(x) = \int_{-\infty}^{x} f(x).dx, \
 	\end{equation}
 	
 	Using the \textbf{Fundamental Law of Calculus}, then
 	\begin{equation}
-	f(x) = \ddd{}{x}F(x)
+	f(x) = \frac{d}{dx}F(x)
 .	\end{equation}
 	
 	
@@ -417,17 +417,9 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 \begin{note} \label{mod2:note:ContinuousRV:CDF}
 	This implies
 	\begin{equation}
-		P( a < X \leq b) = F(b) - F(a).
+		P( a \leq X \leq b) = F(b) - F(a).
 	\end{equation}
 \end{note}
-
-\begin{note} \label{mod2:note:ContinuousRV:CDF2}
-	A useful result for $P(X>k)$ is
-	\begin{equation}
-		P(X>k) = 1 - F(k).
-	\end{equation}	
-\end{note}
-
 
 \begin{prop} \label{mod2:prop:ContinuousRV:CDF}
 	The c.d.f can be used to calculate the median and quartiles of a distribution. If a continuous random variable $X$ has c.d.f $F$,  then 
@@ -488,119 +480,32 @@ Under the above conditions, $X \sim \text{Bin}(n, p)$ can be approximated by $X 
 
 \begin{prop}
 
-Define  functions $g$ and $f$ with $a, b, c \in \mathbb{R}$. For \textbf{ANY} random variables (discrete or continuous) $X$ and $Y$, the following properties hold
+Define  functions $g$ and $f$ with $a, b, c \in \mathbb{R}$. For \textbf{ANY} random variables (discrete or cotinuous) $X$ and $Y$, the following properties hold
 \begin{align}
 E[aX + b] &= aE[X] + b, \\
 E[X + Y] &= E[X] + E[Y], \\
 E[ag(X) + bf(Y)  + c] &= aE[g(X) ]+ bE[f(Y)] + c, \\
-\var[ag(X) + b] &= a^2\var[g(X)].
+Var[ag(X) + b] &= a^2Var[g(X)].
 \end{align}
 
 If $X$ and $Y$ are \textbf{independent} random variables, then the following properties also hold
 \begin{align}
 E[XY] &= E[X] \ E[Y], \\
 E[g(X)f(Y)] &= E[g(X)] \ E[f(Y)], \\
-\var[X + Y] &= \var[X]+ \var[Y].
+Var[X + Y] &= Var[X]+ Var[Y].
 \end{align}
 
 \end{prop}
 
 \begin{note} \label{mod2:note:Independence:Non-implication}
 	
-	If $E[XY] = E[X] \ E[Y]$ or $\var[X + Y] = \var[X]+ \var[Y]$, this does not imply $X$ and $Y$ are independent.
+	If $E[XY] = E[X] \ E[Y]$ or $Var[X + Y] = Var[X]+ Var[Y]$, this does not imply $X$ and $Y$ are independent.
 	
 \end{note}
 
 
 
-\section{$\chi^2$ goodness-of-fit test} \label{Section:ChiSquareTest}
-This test is used to determine whether a random variable can be modeled with a given distribution. One can conduct a $\chi^2$ test following the simple procedure:
-\begin{enumerate}[label = \arabic*)]
-	\item Define the null hypothesis, $H_0$, and alternative hypothesis, $H_1$:
-	\begin{eqnarray}
-		H_0&:& \text{ The data follows the given distribution.} \\
-		H_1&:& \text{ The data does not follow the given distribution.} \
-	\end{eqnarray}
-	\item Pick a level of significance $\alpha$
-	\item Identify critical region: Reject $H_0$ if $\chi^2_\text{calc} > \chi^2_\alpha (\nu)$ \
-	
-	\item $\chi^2_\text{calc} =\sum \frac{(O - E)^2}{E} $
-	where $O$ is the observed data, and $E$ is the expected frequency. We can compute the expected frequency using $E_{ij} = \frac{n_i \times n_j}{N}$, where $E_{ij}$ represents the expected frequency of the value in the $i^{th}$ row and $j^{th}$ column, $n_i$ represents the sum of values in the $i^{th}$ row, $n_{j}$ represents the sum of values in the $j^{th}$ column, and $N$ represents the total sample size. 
-	\item Decision
-\end{enumerate}
 
-\begin{note}
-	$\chi^2_\text{calc}$ is not valid if $E < 5$. When this occurs we combine classes to make all values of $E>5$.
-\end{note}
-
-\begin{note}
-	$\nu$ is the number of degrees of freedom in the test. It is calculated as follows,
-	\begin{equation}
-		\nu = \text{Number of classes - Number of restrictions} \,.
-	\end{equation}
-
-The number of restrictions in a test depends on the distribution that the test is considering. The number of restrictions is as follows:
-\begin{itemize}
-	\item Uniform Distribution:
-	\begin{itemize}
-		\item 1 restriction (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\end{itemize} 
-	\item Distribution in a Given Ratio: 
-	\begin{itemize} 
-		\item 1 restriction (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-	\end{itemize}
-	\item Binomial Distribution:
-	\begin{itemize}
-		\item 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-		\item 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{\bar{x}}{n}$)
-	\end{itemize}
-	\item Poisson Distribution:
-	\begin{itemize}
-		\item 1 restriction if average rate, $\lambda$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-		\item 2 restrictions if average rate, $\lambda$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\lambda=\bar{x}$)
-	\end{itemize}
-	\item Geometric Distribution:
-	\begin{itemize}
-		\item 1 restriction if chance of success, $p$, is known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-		\item 2 restrictions if chance of success, $p$, is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $p=\frac{1}{\bar{x}}$)
-	\end{itemize} 
-	\item Normal Distribution:
-	\begin{itemize}
-		\item 1 restriction if both mean, $\mu$, and variance, $\sigma^2$ are known (Sum of Observed Frequencies must equal Sum of Expected Frequencies)
-		\item 2 restrictions if either mean, $\mu$, or variance, $\sigma^2$ is unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ OR $\sigma^2=\hat{\sigma}^2$)
-		\item 3 restrictions if both mean, $\mu$, and variance, $\sigma^2$ are unknown (Sum of Observed Frequencies must equal Sum of Expected Frequencies AND $\mu=\bar{x}$ AND $\sigma^2=\hat{\sigma}^2$)
-	\end{itemize} 
-\end{itemize} 
-
-The restrictions can be summarized as follows:
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|c|c|}
-		\hline
-		\textbf{Distribution} & \textbf{Parameters} & \textbf{Number of Restrictions} \\
-		\hline
-		Uniform Distribution & - & 1 \\
-		\hline
-		Distribution in a Given Ratio & - & 1 \\
-		\hline
-		Binomial Distribution & $p$ known & 1 \\
-		 & $p$ unknown & 2 \\
-		 \hline 
-		 Poisson Distribution & $\lambda$ known & 1 \\
-		 & $\lambda$ unknown & 2 \\
-		 \hline
-		 Geometric Distribution & $p$ known & 1 \\
-		 & $p$ unknown & 2 \\
-		 \hline 
-		 Normal Distribution & $\mu$ and $\sigma^2$ known & 1 \\
-		 & either $\mu$ or $\sigma^2$ unknown & 2 \\
-		 & both $\mu$ and $\sigma^2$ unknown & 3 \\
-		 \hline
-	\end{tabular}
-\caption{\label{mod2:ChiSquaredRestTable}: Restrictions in a $\chi^2$ goodness-of-fit test.}
-\end{table} 
-	
-\end{note}
 
 
 

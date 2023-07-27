@@ -50,10 +50,10 @@ The profit function to be maximized is,
 
 The inequalities in this problem are,
 \begin{align}
-	\text{Minimum constraint of cases of glass bottles:} & \ x \geq 0 \,, \nn \\
-	\text{Minimum constraint of cases of plastic bottles:} & \ y \geq 0 \,, \nn \\
-	\text{Time constraint on sterilising machine:} & \ 4x + 4y \leq 3000 \,, \nn \\
-	\text{Time constraint on capping machine: } & \ 3x + 6y \leq 3000 \,.
+	x & \geq 0 \,, \nn \\
+	y & \geq 0 \,, \nn \\
+	4x + 4y & \leq 3000 \,, \nn \\
+	3x + 6y & \leq 3000 \,.
 \end{align}
 
 \end{subsubsubquestions}
@@ -72,7 +72,7 @@ The inequalities in this problem are,
 	
 \subsubsubquestion
 
-The graph of this linear programming problem is represented below.
+See Graph ~\ref{2015:q1:graph:Graph1}.
 
 \begin{figure}
 	\begin{center}
@@ -105,22 +105,21 @@ The feasible region is shaded in Graph ~\ref{2015:q1:graph:Graph1}.
 
 \subsubsubquestion
 
-We can determine the number of each type of bottle required for maximum profit by performing a tour of the vertices:
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline
-		Vertice & $P = 20x + 15y$ \\
-		\hline
-		(0, 0) & 0 \\
-		(0, 500) & 7500 \\
-		(750, 0) & 15000 \\
-		(500, 250) & 13750 \\
-		\hline
-	\end{tabular}
-	\caption{\label{2015:q1:tab:Profit} Tour of Vertices}
-\end{table}
-
+Using \rdef{mod1:defn:TourOfvertices},
+\begin{align}
+	\text{Using (0,500)}\,, \nn \\
+	P & = 20x + 15y\,, \nn \\
+	  & = (20 \times 0) + (15 \times 500)\,, \nn \\
+	  & = 7500\,. \\
+	\text{Using (750,0)}\,, \nn \\
+	P & = 20x + 15y\,, \nn \\
+	  & = (20 \times 750) + (15 \times 0)\,, \nn \\
+	  & = 15000\,. \label{2015:q1:eqn:Profit} \\	  
+	\text{Using (500,250)}\,, \nn \\
+	P & = 20x + 15y\,, \nn \\
+	  & = (20 \times 500) + (15 \times250)\,, \nn \\
+	  & = 13750\,.
+\end{align}
 
 To maximize the profit, $750$ cases of glass bottles and $0$ cases of plastic bottles should be manufactured.
 
@@ -130,7 +129,7 @@ To maximize the profit, $750$ cases of glass bottles and $0$ cases of plastic bo
 
 \subsubsubquestion
 
-From \rtab{2015:q1:tab:Profit}, the maximum profit is $\$ 15000$.
+From \req{2015:q1:eqn:Profit}, the maximum profit is $\$ 15000$.
 
 \end{subsubsubquestions}
 
@@ -151,8 +150,6 @@ The longest path from Town S to Town G is ,
 \begin{equation}
 	S \rightarrow D \rightarrow F \rightarrow E \rightarrow G ~~~~\text{(31)} \,.
 \end{equation}
-
-Note: The travel times between $A \rightarrow C$ and $C \rightarrow B$ were not filled in so we did not consider these connections.
 
 \end{subquestions}
 

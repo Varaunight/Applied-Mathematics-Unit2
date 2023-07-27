@@ -45,10 +45,10 @@
 
 		% inputs 1
 		\draw (x1.input 1) -|++ (-\shift,\shift) --++(-\shift,0) node[left,]{$x$};
-		\draw (x1.input 2) -|++ (-\shift,-3.75*\shift) --++(-\shift,0) node[left]{$y$};
+		\draw (x1.input 2) -|++ (-\shift,-\shift) --++(-\shift,0) node[left]{$y$};
 		
 		% inputs 2
-		\draw (x2.input) -|++ (-1.47*\shift, 3.373) --++(0,0) node[left]{};
+		\draw (x2.input) -|++ (-\shift,0) --++(-\shift,0) node[left]{$y$};
 
 		% Insert labels
 		\node[above] at ($(x1.output) + (\shift,0)$) (l1) {\gatetext$x \land y$};
