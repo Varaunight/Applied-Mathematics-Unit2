@@ -21,8 +21,8 @@
 
 \subquestion
 
-The Hungarian algorithm is shown in \rtab{2011:q2:tab:HungAlgo}.
-\begin{table}[!hbt]
+We can allocate runners to a position to minimise the sum of their average times by applying the Hungarian algorithm on the given data.
+\begin{table}[!h]
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\begin{tabular}{cccc}
@@ -45,7 +45,7 @@ The Hungarian algorithm is shown in \rtab{2011:q2:tab:HungAlgo}.
 			0 & 0 & 2 & 0 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Matrix after Reducing Rows}
+		\caption*{Reducing Rows}
 	\end{minipage}
 	\hspace{20pt}
 	%-----------------------------------------------------------------------------
@@ -58,7 +58,7 @@ The Hungarian algorithm is shown in \rtab{2011:q2:tab:HungAlgo}.
 			0 & 0 & 2 & 0 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Matrix after Reducing Columns} 
+		\caption*{Reducing Columns} 
 	\end{minipage}
 	\vspace{20pt} 
 	%-----------------------------------------------------------------------------
@@ -73,30 +73,30 @@ The Hungarian algorithm is shown in \rtab{2011:q2:tab:HungAlgo}.
 			&   &        &\hspace{-3.25mm} \hve[red]{v1} &   &                       \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's using the least \\ \centering number of lines}
+		\caption*{Shading 0's}
 	\end{minipage}
 	\caption{\label{2011:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
 \end{table}
 
 From \rtab{2011:q2:tab:HungAlgo}, we can see that the possible pairings for the runners are as follows:
 \begin{align}
-	&\text{Person A} \rightarrow \text{Position 1}\,, \nn \\
-	&\text{Person B} \rightarrow \text{Position 3, Position 4}\,, \nn \\
-	&\text{Person C} \rightarrow \text{Position 3}\,, \nn \\
-	&\text{Person D} \rightarrow \text{Position 1, Position 2, Position 4}\,. 
+	&\text{Person A} \rightarrow \text{1}\,, \nn \\
+	&\text{Person B} \rightarrow \text{3, 4}\,, \nn \\
+	&\text{Person C} \rightarrow \text{3}\,, \nn \\
+	&\text{Person D} \rightarrow \text{1, 2, 4}\,. 
 \end{align}
 
 Therefore, the matchings to minimize the total time are,
 \begin{align}
-	&\text{Person A} \rightarrow \text{Position 1}\,, \nn \\
-	&\text{Person B} \rightarrow \text{Position 4}\,, \nn \\
-	&\text{Person C} \rightarrow \text{Position 3}\,, \nn \\
-	&\text{Person D} \rightarrow \text{Position 2}\,.  
+	&\text{Person A} \rightarrow \text{1}\,, \nn \\
+	&\text{Person B} \rightarrow \text{4}\,, \nn \\
+	&\text{Person C} \rightarrow \text{3}\,, \nn \\
+	&\text{Person D} \rightarrow \text{2}\,.  
 \end{align}
 
 Therefore, the minimum time for the entire race is,
 \begin{equation}
-	\text{Total time} = 13+13+11+13=50 \, \text{seconds}\,.	
+	\text{Total time} = 50 \, \text{seconds}\,.	
 \end{equation}
 
 %-----------------------------------------------------------------------------
@@ -109,10 +109,10 @@ Therefore, the minimum time for the entire race is,
 	
 \subsubquestion
 
-See \rfig{2011:q2:fig:ActNet}.
-\begin{figure}
+We can construct the following activity network for the project from the given data.
+\begin{figure}[H]
 	\begin{center}
-		\includegraphics{../2011/figures/2011q2ActNet}
+		\includegraphics[scale=0.75]{../2011/figures/2011q2ActNet}
 		\caption{\label{2011:q2:fig:ActNet} Activity Network of the operation.}
 	\end{center}
 \end{figure}
@@ -121,8 +121,8 @@ See \rfig{2011:q2:fig:ActNet}.
 
 \subsubquestion
 
-See \rtab{2011:q2:tab:Table1}.
-\begin{table}[ht]
+We can complete the given table as follows.
+\begin{table}[h]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
@@ -146,7 +146,7 @@ See \rtab{2011:q2:tab:Table1}.
 	
 \subsubsubquestion
 
-From \rdef{mod1:defn:CritPath}, the critical path is,
+From \rdef{mod1:defn:CritPath}, the critical path can be determined as the path with 0 float time:
 \begin{equation}
 	\text{Start} \rightarrow A \rightarrow D \rightarrow C \rightarrow \text{End}\,.
 \end{equation}
@@ -155,7 +155,7 @@ From \rdef{mod1:defn:CritPath}, the critical path is,
 
 \subsubsubquestion
 
-The minimum completion time of this project is 24 hours.
+The minimum completion time of this project, given by the length of the critical path, is 24 hours.
 
 \end{subsubsubquestions}
 

@@ -21,12 +21,12 @@
 
 \subquestion
 
-From \rtab{2011:q2:tab:TruthTab1}, we see that $(\sim p ~\lor \sim q) \implies (p ~\land \sim q)$ always has the same truth value of $p$.
+We can construct the following truth table to evaluate $\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}$
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
-		p & q & $\sim$ p & $\sim$ q & ($\sim$ p $\lor$ $\sim$ q) & (p $\land$ $\sim$ q) & ($\sim$ p $\lor$ $\sim$ q) $\implies$ (p $\land$ $\sim$ q) \\
+			$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{\sim q}$ & $\boldsymbol{(\sim p \ \lor \sim q)}$ & $\boldsymbol{(p \ \land \sim q)}$ & $\boldsymbol{(\sim p \ \lor \sim  q) \implies (p \ \land \sim q)}$ \\
 		\hline
 		0 & 0 & 1 & 1 & 1 & 0 & 0 \\
 		0 & 1 & 1 & 0 & 1 & 0 & 0 \\
@@ -34,18 +34,19 @@ From \rtab{2011:q2:tab:TruthTab1}, we see that $(\sim p ~\lor \sim q) \implies (
 		1 & 1 & 0 & 0 & 0 & 0 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2011:q2:tab:TruthTab1} Truth Table of $(\sim p ~\lor \sim q) \implies (p ~\land \sim q)$.}
+	\caption{\label{2011:q1:tab:TruthTab1} Truth Table of $\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}$.}
 \end{table}
 
+We can see from \rtab{2011:q1:tab:TruthTab1} the proposition always takes the value of $\boldsymbol{p}$.
 %-----------------------------------------------------------------------------
 % 1 b
 %-----------------------------------------------------------------------------
 
 \subquestion
 
-The Boolean expression of the circuit is,
+We can write the following Boolean expression for the given logic circuit.
 \begin{equation}
-	(p \land (q ~\lor \sim r)) \lor r\,.
+	\boldsymbol{(p \land (q ~\lor \sim r)) \lor r}\,.
 \end{equation}
 
 %-----------------------------------------------------------------------------
@@ -54,10 +55,10 @@ The Boolean expression of the circuit is,
 
 \subquestion
 
-See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below.
+We can draw the following switching circuit to represent $\boldsymbol{(a \land b) \lor (a \land (\sim b \lor c))}$ below.
 \begin{center}
 	
-\begin{circuitikz}
+\begin{circuitikz}[scale=0.75]
 	\draw [color=black, thin] (0,0) -- (2,0);
 	\draw [color=black, thin] (2,0) -- (2,2);
 	\draw [color=black, thin] (2,0) -- (2,-2);
@@ -101,13 +102,15 @@ See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below
 
 \subsubquestion
 
+Given that $\boldsymbol{p}$ is the proposition "There is a west wind" and $\boldsymbol{q}$ is the proposition "We shall have rain",
+
 \begin{subsubsubquestions}
 	
 \subsubsubquestion
 
 "If there is a west wind, then we shall have rain" can be expressed as,
 \begin{equation}
-	p \implies q\,.
+	\boldsymbol{p \implies q}\,.
 \end{equation}
 
 %-----------------------------------------------------------------------------
@@ -116,7 +119,7 @@ See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below
 
 "If there is no rain, then the west wind does not blow" can be expressed as,
 \begin{equation}
-	\sim q \implies \sim p\,.
+	\boldsymbol{\sim q \implies \sim p}\,.
 \end{equation}
 
 \end{subsubsubquestions}
@@ -125,12 +128,12 @@ See the switching circuit for $(a \land b) \lor (a \land (\sim b \lor c))$ below
 
 \subsubquestion
 
-From \rtab{2011:q1:tab:TruthTab2}, we can see that $p \implies q$ and $\sim q \implies \sim p$ are logically equivalent.
+We can construct the following truth table for the two previous logic statements.
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		p & q & $\sim$ p & $\sim$ q & p $\implies$ q & $\sim$ q $\implies$ $\sim$ p \\
+		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{\sim q}$ & $\boldsymbol{p \implies q}$ & $\boldsymbol{\sim q \implies \sim p}$ \\
 		\hline
 		0 & 0 & 1 & 1 & 1 & 1 \\
 	    0 & 1 & 1 & 0 & 1 & 1 \\
@@ -138,7 +141,7 @@ From \rtab{2011:q1:tab:TruthTab2}, we can see that $p \implies q$ and $\sim q \i
 	    1 & 1 & 0 & 0 & 1 & 1 \\
 	    \hline
 	\end{tabular}
-	\caption{\label{2011:q1:tab:TruthTab2} Truth values of  $p \implies q$ and $\sim q \implies \sim p$.}
+	\caption{\label{2011:q1:tab:TruthTab2} Truth values of  $\boldsymbol{p \implies q}$ and $\boldsymbol{\sim q \implies \sim p}$.}
 \end{table}
 
 \end{subsubquestions}
@@ -149,31 +152,32 @@ From \rtab{2011:q1:tab:TruthTab2}, we can see that $p \implies q$ and $\sim q \i
 
 \subquestion
 
-Using \rdef{mod1:law:DeMorgan}, we can see that,
+Using De Morgan's Law (\rdef{mod1:law:DeMorgan}), we can see that,
 \begin{equation}	
-	\sim((p \land q) ~\lor \sim p)  \equiv ~\sim(p \land q) \land p \,. \label{2012BoolEqn}
+	\boldsymbol{\sim((p \land q) ~\lor \sim p)  \equiv ~\sim(p \land q) \land p} \,. \label{2012BoolEqn}
 \end{equation}
 
-From \rdef{mod1:law:DeMorgan}, we also know that,
+From De Morgan's Law (\rdef{mod1:law:DeMorgan}), we also know that,
 \begin{equation}
-	\sim(p \land q) \equiv (\sim p ~\lor \sim q) \,.
+	\boldsymbol{\sim(p \land q) \equiv (\sim p ~\lor \sim q)} \,.
 \end{equation}
 
 Therefore, \req{2012BoolEqn} becomes,
 \begin{equation}
-	\sim((p \land q) ~\lor \sim p)  \equiv (\sim p ~\lor \sim q) \land p \,.
+	\boldsymbol{\sim((p \land q) ~\lor \sim p)  \equiv (\sim p ~\lor \sim q) \land p} \,.
 \end{equation}
 
-Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity},
+Using Distributive (\rdef{mod1:law:Distributive}), Complement (\rdef{mod1:law:Complement}) and Identity (\rdef{mod1:law:Identity}) laws,
 \begin{align}
-	(\sim p ~\lor \sim q) \land p & \equiv (p ~\land \sim p) \lor (p \land \sim q) \nn \\
-	                              & \equiv (F) \lor (p ~\land \sim q) \nn \\
-	                              & \equiv (p ~\land \sim q) \,.
+	\boldsymbol{(\sim p ~\lor \sim q) \land p} & \boldsymbol{\equiv (p ~\land \sim p) \lor (p \land \sim q)} \nn \\
+	                              & \boldsymbol{\equiv (F) \lor (p ~\land \sim q)} \nn \\
+	                              & \boldsymbol{\equiv (p ~\land \sim q) \nn} \\
+								  & \boldsymbol{\equiv (\sim q \land p)} \,.
 \end{align}
 
 Thus,
 \begin{equation}
-	\sim((p \land q) ~\lor \sim p) \equiv (p ~\land \sim q) \,.
+	\boldsymbol{\sim((p \land q) ~\lor \sim p) \equiv (\sim q \land p)} \,.
 \end{equation}
 
 \end{subquestions}

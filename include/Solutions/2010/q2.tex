@@ -21,7 +21,9 @@
 
 \subquestion
 
-See the switching circuit below.
+Given that at least two members must vote yes for current to pass, we have to discard a simple $\boldsymbol{A \lor B \lor C}$ setup which will work even if \textbf{ONLY} one member votes yes.  Similarly, a simple $\boldsymbol{A \land B \land C}$ setup must be discarded because it will only work if \textbf{ALL} three members vote yes.  Hence, we can deduce that this circuit needs a combination of AND and OR setups.
+
+Consider the three possible pairs of voters, $\boldsymbol{A \land B}$, $\boldsymbol{A \land C}$ and $\boldsymbol{B \land C}$. If at least two members answer yes, then at least one of these pairs will be switched on. Coversely, if one of these pairs are switched on, then at least two voters must have voted yes. Therefore we can construct the switching circuit of $\boldsymbol{(A \land B) \lor (A \land C) \lor (B \land C)}$ below.
 \begin{center}
 	
 \begin{circuitikz}
@@ -54,6 +56,9 @@ See the switching circuit below.
 
 \end{circuitikz}
 
+
+ 
+
 \end{center}
 
 %------------------------------------------------------------------------------
@@ -62,12 +67,16 @@ See the switching circuit below.
 
 \subquestion
 
-From \rtab{2011:q2:tab:TruthTab1}, we can see that $(\sim p ~\lor \sim q) \implies (p ~\land \sim q)$ always takes the same truth value of $p$.
-\begin{table}[ht]
+We can construct the following truth table to show that the proposition 
+\begin{equation} 
+	\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}
+ \end{equation} always takes the value of $\boldsymbol{p}$.
+
+\begin{table}[h]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
-		p & q & $\sim$ p & $\sim$ q & ($\sim$ p $\lor$ $\sim$ q) & (p $\land$ $\sim$ q) & ($\sim$ p $\lor$ $\sim$ q) $\implies$ (p $\land$ $\sim$ q) \\
+		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{\sim q}$ & $\boldsymbol{(\sim p \ \lor \sim q)}$ & $\boldsymbol{(p \ \land \sim q)}$ & $\boldsymbol{(\sim p \ \lor \sim q) \implies (p \ \land \sim q)}$ \\
 		\hline
 		0 & 0 & 1 & 1 & 1 & 0 & 0 \\
 		0 & 1 & 1 & 0 & 1 & 0 & 0 \\
@@ -75,7 +84,7 @@ From \rtab{2011:q2:tab:TruthTab1}, we can see that $(\sim p ~\lor \sim q) \impli
 		1 & 1 & 0 & 0 & 0 & 0 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2011:q2:tab:TruthTab1} Showing the truth values of $(\sim p ~\lor \sim q) \implies (p ~\land \sim q)$}\,.
+	\caption{\label{2011:q2:tab:TruthTab1} Showing the truth values of $\boldsymbol{(\sim p ~\lor \sim q) \implies (p ~\land \sim q)}$}\,.
 \end{table}
 
 %------------------------------------------------------------------------------
@@ -84,12 +93,11 @@ From \rtab{2011:q2:tab:TruthTab1}, we can see that $(\sim p ~\lor \sim q) \impli
 
 \subquestion
 
-Since we are given that $a \implies b \equiv ~\sim a \lor b$\,, we need to draw the circuit for $\sim a \lor b$\,. \\
-See \rfig{2010:q2:fig:Circuit1}.
-\begin{figure}
+We can draw a logic gate circuit for $\boldsymbol{a \implies b}$, using the given equivalence statement that $\boldsymbol{a \implies b \equiv \ \sim a \lor b}$.
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics{../2010/figures/2010q2Circuit1}
-		\caption{\label{2010:q2:fig:Circuit1} Showing the logic gate equivalent of $\sim a \lor b$.}
+		\caption{\label{2010:q2:fig:Circuit1} Showing the logic gate equivalent of $\boldsymbol{\sim a \lor b}$.}
 	\end{center}
 \end{figure}
 
@@ -105,8 +113,8 @@ See \rfig{2010:q2:fig:Circuit1}.
 
 \subsubquestion
 
-See \rtab{2011:q2:tab:CritPath}.
-\begin{table}[ht]
+We can complete the table given for the activity network as shown below.
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
@@ -128,7 +136,7 @@ See \rtab{2011:q2:tab:CritPath}.
 
 \subsubquestion
 
-From \rtab{2011:q2:tab:CritPath} and using \rdef{mod1:defn:FloatTime} and \rdef{mod1:defn:CritPath}, we can see that the crtical path is,
+From \rtab{2011:q2:tab:CritPath} and using \rdef{mod1:defn:FloatTime} and \rdef{mod1:defn:CritPath}, we can determine the critical path by looking at the path which has 0 float time:
 \begin{equation}
 	\text{Start} \rightarrow A \rightarrow B \rightarrow C \rightarrow F \rightarrow G \rightarrow \text{Finish}\,.
 \end{equation}

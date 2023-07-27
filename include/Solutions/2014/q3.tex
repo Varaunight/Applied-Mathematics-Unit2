@@ -1,17 +1,176 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2014
+%     Module: 2
+%     Question: 3 
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 3 a 
+%------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+\subquestion
+First, note that,
+\begin{align}
+	P(A' \land B') & = 1 - (P(A)+P(B)-P(A \land B)) \,.
+\end{align}
 
+From \ref{mod2:eq:Independent}, we know that since $A$ and $B$ are independent,
+\begin{equation}
+	P(A \land B) = P(A) \times P(B) \,.
+\end{equation}
+
+Substituting this in the above, we find,
+\begin{align}
+	P(A' \land B') & = 1 - (P(A)+P(B)-P(A)\times P(B)) \nn \\
+	               & = 1 - (0.6+0.15-(0.6\times0.15)) \nn \\
+	               & = 1 - (0.11) \nn \\
+	               & = 0.89 \,.
+\end{align} 
+	
+%------------------------------------------------------------------------------
+% 3 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+We are given that 3 members of the choir are chosen for a special occasion.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+\begin{subsubsubquestions}
+	
+\subsubsubquestion
+
+First, note that the total number of combinations that can be chosen is,
+\begin{equation}
+	^{30}C_3 = \frac{30!}{27! \times 3!} = 4060 \,.
+\end{equation}
+	
+To find the probability that two sopranos and one tenor is chosen, we must find the number of ways that this can happen. From \rdef{mod2:defn:MultiplicationRule}, we know that the number of ways to chose two sopranos and one tenor is,
+\begin{align}
+	\#(\text{2 Sopranos and 1 Tenor}) & = \#(\text{2 Sopranos}) \times \#(\text{1 Tenor}) \nn \\
+	                              & = ~ ^{12}C_2 \times  ~^{6}C_1 \nn \\
+	                              & = \frac{12!}{10! \times 2!} \times \frac{6!}{6! \times 0!} \nn \\
+	                              & = 66 \times 6 \nn \\
+	                              & = 396 \,.
+\end{align}
+
+Thus, the probability that two sopranos and one tenor is chosen, $P(2S + 1T)$, is,
+\begin{align}
+	P(2S + 1T) & = \frac{396}{4060} \nn \\
+	           & = \frac{99}{1015} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubsubquestion
+
+The number of ways to chose 1 soprano, 1 tenor and 1 bass is,
+\begin{align}
+	\hspace{-50pt}
+	\#(\text{1 Soprano, 1 Tenor and 1 Bass}) & =  \#(\text{1 Soprano}) \times \#(\text{1 Tenor}) \times \#(\text{1 Bass}) \nn \\
+	                                     & = ~^{12}C_1 \times ~^{6}C_1 \times ~^{5}C_1 \nn \\
+	                                     & = 12 \times 6 \times 5 \nn \\
+	                                     & = 360 \,.
+\end{align}
+
+Thus, the probability that one soprano, one bass and one tenor is chosen, $P(1S+1T+1B)$, is,
+\begin{align}
+	P(1S + 1T + 1B) & = \frac{360}{4060} \nn \\
+			        & = \frac{18}{203} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubsubquestion
+
+From \rdef{mod2:defn:Conditional}, the probability that 3 tenors are chosen, given that all three parts are the same, is given as,
+\begin{equation}
+ 	P(\text{3 Tenors|3 parts are the same}) = \frac{\text{Probability that 3 tenors are chosen}}{\text{Probability that all 3 parts are the same}} \,.
+\end{equation}
+
+The probability that 3 tenors are chosen is given as,
+\begin{align}
+	\text{Probability of 3 tenors} & = \frac{^{6}C_3}{4060} \nn \\
+	                               & = \frac{20}{4060} \nn \\
+	                               & = \frac{1}{203} \,.
+\end{align}
+
+Similarly, the probability that all 3 parts are the same is,
+\begin{align}
+	\text{Probability that 3 parts are the same} & = P(3S) + P(3A) + P(3T) + P(3B)\nn \\
+												& = \frac{^{12}C_3 + ~^{7}C_3 + ~^{6}C_3 + ~^{5}C_3}{4060} \nn \\
+												& = \frac{220+35+20+10}{203} \nn \\
+												& = \frac{285}{4060} \nn \\
+												& = \frac{57}{812} \,.
+\end{align}
+
+Thus, we get that,
+\begin{align}
+	P(\text{3 Tenors|3 parts are the same}) & = \frac{\frac{1}{203}}{\frac{57}{812}} \nn \\
+	                                        & = \frac{4}{57} \,.
+\end{align}
+
+\end{subsubsubquestions}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We should first divide the parts into 3 groups: Bass(5), Tenor(6), NOT Bass or Tenor(19). In order to find the number of committees with exactly 2 basses and 3 tenors, we must use \rdef{mod2:defn:MultiplicationRule} as follows,
+\begin{align}
+	\text{Committees of 9, with 2 Basses and 3 Tenors} & = ~^5C_2 \times ~^6C_3 \times ~^{19}C_4 \nn \\
+	                                                   & = 10 \times 20 \times 3876 \nn \\
+	                                                   & = 775200 \,.
+\end{align}
+
+Thus, the probability that the committee chosen has exactly 2 basses and three tenors is,
+\begin{align}
+	P(\text{Exactly 2B and 3T}) & = \frac{775200}{\text{Total number of committees}} \nn \\
+	                            & = \frac{775200}{^{30}C_9} \nn \\
+	                            & = \frac{775200}{14307150} \nn \\
+	                            & \approx 0.054 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion 
+
+Since all the singers are distinct, we can place the singers in a line instead on a circle to make the calculation easier. We will denote bassists with $B_x$ where $x$ is the number of possible bass singers in this particular position. Similarly, we will denote $T_y$ where $y$ is the number of possible tenors in this position. The $T_{^6C_2}$ represents the two tenors that are next to each other. The $2!$ represents the number of ways that the 2 tenors can be arranged.
+
+The line can be formed as follows,
+\begin{equation}
+	(2! \times T_{^6C_2}):B_5: T_4: B_4: T_3: B_3: T_2: B_2: T_1: B_1 \,. \label{2014:q4:LineInstr}
+\end{equation}
+
+This line can then be wrapped around the circular table with any starting position and still retain the arrangement. Using \rdef{mod2:defn:MultiplicationRule}, we can find the number of ways to arrange the line by multiplying all of the $x$ and $y$ values as follows,
+\begin{align}
+	\text{Number of Arrangements} & = 2! \times ~^6C_2 \times 5\times 4\times 4\times 3\times 3\times 2\times 2\times 1\times 1 \nn \\
+	                       & = 2 \times 15 \times 5\times 4\times 4\times 3\times 3\times 2\times 2\times 1\times 1 \nn \\
+	                       & = 86400 \,.
+\end{align}
+
+As we have arranged 10 groups in \req{2014:q4:LineInstr}, we must divide the total number of arrangements by 10 in order to calculate the circular arrangements as follows,
+\begin{align}
+	\text{Number of Circular Arrangements} & = \frac{86400}{10} \nn \\
+	                                       & = 8640 \,.
+\end{align}
+
+\end{subsubquestions}
+	
+	
+	
+\end{subquestions}

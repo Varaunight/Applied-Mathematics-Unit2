@@ -21,7 +21,7 @@
 
 \subquestion
 
-The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
+The Hungarian algorithm can be applied to the data given in order to minimise the total race time for the relay team consisting of four runners, W, X, Y and Z,
 \begin{table}[!hbt]
 	\begin{minipage}{0.3\textwidth}
 		\centering
@@ -45,7 +45,7 @@ The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
 			6 & 3 & 2 & 0  \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Matrix after Reducing Rows}
+		\caption*{Reducing Rows}
 	\end{minipage}
 	%-------------------------------------------------------------------------------
 	\hspace{20pt}
@@ -58,7 +58,7 @@ The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
 			3 & 3 & 1 & 0  \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Matrix after Reducing Columns} 
+		\caption*{Reducing Columns} 
 	\end{minipage}
 	%-------------------------------------------------------------------------------
 	\vspace{20pt} 
@@ -74,13 +74,14 @@ The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
 
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's using the least \\ \centering number of lines}
+		\caption*{Shading 0's}
 	\end{minipage}
 	%-------------------------------------------------------------------------------
 	\hspace{20pt}
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\begin{tabular}{cccc}
+			& & & \\
 			  &   &   &      \\
 			0 & 1 & 4 & 0   \\
 			1 & 0 & 0 & 6   \\
@@ -89,7 +90,7 @@ The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
 			  &   &   &    \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Applying Step ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
+		\caption*{Applying Step 5, ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
 	\end{minipage}
 	%-------------------------------------------------------------------------------
 	\hspace{20pt}
@@ -104,7 +105,7 @@ The Hungarian algorithm is shown in \rtab{2008M:q2:tab:HungAlgo}.
 						&	  &   &   &   &     			 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's using the least \\ \centering number of lines}
+		\caption*{Shading 0's}
 	\end{minipage}
 
 	\caption{\label{2008M:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
@@ -132,10 +133,10 @@ Thus, the optimal pairing to minimize the total race time is,
 
 \subquestion
 
-See \rfig{2008M:q2:fig:ActNet1}.
-\begin{figure}
+We can construct the following activity network to represent the given data,
+\begin{figure}[H]
 	\begin{center}
-		\includegraphics{../2007/figures/2008M-ActNet1}
+		\includegraphics[scale=0.75]{../2007/figures/2008M-ActNet1}
 		\caption{\label{2008M:q2:fig:ActNet1} Activity Network of the project.}
 	\end{center}
 \end{figure}
@@ -150,7 +151,7 @@ See \rfig{2008M:q2:fig:ActNet1}.
 	
 \subsubquestion
 
-See \rtab{2008M:q2:tab:ActNet2}
+We can calculate the earliest and latest start times for each activity in the network as follows:
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
@@ -177,7 +178,7 @@ See \rtab{2008M:q2:tab:ActNet2}
 
 \subsubsubquestion
 
-From \rtab{2008M:q2:tab:ActNet2} and \rdef{mod1:defn:CritPath}, we can see that the critical path is,
+Using the float times from \rtab{2008M:q2:tab:ActNet2}, we can identify the critical path as the path that has zero float time (\rdef{mod1:defn:CritPath}).
 \begin{equation}
 	\text{Start} \rightarrow A \rightarrow C \rightarrow D \rightarrow F \rightarrow G \rightarrow \text{Finish} \,.
 \end{equation}	
@@ -186,7 +187,7 @@ From \rtab{2008M:q2:tab:ActNet2} and \rdef{mod1:defn:CritPath}, we can see that 
 
 \subsubsubquestion
 
-From \rtab{2008M:q2:tab:ActNet2}, the latest finish time of $E$ is $22$ hours.
+The latest finish time of $E$ can be calucalated by the sum of the latest start time of $E$ and the duration of $E$. Therefore, from \rtab{2008M:q2:tab:ActNet2}, the latest finish time of $E$ is $22 + 12 = 34$.
 
 \end{subsubsubquestions}
 

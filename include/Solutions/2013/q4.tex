@@ -1,17 +1,280 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2013
+%     Module: 2
+%     Question: 4 
 %------------------------------------------------------------------------------
 
+\begin{subquestions}
+	
+%------------------------------------------------------------------------------
+% 4 a
+%------------------------------------------------------------------------------
 
+\subquestion
+
+Let $X$ be the discrete random variable representing the number of accidents which occur on that highway per week. From the given information, we can express this as,
+\begin{equation}
+	X \sim \text{Pois}(1) \,.
+\end{equation}
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+Using \rdef{mod2:defn:Poisson}, we know that,
+\begin{equation}
+	P(X=x)= \frac{1^x \times e^{-1}}{x!} \,.
+\end{equation}
+	
+Therefore, we can find,
+\begin{align}
+	P(X=2) & = \frac{1^2 \times e^{-1}}{2!} \nn \\
+	       & = \frac{1 \times e^{-1}}{2} \nn \\
+	       & = \frac{1}{2e} \nn \\
+	       & = 0.184 \,.
+\end{align}
+	
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Let $Y$ be the discrete random variable representing the number of accidents which occur on that highway during a 4-week period. We can express this as 
+\begin{equation}
+	Y \sim \text{Pois}(4) \,.
+\end{equation}
+
+Using \rdef{mod2:defn:Poisson}, we know that,
+\begin{equation}
+	P(Y=y)= \frac{4^y \times e^{-4}}{y!} \,. \label{2013:q4:eq:Pois1}
+\end{equation}
+
+Since $Y$ is discrete, we notice that,
+\begin{align}
+	P(Y \geq 4) & = 1 - P(Y \leq 3) \nn \\
+	            & = 1 - \left[P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3) \right] \,.
+\end{align}
+
+Using \req{2013:q4:eq:Pois1}, we proceed by finding each of these,
+\begin{align}
+	P(Y=0) & = \frac{4^0 \times e^{-4}}{0!} \nn \\
+	& = \frac{1 \times e^{-4}}{1} \nn\\
+	& = \frac{1}{e^4} \,,
+\end{align}
+\begin{align}
+	P(Y=1) & = \frac{4^1 \times e^{-4}}{1!} \nn \\
+	& = \frac{4 \times e^{-4}}{1} \nn \\
+	& = \frac{4}{e^4} \,,
+\end{align}
+\begin{align}      
+	P(Y=2) & = \frac{4^2 \times e^{-4}}{2!} \nn \\
+	& = \frac{16 \times e^{-4}}{2} \nn \\
+	& = \frac{8}{e^4} \,,
+\end{align}
+and,
+\begin{align}          
+	P(Y=3) & = \frac{4^3 \times e^{-4}}{3!} \nn \\
+	& = \frac{64 \times e^{-4}}{6} \nn \\
+	& = \frac{64}{6e^4} \,. 
+\end{align}
+
+
+We can therefore calculate $P(Y \leq 3)$ by substituting the above as follows,
+\begin{align}         
+    P(Y \leq 3) & = P(Y=0)+P(Y=1)+P(Y=2)+P(Y=3) \nn \\
+                & = \frac{1}{e^4} + \frac{4}{e^4} + \frac{8}{e^4} + \frac{64}{6e^4} \nn \\
+                & = \frac{1}{e^4} \times \left(1+4+8+\frac{64}{6} \right) \nn \\
+                & = \frac{1}{e^4} \times \left(\frac{142}{6} \right) \nn \\
+                & = \frac{142}{6e^4} \nn \\
+                & = 0.433 \,.
+\end{align}
+
+Thus, we get that,
+\begin{align}
+	P(Y \geq 4) & = 1 - P(Y \leq 3) \nn \\
+	            & = 1 - 0.433 \nn \\
+	            & = 0.567 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+Let the discrete random variable $Z$ be the number of 4-week periods in which at least 4 accidents occurred. From \textbf{(4)(a)(ii)}, we know that the probability that at least 4 accidents occur in a 4-week period is 0.567.
+
+From this information, we can conclude that
+\begin{equation}
+	Z \sim \text{Bin}(13,0.567) \,,
+\end{equation}
+and \rdef{mod2:defn:Binomial}, the probability mass function of $Z$, $P(Z=z)$, can be expressed as,
+\begin{equation}
+		P(Z = z) = { 13 \choose z} (0.567)^z  (1-0.567)^{13-z} \,.
+\end{equation}
+
+Thus, we can find,
+\begin{align}
+	P(Z = 11) & = { 13 \choose 11} (0.567)^{11}  (1-0.567)^{13-11} \nn \\
+	          & = { 13 \choose 11} (0.567)^{11}  (0.433)^{2} \nn \\
+	          & = 78 \times (0.567)^{11} \times (0.433)^{2} \nn \\
+	          & = 0.028 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+Let $X$ be the discrete random variable representing the number of defective nails in a box of 100. At first, 
+\begin{equation}
+	X \sim \text{Bin}(100,0.02) \,,
+\end{equation}
+
+From Section ~\ref{mod2:section:PoissonApproxBinomial}, we can notice that,
+\begin{equation}
+	n=100 \geq 15 ~\text{and} ~np= 100 \times 0.02=2<15,
+\end{equation}  
+and so, $X$ can be approximated as a Poisson Distribution as follows,
+\begin{align}
+	& X \sim \text{Pois}(np) \nn \\
+	\Longrightarrow & X \sim \text{Pois}(2) \,.
+\end{align}
+
+Using \rdef{mod2:defn:Poisson}, the probability mass function of $X$ is,
+\begin{equation}
+	P(X=x)= \frac{2^x \times e^{-2}}{x!} \,.
+\end{equation}
+
+Since $X$ is discrete, we know that,
+\begin{equation}
+	P(X \leq 2) = P(X=0)+P(X=1)+P(X=2) \,.
+\end{equation}
+
+Next, we calculate each probability,
+\begin{align}
+	P(Y=0) & = \frac{2^0 \times e^{-2}}{0!} 
+             = \frac{1 \times e^{-2}}{1} \nn \\
+	       & = \frac{1}{e^2} \,,
+\end{align}
+\begin{align}
+	P(Y=1) & = \frac{2^1 \times e^{-2}}{1!} 
+	         = \frac{2 \times e^{-2}}{1} \nn \\
+	       & = \frac{2}{e^2} \,,  
+\end{align}
+and,
+\begin{align}    
+	P(Y=2) & = \frac{2^2 \times e^{-2}}{2!} 
+	         = \frac{4 \times e^{-2}}{2} \nn \\
+	       & = \frac{2}{e^2} \,,
+\end{align}
+
+Substituting in the above, we find
+\begin{align}   
+	P(X \leq 2) & = P(X=0)+P(X=1)+P(X=2) \nn \\
+	            & = \frac{1}{e^2} + \frac{2}{e^2} + \frac{2}{e^2} \nn \\
+	            & = \frac{5}{e^2} \nn \\
+	            & = 0.677 \,. 
+\end{align}
+
+%------------------------------------------------------------------------------
+% 4 c
+%------------------------------------------------------------------------------
+
+\subquestion
+
+It is given that the continuous random variable, $X$, has a uniform distribution.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rprop{mod2:prop:ContinuousRV:1}, we know that,
+\begin{equation}
+	\int_{-\infty}^{\infty} f(x) \, \dd x = 1
+\end{equation}
+
+We must first split up the integral over the different regions,
+\begin{align}
+		\int_{-\infty}^{\infty} f(x) \, \dd x &= \int_{-\infty}^{0} f(x)\,\dd x  + \int_{0}^{3} f(x)\,\dd x + \int_{3}^{\infty} f(x)\,\dd x \,,
+\end{align}
+before we can substitute and evaluate,
+\begin{align}
+	0 + ~\int_{0}^{3} k\,\dd x ~+ 0 & = 1 \, \nn \\
+	\left[\frac{kx}{1} \right]_0^3 & = 1 \, \nn \\
+	[k(3)]-[k(0)] & = 1 \, \nn \\
+	3k & = 1 \, \nn \\
+	\implies k & = \frac{1}{3} \,.
+\end{align}
+
+Thus, we express $f(x)$ as,
+\begin{equation}
+f(x) =
+\begin{cases}
+	\frac{1}{3} & \text{$0 \leq x \leq 3$} \\
+	0    & \text{otherwise} \\
+\end{cases}
+\end{equation}
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We want to find the value of $t$ such that $P(X > t) = 1/4$. Since $X$ is continuous,
+\begin{align}
+	P(X >t) &= \int_t^\infty f(x) \,\dd x 
+\end{align}
+
+Since $0< P(X<t) < 1$, we know $0<t<3$, so the integral will split up as,
+\begin{align}
+	\int_t^\infty f(x) \,\dd x &= \int_t^3 f(x)\,\dd x + \int_3^\infty f(x) \,\dd x \,.
+\end{align}
+
+Evaluating,
+\begin{align}
+	P(X >t) &= \int_t^3 k \,\dd x + \int_3^\infty 0\,\dd x \nn\\
+	&= k\left[x\right]_t^3 \nn\\
+	&= k [3-t]\,.
+\end{align}
+
+Equating to $1/4$, we can solve for $t$,
+\begin{align}
+	k (3-t) &= \frac{1}{4} \nn\\
+	t &= 3 - \frac{1}{4k} \nn\\
+	  &= \frac{9}{4}
+\end{align}
+
+% We are given that $P(X>t) = \frac{1}{4}$. Since $f(x)$ is continuous between 0 and 3, we can then notice that $P(X<t)=1-\frac{1}{4}=\frac{3}{4}$.
+
+% From \rdef{mod2:defn:ContinuousRV:CDF}, we know that the cumulative distribution function, $F(a)$ is defined as $P(X<a)$. Thus, to solve for $t$, we must first find $F(a)$.
+
+% Using \rdef{mod2:defn:ContinuousRV:CDF}, we can find that,
+% \begin{align}
+% 	F(a) & = \int_{-\infty}^{a} f(x)\mathrm{d}x \nn \\
+% 		 & = \int_{-\infty}^{0} f(x)\mathrm{d}x + \int_{0}^{a} f(x)\mathrm{d}x \nn \\
+% 	     & = 0 + \int_{0}^{a} \frac{1}{3}\mathrm{d}x \nn \\
+% 	     & = \left[\frac{x}{3} \right]_0^a \nn \\
+% 	     & = \left[\frac{a}{3} \right] - \left[\frac{0}{3} \right] \nn \\
+% 	     & = \frac{a}{3} \,. \label{2013:q4:CDF1}
+% \end{align}
+
+% Using \req{2013:q4:CDF1}, we can input $a=t$ and solve for $t$ as follows,
+% \begin{align}
+% 	P(X<t)=  F(t) & =\frac{3}{4}\,, \nn \\
+% 	        \frac{t}{3} & = \frac{3}{4} \,. \nn \\
+% 	        \implies  t & = \frac{3 \times 3}{4} \nn \\
+% 	                    & = \frac{9}{4} \,.
+% \end{align}
+
+\end{subsubquestions}
+
+\end{subquestions}
 

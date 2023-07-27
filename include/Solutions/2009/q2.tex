@@ -21,7 +21,7 @@
 
 \subquestion
 
-"Tom works hard if and only if Tom is successful."
+If $\boldsymbol{p}$ is the propositon "Tom works hard" and $\boldsymbol{q}$ is the proposition "Tom is successful", we can express $\boldsymbol{p \iff q}$ in words as "Tom works hard if and only if Tom is successful."
 
 %------------------------------------------------------------------------------
 % 2 b--------------------------------------------------------------------------
@@ -29,30 +29,31 @@
 	
 \subquestion 
 
+Given the statement $\boldsymbol{p \implies q}$, we can write the:
 \begin{subsubquestions}
 	
 %-----------------------------------------------------------------------------
 
 \subsubquestion
-
+Inverse
 \begin{equation}
-	\sim p \implies \sim q\,.
+	\boldsymbol{\sim p \implies \sim q}\,.
 \end{equation}
 
 %-----------------------------------------------------------------------------
 
 \subsubquestion
-
+Converse
 \begin{equation}
-	q \implies p\,.
+	\boldsymbol{q \implies p}\,.
 \end{equation}
 
 %-----------------------------------------------------------------------------
 
 \subsubquestion
-
+Contrapositive
 \begin{equation}
-	\sim q \implies \sim p\,.
+	\boldsymbol{\sim q \implies \sim p}\,.
 \end{equation}
 
 \end{subsubquestions}
@@ -63,12 +64,12 @@
 
 \subquestion
 
-From \rtab{2009:q2:tab:TruthTab1} and \rdef{mod1:defn:Contradiction}, we can see that $(a \land (a \implies b)) \land \sim b$ is a contradiction.
+We can construct the following truth table for the proposition $\boldsymbol{(a \land (a \implies b)) \land \sim b}$.
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		a & b & $\sim$ b & a $\implies$ b & a $\land$ (a $\implies$ b) & (a $\land$ (a $\implies$ b)) $\land$ $\sim$ b \\
+		$\boldsymbol{a}$ & $\boldsymbol{b}$ & $\boldsymbol{\sim b}$ & $\boldsymbol{a \implies b}$ & $\boldsymbol{a \land (a \implies b)}$ & $\boldsymbol{(a \land (a \implies b)) \land \sim b}$ \\
 		\hline
 		0 & 0 & 1 & 1 & 0 & 0 \\
 		0 & 1 & 0 & 1 & 0 & 0 \\
@@ -76,8 +77,10 @@ From \rtab{2009:q2:tab:TruthTab1} and \rdef{mod1:defn:Contradiction}, we can see
 		1 & 1 & 0 & 1 & 1 & 0 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2009:q2:tab:TruthTab1} Truth table of $(a \land (a \implies b)) ~\land \sim b$.}
+	\caption{\label{2009:q2:tab:TruthTab1} Truth table of $\boldsymbol{(a \land (a \implies b)) ~\land \sim b}$.}
 \end{table}
+
+From the truth table, it can be seen that the proposition $\boldsymbol{(a \land (a \implies b)) ~\land \sim b}$ is a contradiction because its truth value is always 0.
 
 %------------------------------------------------------------------------------
 % 2 d--------------------------------------------------------------------------
@@ -85,7 +88,7 @@ From \rtab{2009:q2:tab:TruthTab1} and \rdef{mod1:defn:Contradiction}, we can see
 
 \subquestion
 
-From $A$ to $E$, the paths are,
+From $A$ to $E$, the possible paths are,
 \begin{align}
 	& A \rightarrow E\,, \nn \\
 	& A \rightarrow D \rightarrow E\,, \nn \\
@@ -109,11 +112,11 @@ The degree of vertex $D$ is $4$.
 
 \subquestion
 
-See \rfig{2009:q2:fig:LogicGates}.
-\begin{figure}
+The Boolean expression $\boldsymbol{(x \land y) ~\lor \sim y}$ can be expressed as the following logic gate circuit.
+\begin{figure}[H]
 	\begin{center}
 		\includegraphics{../2009/figures/2009q2LogicGate}
-		\caption{\label{2009:q2:fig:LogicGates} Logic gate equivalent of $(x \land y) ~\lor \sim y$.}
+		\caption{\label{2009:q2:fig:LogicGates} Logic gate equivalent of $\boldsymbol{(x \land y) ~\lor \sim y}$.}
 	\end{center}
 \end{figure}
 
@@ -128,29 +131,29 @@ See \rfig{2009:q2:fig:LogicGates}.
 %-----------------------------------------------------------------------------
 
 \subsubquestion
-
+The Boolean expression for the given logic gate circuit is:
 \begin{equation}
-	\sim (a \lor b)\,.
+	\boldsymbol{\sim (a \lor b)}\,.
+\end{equation}
+
+%-----------------------------------------------------------------------------
+
+\subsubquestion
+The Boolean expression for the given logic gate circuit is:
+\begin{equation}
+	\boldsymbol{\sim a ~\land \sim b}\,.
 \end{equation}
 
 %-----------------------------------------------------------------------------
 
 \subsubquestion
 
-\begin{equation}
-	\sim a ~\land \sim b\,.
-\end{equation}
-
-%-----------------------------------------------------------------------------
-
-\subsubquestion
-
-From \rtab{2009:q2:tab:TruthTab2}, we see that $\sim (a \lor b)$ and $(\sim a ~\land \sim b)$ are logically equivalent.
-\begin{table}[ht]
+We can construct the following truth table to represent the circuits above.
+\begin{table}[h]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|c|}
 		\hline
-		a & b & $\sim$ a & $\sim$ b & a $\lor$ b & $\sim$ (a $\lor$ b) & $\sim$ a $\land$ $\sim$ b \\
+		$\boldsymbol{a}$ & $\boldsymbol{b}$ & $\boldsymbol{\sim a}$ & $\boldsymbol{\sim b}$ & $\boldsymbol{a \lor b}$ & $\boldsymbol{\sim (a \lor b)}$ & $\boldsymbol{\sim a \land \sim b}$ \\
 		\hline
 		0 & 0 & 1 & 1 & 0 & 1 & 1 \\
 		0 & 1 & 1 & 0 & 1 & 0 & 0 \\
@@ -158,8 +161,10 @@ From \rtab{2009:q2:tab:TruthTab2}, we see that $\sim (a \lor b)$ and $(\sim a ~\
 		1 & 1 & 0 & 0 & 1 & 0 & 0 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2009:q2:tab:TruthTab2} Truth table of $\sim (a \lor b)$ and $(\sim a ~\land \sim b)$.}
+	\caption{\label{2009:q2:tab:TruthTab2} Truth table of $\boldsymbol{\sim (a \lor b)}$ and $\boldsymbol{(\sim a ~\land \sim b)}$.}
 \end{table}
+
+From \rtab{2009:q2:tab:TruthTab2}, we see that $\boldsymbol{\sim (a \lor b)}$ and $\boldsymbol{(\sim a ~\land \sim b)}$ are logically equivalent.
 
 \end{subsubquestions}
 

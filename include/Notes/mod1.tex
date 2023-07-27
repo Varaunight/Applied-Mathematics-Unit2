@@ -17,36 +17,58 @@
 % Module 1 Notes and Definitions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Linear Programming} \label{Module1:LinearProgramming}
-
-\begin{defn}\label{mod1:defn:TourOfVertices}
-	\textbf{Tour of Vertices}: In a 2-dimensional graph, the set of vertices of the feasible region must contain the optimal solution. The Tour of Vertices method checks each vertex of the feasible region to find the optimum solution for the problem.
-\end{defn}
-
 \section{Assignment Models} \label{Module1:AsgnmtModels}
 
-\begin{defn} \label{mod1:defn:HungAlgStep4}
-	\textbf{Step 4}: This is the step of the Hungarian algorithm that subtracts the matrix minimum from all unshaded elements and adds double the matrix minimum to all elements that are shaded twice. Using this as the reference until the structured Hungarian notes are placed.
+\begin{defn} \label{mod1:defn:HungAlg}
+	The \textbf{Hungarian Algorithm} is a process that can be used to assign workers of a project to tasks in order minimize a parameter of the project (time, cost, etc).
 \end{defn}
+
+
+\begin{defn} \label{mod1:defn:HungAlgSteps}
+	The algorithm follows a series of steps as follows:
+	\begin{itemize}
+		\item \textbf{Step 1, Squaring the Matrix}: Ensure that the matrix under question is square (of the form $n\times n$). If the matrix is not square, add the necessary rows or columns such that the new elements are equal to each other and are greater than or equal to the maximum element of the original matrix.
+		\item \textbf{Step 2, Reducing Rows}: From each row, find the minimum element and subtract it from all other elements in that row.
+		\item \textbf{Step 3, Reducing Columns}: From each column, find the minimum element and subtract it from all other elements in that column.
+		\item \textbf{Step 4, Shading the Zeroes}: With the minimum number of horizontal and vertical lines, cover all the zeroes in the matrix. If the total number of lines used is equal to $n$, there exists a minimum solution among the zeroes in the matrix. If the number of lines is less than $n$, proceed to Step 5. 
+		\item \textbf{Step 5, Making New Zeroes}: From all the unshaded elements (those not covered by a line), identify the minimum element, $k$. Subtract this value from all the unshaded elements and add twice this value ($2k$) to all of the values that are shaded twice. With this new matrix, Return to Step 4. Repeat as necessary. \label{mod1:defn:HungAlgStep4}
+	\end{itemize}
+When a solution exists, go through the zeroes of the matrix by hand to find the optimal solution.
+\end{defn}
+
+\begin{note}
+	The Hungarian Algorithm can also be used to maximize a project parameter. The steps are exactly the same, however, the signs of all the matrix elements must be flipped.	
+\end{note}
+
+
 
 \section{Graph Theory and Critical Analysis} \label{Module1:GraphTheoryCriticalAnalysis}
 
-\textcolor{red} {DIAGRAMS FOR GRAPH DEFINITIONS  AND CRITICAL ANALYSIS ALGORITHMS}\\
-\textcolor{red}{HUNGARIAN ALGO}
 \begin{defn}\label{mod1:defn:Vertex}
-   \textbf{Vertex}: The Vertex is the fundamental unit from which graphs are formed.
+   \textbf{Vertex}: The Vertex is the fundamental unit from which graphs are formed. It may also be referred to as a node. $P$, $S$ and $R$ are examples of vertices in \rfig{mod1:ActNetDiag}
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Edge}
-   \textbf{Edge}: In an undirected graph, an unordered pair of nodes that signify  a line joining  two nodes are said to form an edge. For a directed graph, the edge is an ordered pair of nodes. An edge may also connect a node to itself.
+   \textbf{Edge}: In an undirected graph, an unordered pair of nodes that signify  a line joining  two nodes are said to form an edge. For a directed graph, the edge is an ordered pair of nodes. An edge may also connect a node to itself. The line connecting $Q$ to $S$ in \rfig{mod1:ActNetDiag} is an example of an edge.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Path}
-    \textbf{Path}: A path in a graph is a sequence of edges which joins multiple vertices, in which all vertices (and edges) are distinct.
+    \textbf{Path}: A path in a graph is a sequence of edges which joins multiple vertices, in which all vertices (and edges) are distinct. The sequence $P \rightarrow R \rightarrow T$ in \rfig{mod1:ActNetDiag} is an example of a path.
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Degree}
-   \textbf{Degree}: The degree of a vertex  in a graph is the number of edges that are incident to the vertex. A loop is counted as two incident edges.
+   \textbf{Degree}: The degree of a vertex  in a graph is the number of edges that are incident to the vertex. A loop is counted as two incident edges. For example, the degree of $T$ in \rfig{mod1:ActNetDiag}, $\deg(T)$, is 3. 
+\end{defn}
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics{../../Notes/figures/GraphAnalysisMod1}
+		\caption{\label{mod1:ActNetDiag} Example of an Activity Network.}
+	\end{center}
+\end{figure}
+
+\begin{defn}\label{mod1:defn:ActNet}
+	\textbf{Activity Network}: An Activity Network is a diagram which shows the order in which activities must be completed throughout a project. If we consider the vertices of \rfig{mod1:ActNetDiag} to be activities of an arbitrary project, we can see that certain activities must be completed for another to begin. For example, $Q$ can only begin if $P$ is completed and similarly, $T$ can begin if and only if both $R$ and $S$ are complete. 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:FloatTime}
@@ -54,30 +76,53 @@
 \end{defn}
 
 \begin{defn}\label{mod1:defn:CritPath}
-	\textbf{Critical Path}: A crtical path is a path which joins activities in an Activity Network whose Float Time is $0$. It is the path which determines the minimum time for some set of operations to be completed. 
+	\textbf{Critical Path}: A critical path is a path which joins activities in an Activity Network whose Float Time is $0$. It is the path which determines the minimum time for some set of operations to be completed. To find the critical path in an activity network, it is useful to construct a table with the activities and their Earliest and Latest Start times. From \rtab{mod1:ActNetTab}, we can see that the critical path of \rfig{mod1:ActNetDiag} is $\text{Start} \rightarrow P \rightarrow R \rightarrow T \rightarrow \text{End}$.
 \end{defn}
 	
+\begin{defn}\label{mod1:defn:EarliestStart}
+	\textbf{Earliest Start Time}: To find the earliest start times, you work from the start of the activity network to the end. To find the earliest start time of some activity $K_n$, you add the weight of the preceding activity to the earliest start time of the preceding activity itself. If $K_n$ has more than one predecessor (for example, $T$ in \rfig{mod1:ActNetDiag} is preceded by both $S$ and $R$), you take the largest value obtained. This process if repeated until the end of the Activity Network. 
+\end{defn}
+
+\begin{defn}\label{mod1:defn:LatestStart}
+	\textbf{Latest Start Time}: To find the latest start times, you work from the end of the activity network to the start. The latest start time of the final activity in an activity network is equal to the earliest start time of that activity. To find the latest start time of some activity $K_j$, you subtract the weight of activity $K_j$ from the latest start time of its succeeding activity. If $K_j$ has more than one succeeding activity (for example, $P$ in \rfig{mod1:ActNetDiag} is succeeded by both $Q$ and $R$), you take the smallest value obtained. This process is repeated until the start of the Activity Network.
+\end{defn}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		Activity & Earliest Start Time & Latest Start Time & Float Time \\
+		\hline 
+		P & 0 & 0 & 0 \\
+		Q & 1 & 3 & 2 \\
+		S & 3 & 5 & 2 \\
+		R & 1 & 1 & 0 \\
+		T & 8 & 8 & 0 \\
+		\hline
+	\end{tabular}
+	\caption{\label{mod1:ActNetTab}Start Times of \rfig{mod1:ActNetDiag}.}
+\end{table}
 
 \section{Logic and Boolean Algebra}
 
 \begin{defn}\label{mod1:defn:Proposition}
-   \textbf{Propsition}: A proposition is a declarative statment which is either true or false.
+   \textbf{Proposition}: A proposition is a declarative statement which is either True (denoted by T or 1) or False (denoted by F or 0).
 \end{defn}
 
 \begin{defn}\label{mod1:defn:LogicSymbols}
    Propositional Logical Symbols
       
-   \begin{table}[ht]
+   \begin{table}[H]
       \centering
       \begin{tabular}{|c|c|c|}
          \hline
             Symbol & Name & Read as\\
          \hline
-         $\land$ & Conjunction & And \\
-         $\lor$ &   Disjunction & Or \\
-         $\lnot$ & Negation & Not\\
-         $\Rightarrow$ & Conditional & If ... then ...\\
-         $\Leftrightarrow$ & Bi-conditional & If and only if; iff\\
+         $\boldsymbol{\land}$ & Conjunction & And \\
+         $\boldsymbol{\lor}$ &   Disjunction & Or \\
+         $\boldsymbol{\sim}$ & Negation & Not\\
+         $\boldsymbol{\Rightarrow}$ & Conditional & If ... then ...\\
+         $\boldsymbol{\Leftrightarrow}$ & Bi-conditional & If and only if; iff\\
          \hline
       \end{tabular}
       \label{mod1:tab:LogicSymbols}
@@ -90,9 +135,9 @@
    \centering
    \begin{minipage}{0.2\textwidth}
    \centering
-      \begin{tabular}{|c |c|}
+      \begin{tabular}{|c|c|}
          \hline
-         p &  $\lnot$p\\
+         $\boldsymbol{p}$ &  $\boldsymbol{\sim p}$\\
          \hline
          T & F\\
          F & T\\
@@ -102,9 +147,9 @@
    \end{minipage}
    \begin{minipage}{0.38\textwidth}
       \centering
-      \begin{tabular}{|c c|c|}
+      \begin{tabular}{|c|c|c|}
             \hline
-            p & q & p $\land$ q\\
+            $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \land q}$\\
             \hline
             T & T & T\\
             T & F & F\\
@@ -117,9 +162,9 @@
    \vspace{1cm}
    \begin{minipage}{0.38\textwidth}
    \centering
-            \begin{tabular}{|c c|c|}
+            \begin{tabular}{|c|c|c|}
          \hline
-         p & q & p $\lor$ q\\
+         $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \lor q}$\\
          \hline
          T & T & T\\
          T & F & T\\
@@ -132,9 +177,9 @@
    \hspace{6cm}
    \begin{minipage}{0.38\textwidth}
       \centering
-      \begin{tabular}{|c c|c|}
+      \begin{tabular}{|c|c|c|}
          \hline
-         p & q & p $\Rightarrow$ q\\
+         $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \implies q}$\\
          \hline
          T & T & T\\
          T & F & F\\
@@ -147,9 +192,9 @@
    % \hspace{1cm}
    \begin{minipage}{0.38\textwidth}
       \centering
-      \begin{tabular}{|c c|c|}
+      \begin{tabular}{|c|c|c|}
          \hline
-         p & q & p $\Leftrightarrow$ q\\
+         $\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \Leftrightarrow q}$\\
          \hline
          T & T & T\\
          T & F & F\\
@@ -163,17 +208,17 @@
 \end{defn}
 
 
-\noindent Suppose we have the proposition $p \Rightarrow q$, we make the following three definitions:
+\noindent Suppose we have the proposition $\boldsymbol{p \Rightarrow q}$, we make the following three definitions:
 \begin{defn}\label{mod1:defn:Inverse}
-   \textbf{Inverse}: $\lnot p \Rightarrow \lnot q$ 
+   \textbf{Inverse}: $\boldsymbol{\sim p \Rightarrow \sim q}$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Converse}
-   \textbf{Converse}: $q \Rightarrow p$ 
+   \textbf{Converse}: $\boldsymbol{q \Rightarrow p}$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Contrapositive}
-   \textbf{Contrapositive}: $\lnot q \Rightarrow \lnot p$ 
+   \textbf{Contrapositive}: $\boldsymbol{\sim q \Rightarrow \sim p}$ 
 \end{defn}
 
 \begin{defn}\label{mod1:defn:Tautology}
@@ -192,14 +237,14 @@
 
 
 
-\noindent Consider the propsitional variables $p$, $q$ and $r$
+\noindent Consider the propositional variables $\boldsymbol{p}$, $\boldsymbol{q}$ and $\boldsymbol{r}$
 
 
 \begin{law}\label{mod1:law:Annulment}
    \textbf{Annulment}
    \begin{align}
-   p \land F &= F  \\
-   p \lor T &= T 
+      \boldsymbol{p \land F} &= \boldsymbol{F}  \\
+      \boldsymbol{p \lor T} &= \boldsymbol{T}
    \end{align}
 \end{law}
 
@@ -207,80 +252,130 @@
 \begin{law}\label{mod1:law:Identity}
    \textbf{Identity}
    \begin{align}
-   p \land T &= p  \\
-   p \lor F &= p
+      \boldsymbol{p \land T} &= \boldsymbol{p}  \\
+      \boldsymbol{p \lor F} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Idempotent}
    \textbf{Idempotent}
    \begin{align}
-   p \lor p &= p\\
-   p \land p &= p
+      \boldsymbol{p \lor p} &= \boldsymbol{p}\\
+      \boldsymbol{p \land p} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Complement}
    \textbf{Complement}
    \begin{align}
-   p \lor \lnot p &= T\\
-   p \land \lnot p &= F
+      \boldsymbol{p \lor \sim p} &= \boldsymbol{T}\\
+      \boldsymbol{p \land \sim p} &= \boldsymbol{F}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:DoubleNegation}
    \textbf{Double Negation}
    \begin{align}
-   \lnot(\lnot p) &= p
+      \boldsymbol{\sim(\sim p)} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:DeMorgan}
    \textbf{De Morgan's}
    \begin{align}
-   \lnot (p \land q) &= \lnot p \lor \lnot q \\
-   \lnot (p \lor q) &= \lnot p \land \lnot q 
+      \boldsymbol{\sim (p \land q)} &= \boldsymbol{\sim p \lor \sim q} \\
+      \boldsymbol{\sim (p \lor q)} &= \boldsymbol{\sim p \land \sim q}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Associative}
    \textbf{Associative}
    \begin{align}
-   (p \lor q) \lor r &= p \lor (q \lor r) \\
-   (p \land q) \land r &= p \land (q \land r) 
+      \boldsymbol{(p \lor q) \lor r} &= \boldsymbol{p \lor (q \lor r)} \\
+      \boldsymbol{(p \land q) \land r} &= \boldsymbol{p \land (q \land r)}
    \end{align}
 \end{law}
 
  \begin{law}\label{mod1:law:Commutative}
    \textbf{Commutative}
    \begin{align}
-   p \land q &= q \land p \\
-   p \lor q &= q \lor p
+      \boldsymbol{p \land q} &= \boldsymbol{q \land p} \\
+      \boldsymbol{p \lor q} &= \boldsymbol{q \lor p}
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Distributive}
    \textbf{Distributive}
    \begin{align}
-   p \land (q \lor r) &= (p \land q) \lor (p \land r) \\
-   p \lor (q \land r) &= (p \lor q) \land (p \lor r) 
+      \boldsymbol{p \land (q \lor r)} &= \boldsymbol{(p \land q) \lor (p \land r)} \\
+      \boldsymbol{p \lor (q \land r)} &= \boldsymbol{(p \lor q) \land (p \lor r) }
    \end{align}
 \end{law}
 
 \begin{law}\label{mod1:law:Absorptive}
    \textbf{Absorptive}
    \begin{align}
-   p \land (p \lor q) &= p\\
-   p \lor (p \land q) &= p
+      \boldsymbol{p \land (p \lor q)} &= \boldsymbol{p}\\
+      \boldsymbol{p \lor (p \land q)} &= \boldsymbol{p}
    \end{align}
 \end{law}
 
 
 \subsection{Logic Circuits}\label{mod1:section:LogicCircuits}
 
-\textcolor{red}{DIAGRAMS OF LOGIC CIRCUITS}
+\begin{defn}
+	Logic Circuits can be used to represent Boolean Expressions with switches and wires. Switches are usually defined with logic propositions where a truth value of 1 will indicate a closed switch whereas a truth value of 0 represents an open switch.
+\end{defn}
 
+\begin{defn}
+	Switching Circuits:
+	\begin{figure}[H]
+		\centering
+		\begin{circuitikz}
+			\draw [color=black, thick] (1,0) -- (2,0);
+			\draw [color=black, thick] (5,0) -- (4,0);
+			\draw (2,0) to[normal open switch, *-*](4,0);	
+			\path (2,0) -- (4,0) node[pos=0.5,below]{\textbf{A}};
+		\end{circuitikz}
+	\caption{Preposition \textbf{A}}
+	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\begin{circuitikz}
+			\draw [color=black, thick] (1,0) -- (2,0);
+			\draw [color=black, thick] (5,0) -- (4,0);
+			\draw [color=black, thick] (7,0) -- (8,0);
+			
+			\draw (2,0) to[normal open switch, *-*](4,0);	
+			\path (2,0) -- (4,0) node[pos=0.5,below]{\textbf{X}};
+			
+			\draw (5,0) to[normal open switch, *-*](7,0);	
+			\path (5,0) -- (7,0) node[pos=0.5,below]{\textbf{Y}};
+		\end{circuitikz}
+		\caption{Preposition (\textbf{X} $\land$ \textbf{Y})}
+	\end{figure}
+
+	\begin{figure}[H]
+		\centering 
+		\begin{circuitikz}
+			\draw [color=black, thick] (6,0) -- (7,0);
+			\draw [color=black, thick] (7,0) -- (7,1);
+			\draw [color=black, thick] (7,0) -- (7,-1);
+			\draw [color=black, thick] (9,0) -- (10,0);
+			\draw [color=black, thick] (9,0) -- (9,1);
+			\draw [color=black, thick] (9,0) -- (9,-1);
+			
+			
+			\draw (7,1) to[normal open switch, *-*](9,1);	
+			\path (7,1) -- (9,1) node[pos=0.5,below]{$\sim$\textbf{P}};
+			
+			\draw (7,-1) to[normal open switch, *-*](9,-1);	
+			\path (7,-1) -- (9,-1) node[pos=0.5,below]{\textbf{Q}};
+		\end{circuitikz}
+		\caption{Preposition ($\sim$\textbf{P} $\lor$ \textbf{Q})}
+	\end{figure}
+\end{defn}
 
 
 

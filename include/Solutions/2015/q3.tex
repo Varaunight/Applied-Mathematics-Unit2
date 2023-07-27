@@ -20,7 +20,7 @@
 %------------------------------------------------------------------------
 \subquestion
 
-It is given that 20\% of bolts manufactured at a factory are defective. Therefore, we shall say the probability a bolt is defective, $P(D)= 0.2$. 
+Let the probability a bolt is defective, $P(D)= 0.2$. 
 
 \begin{subsubquestions}
 	
@@ -29,7 +29,7 @@ It is given that 20\% of bolts manufactured at a factory are defective. Therefor
    %------------------------------------------------------------------------------------
    \subsubquestion	
 
-   Let $X$ be "the number of defective bolts in a random sample of size 15". From Def.~\ref{mod2:defn:Binomial}, we see that $X$ can be modelled using a Binomial Distribution,
+   Let $X$ be the discrete random variable representing ``the number of defective bolts in a random sample of size 15''. From Def.~\ref{mod2:defn:Binomial}, we see that $X$ can be modelled using a Binomial Distribution,
    \begin{equation}
    	 X \sim \text{Bin}(15,0.2) \,,
    \end{equation}
@@ -38,26 +38,27 @@ It is given that 20\% of bolts manufactured at a factory are defective. Therefor
    	P(X = x) = { 15 \choose x} 0.2^x (1-0.2)^{15-x} \,. 
    \end{equation}
 
-   We want to find the probability that, in a sample of 15 bolts, more than 1 is defective. Mathematically, we want to find $P(X>1)$. 
-
-   To solve this question, we can either find the sum of the different probabilities for defective bolts from 2 to 15 OR we can find the probability that the number of defective bolts is $\leq$ 1. This is because $P(X>1)=1-P(X\leq1)$.  \\
+   We want to find $P(X>1)$. To solve this question, we can either find the sum of the different probabilities for defective bolts from 2 to 15 OR we can find the probability that the number of defective bolts is $\leq$ 1. This is because $P(X>1)=1-P(X\leq1)$.  \\
 
    Using the latter, we see that it is much simpler to calculate $P(X\leq1) $   by noticing that 
    \begin{equation}
    	P(X \leq 1)  =  P(X=1)+P(X=0). 
    \end{equation}
 
-   Solving this, we get
+   Solving for each probability, we get
    \begin{align}
    	P(X=0)&={ 15 \choose 0} 0.2^0 (1-0.2)^{15-0} \nn \\
    	&=1\times1\times0.8^{15} \nn \\
-   	&=0.8^{15}.\nn \\ \nn \\
+   	&=0.8^{15}\,,
+   \end{align}
+   and,
+   \begin{align}
    	P(X=1)&={ 15 \choose 1} 0.2^1 (1-0.2)^{15-1} \nn \\
    	&=15 \times 0.2 \times 0.8^{14} \nn \\
    	&=3\times 0.8^{14} \,. 
    \end{align}
 
-   Evaluating the probability,
+   Substituting, in the above we find,
    \begin{align}
    	P(X>1)&=1-P(X\leq1) \nn \\
    	&=1-(P(X=0)+P(X=1)) \nn \\
@@ -71,17 +72,16 @@ It is given that 20\% of bolts manufactured at a factory are defective. Therefor
    %--------------------------------------------------------------------------
    \subsubquestion
 
-   We now want to find the smallest value of $n$ that satisfies the following criteria: \\The ratio of the standard deviation of $X$ to the mean of $X$ is less than 0.1.\\
-
-   Mathematically, we can express this as
+   We now want to find the smallest value of $n$ such that,
    \begin{equation}
-   	\frac{\sqrt{Var[X]}}{E[X]}< 0.1 \,. 
+   	\frac{\sqrt{\var[X]}}{E[X]}< 0.1 \,. 
    \end{equation}
 
-   From Eqs.~\ref{mod2:eq:Binomial:Mean} and Eq.~\ref{mod2:eq:Binomial:Variance}, we can simplify this expression
-   \begin{equation}
-   	\frac{\sqrt{np(1-p)}}{np}<0.1 \implies \sqrt{\frac{np(1-p)}{n^2p^2}}<0.1.  \\ 
-   \end{equation}
+   We can substitute the definitions for $E(X)$ and $\var(X)$ using Eqs.~\ref{mod2:eq:Binomial:Mean} and Eq.~\ref{mod2:eq:Binomial:Variance},
+   \begin{align}
+   	\frac{\sqrt{np(1-p)}}{np}&<0.1 \\
+       \implies \sqrt{\frac{np(1-p)}{n^2p^2}}&<0.1.  \\ 
+   \end{align}
 
    Simplifying this expression yields,
    \begin{equation}
@@ -110,7 +110,7 @@ It is given that 20\% of bolts manufactured at a factory are defective. Therefor
 %------------------------------------------------------------------------
 \subquestion
 
-We are given that $X \sim \text{Bin} (500,0.005)$. In order to find $P(X\leq2)$, we can use a Poisson approximation to the binomial distribution. \\ \\
+In order to find $P(X\leq2)$, we can use a Poisson approximation to the binomial distribution. \\ \\
 From Def.~\ref{mod2:defn:PoissonApproxBinomial}, we know that certain conditions must hold for a binomial distribution to be approximated by a Poisson distribution.
 From the given distribution, we can see that $n=500>50$ and $np=2.5<5$, and so the following approximation holds,
 \begin{equation}
@@ -122,7 +122,7 @@ Now, we want to find $P(X\leq2)$. For a Poisson Distribution,
 	P(X \leq 2) = P(0) + P(1) + P(2) \,.
 \end{align}
 
-By using Eq.~\ref{mod2:eq:PoissonDist}, we can evaluate that, 
+By using Eq.~\ref{mod2:eq:PoissonDist}, we can evaluate each of the probabilities, 
 \begin{align}
 	P(X = 0) & =\frac{ 2.5 ^ 0 \times e^{-2.5}}{0!} \nn \\
   & =\frac{1 \times e^{-2.5}}{1} \nn \\
@@ -136,14 +136,14 @@ By using Eq.~\ref{mod2:eq:PoissonDist}, we can evaluate that,
 	& =2.5 \times e^{-2.5} \nn \\
 	& = 0.205 \,,
 \end{align}
-
+and,
 \begin{align}
 	P(X = 2) & =\frac{ 2.5 ^ 2 \times e^{-2.5}}{2!} \nn \\
 	& =\frac{2.5^2 \times e^{-2.5}}{2} \nn \\
 	& = 0.257\,.
 \end{align}
 	
-Finally, solving for $P(X \leq 2)$, we get 
+Finally, substituting for $P(X \leq 2)$, we get 
 \begin{align}
 		P(X \leq 2) & = 0.082 + 0.205 + 0.257 \nn \\
 		& = 0.544 \,.
@@ -154,7 +154,7 @@ Finally, solving for $P(X \leq 2)$, we get
 %------------------------------------------------------------------------
 \subquestion
 
-We are given that $X \sim \text{Pois} (20)$. In order to find, $P(X\leq 25)$, we must use a normal approximation to the Poisson distribution as seen in Def \ref{mod2:def:NormalApproxToPois:Definition}.\\
+In order to find, $P(X\leq 25)$, we must use a normal approximation to the Poisson distribution as seen in Def \ref{mod2:def:NormalApproxToPois:Definition}.\\
 
 Therefore, by Note \ref{mod2:note:NormalApproxtoPois:Continuity} and using a continuity correction, we will find the probabilty that $P(X \leq 25.5)$.
 
@@ -170,9 +170,13 @@ Standardizing using Property \ref{mod2:note:Normal:Property2} in Note \ref{mod2:
 %------------------------------------------------------------------------
 \subquestion
 
-We are given that $X \sim \text{Geo} (0.3)$. To find $P(X<4)$, we can either sum all the individual probabilities from $X=1$ to $3$ OR we can find $P(X>3)$ using the property of \ref{mod2:eq:Geometric:Prop}, because $P(X<4)=1-P(X>3)$.
+To find $P(X<4)$, we can either sum all the individual probabilities from $X=1$ to $3$ OR we can find $P(X>3)$ because $P(X<4)=1-P(X>3)$.
 
-Evaluating this, we get,
+Using the property of \ref{mod2:eq:Geometric:Prop},
+\begin{equation}
+   P(X>3) = 0.7^3\,,
+\end{equation}
+we can determine $P(X<4)$ as follows,
 \begin{align}
 	P(X<4) &= 1-P(X>3) \nn \\
 	&=1-0.7^3 \nn \\

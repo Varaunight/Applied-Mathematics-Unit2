@@ -21,8 +21,9 @@
 
 \subquestion
 
+Given the proposition $\boldsymbol{p \implies \sim q}$, the contrapositive proposition is:
 \begin{equation}
-	q \implies \sim p\,. 
+	\boldsymbol{q \implies \sim p}\,. 
 \end{equation}
 
 %------------------------------------------------------------------------------
@@ -31,20 +32,20 @@
 
 \subquestion
 
-See \rtab{2014:q1:tab:Tab1}. Note that the inverse of ($p \implies \sim q$) is ($\sim p \implies q$).
+We can construct the following truth table for the inverse of $\boldsymbol{p \implies \sim q}$. Note that the inverse of $\boldsymbol{p \implies \sim q}$ is $\boldsymbol{\sim p \implies q}$.
 \begin{table}[ht]
 	\centering
-	\begin{tabular}{|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|}
 		\hline
-		p & $\sim$ q & $\sim$ p & q & ($\sim$ p $\implies$ q) \\
+		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{\sim p \implies q}$ \\
 		\hline
-		0 & 0 & 1 & 1 & 1 \\
-		0 & 1 & 1 & 0 & 0 \\
-		1 & 0 & 0 & 1 & 1 \\
-		1 & 1 & 0 & 0 & 1 \\
+		0 & 0 & 1 & 1 \\
+		0 & 1 & 1 & 0 \\
+		1 & 0 & 0 & 1 \\
+		1 & 1 & 0 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2014:q1:tab:Tab1} Truth Table of $\sim p \implies q$.}
+	\caption{\label{2014:q1:tab:Tab1} Truth Table of $\boldsymbol{\sim p \implies q}$.}
 \end{table}
 		
 %------------------------------------------------------------------------------
@@ -57,12 +58,16 @@ See \rtab{2014:q1:tab:Tab1}. Note that the inverse of ($p \implies \sim q$) is (
 	
 \subsubquestion
 
-See \rtab{2014:q1:tab:Tab2}.
-\begin{table}[ht]
+We can construct the following truth table for the proposition 
+\begin{equation}
+	\boldsymbol{(p \implies q) \lor (q \implies r)}
+\end{equation} as
+
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		p & q & r & (p $\implies$ q) & (q $\implies$ r) & (p $\implies$ q) $\lor$ (q $\implies$ r) \\
+		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{r}$ & $\boldsymbol{p \implies q}$ & $\boldsymbol{q \implies r}$ & $\boldsymbol{(p \implies q) \lor (q \implies r)}$ \\
 		\hline
 		0 & 0 & 0 & 1 & 1 & 1 \\
 		0 & 0 & 1 & 1 & 1 & 1 \\
@@ -74,14 +79,14 @@ See \rtab{2014:q1:tab:Tab2}.
 		1 & 1 & 1 & 1 & 1 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2014:q1:tab:Tab2} Truth Table of $(p \implies q) \lor (q \implies r)$.}
+	\caption{\label{2014:q1:tab:Tab2} Truth Table of $\boldsymbol{(p \implies q) \lor (q \implies r)}$.}
 \end{table}
 
 %-----------------------------------------------------------------------------
 
 \subsubquestion
 
-From \rdef{mod1:defn:Tautology}, we can see that $(p \implies q) \lor (q \implies r)$ is a tautology.
+From \rdef{mod1:defn:Tautology}, we can see that $\boldsymbol{(p \implies q) \lor (q \implies r)}$ is a tautology because its truth value is always 1.
 \end{subsubquestions}
 
 %------------------------------------------------------------------------------
@@ -90,9 +95,9 @@ From \rdef{mod1:defn:Tautology}, we can see that $(p \implies q) \lor (q \implie
 
 \subquestion
 
-The Boolean expression for the circuit shown is,
+We can write the following Boolean expression for the given logic gates circuit:
 \begin{equation}
-	\sim (a \land b) \lor \sim c\,.
+	\boldsymbol{\sim (a \land b) \lor \sim c}\,.
 \end{equation}
 
 %------------------------------------------------------------------------------
@@ -105,7 +110,7 @@ The Boolean expression for the circuit shown is,
 
 \subsubquestion
 
-The switching circuit for $A \lor (B \land C)$ is shown below.
+We can draw the following switching circuit for the proposition $\boldsymbol{A \lor (B \land C)}$.
 
 \begin{circuitikz}
 	\draw [color=black, thick] (0,0) -- (2,0);
@@ -126,9 +131,9 @@ The switching circuit for $A \lor (B \land C)$ is shown below.
 
 \subsubquestion
 
-Using \rdef{mod1:law:Distributive}, we see that,
+Using the Distributive Law (\rdef{mod1:law:Distributive}), we see that,
 \begin{equation}
-	A \lor (B \land C) \equiv (A \lor B) \land (A \lor C) \,.
+	\boldsymbol{A \lor (B \land C) \equiv (A \lor B) \land (A \lor C)} \,.
 \end{equation}
 
 \end{subsubquestions}

@@ -1,17 +1,224 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2011
+%     Module: 2
+%     Question: 3 
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 3 a
+%------------------------------------------------------------------------------
+
+\begin{subquestions}
+	
+\subquestion
+
+We make some observations about the word MAXIMUM: There are 5 letters which make up the word, \{A, I , M, U, X\}, and all of the letters occur exactly once, except for M which occurs 3 times. The number of letters in the word, $n$, is equal to 7.
+	
+\begin{subsubquestions}
+	
+\subsubquestion
+
+From \rdef{mod2:defn:PermutationEqn2}, the number of permutations of seven elements when three are identical is,
+\begin{align}
+	\text{Number of Arrangements} & = \frac{7!}{3!} \nn \\
+	                              & = 7 \times 6 \times 5 \times 4 \nn \\
+	                              & = 840 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We can break this down into a two step process. Note that, to arrange the letters such that the last letter is a vowel, we must first pick the last letter to be a vowel, and then arrange the first six letters. So, according to \rdef{mod2:defn:MultiplicationRule},
+\begin{align}
+	\# \text{arrangements with last letter a vowel} &= \# \text{ways to pick one vowel} \nn \\
+	& \hspace{20mm}\times \nn\\
+	&\# \text{of ways to arrange the first six letters}
+\end{align}
+
+Following this strategy, we note that there are three distinct vowels \{ A, I, U\}. Thus, 
+\begin{equation}
+	\#\,\text{of ways to pick one vowel } = 3 \,.
+\end{equation}
+
+After we pick one vowel to be the last letter, we can add the other two vowels back into the set of the first six letters that preceed the last letter. The first six letters have three M's. So, using \rdef{mod2:defn:PermutationEqn2} for arrangements with identical elements,
+\begin{equation}
+	\#\,\text{of ways to arrange first six letters } =\frac{6!}{3!} \,.
+\end{equation}
 
 
+Substituting these in the above, we find that
+\begin{align}
+	\# \text{arrangements with last letter a vowel}  &= 3 \times \frac{6!}{3!} \nn \\
+	& = 120 \times 3 \nn \\
+	                                            & = 360 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+The strategy now is to treat the three M's as a single item. Now, there are only 5 items to sort \{A, I, U, X, and 1 set of 3 M's\}. Thus, from \rdef{mod2:defn:PermutationEqn},
+\begin{align}
+	^{5}P_5 & = \frac{5!}{(5-5)!} \nn \\
+	        & = \frac{5!}{0!} \nn \\
+	        & = 5! \nn \\
+	        & = 120 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 3 b
+%------------------------------------------------------------------------------
+
+\subquestion
+We should notice that a committee can only have more that 3 women in it if ALL 4 women are chosen. Therefore, there is only 1 possible committee with all 4 women. 
+
+Thus, we can find the total number of committees that can be formed among all the persons, and minus the 1 committee with 4 women, in order to find the number of committees with AT MOST 3 women. Thus,
+\begin{equation}
+  	\text{Number of committees with AT MOST 3 Women} = \text{Total number of committees} - 1 \,.
+\end{equation}
+
+Since every possible person out of the 10 is distinct, we can use \rdef{mod2:defn:CombinationEqn} as follows,
+\begin{align}
+	\text{Number of Committees} & = ~ ^{10}C_4 \nn \\
+	                            & = \frac{10!}{4!\times (10-4)!} \nn \\
+	                            & = \frac{10!}{4! \times 6!} \nn \\
+	                            & = 210 \,.
+\end{align}
+
+Thus,
+\begin{equation}
+	\text{Number of committees with at most 3 Women} = 210 - 1 = 209 \,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+% 3 c
+%------------------------------------------------------------------------------
+
+\subquestion
+
+Let $X$ be the discrete random variable which representing the number attempts needed to draw a green ball.
+
+\begin{subsubquestions}
+	
+\subsubquestion
+Because a ball is returned to the box if it is not red, the probability of success and failure remain constant with time. From Section ~\ref{mod2:section:Geometric}, we see that
+\begin{equation}
+	X \sim \text{Geo} \left(\frac{3}{9}\right) \text{or} ~ X \sim \text{Geo} \left(\frac{1}{3}\right) \,.
+\end{equation}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+\begin{subsubsubquestions}
+	
+\subsubsubquestion
+
+From \rdef{mod2:defn:Geomtric},
+\begin{align}
+	P(X = x) & = \frac{1}{3} \times \left(1-\frac{1}{3} \right)^{x-1} \nn \\
+				& = \frac{1}{3} \times \left(\frac{2}{3} \right)^{x-1} \,.
+\end{align}	
+	
+Thus, we can find $P(X=2)$ as follows,
+\begin{align}
+	P(X=2) & = \frac{1}{3} \times \left(\frac{2}{3} \right)^{2-1} \nn \\
+	       & = \frac{1}{3} \times \frac{2}{3}  \nn \\
+	       & = \frac{2}{9} \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubsubquestion
+
+We want to find $P(X\geq3)$. Since $X$ is discrete, 
+\begin{equation}
+	P(X\geq3) = P(X>2) \,.
+\end{equation}
+
+From \rdef{mod2:eq:Geometric:Prop},
+\begin{align}
+	P(X > 2) & = (1-p)^2 \nn \\
+	         & = \left(\frac{2}{3}\right)^2 \nn \\
+	         & = \frac{4}{9} \,.
+\end{align}
+
+Alternatively, we could note
+\begin{align}
+	P(X\geq 3) &= 1 - P(X<2) \nn\\
+				  &= 1 - \left( P(X=1) + P(X=2) \right)
+\end{align}
+and compute
+\begin{align}
+	P(X=1) &= \frac{1}{3}\times \left(\frac{2}{3}\right)^{1-1} \nn\\
+			 &= \frac{1}{3} \,.
+\end{align}
+
+Since we have $P(X=2)$ from above, we can substitute to find $P(X\geq 3)$,
+\begin{align}
+	P(X\geq 3) &= 1 - \left( \frac{1}{3} + \frac{2}{9} \right) \nn\\
+				  &= \frac{4}{9} \,.
+\end{align}
+
+
+
+
+%------------------------------------------------------------------------------
+
+\subsubsubquestion
+
+We want to find $P(X<4)$. Since $X$ is discrete, we know that,
+\begin{align}
+	P(X < 4) &= 1 - P(X \geq 4) \nn\\
+	         &= 1 - P(X >3)
+\end{align}
+
+Using \rdef{mod2:eq:Geometric:Prop}, we can calculate $P(X>3)$ as,
+\begin{align}
+	P(X > 3) & = (1-p)^3 \nn \\
+		   	 & = \left(\frac{2}{3}\right)^3 \nn \\
+			 & = \frac{8}{27} \,.
+\end{align}
+
+Thus, $P(X<4)$ can be calculated as follows,
+\begin{align}
+	P(X < 4) & = 1 - P(X > 3) \nn \\
+	         & = 1 - \frac{8}{27} \nn \\
+	         & = \frac{19}{27} \,.
+\end{align}
+
+\end{subsubsubquestions}
+
+%------------------------------------------------------------------------------
+% 3 d
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+From \req{mod2:eq:Geometric:Mean}, we can compute $E(X)$ of a geometric distribution as, 
+\begin{align}
+	E(X) & = \frac{1}{p} \,.
+\end{align}
+
+Substituting, we find
+\begin{align}
+	E(X) & = \frac{1}{\frac{1}{3}} \nn \\
+	     & = 3 \,.
+\end{align}
+
+
+\end{subsubquestions}
+
+\end{subquestions}

@@ -38,10 +38,10 @@ We must maximize the expression, $P=6x+4y$, given the following inequalities:
 	
 \subsubquestion
 
-See Graph ~\ref{2016:q2:graph:Graph1}.
-\begin{figure}
+We can draw the inequalities for the linear programming question below.
+\begin{figure}[H]
 	\begin{center}
-		\includegraphics{../2016/figures/2016q2LinGraph}
+		\includegraphics[scale=0.75]{../2016/figures/2016q2LinGraph}
 		\caption{\label{2016:q2:graph:Graph1} Linear Programming Graph.}
 	\end{center}
 \end{figure}
@@ -61,27 +61,25 @@ The feasible region is shaded in Graph ~\ref{2016:q2:graph:Graph1}.
 
 \subsubquestion
 
-From ~\ref{mod1:defn:TourOfVertices}, we can calculate $P$ by,
-\begin{align}
-	\text{Using (0,5)} \,, \nn \\
-	P & = 6x + 4y \,, \nn \\
-      & = (6 \times 0) + (4 \times 5) \,, \nn \\
-	  & = 20 \,. \\
-	\text{Using (4.5,5)} \,, \nn \\
-	P & = 6x + 4y \,, \nn \\
-	  & = (6 \times 4.5) + (4 \times 5) \,, \nn \\
-	  & = 47 \,.    \\		  
-	\text{Using (6,4)} \,, \nn \\
-	P & = 6x + 4y \,, \nn \\
-	  & = (6 \times 6) + (4 \times 4) \,, \nn \\
-	  & = 52 \,. \label{2016:q2:eqn:Profit} \\
-	\text{Using (8,0)} \,, \nn \\
-	P & = 6x + 4y \,, \nn \\
-	  & = (6 \times 8) + (4 \times 0) \,, \nn \\
-	  & = 48 \,. 
-\end{align}
+From ~\rdef{mod1:defn:TourOfVertices}, we can calculate $P$ by performaing a tour of the vertices,
 
-From \req{2016:q2:eqn:Profit}, we see that the maximum value of $P$ is 52.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Vertice & $P = 6x + 4y$ \\
+		\hline
+		(0, 0) & 0 \\
+		(0, 5) & 20 \\
+		(4.5, 5) & 47 \\
+		(6, 4) & 52 \\
+		(8, 0) & 48 \\
+		\hline
+	\end{tabular}
+	\caption{\label{2016:q2:tab:P} Tour of Vertices}
+\end{table}
+
+From \rtab{2016:q2:tab:P}, we see that the maximum value of $P$ is 52, when $x=6$ and $y=4$.
 
 \end{subsubquestions}
 
@@ -95,8 +93,8 @@ From \req{2016:q2:eqn:Profit}, we see that the maximum value of $P$ is 52.
 	
 \subsubquestion
 
-The Hungarian algorithm is shown in \rtab{2016:q2:tab:HungAlgo}.
-\begin{table}[!hbt]
+We wish to assign four drivers to take passengers to four towns in order to minimise travel time. We can use the Hungarian algorithm on the data given.
+\begin{table}[H]
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\begin{tabular}{cccc}
@@ -119,7 +117,7 @@ The Hungarian algorithm is shown in \rtab{2016:q2:tab:HungAlgo}.
 		   16 & 0 & 1 & 11 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Matrix after Reducing Rows}
+		\caption*{Reducing Rows}
 	\end{minipage}
 	\hspace{20pt}
 	%------------------------------------------------------------------------------
@@ -132,7 +130,7 @@ The Hungarian algorithm is shown in \rtab{2016:q2:tab:HungAlgo}.
 		   16 & 0 & 0 & 6 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Matrix after Reducing Columns} 
+		\caption*{Reducing Columns} 
 	\end{minipage}
 	
 	\vspace{20pt} 
@@ -148,7 +146,7 @@ The Hungarian algorithm is shown in \rtab{2016:q2:tab:HungAlgo}.
 			&   &        & 							 &   &                       \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's using the least \\ \centering number of lines}
+		\caption*{Shading 0's}
 	\end{minipage}
 	\caption{\label{2016:q2:tab:HungAlgo} Showing the steps of the Hungarian Algorithm.}
 \end{table}

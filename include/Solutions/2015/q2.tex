@@ -22,8 +22,8 @@
 		
 \subsubquestion
 		
-The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
-		\begin{table}[!hbt]
+We can determine the class to which each teacher must be assigned to minimise the total teaching time by applying the Hungarian Algorithm as follows.
+		\begin{table}[H]
 			\begin{minipage}{0.3\textwidth}
 				\centering
 				\begin{tabular}{cccc}
@@ -46,7 +46,7 @@ The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 					3 & 5 & 0 & 3 \\
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
-				\caption*{Matrix after Reducing Rows}
+				\caption*{Reducing Rows}
 			\end{minipage}
 			\hspace{20pt}
 			%---------------------------------------------------
@@ -59,7 +59,7 @@ The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 					3 & 3 & 0 & 3 \\
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
-				\caption*{Matrix after Reducing Columns} 
+				\caption*{Reducing Columns} 
 			\end{minipage}
 			
 			\vspace{20pt} 
@@ -75,7 +75,7 @@ The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 					&   &        & \hspace{-3.25mm} \hve[blue]{v1} &   &    \\
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
-				\caption*{Shading 0's using the least \\ \centering number of lines}
+				\caption*{Shading 0's}
 			\end{minipage}
 			\hspace{20pt}
 			%---------------------------------------------------
@@ -85,12 +85,12 @@ The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 					  &   &   &   \\
 					0 & 0 & 3 & 4 \\
 					5 & 1 & 2 & 0 \\
-					0 & 0 & 0 & 5 \\
-					2 & 2 & 0 & 3 \\
+					0 & 0 & 0 & 4 \\
+					2 & 2 & 0 & 2 \\
 				  	  &   &   &   \\	 
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
-				\caption*{Applying Step \ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
+				\caption*{Applying Step 5, \ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} 
 			\end{minipage}
 			\hspace{20pt}
 			%---------------------------------------------------
@@ -100,12 +100,12 @@ The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 					&   &        & \hspace{-3.25mm} \hvs{v3}      & \hspace{-3.25mm} \hvs{v4}       &               \\ 
 		   \hhs{h3} & 0 &      0 &                         3      &                          4      & \hhe[red]{h3} \\
 					& 5 &      1 &                         2      &                          0      &               \\ 
-		   \hhs{h4} & 0 &      0 &                         0      &                          5      & \hhe[red]{h4} \\
-					& 2 &      2 &                         0      &                          3      &               \\ 
+		   \hhs{h4} & 0 &      0 &                         0      &                          4      & \hhe[red]{h4} \\
+					& 2 &      2 &                         0      &                          2      &               \\ 
 					&   &        & \hspace{-3.25mm} \hve[red]{v3} & \hspace{-3.25mm} \hve[red]{v4}  &               \\
 				\end{tabular}
 				\captionsetup{width=1.1\linewidth}
-				\caption*{Shading 0's using the least \\ \centering number of lines}
+				\caption*{Shading 0's}
 			\end{minipage}
 
 			\caption{\label{2015:q2:tab:HungAlgo} Steps of the Hungarian Algorithm.}
@@ -113,18 +113,18 @@ The Hungarian algorithm is shown in \rtab{2015:q2:tab:HungAlgo}.
 			
 From \rtab{2015:q2:tab:HungAlgo}, we can see that the possible matchings for the teachers are as follows:
 		\begin{align}
-			&\text{Mr Jones} \rightarrow \text{Class 1, Class 2}\,, \nn \\
+			&\text{Mrs Jones} \rightarrow \text{Class 1, Class 2}\,, \nn \\
 			&\text{Mr James} \rightarrow \text{Class 4}\,, \nn \\
-			&\text{Mr Wright} \rightarrow \text{Class 1, Class 2, Class 3}\,, \nn \\
-			&\text{Mr Small} \rightarrow \text{Class 3}\,. 
+			&\text{Mrs Wright} \rightarrow \text{Class 1, Class 2, Class 3}\,, \nn \\
+			&\text{Ms Small} \rightarrow \text{Class 3}\,. 
 		\end{align}
 		
 Therefore, the matchings to minimize the total time are,
 		\begin{align}
-			&\text{Mr Jones} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
+			&\text{Mrs Jones} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
 			&\text{Mr James} \rightarrow \text{Class 4}\,, \nn \\
-			&\text{Mr Wright} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
-			&\text{Mr Small} \rightarrow \text{Class 3}\,.  
+			&\text{Mrs Wright} \rightarrow \text{Class 1 or Class 2}\,, \nn \\
+			&\text{Ms Small} \rightarrow \text{Class 3}\,.  
 		\end{align}
 
 %----------------------------------------------------------
@@ -143,12 +143,12 @@ The total time spent in the classroom by the four teachers can be found by summi
 	
 \subquestion
 	
-The truth table is as follows,
+We can construct the following truth table for the proposition $\boldsymbol{(p \land q) \implies p}$.
 \begin{table}[ht]
 		\centering
 		\begin{tabular}{|c|c|c|c|}
 			\hline
-			p & q & p $\land$ q & (p $\land$ q) $\implies$ p \\
+			$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \land q}$ & $\boldsymbol{(p \land q) \implies p}$ \\
 			\hline
 			0 & 0 & 0 & 1 \\
 			0 & 1 & 0 & 1 \\
@@ -156,10 +156,10 @@ The truth table is as follows,
 			1 & 1 & 1 & 1 \\
 			\hline
 		\end{tabular}
-		\caption{\label{2015:q2:tab:TrthTab} Showing the truth values of the expression.}
+		\caption{\label{2015:q2:tab:TrthTab} Truth Table of $\boldsymbol{(p \land q) \implies p}$.}
 \end{table}        
 	
-Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we can see that the expression, $(p \land q) \implies p$, is a \textbf{tautology}.  \\
+From \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we can see that $\boldsymbol{(p \land q) \implies p}$, is a \textbf{tautology} as its truth value is always 1. \\
 	
 %------------------------------------------------------------------
 % 2 c
@@ -171,42 +171,45 @@ Looking at \rtab{2015:q2:tab:TrthTab} and using \rdef{mod1:defn:Tautology}, we c
 		
 \subsubquestion
 		
-The Boolean expression for the circuit is,
+We can write the following Boolean expression for the given switching circuit:
 		\begin{align}
-			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))\,.
+			\boldsymbol{a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))}\,.
 		\end{align}	
 		
 %-----------------------------------------------------------------
 
 \subsubquestion
 		
-Using \rdef{mod1:law:Associative}, we can manipulate this expression as follows,
+Using the Commutative Law (\rdef{mod1:law:Commutative}), we can manipulate this expression as follows,
 		\begin{align}
-			a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))
-			 \equiv a \land (a \lor (\sim a \land b)) \land (b \lor (a \land b))\,, \label{2015:q2:BooleanEquation} \nn \\
+			\boldsymbol{a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b))}
+			 \equiv \boldsymbol{a \land (a \lor (\sim a \land b)) \land (b \lor (a \land b))}\,, \label{2015:q2:BooleanEquation} \nn \\
 		\end{align}
 		
-Let $A \equiv a \land (a \lor (\sim a \land b))$ and let $B \equiv (b \lor (a \land b))$. \\
+Let $\boldsymbol{P \equiv a \land (a \lor (\sim a \land b))}$ and let $\boldsymbol{Q \equiv (b \lor (a \land b))}$. \\
 
-Using \rdef{mod1:law:Absorptive} on $A$, we see that,
+Using the Distributive (\rdef{mod1:law:Distributive}), Annulment (\rdef{mod1:law:Annulment}) and the Absorptive (\rdef{mod1:law:Absorptive}) laws on $P$, we see that,
 \begin{align}
-	A & \equiv a \land (a \lor (\sim a \land b)) \nn \\
-	  & \equiv a \,.
+	\boldsymbol{P} & \equiv \boldsymbol{a \land (a \lor (\sim a \land b))} \nn \\
+	  & \equiv \boldsymbol{a \land ((a \lor \sim a) \land (a \lor b))} \nn \\
+	  & \equiv \boldsymbol{a \land T \land (a \lor b)} \nn \\
+	  & \equiv \boldsymbol{a \land (a \lor b)} \nn \\
+	  & \equiv \boldsymbol{a} \,.
 \end{align}
 
-Similarly, using \rdef{mod1:law:Associative} and \rdef{mod1:law:Absorptive} on $B$, we see that,
+Similarly, using Commutative Law (\rdef{mod1:law:Commutative}) and Absorptive Law (\rdef{mod1:law:Absorptive}) on $Q$, we see that,
 \begin{align}
-	B & \equiv (b \lor (a \land b)) \nn \\
-	  & \equiv (b \lor (b \land a)) \nn \\
-	  & \equiv b \,.
+	\boldsymbol{Q} & \equiv \boldsymbol{(b \lor (a \land b))} \nn \\
+	  & \equiv \boldsymbol{(b \lor (b \land a))} \nn \\
+	  & \equiv \boldsymbol{b} \,.
 \end{align}
 
 Therefore, \req{2015:q2:BooleanEquation} becomes,
 \begin{align}
-	a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b)) \equiv a \land b \,.
+	\boldsymbol{a \land (b \lor (a \land b)) \land (a \lor (\sim a \land b)) \equiv a \land b} \,.
 \end{align}
 
-The expression, $a \land b$, can be expressed as a switching circuit as follows, \\
+The expression, $\boldsymbol{a \land b}$, can be expressed as a switching circuit as follows, \\
 \begin{center}	
 	\begin{circuitikz}
 			\draw [thick] (1,0) to (2,0);

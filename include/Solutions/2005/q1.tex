@@ -25,12 +25,12 @@
 	
 \subsubquestion
 
-See \rtab{2005:q1:tab:TruthTab1}.
+We can construct the following truth table for the statement $\boldsymbol{p \lor q}$.
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|}
 		\hline
-		p & q & p $\lor$ q \\
+		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{p \lor q}$ \\
 		\hline
 		0 & 0 & 0 \\
 		0 & 1 & 1 \\
@@ -38,19 +38,19 @@ See \rtab{2005:q1:tab:TruthTab1}.
 		1 & 1 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2005:q1:tab:TruthTab1} Truth table of $p \lor q$.}
+	\caption{\label{2005:q1:tab:TruthTab1} Truth table of $\boldsymbol{p \lor q}$.}
 \end{table}
 
 %-----------------------------------------------------------------------------
 
 \subsubquestion
 
-See \rtab{2005:q1:tab:TruthTab2}
+We can complete the truth table in the following way.
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
-		p & q & $\sim$ p & p $\implies$ q & $\sim$ p $\land$ q & (p $\implies$ q) $\iff$ ($\sim$ p $\land$ q) \\
+		$\boldsymbol{p}$ & $\boldsymbol{q}$ & $\boldsymbol{\sim p}$ & $\boldsymbol{p \implies q}$ & $\boldsymbol{\sim p \land q}$ & $\boldsymbol{(p \implies q) \iff (\sim p \land q)}$ \\
 		\hline
 		0 & 0 & 1 & 1 & 0 & 0 \\
 		0 & 1 & 1 & 1 & 1 & 1 \\
@@ -58,7 +58,7 @@ See \rtab{2005:q1:tab:TruthTab2}
 		1 & 1 & 0 & 1 & 0 & 0 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2005:q1:tab:TruthTab2} Truth table of $(p \implies q) \iff (\sim p \land q)$.}
+	\caption{\label{2005:q1:tab:TruthTab2} Truth table of $\boldsymbol{(p \implies q) \iff (\sim p \land q)}$.}
 \end{table}
 
 %-----------------------------------------------------------------------------
@@ -69,13 +69,13 @@ See \rtab{2005:q1:tab:TruthTab2}
 	
 \subsubsubquestion
 
-Since the truth values of \rtab{2005:q1:tab:TruthTab1} and \rtab{2005:q1:tab:TruthTab2} are not the same, the expressions ($p \lor q$) and ($(p \implies q) \iff (\sim p \land q)$) are not logically equivalent.
+Since the truth values of \rtab{2005:q1:tab:TruthTab1} and \rtab{2005:q1:tab:TruthTab2} are not the same, the expressions $\boldsymbol{p \lor q}$ and $\boldsymbol{(p \implies q) \iff (\sim p \land q)}$ are not logically equivalent.
 
 %-----------------------------------------------------------------------------
 
 \subsubsubquestion
 
-From \rdef{mod1:defn:Tautology}, we can see that ($(p \implies q) \iff (\sim p ~\land q)$) is \textbf{not a tautology}.
+From \rdef{mod1:defn:Tautology}, we can see that ($\boldsymbol{(p \implies q) \iff (\sim p ~\land q)}$) is \textbf{not a tautology} because the truth values are not all 1.
 
 \end{subsubsubquestions}
 
@@ -91,14 +91,14 @@ From \rdef{mod1:defn:Tautology}, we can see that ($(p \implies q) \iff (\sim p ~
 	
 \subsubquestion
 
-$(x ~\land \sim y)$ can be expressed as "I do Statistical Analysis and I do not do Applied Mathematics."
+If $\boldsymbol{x}$ is the proposition "I do Statistical Analysis" and $\boldsymbol{y}$ is the proposition "I do Applied Mathematics", then $\boldsymbol{x ~\land \sim y}$ can be expressed as "I do Statistical Analysis and I do not do Applied Mathematics."
 
 %-----------------------------------------------------------------------------
 \subsubquestion
 
-"I do Statistical Analysis so I will do Applied Mathematics" can be expressed as,
+The proposition "I do Statistical Analysis so I will do Applied Mathematics" can be interpreted in logical language as "If I do Statistical Analysis, then I do Applied Mathematics also". This can be expressed as:
 \begin{equation}
-	x \implies y\,.
+	\boldsymbol{x \implies y}\,.
 \end{equation}
 
 \end{subsubquestions}
@@ -109,42 +109,27 @@ $(x ~\land \sim y)$ can be expressed as "I do Statistical Analysis and I do not 
 
 \subquestion
 
-Let $A$="$(l \land m \land n) \lor (l \land m ~\land \sim n)$". \\
-Let $B$="$(l \land m)$". \\
+Let $\boldsymbol{A} = \boldsymbol{(l \land m \land n) \lor (l \land m ~\land \sim n)}$. \\
+Let $\boldsymbol{B} = \boldsymbol{l \land m}$. \\
 $A$ then becomes,
 \begin{equation}
-	A \equiv (B \land n) \lor (B \land \sim n) \,.
+	\boldsymbol{A \equiv (B \land n) \lor (B \land \sim n)} \,.
 \end{equation}
 
-Using \rdef{mod1:law:Distributive} and \rdef{mod1:law:Absorptive}, $A$ becomes,
+Using the Distributive Law (\rdef{mod1:law:Distributive}) in reverse, $A$ becomes,
 \begin{align}
-	A & \equiv ((B \land n) \lor B) \land ((B \land n) \lor \sim n) \nn \\
-	  & \equiv B \land ((B \land n) \lor \sim n) \,.
+	\boldsymbol{A} & \boldsymbol{\equiv B \land (n \lor \sim n)} \,.
 \end{align}
 
-Let $C$="$(B \land n) \lor \sim n$". \\
-Using \rdef{mod1:law:Distributive}, \rdef{mod1:law:Complement} and \rdef{mod1:law:Identity} on $C$, it becomes,
+Using the Complement Law (\rdef{mod1:law:Complement}) and Identity Law (\rdef{mod1:law:Identity}), $A$ is now,
 \begin{align}
-	C & \equiv (B \land n) \lor \sim n \nn \\
-	  & \equiv (\sim n \lor B) \land (\sim n \lor n) \nn \\
-	  & \equiv (\sim n \lor B) \land T \nn \\
-	  & \equiv (\sim n \lor B) \,.
-\end{align}
-
-From this, $A$ now becomes,
-\begin{equation}
-	A \equiv B \land (\sim n \lor B) \,.
-\end{equation}
-
-Using \rdef{mod1:law:Absorptive}, $A$ becomes,
-\begin{align}
-	A & \equiv B \land (\sim n \lor B) \nn \\
-	  & \equiv B \,.
+	\boldsymbol{A} & \boldsymbol{\equiv B \land T} \nn \\
+					& \equiv \boldsymbol{B} \,.
 \end{align}
 
 Therefore,
 \begin{equation}
-	(l \land m \land n) \lor (l \land m ~\land \sim n) \equiv l \land m \,.
+	\boldsymbol{(l \land m \land n) \lor (l \land m ~\land \sim n) \equiv l \land m} \,.
 \end{equation}
 
 %------------------------------------------------------------------------------
@@ -153,7 +138,7 @@ Therefore,
 
 \subquestion
 
-See the switching circuit of $((a \land b) \lor (a \land c)) \land (a \lor b)$.
+See the switching circuit of $\boldsymbol{((a \land b) \lor (a \land c)) \land (a \lor b)}$.
 \begin{center}
 	\begin{circuitikz}
 		

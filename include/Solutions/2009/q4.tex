@@ -1,17 +1,231 @@
 %------------------------------------------------------------------------------
 % Author(s):
-%
+% Varaun Ramgoolie
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 
-%     Module: 
-%     Question: 
+%     Year: 2009
+%     Module: 2
+%     Question: 4
 %------------------------------------------------------------------------------
 
+%------------------------------------------------------------------------------
+% 4 a
+%------------------------------------------------------------------------------
+
+\begin{subquestions}
+	
+\subquestion
+
+We are given a scenario which illustrates a Binomial distribution with parameters, $p = 0.65$ and $n=12$. Let $X$ be the discrete random variable representing the number of people that pass the test,
+\begin{equation}
+	X \sim \text{Bin}(12,0.65) \,.
+\end{equation}
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+\begin{subsubsubquestions}
+	
+\subsubsubquestion
+
+From, \rdef{mod2:defn:Binomial}, we know that,
+\begin{equation}
+	P(X = x) = { 12 \choose x} (0.65)^x (1-0.65)^{12-x} \,. \label{2009:q4:BinEqn1}
+\end{equation}
+	
+Using this, we can find $P(X=8)$,
+\begin{align}
+	P(X=8) & = { 12 \choose 8} (0.65)^8 \times (1-0.65)^{12-8} \nn \\
+		   & = { 12 \choose 8} (0.65)^8 \times (0.35)^{4} \nn \\
+		   & = 495 \times (0.65)^8 \times (0.35)^{4} \nn \\
+		   & = 0.237 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubsubquestion
+
+Since $X$ is discrete,
+\begin{equation}
+	P(8\leq X \leq 10) = P(8)+P(9)+P(10) \,. \label{2009:q4:Bin2}
+\end{equation}
+
+Now we can use \req{2009:q4:BinEqn1} to compute the additional $P(X=9)$ and $P(X=10)$,
+\begin{align}
+	P(9) & = { 12 \choose 9} (0.65)^9 \times (1-0.65)^{12-9} \nn \\
+	     & = { 12 \choose 9} (0.65)^9 \times (0.35)^{3} \nn \\
+	     & = 220 \times (0.65)^9 \times (0.35)^{3} \nn \\
+	     & = 0.195 \,,
+\end{align}
+and,
+\begin{align}
+	P(10) & = { 12 \choose 10} (0.65)^8 \times (1-0.65)^{12-10} \nn \\
+         & = { 12 \choose 10} (0.65)^8 \times (0.35)^{2} \nn \\
+	     & = 66 \times (0.65)^{10} \times (0.35)^{2} \nn \\
+	     & = 0.109 \,.
+\end{align}
+
+Substituting these values into \req{2009:q4:Bin2}, we get that,
+\begin{align}
+	P(8\leq X \leq 10) & = P(8)+P(9)+P(10) \nn \\
+	                   & = 0.237+0.195+0.109 \nn \\
+	                   & = 0.541 \,.   
+\end{align}
+
+\end{subsubsubquestions}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+For a Binomial distribution, the mean is given in \req{mod2:eq:Binomial:Mean} as,
+\begin{align}
+	E(X) & = np \,.
+\end{align}
+
+Substituting, we find
+\begin{align}
+	E(X) & = 12 \times 0.65 \nn \\
+	     & = 7.8 \,.
+\end{align}
+
+Similarly, using \req{mod2:eq:Binomial:Variance}, we know the variance is given by,
+\begin{align}
+	\var &= npq = n p (1-p) \,,
+\end{align}
+and so, we can compute the standard deviation as
+\begin{align}
+	\text{Standard Deviation} & = \sqrt{\text{Variance}} \nn \\
+	                          & = \sqrt{12\times0.65\times0.35} \nn \\
+	                          & = \sqrt{2.73} \nn \\
+	                          & = 1.65 \,.
+\end{align}
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+We will let $Y$ be the discrete random variable which represents the number of days in which at least 8 but no more than 10 persons pass the test, over a 5 day period,
+\begin{equation}
+	Y \sim \text{Bin}(5,0.541) \,.
+\end{equation}
+
+From, \rdef{mod2:defn:Binomial}, we know that,
+\begin{equation}
+	P(Y = y) = { 5 \choose y} (0.541)^y (1-0.541)^{5-y} \,. \label{2009:q4:BinEqn2}
+\end{equation}
+
+Using \req{2009:q4:BinEqn2}, we can find that,
+\begin{align}
+	P(Y=3) & = { 5 \choose 3} (0.541)^3 (1-0.541)^{5-3} \nn \\
+	       & = 10 \times (0.541)^3 \times (0.459)^{2} \nn \\
+	       & = 0.334 \,.
+\end{align}
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 4 b
+%------------------------------------------------------------------------------	
+	
+\subquestion
+
+Let $X$ represent the number of accidents which occur in a week. $X$ follows a Poisson distribution with parameter, $\lambda =2$,
+\begin{equation}
+	X \sim \text{Pois}(2) \,.
+\end{equation}
+
+From \rdef{mod2:defn:Poisson}, we know that,
+\begin{equation}
+	P(X = x) =\frac{2^x \times e^{-2}}{x!} \,. \label{2009:q4:PoisEqn1}
+\end{equation}
+
+Since $X$ is discrete, we know that,
+\begin{equation}
+	P(X \geq 1) = 1 - P(X=0) \,. \label{2009:q4:PoisEqn2}
+\end{equation}
+
+Using \req{2009:q4:PoisEqn1} we can find that,
+\begin{align}
+	P(X=0) & = \frac{2^0 \times e^{-2}}{0!} \nn \\
+	     & = \frac{1 \times e^{-2}}{1} \nn \\
+	     & = e^{-2} \,. 
+\end{align}
+
+Substituting this into \req{2009:q4:PoisEqn1}, we find,
+\begin{align}
+	 P(X \geq 1) & = 1 - P(X=0) \nn \\
+	             & = 1 - e^{-2} \nn \\
+	             & = 0.865 \,.  
+\end{align}
+
+%------------------------------------------------------------------------------
+% 4 c
+%------------------------------------------------------------------------------
+
+\subquestion 
+
+Let $X$ represent the number of people that have a certain disease in a sample of $100$ persons. $X$ follows a Binomial distribution with parameters, $p=0.04$ and $n=100$,
+\begin{align}
+	X \sim\text{Bin}(100,0.04) \,.
+\end{align}
+
+Following \rdef{mod2:defn:PoissonApproxBinomial}, we notice that,
+\begin{align}
+	& n=100>30 \,, \nn \\
+	\text{and} ~ & np=100 \times 0.04 = 4<5 \,. 
+\end{align}
+
+Thus, $X$ can be approximated by a Poisson distribution with parameter, $\lambda=np=4$,
+\begin{equation}
+	X \sim \text{Pois}(4) \,.
+\end{equation}
+
+From \rdef{mod2:defn:Poisson},
+\begin{equation}
+	P(X = x) =\frac{4^x \times e^{-4}}{x!} \,. \label{2009:q4:PoisEqn3}
+\end{equation}
+
+Since $X$ is discrete,
+\begin{equation}
+	P(X \leq 3) = P(X=0)+P(X=1)+P(X=2)+P(X=3) \,. \label{2009:q4:Pois4}
+\end{equation}
+
+We can determine the probabilities using \req{2009:q4:PoisEqn3},
+\begin{align}
+	P(X=0) & = \frac{4^0 \times e^{-4}}{0!} \nn \\
+	       & = \frac{1 \times e^{-4}}{1} \nn \\
+	       & = e^{-4} 
+\end{align}
+\begin{align}
+	P(X=1) & = \frac{4^1 \times e^{-4}}{1!} \nn \\
+	       & = \frac{4 \times e^{-4}}{1} \nn \\
+	       & = 4e^{-4}
+\end{align}
+\begin{align}
+	P(X=2) & = \frac{4^2 \times e^{-4}}{2!} \nn \\
+	       & = \frac{16 \times e^{-4}}{2} \nn \\
+	       & = 8e^{-4}
+\end{align}
+\begin{align}
+	P(X=3) & = \frac{4^3 \times e^{-4}}{3!} \nn \\
+	       & = \frac{64 \times e^{-4}}{6} \nn \\
+	       & = \frac{32e^{-4}}{3}\,.
+\end{align}
+
+Substituting these values into \req{2009:q4:Pois4}, we find that,
+\begin{align}
+	P(X \leq 3) & = P(X=0)+P(X=1)+P(X=2)+P(X=3) \nn \\
+	            & = e^{-4} \times \left(1+4+8+\frac{32}{3}\right) \nn \\
+	            & = \frac{71e^{-4}}{3} \nn \\
+	            & = 0.433 \,.
+\end{align}
 
 
+\end{subquestions}
