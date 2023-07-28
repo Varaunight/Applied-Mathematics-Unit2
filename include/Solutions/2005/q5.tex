@@ -116,28 +116,29 @@ Using \req{2005:q5:FTC1}, we get that,
 	
 \subsubquestion
 
-\textbf{\textit{Sketch and Translate:}} \\ 
-As we are given that the resisitive force, $F_R$, experienced by the body is directly proportional to the velocity, $v$, we can express this force in terms of a constant of proportionality $k$ in the form of $F_R=-kv.$\TODO{Justify the minus sign} We also get that the initial velocity, $v(t=0)=0$.\\
+\textbf{\textit{Sketch and Translate:}} \\
+\addimage{../2005/figures/2005q5-Sketch2}{2005:q5:fig:Sketch2}{Particle falling through medium.}
+As we are given that the resistive force, $F_R$, experienced by the body is directly proportional to the velocity, $v$, we can express this force in terms of a constant of proportionality $k$ in the form of $F_R=kv$. We also get that the initial velocity, $v(t=0)=0$, as it falls from rest.\\
 
 
 
 
-\textbf{\textit{Simplify and Diagram:}} \\ 
+\textbf{\textit{Simplify and Diagram:}} \\
+\addimage{../2005/figures/2005q5-Diagram2}{2005:q5:fig:Diagram2}{Particle falling through medium.} 
 We will assume that the body moves only in the vertical ($y$) direction. We will use Newton's Second Law on the body and find an expression for the velocity of the particle in terms of $t$.
 We will take the vertical downwards direction to be positive.
 
 We will define the following forces: \TODO{Use vector notation, Remove F}
 \begin{itemize}
-	\item $F_R$ is the resistive force on the body, $F_R=-kv$,
-	\item $W$ is the weight, $\vec{W}=+mg$,
-	\item $F$ is the resultant force on the body, $F=ma$.
+	\item $F_R$ is the resistive force on the body, $F_R=kv$,
+	\item $W$ is the weight, $\vec{W}=+mg$.
 \end{itemize}
 
 
 
 
 \textbf{\textit{Represent Mathematically:}} \\ 
-From Newton's Second Law, we get that, \TODO{Minus sign of F-R}
+As the direction of the resistive force is opposite to the chosen positive direction, we can use Newton's Second Law to express the resultant force in the direction of the $+y$ as,
 \begin{equation}
 	\sum F = ma = W - F_R \label{2005:q5:FEqn1} \,.
 \end{equation}
@@ -178,9 +179,9 @@ Separating variables and integrating between the bounds $v(t=0)=0$ and $v(t=t')=
 	\implies v' & = \frac{mg}{k}\left(1-e^{\frac{-kt'}{m}}\right) \,.
 \end{align}
 
-Switching variables, we get that, \TODO{Talk about v' amnd t' being arbitrary and so, we can swith.}
+Given that we chose $v'$ and $t'$ to be a pair of corresponding arbitrary variables (in the context of the question), we can switch these for $v(t)$ and $t$. We get that,
 \begin{equation}
-	v = \frac{mg}{k}\left(1-e^{\frac{-kt}{m}}\right) \,.
+	v(t) = \frac{mg}{k}\left(1-e^{\frac{-kt}{m}}\right) \,.
 \end{equation}\\
 
 %------------------------------------------------------------------------------
@@ -211,6 +212,8 @@ Considering \req{2005:q5:TLim}, we get that,
 		 & = \frac{mg}{k} \left(1-\frac{1}{\infty}\right) \nn \\ 
 		 & = \frac{mg}{k} \,.
 \end{align}\\
+
+We can justify why $k$ has to be a positive constant by contradiction. If $k$ were to be negative, then $F_R$ will necessarily have to act in the direction of $+y$. As we defined $F_R$ to be the resistive force, it must act against the direction of motion or in this case, opposite to the direction of $+y$. Thus, $k$ must be positive.
 
 \end{subsubquestions}
 	
