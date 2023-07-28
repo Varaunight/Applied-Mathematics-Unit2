@@ -1,143 +1,17 @@
 %------------------------------------------------------------------------------
 % Author(s):
-% Varaun Ramgoolie
+%
 % Copyright:
-%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Nicholas Sammy, Kerry Singh
 %
 %  This file is part of Applied-Mathematics-Unit2 and is distributed under the
 %  terms of the MIT License. See the LICENSE file for details.
 %
 %  Description:
-%     Year: 2006 C
-%     Module: 2
-%     Question: 4
+%     Year: 
+%     Module: 
+%     Question: 
 %------------------------------------------------------------------------------
 
-%------------------------------------------------------------------------------
-% 4 a
-%------------------------------------------------------------------------------
 
-\begin{subquestions}
-	
-\subquestion
 
-\begin{subsubquestions}
-	
-\subsubquestion
-
-Using \rdef{mod2:defn:PermutationEqn}, we can arrange the class in a straight line as follows,
-\begin{align}
-	\text{Straight line arrangements} = ~^{12}P_{12} & = \frac{12!}{(12-12)!} \nn \\
-	            & = \frac{12!}{0!} \nn \\
-	            & = \frac{12!}{1} \nn \\
-	            & = 12!
-\end{align}
-	
-%------------------------------------------------------------------------------
-
-\subsubquestion
-
-We should first notice that every straight line arrangement of the class can be put around a circle. However, we have 12 different positions around the circle in which we can start the line. Because of this, exactly 12 straight line arrangements of the class will be equivalent when placed around the circle. Thus, we get that the number of circular arrangements of the class is,
-\begin{align}
-	\text{Circular arrangements} & = \frac{12!}{12} \nn \\
-	& = 11! 
-\end{align}
-	
-%------------------------------------------------------------------------------
-
-\subsubquestion 	
-	
-We will proceed by splitting the class into 6 groups to be arranged. 5 groups will contain 1 distinct male student and the 6th group will have the 7 female students. By \rdef{mod2:defn:MultiplicationRule}, we must arrange the group of 7 female students and multiply that number by the total arrangements of the 6 groups. This will give,
-\begin{align}
-	\text{Arrangemments w/ Females next to each other in a line} & = ~^7P_7 \times ~^6P_6 \nn \\
-	                                            & = \frac{7!}{(7-7)!} \times \frac{6!}{(6-6)!} \nn \\
-	                                            & = \frac{7!}{0!} \times \frac{6!}{0!} \nn \\
-	                                            & = 7! \times 6! 
-\end{align}
-
-%------------------------------------------------------------------------------
-
-\subsubquestion
-
-We will group the tallest male and female students as 1 group to consider. Thus, we will multiply the number of arrangements of the 11 groups (10 distinct students and 1 group with the tallest students) by the number of ways that the two tall students can be arranged. In order to arrange them in a straight line, we get that,
-\begin{align}
-	\text{Arrangements w/ tall students next to each other in a line} & = ~^{11}P_{11} \times ^{2}P_{2} \nn \\
-	                                            & = \frac{11!}{(11-11)!} \times \frac{2!}{(2-2)!} \nn \\
-	                                            & = \frac{11!}{0!} \times \frac{2!}{0!} \nn \\
-	                                            & = 11! \times 2!
-\end{align}
-
-Since we are arranging the 11 groups (10 distinct students and 1 group with the tallest students) around a cirlce, using similar reasoning from \textbf{(4)(a)(ii)}, we can get that,
-\begin{align}
-	\text{Arrangements w/ tallest students next to each other in a circle} & = \frac{11! \times 2!}{11} \nn \\
-																			 & = 10! \times 2! 
-\end{align}
-
-%------------------------------------------------------------------------------
-
-\subsubquestion
-
-We will first calculate the number of arrangements with female students. The line can be formed as follows,
-\begin{equation}
-	F_7 : \text{Arrangement of remaining 10 students} : F_6 \,.
-\end{equation}
-where $F$ represents a female student and the subscripts 7 and 6 represent the number of choices of students for the end positions.
-
-Thus, using \rdef{mod2:defn:MultiplicationRule}, we get that,
-\begin{align}
-	\text{Arrangements with 2 females on the ends} & = 7 \times ^{10}P_{10} \times 6 \nn \\
-	                                          & = 7 \times \frac{10!}{(10-10)!} \times 6 \nn \\
-	                                          & = 42 \times \frac{10!}{(0)!} \nn \\
-	                                          & = 42 \times 10! 
-\end{align}
-
-Similarly, the line with male students on the ends can be formed as,
-\begin{equation}
-	M_5 : \text{Arrangement of remaining 10 students} : M_4 \,.
-\end{equation}
-where $M$ represents a male student and the subscripts 5 and 4 represent the number of choices of students for the end positions.
-
-Thus, using \rdef{mod2:defn:MultiplicationRule}, we get that,
-\begin{align}
-	\text{Arrangements with 2 males on the ends} & = 5 \times ^{10}P_{10} \times 4 \nn \\
-	& = 5 \times \frac{10!}{(10-10)!} \times 4 \nn \\
-	& = 20 \times \frac{10!}{(0)!} \nn \\
-	& = 20 \times 10! 
-\end{align}
-
-Thus, the total number of arrangements with students of the same sex on the ends is,
-\begin{align}
-	\text{Arrangements with 2 students of the same sex on the ends} & = 42 \times 10! + 20 \times 10! \nn \\
-	                                                & = 62 \times 10! 
-\end{align}
-
-\end{subsubquestions}
-
-%------------------------------------------------------------------------------
-% 4 b
-%------------------------------------------------------------------------------
-
-\subquestion
-
-Let us first calculate the probability that a male is chosen first and then a female student as follows,
-\begin{align}
-	P(1^{st} M, ~2^{nd} F) & = P(M ~1^{st}) \times P(F ~2^{nd}) \nn \\
-	                & = \frac{5}{12} \times \frac{7}{11} \nn \\
-	                & = \frac{35}{132} \,. 
-\end{align}
-
-Next, the probability that a female is chosen first and then a male student is,
-\begin{align}
-	P(1^{st} F, ~2^{nd} M) & = P(F ~1^{st}) \times P(M ~2^{nd}) \nn \\
-	& = \frac{7}{12} \times \frac{5}{11} \nn \\
-	& = \frac{35}{132} \,. 
-\end{align}
-
-Thus, the probability that 2 students chosen are of the different sexes is,
-\begin{align}
-	P(\text{Different sexes}) & = P(1^{st} M \land 2^{nd} F) + P(1^{st} F, ~2^{nd} M) \nn \\
-	                          & = \frac{35}{132} + \frac{35}{132} \nn \\
-	                          & = \frac{35}{66} \,.
-\end{align}
-
-\end{subquestions}

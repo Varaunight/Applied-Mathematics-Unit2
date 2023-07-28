@@ -21,10 +21,10 @@
 
 \subquestion
 
-We can modify the given activity network to obtain the desired information.
-\begin{figure}[H]
+From \rfig{2013:q2:fig:ActNet},
+\begin{figure}
 	\begin{center}
-		\includegraphics[scale=0.75]{../2013/figures/2013q2CriticalPath}
+		\includegraphics{../2013/figures/2013q2CriticalPath}
 		\caption{\label{2013:q2:fig:ActNet} Activity network of the project.}
 	\end{center}
 \end{figure}
@@ -72,6 +72,8 @@ The float time of activity $T$ is 0 days, using \rdef{mod1:defn:FloatTime}.
 
 \end{subsubquestions}
 
+See \rfig{2013:q2:fig:ActNet} to see the full activity network with the relevant start and end times.
+
 %--------------------------------------------------------
 % 2 b 
 %--------------------------------------------------------
@@ -90,8 +92,8 @@ From \rdef{mod1:defn:Degree}, we see that the degree of $A$ is 4 and the degree 
 
 \subsubquestion 
 
-We can determine the supermarkets to which each warehouse must be assigned in order to minimise the cost of delivery by applying the Hungarian algorithm as follows.
-\begin{table}[H]
+See \rtab{2013:q2:tab:HungAlgo} for the Hungarian Algorithm.
+\begin{table}[!hbt]
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\begin{tabular}{cccc}
@@ -114,7 +116,7 @@ We can determine the supermarkets to which each warehouse must be assigned in or
 			8 & 3 & 0 & 5 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Reducing Rows}
+		\caption*{Matrix after Reducing Rows}
 	\end{minipage}
 	\hspace{20pt}
 	%-----------------------------------------------------------------------------
@@ -127,7 +129,7 @@ We can determine the supermarkets to which each warehouse must be assigned in or
 			8 & 3 & 0 & 1 \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Reducing Columns} 
+		\caption*{Matrix after Reducing Columns} 
 	\end{minipage}
 	
 	\vspace{20pt} 
@@ -143,7 +145,7 @@ We can determine the supermarkets to which each warehouse must be assigned in or
 			&   &        & \hspace{-3.25mm} \hve[blue]{v1} &   &                \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
 	\end{minipage}
 	\hspace{20pt}
 	%-----------------------------------------------------------------------------
@@ -158,7 +160,7 @@ We can determine the supermarkets to which each warehouse must be assigned in or
 		      &   &   &   \\	 
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Applying Step 5, ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} % The reference here is a placeholder until that note is put in%
+		\caption*{Applying Step ~\ref{mod1:defn:HungAlgStep4} \\ \hspace{0pt}} % The reference here is a placeholder until that note is put in%
 	\end{minipage}
 	\hspace{20pt}
 	%-----------------------------------------------------------------------------
@@ -173,7 +175,7 @@ We can determine the supermarkets to which each warehouse must be assigned in or
 			&   &        & \hspace{-3.25mm} \hve[red]{v3} & \hspace{-3.25mm} \hve[red]{v4}  &               \\
 		\end{tabular}
 		\captionsetup{width=1.1\linewidth}
-		\caption*{Shading 0's}
+		\caption*{Shading 0's using the least \\ \centering number of lines}
 	\end{minipage}
 		
 	\caption{\label{2013:q2:tab:HungAlgo} Steps of the Hungarian Algorithm.}
@@ -200,7 +202,7 @@ Therefore, the optimum pairings to minimize the cost of delivery are,
 
 \subsubquestion
 
-The total cost of transportation for the 4 warehouses is,
+The total cost for each item at the 4 warehouses is,
 \begin{align}
 	\text{Total cost} = 5+2+1+8=16 \, \text{dollars} \,.
 \end{align}

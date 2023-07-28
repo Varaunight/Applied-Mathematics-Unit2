@@ -43,7 +43,6 @@
 \usepackage{circuitikz}
 \usepackage{pgfplots}
 \usepackage[export]{adjustbox}
-\usepackage{draftwatermark}
 
 % Equation numbering 
 \numberwithin{equation}{section}
@@ -201,4 +200,28 @@
 		\caption{\label{#2} #3}
 	\end{center}
 \end{figure}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

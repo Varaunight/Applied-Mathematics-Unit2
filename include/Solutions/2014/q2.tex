@@ -25,10 +25,10 @@
 	
 \subsubquestion
 
-We can construct the following activity network from the given activities.
-\begin{figure}[H]
+See Fig. \ref{2014:q2:fig:ActNet}.
+\begin{figure}
 	\begin{center}
-		\includegraphics[scale=0.75]{../2014/figures/ActNet}
+		\includegraphics{../2014/figures/ActNet}
 		\caption{\label{2014:q2:fig:ActNet} Activity Network of the operation.}
 	\end{center}
 \end{figure}
@@ -37,8 +37,8 @@ We can construct the following activity network from the given activities.
 
 \subsubquestion
 
-We can complete the table as follows:
-\begin{table}[H]
+ See Table \ref{2014:tab:Act}. 
+\begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 		\hline
@@ -80,21 +80,21 @@ Using Def. \ref{mod1:defn:CritPath} and looking at Fig. \ref{2014:q2:fig:ActNet}
 	
 \subsubquestion
 
-We can write the following Boolean expression for the given switching circuit:
+The Boolean expression for the circuit is 
 \begin{align}
-	\boldsymbol{p \wedge (p \: \vee \sim q)} \label{2014:q2:eqn:Bool}
+	p \wedge (p \: \vee \sim q) \label{2014:q2:eqn:Bool}
 \end{align}
 
 %-----------------------------------------------------------------------------
 
 \subsubquestion
 
-We can construct the truth table for the proposition $\boldsymbol{p \land (p ~\lor \sim q)}$
+See Table \ref{2014:tab:TrthTab}
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		$\boldsymbol{p}$ &$\boldsymbol{q}$ & $\boldsymbol{\sim q}$ & $\boldsymbol{p \ \vee \sim q}$ & $\boldsymbol{p \wedge ( p \ \vee \sim q)}$ \\
+		p&q& $\sim$ q & p $\vee$ $\sim$ q& p $\wedge$ ( p $\vee$ $\sim$ q) \\
 		\hline
 		0 & 0 & 1 & 1 & 0 \\
 		0 & 1 & 0 & 0 & 0 \\
@@ -102,10 +102,8 @@ We can construct the truth table for the proposition $\boldsymbol{p \land (p ~\l
 		1 & 1 & 0 & 1 & 1 \\
 		\hline
 	\end{tabular}
-	\caption{\label{2014:tab:TrthTab}Truth Table of $\boldsymbol{p \land (p ~\lor \sim q)}$.}
+	\caption{\label{2014:tab:TrthTab}Truth Table of $p \land (p ~\lor \sim q)$.}
 \end{table}
-
-Note: Although the question did not ask for it, this truth table is a proof of the Absorptive Law (\rdef{mod1:law:Absorptive}).
 
 \end{subsubquestions}
 
