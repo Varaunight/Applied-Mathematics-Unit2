@@ -28,25 +28,15 @@ We are given two masses which are connected by a string over a smooth, weightles
 	
 	\subsubquestion
 	
-	\textbf{\textit{Sketch and Translate:}} \\ \\
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=0.25]{../2006/figures/2006q5-1}
-			\caption{\label{2006:q5:Sketch1} Pulley System.}
-		\end{center}
-	\end{figure}	
-	We are asked to find the acceleration of the system given. This problem is a pulley problem together with an inclined plane situation and so, we should think about what we know about tension and forces in the context of masses connected by the string.
+	\textbf{\textit{Sketch and Translate:}} \\
+	\addimage{../2006/figures/2006q5-Sketch1}{2006:q5:Sketch1}{Pulley System}
+	We are asked to find the acceleration of the system given. This problem is a pulley problem together with an inclined plane situation and so, we should think about what we know about tension and forces in the context of masses connected by the string. \\
 	
 	
 	
 	
-	\textbf{\textit{Simplify and Diagram:}} \\ \\
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=0.25]{../2006/figures/2006q5-1}
-			\caption{\label{2006:q5:Diagram1} All forces on Pulley System.}
-		\end{center}
-	\end{figure}
+	\textbf{\textit{Simplify and Diagram:}} \\
+	\addimage{../2006/figures/2006q5-Diagram1}{2006:q5:Diagram1}{Forces acting on the masses}
 	We will assume that both bodies behave as point particles. We will also assume that the mass of the string is 0 and inextensible. Thus, we know that the speed (and the magnitude of the acceleration) of both particles must be the same. Since the pulley is smooth, no energy is lost to friction. We should consider how the forces act on the different weights and motivate our solution from there. We will define the following:
 	\begin{itemize}
 		\item $\vec{W_1}$ is the weight of the 12kg mass,
@@ -57,30 +47,30 @@ We are given two masses which are connected by a string over a smooth, weightles
 		\item $m_1$ is the mass of the 12kg mass, $m_1=12$,
 		\item $m_2$ is the mass of the 8kg mass, $m_1=8$.
 	\end{itemize}
-	We will find the Resultant Force in the direction of the acceleration of both the masses and use Newton's Second Law to solve for the acceleration. We will assume that there is no acceleration perpendicular to the plane.
+	We will find the Resultant Force in the direction of the acceleration of both the masses and use Newton's Second Law to solve for the acceleration. We will assume that there is no acceleration perpendicular to the plane.\\
 	
 	
-	\textbf{\textit{Represent Mathematically:}} \\ \\ 
+	\textbf{\textit{Represent Mathematically:}} \\ 
 	Let us denote the displacements of the 12kg and 8kg masses as $y_1$ and $y_2$ respectively. As the string is inextensible, we know that,
 	\begin{align}
 		|y_1| & = |y_2| \nn \\
 		\implies \ddd{y_1}{t} & = \ddd{y_2}{t} \nn \\
 		\implies \ddd{^2y_1}{t^2} & = \ddd{^2y_2}{t^2} \nn \\
-		a_1 & = a_2 = a \,.
+		a_1 & = a_2 = a \,. \label{2006:q5:AccEqn}
 	\end{align}
 	where $a_1$ and $a_2$ are the acceleration of the 12kg and 8kg mass respectively.
 	
 	From the assumption that the string is massless, we also get that,
 	\begin{equation}
-		|T_1| = |T_2| = T \,.
+		|T_1| = |T_2| = T \,. \label{2006:q5:TensEqn}
 	\end{equation}
 	
-	We will resolve $W_1$ in terms of the unit vectors parallel ($\xhat$) and perpendicular ($\yhat$) to the plane as,
+	We will resolve $\vec{W_1}$ in terms of the unit vectors parallel ($\xhat$) and perpendicular ($\yhat$) to the plane as,
 	\begin{equation}
 		\vec{W_1} = -\sin\left(\arcsin\left(\frac{1}{6}\right)\right)|W_1|\xhat - \cos\left(\arcsin\left(\frac{1}{6}\right)\right)|W_1|\yhat \,.
 	\end{equation}
 	
-	Let us first consider the forces on the 12kg mass. From Newton's 2nd Law in the direction of the acceleration (the $\xhat$ direction), we get that,
+	Let us first consider the forces on the 12kg mass. From Newton's 2nd Law in the $\xhat$ direction, we get that,
 	\begin{align}
 		\sum F & = m_1a_1 \nn \\
 		T_1 -\sin\left(\arcsin\left(\frac{1}{6}\right)\right)|W_1| & = m_1a_1 \label{2006:q5:SimEqn1} \,.
@@ -95,8 +85,8 @@ We are given two masses which are connected by a string over a smooth, weightles
 	
 	
 	
-	\textbf{\textit{Solve and Evaluate:}} \\ \\
-	By substituting our values, we can see that \reqs{2006:q5:SimEqn1}{2006:q5:SimEqn2} become,
+	\textbf{\textit{Solve and Evaluate:}} \\
+	By substituting our values and considering \reqs{2006:q5:AccEqn}{2006:q5:TensEqn}, we can see that \reqs{2006:q5:SimEqn1}{2006:q5:SimEqn2} become,
 	\begin{align}
 		T_1 -\frac{1}{6}m_1g & = m_1a_1 \nn \\
 		\implies T - 2g & = 12a \label{2006:q5:SimEqn3} \\
@@ -104,10 +94,9 @@ We are given two masses which are connected by a string over a smooth, weightles
 		m_2g-T_2 & = m_2a_2 \nn \\
 		\implies 8g-T & = 8a \label{2006:q5:SimEqn4} \,.
 	\end{align}
-	
 	Solving \reqs{2006:q5:SimEqn3}{2006:q5:SimEqn4} simultaneously, we get,
 	\begin{align}
-		(\text{\req{2006:q5:SimEqn3}+\req{2006:q5:SimEqn4}}): (T-2g)+[8g-T] & = (12a)+[8a] \nn \\
+		(\text{\req{2006:q5:SimEqn3}~+~\req{2006:q5:SimEqn4}}): (T-2g)+[8g-T] & = (12a)+[8a] \nn \\
 		6g & = 20a \nn \\
 		\implies a & = 2.94ms^{-2}\,.
 	\end{align} 
@@ -116,7 +105,7 @@ We are given two masses which are connected by a string over a smooth, weightles
 	
 	\subsubquestion
 	
-	\textbf{\textit{Solve and Evaluate:}} \\ \\
+	\textbf{\textit{Solve and Evaluate:}} \\
 	Substituting our value of $a$ into \req{2006:q5:SimEqn3}, we get that,
 	\begin{align}
 		T & = 12(2.94) + 2g \nn \\
@@ -127,13 +116,13 @@ We are given two masses which are connected by a string over a smooth, weightles
 	
 	\subsubquestion
 	
-	\textbf{\textit{Simplify and Diagram:}} \\ \\
-	As we have assumed that there is no acceleration perpendicular to the plane (and by extension, no resultant force), we can use Newton's Second Law on the 12kg mass and solve for $\vec{R}$.
+	\textbf{\textit{Simplify and Diagram:}} \\
+	As we have assumed that there is no acceleration perpendicular to the plane (and by extension, no resultant force), we can use Newton's Second Law on the 12kg mass and solve for $\vec{R}$.\\
 	
 	
 	
 	
-	\textbf{\textit{Represent Mathematically:}} \\ \\
+	\textbf{\textit{Represent Mathematically:}} \\
 	By resolving $\vec{R}$, we get that,
 	\begin{equation}
 		\vec{R} = |\vec{R}|\yhat \,.
@@ -147,7 +136,7 @@ We are given two masses which are connected by a string over a smooth, weightles
 	
 	
 	
-	\textbf{\textit{Solve and Evaluate:}} \\ \\
+	\textbf{\textit{Solve and Evaluate:}} \\
 	From \req{2006:q5:REqn1}, we get that,
 	\begin{align}
 		|\vec{R}| & = \cos\left(\arcsin\left(\frac{1}{6}\right)\right)12g \nn \\
@@ -163,25 +152,15 @@ We are given two masses which are connected by a string over a smooth, weightles
 	
 \subquestion
 
-\textbf{\textit{Sketch and Translate:}} \\ \\
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.25]{../2006/figures/2006q5-2}
-		\caption{\label{2006:q5:Sketch2} Movement of car.}
-	\end{center}
-\end{figure}	
-To find the tractive force of the car, we will need to use our equations of motion and Newton's Second Law.
+\textbf{\textit{Sketch and Translate:}} \\
+\addimage{../2006/figures/2006q5-Sketch2}{2006:q5:Sketch2}{Car go Vroom.}	
+To find the tractive force of the car, we will need to use our equations of motion and Newton's Second Law.\\
 
 
 
 
-\textbf{\textit{Simplify and Diagram:}} \\ \\
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.25]{../2006/figures/2006q5-2}
-		\caption{\label{2006:q5:Diagram2} Movement of car.}
-	\end{center}
-\end{figure}
+\textbf{\textit{Simplify and Diagram:}} \\
+\addimage{../2006/figures/2006q5-Diagram2}{2006:q5:Diagram2}{Force diagram of the car.}	
 We will assume that the car accelerates with constant velocity. We will define the following:
 \begin{itemize}
 	\item $u$ is the initial velocity of the car, $u=\frac{80}{9}ms^{-1}$,
@@ -189,28 +168,28 @@ We will assume that the car accelerates with constant velocity. We will define t
 	\item $s$ is the distance traveled by the car, $s=60m$,
 	\item $a$ is the acceleration of the car,
 	\item $m$ is the mass of the car, $m=1250kg$,
-	\item $F_T$ s the tractive force of the car.
+	\item $F_T$ is the tractive force of the car.
 \end{itemize}
-To find the tractive force, we will find the acceleration of the car, use $F_T$ as the resultant force on the car, and apply Newton's Second Law.
+To find the tractive force, we will find the acceleration of the car, use $F_T$ as the resultant force on the car, and apply Newton's Second Law.\\
 	
 
 	
 	
-\textbf{\textit{Represent Mathematically:}} \\ \\
+\textbf{\textit{Represent Mathematically:}} \\
 To find $a$, we will use,
 \begin{equation}
 	v^2=u^2+2as \label{2006:q5:AEqn1} \,.
 \end{equation}
 
-From Newton's Second Law, we get that,
+From Newton's Second Law (in the $+x$ direction), we get that,
 \begin{equation}
-	F_T = ma \label{2006:q5:FEqn1} \,.
+	\sum F = F_T = ma \label{2006:q5:FEqn1} \,.
 \end{equation}
 
 
 
 
-\textbf{\textit{Solve and Evaluate:}} \\ \\
+\textbf{\textit{Solve and Evaluate:}} \\
 Using \req{2006:q5:AEqn1}, we get that,
 \begin{align}
 	\left(\frac{25}{2}\right)^2 & = \left(\frac{80}{9}\right)^2 + 120a \nn \\
