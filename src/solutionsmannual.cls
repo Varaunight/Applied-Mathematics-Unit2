@@ -42,6 +42,7 @@
 \usepackage{caption}
 \usepackage{circuitikz}
 \usepackage{pgfplots}
+\usepackage[export]{adjustbox}
 
 % Equation numbering 
 \numberwithin{equation}{section}
@@ -189,3 +190,38 @@
 \newcommand{\yhat}{\,\mathbf{y}}
 \newcommand{\zhat}{\,\mathbf{z}}
 \renewcommand{\v}[1]{\vec{#1}}
+%------------------------------------------------------------------------------
+% Inserting Diagrams
+%-----------------------------------------------------------------------------
+\newcommand{\addimage}[3]{
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[max size={\textwidth}{\textheight}]{#1}
+		\caption{\label{#2} #3}
+	\end{center}
+\end{figure}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

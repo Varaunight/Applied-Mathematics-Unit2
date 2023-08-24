@@ -1,0 +1,241 @@
+%------------------------------------------------------------------------------
+% Author(s):
+% Varaun Ramgoolie
+%
+% Copyright:
+%  Copyright (C) 2020 Brad Bachu, Arjun Mohammed, Varaun Ramgoolie, Nicholas Sammy
+%
+%  This file is part of Applied-Mathematics-Unit2 and is distributed under the
+%  terms of the MIT License. See the LICENSE file for details.
+%
+%  Description:
+%     Year: 2005 C
+%     Module: 3
+%     Question: 5
+%------------------------------------------------------------------------------
+
+%------------------------------------------------------------------------------
+% 5 a
+%------------------------------------------------------------------------------
+
+\begin{subquestions}
+	
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+\textbf{\textit{Sketch and Translate:}} \\ 
+\addimage{../2005/figures/2005q5-Sketch1}{2005:q5:fig:Sketch1}{Particle moving on the $x$-axis}
+We are given the velocity function of a particle which is traveling along the $x$-axis. \\
+
+
+
+
+\textbf{\textit{Simplify and Diagram:}} \\ 
+\addimage{../2005/figures/2005q5-Diagram1-1}{2005:q5:fig:Diagram1}{Particle moving on the $x$-axis}
+We know, by definition, that the acceleration of the particle can be expressed as the derivative of the velocity with respect to time. Thus, we can use this to find the acceleration at $t=5$.\\
+
+
+
+
+\textbf{\textit{Represent Mathematically:}} \\ 
+By definition, we know that,
+\begin{equation}
+	a(t) = \ddd{}{t} v(t) \label{2005:q5:AEqn1} \,.
+\end{equation}\\
+
+
+
+
+\textbf{\textit{Solve and Evaluate:}} \\ 
+By using \req{2005:q5:AEqn1}, we get that,
+\begin{align}
+	a(t) & = \ddd{}{t} \left(4t^3 +4t +5\right) \nn \\
+	     & = 12t^2 + 4 \,.
+\end{align}
+
+Thus, at $t=5$, we get that,
+\begin{align}
+	a(t=5) & = 12(5)^2 + 4 \nn \\
+	       & = 304 ms^{-2} \,.
+\end{align}\\
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+\textbf{\textit{Sketch and Translate:}} \\
+Refer to \rfig{2005:q5:fig:Sketch1}. As the particle passes the origin at $t=0$, we know that $s(t=0) = 0m$, as we have taken the origin to be the reference point for the problem. \\
+
+
+
+
+\textbf{\textit{Simplify and Diagram:}} \\
+Refer to \rfig{2005:q5:fig:Diagram1}. By definition, we know that the integral of the velocity of the particle will yield the displacement of the particle. We will use this to find the distance covered from $t=0$ and $t=5$. \\ 
+
+
+
+
+\textbf{\textit{Represent Mathematically:}} \\ 
+We know that,
+\begin{equation}
+	v(t)=\frac{\dd s(t)}{\dd t} \,.
+\end{equation}
+Thus, by the Fundamental Theorem of Calculus, we get that,
+\begin{equation}
+	\int_{0}^{5} v(t) \dd t = s(t=5)-s(t=0) \label{2005:q5:FTC1} \,.
+\end{equation}
+
+We also know that, from the setup of the question,
+\begin{equation}
+	s(t=0) = 0m \,.
+\end{equation}\\
+
+
+
+
+\textbf{\textit{Solve and Evaluate:}} \\ 
+Using \req{2005:q5:FTC1}, we get that,
+\begin{align}
+	\int_{0}^{5} \left(4t^3+4t+5\right) \dd t & = s(t=5)-0 \nn \\
+	\left[t^4+2t^2+5t\right]^5_0 & = s(t=5) \nn \\
+	\implies s(t=5) & = 700m \,.
+\end{align}\\
+
+\end{subsubquestions}
+
+%------------------------------------------------------------------------------
+% 5 b
+%------------------------------------------------------------------------------
+
+\subquestion
+
+\begin{subsubquestions}
+	
+\subsubquestion
+
+\textbf{\textit{Sketch and Translate:}} \\
+\addimage{../2005/figures/2005q5-Sketch2}{2005:q5:fig:Sketch2}{Particle falling through medium.}
+As we are given that the resistive force, $F_R$, experienced by the body is directly proportional to the velocity, $v$, we can express this force in terms of a constant of proportionality $k$ in the form of $F_R=kv$. We also get that the initial velocity, $v(t=0)=0$, as it falls from rest.\\
+
+
+
+
+\textbf{\textit{Simplify and Diagram:}} \\
+\addimage{../2005/figures/2005q5-Diagram2}{2005:q5:fig:Diagram2}{Particle falling through medium.} 
+We will assume that the body moves only in the vertical ($y$) direction. We will use Newton's Second Law on the body and find an expression for the velocity of the particle in terms of $t$.
+We will take the vertical downwards direction to be positive.
+
+We will define the following forces: \TODO{Use vector notation, Remove F}
+\begin{itemize}
+	\item $F_R$ is the resistive force on the body, $F_R=kv$,
+	\item $W$ is the weight, $\vec{W}=+mg$.
+\end{itemize}
+
+
+
+
+\textbf{\textit{Represent Mathematically:}} \\ 
+As the direction of the resistive force is opposite to the chosen positive direction, we can use Newton's Second Law to express the resultant force in the direction of the $+y$ as,
+\begin{equation}
+	\sum F = ma = W - F_R \label{2005:q5:FEqn1} \,.
+\end{equation}
+
+By definition, we also know that,
+\begin{equation}
+	a = \ddd{v}{t} \label{2005:q5:AEqn2} \,.
+\end{equation}
+
+We also have the information that,
+\begin{align}
+	v(t=0) & = 0 \,
+\end{align}
+
+We will define another point as,
+\begin{align}
+	v(t=t') & = v' \,.
+\end{align}\\
+
+
+
+\textbf{\textit{Solve and Evaluate:}} \\ 
+Combining \reqs{2005:q5:FEqn1}{2005:q5:AEqn2}, we get a differential equation as follows,
+\begin{align}
+	m\ddd{v}{t} & = mg - kv \nn \\
+	\ddd{v}{t} & = g -\frac{k}{m}v \,.
+\end{align}
+
+Separating variables and integrating between the bounds $v(t=0)=0$ and $v(t=t')=v'$, we get that,
+\begin{align}
+	\int_{0}^{v'}\frac{1}{g-\frac{k}{m}v} \dd v & = \int_{0}^{t'} \dd t \nn \\
+	\frac{-m}{k}\left[\ln(g-\frac{k}{m}v)\right]_{0}^{v'} & = \left[t\right]_0^{t'} \nn \\
+	\frac{-m}{k}\left[\ln(g-\frac{k}{m}v')-\ln(g)\right] & = t' \nn \\
+	\frac{-m}{k}\left[\ln(\frac{g-\frac{k}{m}v'}{g})\right] & = t' \nn \\
+	\frac{-m}{k}\left[\ln(1-\frac{k}{mg}v')\right] & = t' \nn \\
+	\ln(1-\frac{k}{mg}v') & = \frac{-kt'}{m} \nn \\
+	1-\frac{k}{mg}v' & = e^{\frac{-kt'}{m}} \nn \\
+	\implies v' & = \frac{mg}{k}\left(1-e^{\frac{-kt'}{m}}\right) \,.
+\end{align}
+
+Given that we chose $v'$ and $t'$ to be a pair of corresponding arbitrary variables (in the context of the question), we can switch these for $v(t)$ and $t$. We get that,
+\begin{equation}
+	v(t) = \frac{mg}{k}\left(1-e^{\frac{-kt}{m}}\right) \,.
+\end{equation}\\
+
+%------------------------------------------------------------------------------
+
+\subsubquestion
+
+\textbf{\textit{Simplify and Diagram:}} \\ 
+To find the limit of $v$, we will consider when $t$ approaches $\infty$.\\
+
+
+
+
+\textbf{\textit{Represent Mathematically:}} \\ 
+We will find,
+\begin{equation}
+	\lim_{t\rightarrow \infty} v = \lim_{t\rightarrow \infty}      \frac{mg}{k}\left(1-e^{\frac{-kt}{m}}\right) \label{2005:q5:TLim} \,.
+\end{equation}\\
+
+
+
+
+\textbf{\textit{Solve and Evaluate:}} \\ 
+Considering \req{2005:q5:TLim}, we get that,
+\begin{align}
+		\lim_{t\rightarrow \infty} v & = \frac{mg}{k} \left(\lim_{t\rightarrow \infty}      \left(1-e^{\frac{-kt}{m}}\right)\right) \nn \\
+		 & = \frac{mg}{k} \left(\lim_{t\rightarrow \infty}1-\lim_{t\rightarrow \infty}e^{\frac{-kt}{m}}\right) \nn \\
+	 	 & = \frac{mg}{k} \left(1-\lim_{t\rightarrow \infty}\frac{1}{e^{\frac{kt}{m}}}\right) \nn \\ 
+		 & = \frac{mg}{k} \left(1-\frac{1}{\infty}\right) \nn \\ 
+		 & = \frac{mg}{k} \,.
+\end{align}\\
+
+We can justify why $k$ has to be a positive constant by contradiction. If $k$ were to be negative, then $F_R$ will necessarily have to act in the direction of $+y$. As we defined $F_R$ to be the resistive force, it must act against the direction of motion or in this case, opposite to the direction of $+y$. Thus, $k$ must be positive.
+
+\end{subsubquestions}
+	
+\end{subquestions}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
